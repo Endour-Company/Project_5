@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjwnjc45hlcrd"]
+
+[ext_resource type="Texture2D" uid="uid://kftg8lge2ooc" path="res://Game/Ricefield/Assets/ricefield_background.png" id="1_p6yo8"]
+
+[node name="Game" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_p6yo8")
+expand_mode = 1
