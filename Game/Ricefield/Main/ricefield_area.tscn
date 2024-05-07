@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://brw17nqvu6hle"]
+
+[ext_resource type="Texture2D" uid="uid://bygqpoyk2ke7x" path="res://Game/Ricefield/Assets/prototype/land.png" id="1_rwnou"]
+[ext_resource type="Texture2D" uid="uid://cafhdbsuyo8vr" path="res://Game/Ricefield/Assets/prototype/Sawah.png" id="2_4jorx"]
+[ext_resource type="Texture2D" uid="uid://beimanjvksvm5" path="res://Game/Ricefield/Assets/prototype/Jalan_lv1.png" id="3_wubep"]
+[ext_resource type="Texture2D" uid="uid://clxy3b7kv7agm" path="res://Game/Ricefield/Assets/prototype/lampu_taman.png" id="4_65rpt"]
+[ext_resource type="Texture2D" uid="uid://dxyk6n7oh6brx" path="res://Game/Ricefield/Assets/prototype/padi_kecil.png" id="5_fq412"]
+[ext_resource type="Texture2D" uid="uid://ycixm1glcobj" path="res://Game/Ricefield/Assets/prototype/cangkul.png" id="6_kocl5"]
+[ext_resource type="Texture2D" uid="uid://dp0w5a46ctlcw" path="res://Game/Ricefield/Assets/prototype/mobil_padi_isi0.png" id="7_kk5li"]
+[ext_resource type="PackedScene" uid="uid://jfxxjw7qcnkf" path="res://Game/Ricefield/Lib/River/river.tscn" id="8_vno6r"]
+
+[node name="Ricefield_area" type="Node2D"]
+
+[node name="Land" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_rwnou")
+expand_mode = 1
+
+[node name="Ricefield" type="TextureRect" parent="."]
+offset_left = 312.0
+offset_top = 383.0
+offset_right = 1042.0
+offset_bottom = 806.0
+texture = ExtResource("2_4jorx")
+expand_mode = 1
+
+[node name="Street" type="TextureRect" parent="."]
+offset_left = -12.0
+offset_top = -18.0
+offset_right = 2507.0
+offset_bottom = 1062.0
+texture = ExtResource("3_wubep")
+
+[node name="Lamp" type="TextureRect" parent="."]
+offset_left = 1089.0
+offset_top = 26.0
+offset_right = 1152.0
+offset_bottom = 252.0
+texture = ExtResource("4_65rpt")
+expand_mode = 1
+
+[node name="Riceplant" type="TextureRect" parent="."]
+offset_left = 477.0
+offset_top = 516.0
+offset_right = 518.0
+offset_bottom = 542.0
+texture = ExtResource("5_fq412")
+expand_mode = 1
+
+[node name="Tractor" type="TextureRect" parent="."]
+offset_left = 427.0
+offset_top = 225.0
+offset_right = 594.0
+offset_bottom = 289.0
+texture = ExtResource("6_kocl5")
+expand_mode = 1
+
+[node name="Ricecar" type="TextureRect" parent="."]
+offset_left = 35.0
+offset_top = 839.0
+offset_right = 179.0
+offset_bottom = 885.0
+texture = ExtResource("7_kk5li")
+expand_mode = 1
+
+[node name="River" parent="." instance=ExtResource("8_vno6r")]
+position = Vector2(1, 340)
