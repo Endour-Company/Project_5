@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjwnjc45hlcrd"]
+[gd_scene load_steps=3 format=3 uid="uid://bjwnjc45hlcrd"]
 
 [ext_resource type="PackedScene" uid="uid://brw17nqvu6hle" path="res://Game/Ricefield/Main/ricefield_area.tscn" id="1_ymy68"]
+[ext_resource type="PackedScene" uid="uid://6wgjm6tla017" path="res://Global/Game_UI/Action_bar/action_bar.tscn" id="2_tmlwp"]
 
 [node name="Game" type="Node"]
 
 [node name="Ricefield_area" parent="." instance=ExtResource("1_ymy68")]
+
+[node name="Action_bar" parent="." instance=ExtResource("2_tmlwp")]
+offset_left = 441.0
+offset_top = 590.0
+offset_right = 441.0
+offset_bottom = 590.0
