@@ -1,9 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://6wgjm6tla017"]
+[gd_scene load_steps=8 format=3 uid="uid://6wgjm6tla017"]
 
 [ext_resource type="Texture2D" uid="uid://dpn7mh6fvy5oq" path="res://Global/Game_UI/Action_bar/Assets/Actions.png" id="1_2lrml"]
-[ext_resource type="Texture2D" uid="uid://brmcs2y1nfexd" path="res://Global/Game_UI/Action_bar/Assets/Item.png" id="2_ws46k"]
+[ext_resource type="Texture2D" uid="uid://crchiivtetpiw" path="res://Global/Game_UI/Action_bar/Assets/Container_item_empty.png" id="2_ev35g"]
+[ext_resource type="PackedScene" uid="uid://cqtcbojv8uhff" path="res://Global/Game_UI/Action_bar/Item/Item.tscn" id="3_5facd"]
 
-[sub_resource type="Theme" id="Theme_g4j3n"]
+[sub_resource type="Theme" id="Theme_l7g4g"]
+GridContainer/constants/h_separation = 30
+GridContainer/constants/v_separation = 100
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eueno"]
+texture = ExtResource("2_ev35g")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdys8"]
+bg_color = Color(0.383159, 0.597374, 0.946866, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0.669174, 0.962241, 1)
+
+[sub_resource type="Theme" id="Theme_awpmf"]
+Panel/styles/panel = SubResource("StyleBoxTexture_eueno")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_tdys8")
 
 [node name="Action_bar" type="Control"]
 layout_mode = 3
@@ -16,21 +34,49 @@ offset_bottom = 40.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_2lrml")
 
-[node name="ItemList" type="ItemList" parent="."]
-layout_direction = 2
+[node name="Item_container" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 60.0
-offset_top = 106.0
-offset_right = 4160.0
-offset_bottom = 610.0
-scale = Vector2(0.25, 0.25)
-theme = SubResource("Theme_g4j3n")
-allow_reselect = true
-max_text_lines = 2
-item_count = 2
-max_columns = 0
-icon_mode = 0
-item_0/text = "hehe"
-item_0/icon = ExtResource("2_ws46k")
-item_1/text = ""
-item_1/icon = ExtResource("2_ws46k")
+offset_left = 65.0
+offset_top = 96.0
+offset_right = 1059.0
+offset_bottom = 212.0
+theme = SubResource("Theme_l7g4g")
+columns = 7
+
+[node name="Panel" type="Panel" parent="Item_container"]
+custom_minimum_size = Vector2(116, 116)
+layout_mode = 2
+theme = SubResource("Theme_awpmf")
+
+[node name="Item" parent="Item_container/Panel" instance=ExtResource("3_5facd")]
+position = Vector2(13, 11)
+
+[node name="Panel2" type="Panel" parent="Item_container"]
+custom_minimum_size = Vector2(116, 116)
+layout_mode = 2
+theme = SubResource("Theme_awpmf")
+
+[node name="Panel3" type="Panel" parent="Item_container"]
+custom_minimum_size = Vector2(116, 116)
+layout_mode = 2
+theme = SubResource("Theme_awpmf")
+
+[node name="Panel4" type="Panel" parent="Item_container"]
+custom_minimum_size = Vector2(116, 116)
+layout_mode = 2
+theme = SubResource("Theme_awpmf")
+
+[node name="Panel5" type="Panel" parent="Item_container"]
+custom_minimum_size = Vector2(116, 116)
+layout_mode = 2
+theme = SubResource("Theme_awpmf")
+
+[node name="Panel6" type="Panel" parent="Item_container"]
+custom_minimum_size = Vector2(116, 116)
+layout_mode = 2
+theme = SubResource("Theme_awpmf")
+
+[node name="Panel7" type="Panel" parent="Item_container"]
+custom_minimum_size = Vector2(116, 116)
+layout_mode = 2
+theme = SubResource("Theme_awpmf")
