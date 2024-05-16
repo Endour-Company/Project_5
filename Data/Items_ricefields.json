@@ -1,0 +1,50 @@
+[
+	{
+		"name": "tractor",
+		"description": "Donec ut enim vestibulum, convallis lectus tincidunt, vehicula mi. Nunc facilisis accumsan mi sit amet semper. Etiam cursus felis eget rhoncus ultrices. Maecenas aliquam, nisi eget suscipit imperdiet, libero lectus hendrerit mi, a pulvinar elit magna ac velit. Donec interdum nisi vel dui euismod luctus non vel nibh. Maecenas et mattis leo, eget congue libero. Nunc sagittis porta nulla, convallis tempor eros luctus vel. Aliquam pellentesque lacus quis luctus vehicula.",
+		"levels": [
+			{
+				"level": 1,
+				"name": "Cangkul",
+				"upgrade_price": 3000,
+				"img": "Ricefield/Assets/prototype/cangkul.png"
+			},
+			{
+				"level": 2,
+				"name": "Traktor Tangan",
+				"upgrade_price": 4000,
+				"img": "res://Game/Ricefield/Assets/prototype/traktor_tangan.png"
+			},
+			{
+				"level": 3,
+				"name": "Traktor Mobil",
+				"upgrade_price": 0,
+				"img": "res://Game/Ricefield/Assets/prototype/traktor_mobil.png"
+			}
+		]
+	},
+	{
+		"name": "Jalan",
+		"description": "Street ut enim vestibulum, convallis lectus tincidunt, vehicula mi. Nunc facilisis accumsan mi sit amet semper. Etiam cursus felis eget rhoncus ultrices. Maecenas aliquam, nisi eget suscipit imperdiet, libero lectus hendrerit mi, a pulvinar elit magna ac velit. Donec interdum nisi vel dui euismod luctus non vel nibh. Maecenas et mattis leo, eget congue libero. Nunc sagittis porta nulla, convallis tempor eros luctus vel. Aliquam pellentesque lacus quis luctus vehicula.",
+		"levels": [
+			{
+				"level": 1,
+				"name": "Jalan Rusak",
+				"upgrade_price": 5000,
+				"img": "res://Game/Ricefield/Assets/prototype/jalan_lv1.png"
+			},
+			{
+				"level": 2,
+				"name": "Jalan Paving",
+				"upgrade_price": 11000,
+				"img": "res://Game/Ricefield/Assets/prototype/jalan_lv2.png"
+			},
+			{
+				"level": 3,
+				"name": "Jalan Aspal",
+				"upgrade_price": 0,
+				"img": "res://Game/Ricefield/Assets/prototype/jalan_lv3.png"
+			}
+		]
+	}
+]

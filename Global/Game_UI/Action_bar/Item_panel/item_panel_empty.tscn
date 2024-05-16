@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb5fdor2mrcci"]
+
+[ext_resource type="Texture2D" uid="uid://crchiivtetpiw" path="res://Global/Game_UI/Action_bar/Assets/Container_item_empty.png" id="1_e0p7l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cj8p3"]
+texture = ExtResource("1_e0p7l")
+
+[sub_resource type="Theme" id="Theme_nc722"]
+Panel/styles/panel = SubResource("StyleBoxTexture_cj8p3")
+
+[node name="Item_panel_empty" type="Panel"]
+custom_minimum_size = Vector2(118, 118)
+theme = SubResource("Theme_nc722")
