@@ -13,6 +13,7 @@ func _process(delta):
 	pass
 	
 
-func init_item_panel(itemPath : Texture2D, price : int):
-	item.init_item(itemPath, price)
+func init_item_panel(itemPath : String, price : int):
+	var myItem = item.instantiate()
+	myItem.init_item(itemPath, price)
 	

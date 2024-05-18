@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalActionBar="*res://Global/Scripts/GlobalActionBar.gd"
+GlobalItemsLevel="*res://Global/Scripts/GlobalItemsLevel.gd"
 
 [display]
 

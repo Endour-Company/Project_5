@@ -1,30 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://6wgjm6tla017"]
+[gd_scene load_steps=5 format=3 uid="uid://6wgjm6tla017"]
 
 [ext_resource type="Texture2D" uid="uid://dpn7mh6fvy5oq" path="res://Global/Game_UI/Action_bar/Assets/Actions.png" id="1_2lrml"]
 [ext_resource type="Script" path="res://Global/Game_UI/Action_bar/action_bar.gd" id="1_14npq"]
 [ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Item_container.gd" id="3_rm0i6"]
-[ext_resource type="PackedScene" uid="uid://cd487uqanw2o" path="res://Global/Game_UI/Action_bar/Item_panel/item_panel_fill.tscn" id="4_0ajnt"]
-[ext_resource type="Texture2D" uid="uid://bn5xqq031easv" path="res://Global/Game_UI/Action_bar/Assets/Container_item_fill.png" id="4_2co5d"]
-[ext_resource type="PackedScene" uid="uid://bb5fdor2mrcci" path="res://Global/Game_UI/Action_bar/Item_panel/item_panel_empty.tscn" id="6_4tiqi"]
 
 [sub_resource type="Theme" id="Theme_l7g4g"]
 GridContainer/constants/h_separation = 30
 GridContainer/constants/v_separation = 100
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eueno"]
-texture = ExtResource("4_2co5d")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdys8"]
-bg_color = Color(0.383159, 0.597374, 0.946866, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(1, 0.669174, 0.962241, 1)
-
-[sub_resource type="Theme" id="Theme_awpmf"]
-Panel/styles/panel = SubResource("StyleBoxTexture_eueno")
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_tdys8")
 
 [node name="Action_bar" type="Control"]
 layout_mode = 3
@@ -47,39 +29,3 @@ offset_bottom = 212.0
 theme = SubResource("Theme_l7g4g")
 columns = 7
 script = ExtResource("3_rm0i6")
-
-[node name="Item_panel_fill" parent="Item_container" instance=ExtResource("4_0ajnt")]
-layout_mode = 2
-
-[node name="Panel2" type="Panel" parent="Item_container"]
-custom_minimum_size = Vector2(116, 116)
-layout_mode = 2
-theme = SubResource("Theme_awpmf")
-
-[node name="Panel3" type="Panel" parent="Item_container"]
-custom_minimum_size = Vector2(116, 116)
-layout_mode = 2
-theme = SubResource("Theme_awpmf")
-
-[node name="Panel4" type="Panel" parent="Item_container"]
-custom_minimum_size = Vector2(116, 116)
-layout_mode = 2
-theme = SubResource("Theme_awpmf")
-
-[node name="Panel5" type="Panel" parent="Item_container"]
-custom_minimum_size = Vector2(116, 116)
-layout_mode = 2
-theme = SubResource("Theme_awpmf")
-
-[node name="Panel6" type="Panel" parent="Item_container"]
-custom_minimum_size = Vector2(116, 116)
-layout_mode = 2
-theme = SubResource("Theme_awpmf")
-
-[node name="Panel7" type="Panel" parent="Item_container"]
-custom_minimum_size = Vector2(116, 116)
-layout_mode = 2
-theme = SubResource("Theme_awpmf")
-
-[node name="Item_panel_empty" parent="Item_container" instance=ExtResource("6_4tiqi")]
-layout_mode = 2

@@ -7,6 +7,7 @@ extends Node2D
 @onready var itemPrice = $VBoxContainer/Price
 var it = load("res://Game/Ricefield/Assets/prototype/Jalan_lv1.png")
 func _ready():
+	#print(itemPrice)
 	pass # Replace with function body.
 
 
@@ -14,6 +15,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func init_item(itemPath : Texture2D, price : int):
-	itemImage.set_texture(itemPath)
-	itemPrice.set_text(price)
+func init_item(itemPath : String, price : int):
+	print(itemPath)
+	#itemImage.set_texture(itemPath)
+	#itemPrice.set_text(price)
