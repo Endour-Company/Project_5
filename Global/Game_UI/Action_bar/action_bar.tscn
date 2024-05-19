@@ -11,6 +11,7 @@ GridContainer/constants/v_separation = 100
 [node name="Action_bar" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 1
 script = ExtResource("1_14npq")
 
 [node name="Action_bar_container" type="TextureRect" parent="."]
@@ -29,3 +30,10 @@ offset_bottom = 212.0
 theme = SubResource("Theme_l7g4g")
 columns = 7
 script = ExtResource("3_rm0i6")
+
+[node name="Item_description_container" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 264.0
+offset_right = 1083.0
+offset_bottom = 414.0
