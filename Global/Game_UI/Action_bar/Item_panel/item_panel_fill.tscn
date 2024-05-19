@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd487uqanw2o"]
+[gd_scene load_steps=6 format=3 uid="uid://cd487uqanw2o"]
 
 [ext_resource type="Texture2D" uid="uid://bn5xqq031easv" path="res://Global/Game_UI/Action_bar/Assets/Container_item_fill.png" id="1_daayw"]
 [ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Item_panel/Item_panel_fill.gd" id="2_wuxu2"]
-[ext_resource type="PackedScene" uid="uid://cqtcbojv8uhff" path="res://Global/Game_UI/Action_bar/Item/Item.tscn" id="3_y0k6w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eueno"]
 texture = ExtResource("1_daayw")
@@ -23,6 +22,3 @@ PanelContainer/styles/panel = SubResource("StyleBoxFlat_tdys8")
 custom_minimum_size = Vector2(116, 116)
 theme = SubResource("Theme_awpmf")
 script = ExtResource("2_wuxu2")
-
-[node name="Item" parent="." instance=ExtResource("3_y0k6w")]
-position = Vector2(58, 58)

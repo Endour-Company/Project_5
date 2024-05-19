@@ -15,5 +15,7 @@ func _process(delta):
 
 func init_item_panel(itemPath : String, price : int):
 	var myItem = item.instantiate()
-	myItem.init_item(itemPath, price)
+	myItem.image = load(itemPath)
+	myItem.price = price
+	add_child(myItem)
 	
