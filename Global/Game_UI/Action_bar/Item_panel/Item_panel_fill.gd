@@ -13,9 +13,10 @@ func _process(delta):
 	pass
 	
 
-func init_item_panel(itemPath : String, price : int):
+func init_item_panel(itemPath : String, price : int, itemName : String):
 	var myItem = item.instantiate()
 	myItem.image = load(itemPath)
 	myItem.price = price
+	myItem.itemName = itemName
 	add_child(myItem)
 	

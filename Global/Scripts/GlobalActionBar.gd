@@ -2,6 +2,8 @@ extends Node
 
 
 # Called when the node enters the scene tree for the first time.
+
+var CURRENT_SELECTED_ITEM = null
 func _ready():
 	pass # Replace with function body.
 

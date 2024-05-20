@@ -1,12 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://6wgjm6tla017"]
+[gd_scene load_steps=10 format=3 uid="uid://6wgjm6tla017"]
 
 [ext_resource type="Texture2D" uid="uid://dpn7mh6fvy5oq" path="res://Global/Game_UI/Action_bar/Assets/Actions.png" id="1_2lrml"]
 [ext_resource type="Script" path="res://Global/Game_UI/Action_bar/action_bar.gd" id="1_14npq"]
 [ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Item_container.gd" id="3_rm0i6"]
+[ext_resource type="Texture2D" uid="uid://co4warrr6j24" path="res://Global/Game_UI/Action_bar/Assets/Level_bar_border.png" id="4_u8ma7"]
+[ext_resource type="Texture2D" uid="uid://oncu8txmpcl6" path="res://Global/Game_UI/Action_bar/Assets/Buy.png" id="5_0iypt"]
 
 [sub_resource type="Theme" id="Theme_l7g4g"]
 GridContainer/constants/h_separation = 30
 GridContainer/constants/v_separation = 100
+
+[sub_resource type="Theme" id="Theme_xjmjx"]
+VBoxContainer/constants/separation = 15
+
+[sub_resource type="Theme" id="Theme_jd0ee"]
+HBoxContainer/constants/separation = -3
+
+[sub_resource type="Theme" id="Theme_2oode"]
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 80
+Button/constants/outline_size = 0
 
 [node name="Action_bar" type="Control"]
 layout_mode = 3
@@ -37,3 +50,52 @@ offset_left = 36.0
 offset_top = 264.0
 offset_right = 1083.0
 offset_bottom = 414.0
+theme = SubResource("Theme_xjmjx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Item_description_container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Item_description_container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Jalan Bagus"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Item_description_container/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_jd0ee")
+
+[node name="TextureRect" type="TextureRect" parent="Item_description_container/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(192, 37)
+layout_mode = 2
+texture = ExtResource("4_u8ma7")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Item_description_container/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(192, 37)
+layout_mode = 2
+texture = ExtResource("4_u8ma7")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Item_description_container/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(192, 37)
+layout_mode = 2
+texture = ExtResource("4_u8ma7")
+expand_mode = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Item_description_container"]
+custom_minimum_size = Vector2(1047, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Item_description_container/HBoxContainer2"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu ullamcorper leo, a efficitur diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu ullamcorper leo, a efficitur diam. Morbi eget turpis dui. Quisque efficitur ipsum mas"
+autowrap_mode = 1
+clip_text = true
+
+[node name="Button" type="Button" parent="Item_description_container/HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_2oode")
+icon = ExtResource("5_0iypt")
+flat = true

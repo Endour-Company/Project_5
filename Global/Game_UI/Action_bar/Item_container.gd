@@ -22,7 +22,7 @@ func init_items(items):
 		
 		var panelFill = itemPanelFill.instantiate()
 		add_child(panelFill)
-		panelFill.init_item_panel(myItem["img"], myItem["upgrade_price"])
+		panelFill.init_item_panel(myItem["img"], myItem["upgrade_price"],item["name"])
 		
 		itemRemaining-=1
 	
