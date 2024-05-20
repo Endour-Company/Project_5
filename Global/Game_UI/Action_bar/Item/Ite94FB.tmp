@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqtcbojv8uhff"]
+
+[ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Item/Item.gd" id="1_cabcm"]
+[ext_resource type="Texture2D" uid="uid://dk6io2p68o7bm" path="res://Global/Game_UI/Action_bar/Assets/Item_road.png" id="1_mi6qg"]
+[ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Item/Item_image.gd" id="2_14cuw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvtxl"]
+radius = 57.2713
+
+[sub_resource type="Theme" id="Theme_yhan7"]
+VBoxContainer/constants/separation = 4
+
+[node name="Item" type="Area2D"]
+position = Vector2(58, 58)
+script = ExtResource("1_cabcm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_kvtxl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.5
+offset_top = -50.0
+offset_right = 45.5
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yhan7")
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Item_image" type="TextureRect" parent="VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(91.65, 91.65)
+layout_mode = 2
+texture = ExtResource("1_mi6qg")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_14cuw")
+
+[node name="Price" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Rp 5000 M"
+horizontal_alignment = 1
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

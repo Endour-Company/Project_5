@@ -6,6 +6,7 @@ extends Control
 @onready var PLACE = null
 
 @onready var itemContainer = $Item_container
+@onready var itemDescriptionContainer = $Item_description_container
 var itemsPath = "res://Data/Items_ricefields.json"
 
 
@@ -20,7 +21,8 @@ func load_json_file(filePath : String):
 func _ready():
 	var items = load_json_file(itemsPath)
 	itemContainer.init_items(items)
-
+	itemDescriptionContainer.init_items(items)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -7,7 +7,7 @@ var ITEM_LEVEL = [
 	},
 	{
 		"name" : "street",
-		"level" : 1
+		"level" : 2
  	}
 ]
 
@@ -15,6 +15,7 @@ enum CURRENT_PLACE {
 	PLACE_ricefiled,
 	PLACE_forest
 }
+
 
 func _ready():
 	pass # Replace with function body.

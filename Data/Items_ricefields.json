@@ -21,7 +21,9 @@
 				"upgrade_price": 0,
 				"img": "res://Game/Ricefield/Assets/prototype/traktor_mobil.png"
 			}
-		]
+		],
+		"count" : null,
+		"price" : 0
 	},
 	{
 		"name": "street",
@@ -39,12 +41,10 @@
 				"upgrade_price": 11000,
 				"img": "res://Game/Ricefield/Assets/prototype/jalan_lv2.png"
 			},
-			{
-				"level": 3,
-				"name": "Jalan Aspal",
-				"upgrade_price": 0,
-				"img": "res://Game/Ricefield/Assets/prototype/jalan_lv3.png"
-			}
-		]
-	}
+			
+		],
+		"count" : null,
+		"price" : 0
+	},
+
 ]
