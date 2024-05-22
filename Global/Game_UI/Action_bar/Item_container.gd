@@ -19,11 +19,16 @@ func init_items(items):
 		var itemCurrent = find_item_with_key(GlobalItemsLevel.ITEM_LEVEL, "name",item["name"])
 		print(itemCurrent)
 		var itemCurrentLevel = itemCurrent["level"]
+			
 		var myItem = find_item_with_key(item["levels"], "level",itemCurrentLevel)
+		
+			
 		
 		var panelFill = itemPanelFill.instantiate()
 		add_child(panelFill)
-		panelFill.init_item_panel(myItem["img"], myItem["upgrade_price"],item["name"])
+		
+		if(myItem != null):
+			panelFill.init_item_panel(myItem["img"], myItem["upgrade_price"],item["name"])
 		
 		itemRemaining-=1
 	

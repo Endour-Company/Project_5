@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://6wgjm6tla017"]
+[gd_scene load_steps=16 format=3 uid="uid://6wgjm6tla017"]
 
 [ext_resource type="Texture2D" uid="uid://dpn7mh6fvy5oq" path="res://Global/Game_UI/Action_bar/Assets/Actions.png" id="1_2lrml"]
 [ext_resource type="Script" path="res://Global/Game_UI/Action_bar/action_bar.gd" id="1_14npq"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Item_description_container.gd" id="4_noa5x"]
 [ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Item/Item_levels.gd" id="5_2jt7p"]
 [ext_resource type="Texture2D" uid="uid://cwa0yxbju0g8a" path="res://Global/Game_UI/Action_bar/Assets/Buy_ver2.png" id="6_ae25v"]
+[ext_resource type="Texture2D" uid="uid://dpuomn7vo615h" path="res://Global/Game_UI/Action_bar/Assets/Level_none.png" id="6_m2urv"]
+[ext_resource type="Texture2D" uid="uid://dh1uyl8pu5gy5" path="res://Global/Game_UI/Action_bar/Assets/Item_count.png" id="7_latrq"]
 
 [sub_resource type="Theme" id="Theme_l7g4g"]
 GridContainer/constants/h_separation = 30
@@ -13,6 +15,9 @@ GridContainer/constants/v_separation = 100
 
 [sub_resource type="Theme" id="Theme_xjmjx"]
 VBoxContainer/constants/separation = 15
+
+[sub_resource type="Theme" id="Theme_4bkgh"]
+HBoxContainer/constants/separation = 14
 
 [sub_resource type="Theme" id="Theme_8xstm"]
 default_font_size = 30
@@ -64,6 +69,7 @@ script = ExtResource("4_noa5x")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Item_description_container"]
 layout_mode = 2
+theme = SubResource("Theme_4bkgh")
 
 [node name="Item_name" type="Label" parent="Item_description_container/HBoxContainer"]
 layout_mode = 2
@@ -75,6 +81,25 @@ text = "Jalan Bagus"
 layout_mode = 2
 theme = SubResource("Theme_jd0ee")
 script = ExtResource("5_2jt7p")
+
+[node name="Item_levels_none" type="TextureRect" parent="Item_description_container/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("6_m2urv")
+expand_mode = 3
+
+[node name="Item_count" type="MarginContainer" parent="Item_description_container/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Item_description_container/HBoxContainer/Item_count"]
+layout_mode = 2
+texture = ExtResource("7_latrq")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Item_description_container/HBoxContainer/Item_count"]
+layout_mode = 2
+text = "Punya  : 1"
+horizontal_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Item_description_container"]
 custom_minimum_size = Vector2(1047, 0)

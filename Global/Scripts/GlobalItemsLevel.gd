@@ -2,13 +2,22 @@ extends Node
 
 var ITEM_LEVEL = [
 	{
-		"name" : "tractor",
-		"level" : 2
+		"name" : "Traktor",
+		"level" : 2,
+		"count" : 1,
+		
 	},
 	{
-		"name" : "street",
-		"level" : 2
- 	}
+		"name" : "Jalan",
+		"level" : 2,
+		"count" : 1,
+
+ 	},
+	{
+		"name" : "Lampu Jalan",
+		"level" : 1,
+		"count" : 1
+	}
 ]
 
 enum CURRENT_PLACE {

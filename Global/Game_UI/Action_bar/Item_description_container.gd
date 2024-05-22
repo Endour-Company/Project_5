@@ -28,18 +28,42 @@ func set_description_body():
 	$HBoxContainer2/Item_description.set_text(itemDescription)
 	
 	# Set Item Level Bar
+	
+	# Cek apakah item upgradable
 	var itemLevels = currentItem["levels"]
 	var currentLevel = Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", itemName)
-	$HBoxContainer/Item_levels.init_level(currentLevel["level"],itemLevels.size())
+	if(currentItem["type"] == "upgradable"):
+		$HBoxContainer/Item_levels.init_level(currentLevel["level"],itemLevels.size())
+		$HBoxContainer/Item_levels.set_visible(true)
+		$HBoxContainer/Item_levels_none.set_visible(false)
+		$HBoxContainer/Item_count.set_visible(false)
+	elif(currentItem["type"] == "countable"):
+		$HBoxContainer/Item_levels.set_visible(false)
+		$HBoxContainer/Item_levels_none.set_visible(true)
+		$HBoxContainer/Item_count.set_visible(true)
+		
+		# Set Item count
+		$HBoxContainer/Item_count/Label.set_text("Punya : " + str(currentLevel["count"]))
 	
 	# Set Item Buy Button
-	var isItemMaxLevel : bool = currentLevel["level"] == itemLevels.size()
-	if (isItemMaxLevel) : 
-		$HBoxContainer2/Buy_button.set_button_icon(buyButtonMax)
-		$HBoxContainer2/Buy_button.set_disabled(true)
-	else :
+	
+	var isAllowToBuy : bool = false
+	
+	if(currentItem["type"] == "upgradable"):
+		var isItemMaxLevel : bool = currentLevel["level"] == itemLevels.size()
+		isAllowToBuy = !isItemMaxLevel
+	elif (currentItem["type"] == "countable"):
+		var isItemMaxOwned : bool = currentItem["max_owned"] <= currentLevel["count"]
+		isAllowToBuy = !isItemMaxOwned
+		print(currentItem["max_owned"])
+	
+	if (isAllowToBuy) : 
 		$HBoxContainer2/Buy_button.set_button_icon(buyButtonNormal)
 		$HBoxContainer2/Buy_button.set_disabled(false)
+	else :
+		$HBoxContainer2/Buy_button.set_button_icon(buyButtonMax)
+		$HBoxContainer2/Buy_button.set_disabled(true)
+	
 	
 func init_items(newItems):
 	items = newItems
