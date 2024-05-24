@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://brw17nqvu6hle"]
+
+[ext_resource type="Texture2D" uid="uid://0g40tg1b4r6y" path="res://Game/Ricefield/Assets/item_bg_padi/padi.png" id="2_mmswh"]
+[ext_resource type="Texture2D" uid="uid://djn8553umbsy8" path="res://Game/Ricefield/Assets/bg_main/ricefield.jpeg" id="9_4xcvn"]
+
+[node name="Ricefield_area" type="Node2D"]
+
+[node name="main_background" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("9_4xcvn")
+expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(335, 423)
+scale = Vector2(0.029541, 0.029541)
+texture = ExtResource("2_mmswh")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://jfxxjw7qcnkf"]
+
+[ext_resource type="Script" path="res://Game/Ricefield/Lib/River/river.gd" id="1_tkqq2"]
+[ext_resource type="Texture2D" uid="uid://qu2sev6qqfn7" path="res://Game/Ricefield/prototype/Sungai_normal.png" id="2_r878h"]
+
+[node name="River" type="Node2D"]
+position = Vector2(1, 309)
+script = ExtResource("1_tkqq2")
+
+[node name="River" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 573.0
+texture = ExtResource("2_r878h")

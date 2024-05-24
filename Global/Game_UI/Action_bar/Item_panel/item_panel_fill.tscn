@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd487uqanw2o"]
+
+[ext_resource type="Texture2D" uid="uid://bn5xqq031easv" path="res://Global/Game_UI/Action_bar/Assets/Container_item_fill.png" id="1_daayw"]
+[ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Item_panel/Item_panel_fill.gd" id="2_wuxu2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eueno"]
+texture = ExtResource("1_daayw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdys8"]
+bg_color = Color(0.383159, 0.597374, 0.946866, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0.669174, 0.962241, 1)
+
+[sub_resource type="Theme" id="Theme_awpmf"]
+Panel/styles/panel = SubResource("StyleBoxTexture_eueno")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_tdys8")
+
+[node name="Item_panel_fill" type="Panel"]
+custom_minimum_size = Vector2(116, 116)
+mouse_filter = 1
+theme = SubResource("Theme_awpmf")
+script = ExtResource("2_wuxu2")
