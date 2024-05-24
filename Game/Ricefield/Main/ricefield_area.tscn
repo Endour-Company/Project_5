@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://brw17nqvu6hle"]
+[gd_scene load_steps=5 format=3 uid="uid://brw17nqvu6hle"]
 
-[ext_resource type="Texture2D" uid="uid://0g40tg1b4r6y" path="res://Game/Ricefield/Assets/item_bg_padi/padi.png" id="2_mmswh"]
+[ext_resource type="Script" path="res://Game/Ricefield/Lib/Sawah/Sawah.gd" id="2_13ptr"]
+[ext_resource type="Script" path="res://Game/Ricefield/Lib/Sawah/Subarea_sawah.gd" id="2_xe0x6"]
+[ext_resource type="Texture2D" uid="uid://b4kyy2n5okrdj" path="res://Game/Ricefield/Assets/item_bg_padi/Padis_kecil.png" id="3_3jio3"]
 [ext_resource type="Texture2D" uid="uid://djn8553umbsy8" path="res://Game/Ricefield/Assets/bg_main/ricefield.jpeg" id="9_4xcvn"]
 
 [node name="Ricefield_area" type="Node2D"]
@@ -11,7 +13,17 @@ offset_bottom = 1080.0
 texture = ExtResource("9_4xcvn")
 expand_mode = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(335, 423)
-scale = Vector2(0.029541, 0.029541)
-texture = ExtResource("2_mmswh")
+[node name="Subarea_sawah" type="Node2D" parent="."]
+position = Vector2(201, 177)
+script = ExtResource("2_xe0x6")
+
+[node name="Sawah" type="Node2D" parent="Subarea_sawah"]
+position = Vector2(104, 100)
+script = ExtResource("2_13ptr")
+
+[node name="TextureRect" type="TextureRect" parent="Subarea_sawah/Sawah"]
+offset_right = 447.0
+offset_bottom = 172.0
+texture = ExtResource("3_3jio3")
+expand_mode = 1
+stretch_mode = 4
