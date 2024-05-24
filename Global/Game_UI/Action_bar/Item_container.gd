@@ -17,7 +17,6 @@ func init_items(items):
 	for item in items:
 		# cek level dari variabel global
 		var itemCurrent = find_item_with_key(GlobalItemsLevel.ITEM_LEVEL, "name",item["name"])
-		print(itemCurrent)
 		var itemCurrentLevel = itemCurrent["level"]
 			
 		var myItem = find_item_with_key(item["levels"], "level",itemCurrentLevel)

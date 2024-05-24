@@ -23,7 +23,15 @@ func _ready():
 	itemContainer.init_items(items)
 	itemDescriptionContainer.init_items(items)
 	
+	GlobalItemsLevel.item_upgraded.connect(_on_item_upgraded)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_item_upgraded():
+	$Item_description_container._refresh()
+
+

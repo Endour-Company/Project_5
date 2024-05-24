@@ -10,7 +10,7 @@ var CURRENT_ITEM_NAME = null
 var items = null
 func _ready():
 	GlobalActionBar.current_selected_item_changed.connect(_on_current_selected_item_changed)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	pass
 
@@ -21,7 +21,6 @@ func _on_current_selected_item_changed(current_selected_item_name : String):
 
 func set_description_body():
 	var currentItem = Utils.find_item_in_array_with_key(items,"name", CURRENT_ITEM_NAME)
-	
 	var itemName = currentItem["name"]
 	var itemDescription = currentItem["description"]
 	$HBoxContainer/Item_name.set_text(itemName)
@@ -68,3 +67,9 @@ func set_description_body():
 func init_items(newItems):
 	items = newItems
 
+
+func _on_buy_button_button_up():
+	GlobalItemsLevel.upgrade_item(CURRENT_ITEM_NAME)
+
+func _refresh():
+	set_description_body()

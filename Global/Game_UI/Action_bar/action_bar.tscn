@@ -119,3 +119,5 @@ layout_mode = 2
 theme = SubResource("Theme_2oode")
 icon = ExtResource("6_ae25v")
 flat = true
+
+[connection signal="button_up" from="Item_description_container/HBoxContainer2/Buy_button" to="Item_description_container" method="_on_buy_button_button_up"]
