@@ -26,7 +26,6 @@ func set_description_body():
 	$HBoxContainer/Item_name.set_text(itemName)
 	$HBoxContainer2/Item_description.set_text(itemDescription)
 	
-	# Set Item Level Bar
 	
 	# Cek apakah item upgradable
 	var itemLevels = currentItem["levels"]
@@ -63,7 +62,9 @@ func set_description_body():
 		$HBoxContainer2/Buy_button.set_button_icon(buyButtonMax)
 		$HBoxContainer2/Buy_button.set_disabled(true)
 	
-	
+func set_description_empty():
+	pass
+
 func init_items(newItems):
 	items = newItems
 

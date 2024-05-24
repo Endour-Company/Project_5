@@ -33,5 +33,6 @@ func _process(delta):
 
 func _on_item_upgraded():
 	$Item_description_container._refresh()
+	$Item_container._refresh()
 
 

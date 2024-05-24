@@ -3,13 +3,13 @@ extends Node
 var ITEM_LEVEL = [
 	{
 		"name" : "Traktor",
-		"level" : 2,
+		"level" : 1,
 		"count" : 1,
 		
 	},
 	{
 		"name" : "Jalan",
-		"level" : 2,
+		"level" : 1,
 		"count" : 1,
 
  	},
