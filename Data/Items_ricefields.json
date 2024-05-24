@@ -8,19 +8,19 @@
 				"level": 1,
 				"name": "Cangkul",
 				"upgrade_price": 3000,
-				"img": "Ricefield/Assets/prototype/cangkul.png"
+				"img": "res://Game/Ricefield/Assets/item_up_pembajak_sawah/pembajak_sawah_lv1.png"
 			},
 			{
 				"level": 2,
 				"name": "Traktor Tangan",
 				"upgrade_price": 4000,
-				"img": "res://Game/Ricefield/Assets/prototype/traktor_tangan.png"
+				"img": "res://Game/Ricefield/Assets/item_up_pembajak_sawah/pembajak_sawah_lv2.png"
 			},
 			{
 				"level": 3,
 				"name": "Traktor Mobil",
 				"upgrade_price": 0,
-				"img": "res://Game/Ricefield/Assets/prototype/traktor_mobil.png"
+				"img": "res://Game/Ricefield/Assets/item_up_pembajak_sawah/pembajak_sawah_lv3.png"
 			},
 		],
 		"max_owned" : 1,
