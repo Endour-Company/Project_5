@@ -1,23 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://db35idblcda4e"]
+[gd_scene load_steps=14 format=3 uid="uid://db35idblcda4e"]
 
-[ext_resource type="Script" path="res://Main_menu/Main/main_menu.gd" id="1_2j24b"]
 [ext_resource type="Texture2D" uid="uid://bjjie2m3jglhh" path="res://Main_menu/Assets/BG.png" id="1_jqwbi"]
 [ext_resource type="Texture2D" uid="uid://uupd40qy7j5v" path="res://Main_menu/Assets/Buttons/Mulai Button_Normal.png" id="2_ypjai"]
 [ext_resource type="Texture2D" uid="uid://c7qvcxty1x1et" path="res://Main_menu/Assets/Buttons/Mulai Button_Pressed.png" id="3_8n4l6"]
 [ext_resource type="Texture2D" uid="uid://dr7afrcu4coe0" path="res://Main_menu/Assets/Buttons/Mulai Button_Hover.png" id="4_0305y"]
 [ext_resource type="Texture2D" uid="uid://bx1mar6cn4s55" path="res://Main_menu/Assets/Buttons/Tutorial Button_Normal.png" id="5_6fwaf"]
-[ext_resource type="BitMap" uid="uid://dtiy4lcnhnh0a" path="res://Main_menu/Assets/Buttons/Mulai Button_Mask.png" id="5_bchac"]
 [ext_resource type="Texture2D" uid="uid://g038jdxc21f1" path="res://Main_menu/Assets/Buttons/Tutorial Button_Pressed.png" id="6_3trkv"]
 [ext_resource type="Texture2D" uid="uid://d0oadqu21ql57" path="res://Main_menu/Assets/Buttons/Tutorial Button_Hover.png" id="7_q3cv0"]
 [ext_resource type="Texture2D" uid="uid://dju82xpi2umgt" path="res://Main_menu/Assets/Buttons/Option Button_Normal.png" id="8_i3sd2"]
-[ext_resource type="BitMap" uid="uid://b81ip13ujyqgx" path="res://Main_menu/Assets/Buttons/Tutorial Button_Mask.png" id="9_nipg5"]
 [ext_resource type="Texture2D" uid="uid://cmrshciww5b1s" path="res://Main_menu/Assets/Buttons/Option Button_Pressed.png" id="9_nxrr6"]
 [ext_resource type="Texture2D" uid="uid://btmggyk0jwbg5" path="res://Main_menu/Assets/Buttons/Option Button_Hover.png" id="10_aete7"]
 [ext_resource type="Texture2D" uid="uid://bpuauu7museis" path="res://Main_menu/Assets/Buttons/Exit Button_Normal.png" id="11_86ex6"]
 [ext_resource type="Texture2D" uid="uid://cnemqrnik8yya" path="res://Main_menu/Assets/Buttons/Exit Button_Pressed.png" id="12_3hcqv"]
-[ext_resource type="BitMap" uid="uid://bejkl3l3rb6tn" path="res://Main_menu/Assets/Buttons/Option Button_Mask.png" id="13_f1t6n"]
 [ext_resource type="Texture2D" uid="uid://cvocxplo8xn1p" path="res://Main_menu/Assets/Buttons/Exit Button_Hover.png" id="13_pecw0"]
-[ext_resource type="BitMap" uid="uid://bsjqafnqlrojl" path="res://Main_menu/Assets/Buttons/Exit Button_Mask.png" id="17_geerx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -44,7 +39,6 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_ypjai")
 texture_pressed = ExtResource("3_8n4l6")
 texture_hover = ExtResource("4_0305y")
-texture_click_mask = ExtResource("5_bchac")
 
 [node name="TutorialButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -56,7 +50,6 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_6fwaf")
 texture_pressed = ExtResource("6_3trkv")
 texture_hover = ExtResource("7_q3cv0")
-texture_click_mask = ExtResource("9_nipg5")
 
 [node name="OpsiButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -68,7 +61,6 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("8_i3sd2")
 texture_pressed = ExtResource("9_nxrr6")
 texture_hover = ExtResource("10_aete7")
-texture_click_mask = ExtResource("13_f1t6n")
 
 [node name="KeluarButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -80,16 +72,3 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("11_86ex6")
 texture_pressed = ExtResource("12_3hcqv")
 texture_hover = ExtResource("13_pecw0")
-texture_click_mask = ExtResource("17_geerx")
-
-[node name="Overlay" type="ColorRect" parent="."]
-visible = false
-self_modulate = Color(0, 0, 0, 0.705882)
-layout_mode = 0
-offset_right = 1921.0
-offset_bottom = 1081.0
-
-[connection signal="pressed" from="MulaiButton" to="." method="_on_mulai_button_pressed"]
-[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
-[connection signal="pressed" from="OpsiButton" to="." method="_on_opsi_button_pressed"]
-[connection signal="pressed" from="KeluarButton" to="." method="_on_keluar_button_pressed"]
