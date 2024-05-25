@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://db35idblcda4e"]
+[gd_scene load_steps=14 format=3 uid="uid://db35idblcda4e"]
 
-[ext_resource type="Texture2D" uid="uid://6olxtg20if10" path="res://Main_menu/Assets/10 - Title Screen.png" id="1_2adxb"]
+[ext_resource type="Texture2D" uid="uid://bjjie2m3jglhh" path="res://Main_menu/Assets/BG.png" id="1_jqwbi"]
+[ext_resource type="Texture2D" uid="uid://uupd40qy7j5v" path="res://Main_menu/Assets/Buttons/Mulai Button_Normal.png" id="2_ypjai"]
+[ext_resource type="Texture2D" uid="uid://c7qvcxty1x1et" path="res://Main_menu/Assets/Buttons/Mulai Button_Pressed.png" id="3_8n4l6"]
+[ext_resource type="Texture2D" uid="uid://dr7afrcu4coe0" path="res://Main_menu/Assets/Buttons/Mulai Button_Hover.png" id="4_0305y"]
+[ext_resource type="Texture2D" uid="uid://bx1mar6cn4s55" path="res://Main_menu/Assets/Buttons/Tutorial Button_Normal.png" id="5_6fwaf"]
+[ext_resource type="Texture2D" uid="uid://g038jdxc21f1" path="res://Main_menu/Assets/Buttons/Tutorial Button_Pressed.png" id="6_3trkv"]
+[ext_resource type="Texture2D" uid="uid://d0oadqu21ql57" path="res://Main_menu/Assets/Buttons/Tutorial Button_Hover.png" id="7_q3cv0"]
+[ext_resource type="Texture2D" uid="uid://dju82xpi2umgt" path="res://Main_menu/Assets/Buttons/Option Button_Normal.png" id="8_i3sd2"]
+[ext_resource type="Texture2D" uid="uid://cmrshciww5b1s" path="res://Main_menu/Assets/Buttons/Option Button_Pressed.png" id="9_nxrr6"]
+[ext_resource type="Texture2D" uid="uid://btmggyk0jwbg5" path="res://Main_menu/Assets/Buttons/Option Button_Hover.png" id="10_aete7"]
+[ext_resource type="Texture2D" uid="uid://bpuauu7museis" path="res://Main_menu/Assets/Buttons/Exit Button_Normal.png" id="11_86ex6"]
+[ext_resource type="Texture2D" uid="uid://cnemqrnik8yya" path="res://Main_menu/Assets/Buttons/Exit Button_Pressed.png" id="12_3hcqv"]
+[ext_resource type="Texture2D" uid="uid://cvocxplo8xn1p" path="res://Main_menu/Assets/Buttons/Exit Button_Hover.png" id="13_pecw0"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,8 +22,52 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BG" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_2adxb")
+texture = ExtResource("1_jqwbi")
+
+[node name="MulaiButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 306.0
+offset_right = 481.0
+offset_bottom = 477.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_ypjai")
+texture_pressed = ExtResource("3_8n4l6")
+texture_hover = ExtResource("4_0305y")
+
+[node name="TutorialButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 480.0
+offset_right = 564.0
+offset_bottom = 691.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_6fwaf")
+texture_pressed = ExtResource("6_3trkv")
+texture_hover = ExtResource("7_q3cv0")
+
+[node name="OpsiButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 666.0
+offset_right = 459.0
+offset_bottom = 837.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_i3sd2")
+texture_pressed = ExtResource("9_nxrr6")
+texture_hover = ExtResource("10_aete7")
+
+[node name="KeluarButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 840.0
+offset_right = 569.0
+offset_bottom = 1051.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_86ex6")
+texture_pressed = ExtResource("12_3hcqv")
+texture_hover = ExtResource("13_pecw0")
