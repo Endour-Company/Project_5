@@ -34,9 +34,10 @@ func _process(delta):
 	print(TIME_ELAPSED)
 	
 	# Update PADIS_SIZE based on elapsed time
-	if TIME_ELAPSED >= 10 and PADIS_SIZE == PADIS_SIZES.NONE:
+	if TIME_ELAPSED >= 5 and PADIS_SIZE == PADIS_SIZES.NONE:
 		PADIS_SIZE = PADIS_SIZES.SMALL
 		set_padis_texture()
+		effect_upgrading()
 	elif TIME_ELAPSED >= 30 and PADIS_SIZE == PADIS_SIZES.SMALL:
 		PADIS_SIZE = PADIS_SIZES.MEDIUM
 		set_padis_texture()
