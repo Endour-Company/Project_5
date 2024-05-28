@@ -1,0 +1,46 @@
+[
+	{
+		"name": "Pinus",
+		"description": "Donec ut enim vestibulum, convallis lectus tincidunt, vehicula mi. Nunc facilisis accumsan mi sit amet semper. Etiam cursus felis eget rhoncus ultrices. Maecenas aliquam, nisi eget suscipit imperdiet, libero lectus hendrerit mi, a pulvinar elit magna ac velit. Donec interdum nisi vel dui euismod luctus non vel nibh. Maecenas et mattis leo, eget congue libero. Nunc sagittis porta nulla, convallis tempor eros luctus vel. Aliquam pellentesque lacus quis luctus vehicula.",
+		"type" : "countable",
+		"levels": [
+			{
+				"level": 1,
+				"name": "Pinus Lv 1",
+				"upgrade_price": 500,
+				"img": "res://Game/Ricefield/Assets/item_up_pembajak_sawah/pembajak_sawah_lv1.png"
+			},
+		],
+		"max_owned" : 10,
+	},
+	{
+		"name": "Jati",
+		"description": "Street ut enim vestibulum, convallis lectus tincidunt, vehicula mi. Nunc facilisis accumsan mi sit amet semper. Etiam cursus felis eget rhoncus ultrices. Maecenas aliquam, nisi eget suscipit imperdiet, libero lectus hendrerit mi, a pulvinar elit magna ac velit. Donec interdum nisi vel dui euismod luctus non vel nibh. Maecenas et mattis leo, eget congue libero. Nunc sagittis porta nulla, convallis tempor eros luctus vel. Aliquam pellentesque lacus quis luctus vehicula.",
+		"type" : "countable",
+		"levels": [
+			{
+				"level": 1,
+				"name": "Pinus Lv 1",
+				"upgrade_price": 700,
+				"img": "res://Game/Ricefield/Assets/prototype/jalan_lv1.png"
+			},
+			
+		],
+		"max_owned" : 15,
+	},
+	{
+		"name": "Mahoni",
+		"description": "Street ut enim vestibulum, convallis lectus tincidunt, vehicula mi. Nunc facilisis accumsan mi sit amet semper. Etiam cursus felis eget rhoncus ultrices. Maecenas aliquam, nisi eget suscipit imperdiet, libero lectus hendrerit mi, a pulvinar elit magna ac velit. Donec interdum nisi vel dui euismod luctus non vel nibh. Maecenas et mattis leo, eget congue libero. Nunc sagittis porta nulla, convallis tempor eros luctus vel. Aliquam pellentesque lacus quis luctus vehicula.",
+		"type" : "countable",
+		"levels": [		
+			{
+				"level" : 1,
+				"name" : "Mahoni Lv 1",
+				"upgrade_price" : 900,
+				"img" : "res://Game/Ricefield/Assets/prototype/lampu_taman.png"
+			}	
+		],
+		"max_owned" : 5,
+	},
+
+]
