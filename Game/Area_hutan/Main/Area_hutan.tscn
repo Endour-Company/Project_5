@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://mes4efbefx"]
+
+[ext_resource type="Script" path="res://Game/Area_hutan/Main/Area_hutan.gd" id="1_ptkcm"]
+[ext_resource type="Texture2D" uid="uid://orfw048xg66j" path="res://Game/Area_hutan/Assets/bg_main/hutan.jpeg" id="1_xaoaj"]
+
+[node name="Area_Hutan" type="Node2D"]
+script = ExtResource("1_ptkcm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_xaoaj")

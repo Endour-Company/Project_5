@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjwnjc45hlcrd"]
+[gd_scene load_steps=4 format=3 uid="uid://bjwnjc45hlcrd"]
 
+[ext_resource type="PackedScene" uid="uid://mes4efbefx" path="res://Game/Area_hutan/Main/Area_hutan.tscn" id="1_pgppg"]
 [ext_resource type="PackedScene" uid="uid://brw17nqvu6hle" path="res://Game/Ricefield/Main/ricefield_area.tscn" id="1_ymy68"]
 [ext_resource type="PackedScene" uid="uid://6wgjm6tla017" path="res://Global/Game_UI/Action_bar/action_bar.tscn" id="2_tmlwp"]
 
 [node name="Game" type="Node"]
 
+[node name="Area_Hutan" parent="." instance=ExtResource("1_pgppg")]
+
 [node name="Ricefield_area" parent="." instance=ExtResource("1_ymy68")]
+visible = false
 
 [node name="Action_bar" parent="." instance=ExtResource("2_tmlwp")]
 offset_left = 441.0

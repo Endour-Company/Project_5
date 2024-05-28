@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpehbbiosswjd"
-path="res://.godot/imported/padi_sedang.png-4c478d8e4de2c017981e632d493d5206.ctex"
+uid="uid://cmjvcv0vh1kr8"
+path="res://.godot/imported/RicefieldIndicator_Normal.png-023e8245ce2a39c5333a48ebbc0d40a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Ricefield/Assets/item_bg_padi/padi_sedang.png"
-dest_files=["res://.godot/imported/padi_sedang.png-4c478d8e4de2c017981e632d493d5206.ctex"]
+source_file="res://Global/Game_UI/Map/Assets/RicefieldIndicator_Normal.png"
+dest_files=["res://.godot/imported/RicefieldIndicator_Normal.png-023e8245ce2a39c5333a48ebbc0d40a3.ctex"]
 
 [params]
 
