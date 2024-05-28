@@ -1,8 +1,11 @@
 extends Node
 
+
+var ITEMS_JSON = []
+
 var ITEM_LEVEL = [
 	{
-		"name" : "Traktor",
+		"name" : "Pembajak",
 		"level" : 1,
 		"count" : 1,
 		
@@ -20,15 +23,13 @@ var ITEM_LEVEL = [
 	}
 ]
 
-enum CURRENT_PLACE {
-	PLACE_ricefiled,
-	PLACE_forest
-}
 
 signal item_upgraded
 
 
 func _ready():
+	var itemsJson = Utils.parse_json_file_by_filepath("res://Data/Items_ricefields.json")
+	ITEMS_JSON = itemsJson
 	pass # Replace with function body.
 
 
@@ -37,8 +38,7 @@ func _process(delta):
 	pass
 
 func upgrade_item(itemName):
-	var itemsJson = Utils.parse_json_file_by_filepath("res://Data/Items_ricefields.json")
-	var item = Utils.find_item_in_array_with_key(itemsJson, "name",itemName)
+	var item = Utils.find_item_in_array_with_key(ITEMS_JSON, "name",itemName)
 	
 	var itemCurrentStats = Utils.find_item_in_array_with_key(ITEM_LEVEL, "name", itemName)
 	var isAllowToUpgrade = false

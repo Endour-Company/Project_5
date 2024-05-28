@@ -8,11 +8,14 @@ var price = 0
 
 @onready var itemImage = $VBoxContainer/Item_image
 @onready var itemPrice = $VBoxContainer/Price
-var it = load("res://Game/Ricefield/Assets/prototype/Jalan_lv1.png")
+
 func _ready():
 	itemImage.set_texture(image)
-	itemPrice.set_text(str(price))
 	
+	if(price != 0):
+		itemPrice.set_text(str(price))
+	else :
+		itemPrice.set_text("MAX")	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,8 +29,6 @@ func _on_input_event(viewport, event, shape_idx):
 			print("Item clicked")
 			change_current_selected_item(itemName)
 	
-
-
 func _on_mouse_entered():
 	pass
 

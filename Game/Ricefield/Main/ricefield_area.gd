@@ -6,8 +6,6 @@ extends Node2D
 var VAR_KUALITAS_PADI = 0
 var VAR_KUANTITAS_PADI = 0
 var VAR_JUMLAH_HAMA = 0
-
-
 var VAR_TINGKAT_PESTISIDA = 0
 
 func _ready():

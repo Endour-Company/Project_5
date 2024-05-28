@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://brw17nqvu6hle"]
+[gd_scene load_steps=7 format=3 uid="uid://brw17nqvu6hle"]
 
 [ext_resource type="Script" path="res://Game/Ricefield/Main/ricefield_area.gd" id="1_0ucuo"]
-[ext_resource type="Script" path="res://Game/Ricefield/Lib/Sawah/Sawah.gd" id="2_13ptr"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Sawah/Subarea_sawah.gd" id="2_xe0x6"]
-[ext_resource type="Texture2D" uid="uid://b4kyy2n5okrdj" path="res://Game/Ricefield/Assets/item_bg_padi/Padis_kecil.png" id="3_3jio3"]
+[ext_resource type="PackedScene" uid="uid://bqooamd15ligs" path="res://Game/Ricefield/Lib/Sawah/sawah.tscn" id="4_ea5t5"]
+[ext_resource type="Script" path="res://Game/Ricefield/Lib/Pembajak/Itembg_pembajak.gd" id="6_0ywcr"]
+[ext_resource type="Texture2D" uid="uid://drfusy02bgc55" path="res://Game/Ricefield/Assets/item_up_pembajak_sawah/pembajak_sawah_lv2.png" id="7_eed5c"]
 [ext_resource type="Texture2D" uid="uid://djn8553umbsy8" path="res://Game/Ricefield/Assets/bg_main/ricefield.jpeg" id="9_4xcvn"]
 
 [node name="Ricefield_area" type="Node2D"]
@@ -19,13 +20,25 @@ expand_mode = 1
 position = Vector2(201, 177)
 script = ExtResource("2_xe0x6")
 
-[node name="Sawah" type="Node2D" parent="Subarea_sawah"]
-position = Vector2(104, 100)
-script = ExtResource("2_13ptr")
+[node name="Sawah1" parent="Subarea_sawah" instance=ExtResource("4_ea5t5")]
+position = Vector2(578, 97)
 
-[node name="TextureRect" type="TextureRect" parent="Subarea_sawah/Sawah"]
-offset_right = 447.0
-offset_bottom = 172.0
-texture = ExtResource("3_3jio3")
+[node name="Sawah2" parent="Subarea_sawah" instance=ExtResource("4_ea5t5")]
+
+[node name="Sawah3" parent="Subarea_sawah" instance=ExtResource("4_ea5t5")]
+position = Vector2(-2, 336)
+
+[node name="Sawah4" parent="Subarea_sawah" instance=ExtResource("4_ea5t5")]
+position = Vector2(470, 333)
+
+[node name="Itembg_pembajak" type="Node2D" parent="."]
+position = Vector2(1180, 13)
+script = ExtResource("6_0ywcr")
+
+[node name="TextureRect" type="TextureRect" parent="Itembg_pembajak"]
+offset_left = -2.0
+offset_top = 3.0
+offset_right = 170.0
+offset_bottom = 175.0
+texture = ExtResource("7_eed5c")
 expand_mode = 1
-stretch_mode = 4

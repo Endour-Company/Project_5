@@ -7,9 +7,9 @@
 [node name="Game" type="Node"]
 
 [node name="Area_Hutan" parent="." instance=ExtResource("1_pgppg")]
+visible = false
 
 [node name="Ricefield_area" parent="." instance=ExtResource("1_ymy68")]
-visible = false
 
 [node name="Action_bar" parent="." instance=ExtResource("2_tmlwp")]
 offset_left = 441.0
