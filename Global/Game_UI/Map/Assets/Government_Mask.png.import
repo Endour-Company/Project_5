@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://ddtscktjxwt76"
+path="res://.godot/imported/Government_Mask.png-40d458e9f2813fffac6b5b19c8e87807.res"
+
+[deps]
+
+source_file="res://Global/Game_UI/Map/Assets/Government_Mask.png"
+dest_files=["res://.godot/imported/Government_Mask.png-40d458e9f2813fffac6b5b19c8e87807.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

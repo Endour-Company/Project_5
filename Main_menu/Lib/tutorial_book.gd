@@ -57,7 +57,11 @@ func select_bookmark(newBookmarkName: String):
 	newBookmark.disabled = true
 	
 	# Set tutorial text
-	tutorialText.text = tutorialTexts[bookmarkOrder[newBookmarkName]-2]
+	setTutorialText(tutorialTexts[bookmarkOrder[newBookmarkName]-2])
+
+
+func setTutorialText(text: String):
+	tutorialText.text = text
 
 
 func _on_bookmark_cara_pressed():

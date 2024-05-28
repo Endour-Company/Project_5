@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://la0f32kmwc2r"
+path="res://.godot/imported/Houses_Mask.png-cf62c2cf02813d7b99a03e79a9803389.res"
+
+[deps]
+
+source_file="res://Global/Game_UI/Map/Assets/Houses_Mask.png"
+dest_files=["res://.godot/imported/Houses_Mask.png-cf62c2cf02813d7b99a03e79a9803389.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

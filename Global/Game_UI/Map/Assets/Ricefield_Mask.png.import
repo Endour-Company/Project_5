@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://b11nuonm70ubg"
+path="res://.godot/imported/Ricefield_Mask.png-51ea8cd75c812738ac9fec673ce08bd4.res"
+
+[deps]
+
+source_file="res://Global/Game_UI/Map/Assets/Ricefield_Mask.png"
+dest_files=["res://.godot/imported/Ricefield_Mask.png-51ea8cd75c812738ac9fec673ce08bd4.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

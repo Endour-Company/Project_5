@@ -1,7 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://1b5xie3shkry"]
+[gd_scene load_steps=25 format=3 uid="uid://1b5xie3shkry"]
 
-[ext_resource type="Texture2D" uid="uid://dqtvqda0e31sp" path="res://Global/Game_UI/Map/Assets/Overlay.png" id="1_no0ju"]
+[ext_resource type="Script" path="res://Global/Game_UI/Map/Main/Map.gd" id="1_2pcqy"]
 [ext_resource type="Texture2D" uid="uid://dw1ah8qii8gqt" path="res://Global/Game_UI/Map/Assets/Box.png" id="2_4k8sw"]
+[ext_resource type="Texture2D" uid="uid://bv7ycrh7ioox1" path="res://Global/Game_UI/Map/Assets/Close Button_Normal.png" id="3_eape2"]
+[ext_resource type="Texture2D" uid="uid://dm4e5u5f2q2ac" path="res://Global/Game_UI/Map/Assets/Close Button_Pressed.png" id="4_jx3ta"]
+[ext_resource type="Texture2D" uid="uid://dgcuc53aj41j5" path="res://Global/Game_UI/Map/Assets/Close Button_Hover.png" id="5_1nn6p"]
+[ext_resource type="BitMap" uid="uid://y4rp3irat8i7" path="res://Global/Game_UI/Map/Assets/Close Button_Mask.png" id="6_popbq"]
+[ext_resource type="Texture2D" uid="uid://5gap2lpqyc8d" path="res://Global/Game_UI/Map/Assets/Government_Normal.png" id="7_xiyk1"]
+[ext_resource type="Texture2D" uid="uid://c3gu031w5yeil" path="res://Global/Game_UI/Map/Assets/Forest_Normal.png" id="8_1sfiy"]
+[ext_resource type="Texture2D" uid="uid://c60jrodkrbsns" path="res://Global/Game_UI/Map/Assets/Government_Pressed.png" id="8_jf60r"]
+[ext_resource type="Texture2D" uid="uid://doc1s6qc4r38u" path="res://Global/Game_UI/Map/Assets/Government_Hover.png" id="9_pepu4"]
+[ext_resource type="Texture2D" uid="uid://cjewx3fexsnlw" path="res://Global/Game_UI/Map/Assets/Forest_Pressed.png" id="9_pidh7"]
+[ext_resource type="BitMap" uid="uid://ddtscktjxwt76" path="res://Global/Game_UI/Map/Assets/Government_Mask.png" id="10_dxtkk"]
+[ext_resource type="Texture2D" uid="uid://ch26w5tl1ficg" path="res://Global/Game_UI/Map/Assets/Forest_Hover.png" id="10_m0fca"]
+[ext_resource type="BitMap" uid="uid://c8vqi2sedufxx" path="res://Global/Game_UI/Map/Assets/Forest_Mask.png" id="11_n1v4b"]
+[ext_resource type="Texture2D" uid="uid://bgy3fsl2y32fr" path="res://Global/Game_UI/Map/Assets/Houses_Normal.png" id="12_lvdhp"]
+[ext_resource type="Texture2D" uid="uid://bs1kfmlhna0u1" path="res://Global/Game_UI/Map/Assets/Ricefield_Normal.png" id="12_t6by6"]
+[ext_resource type="Texture2D" uid="uid://omyf6seds7rj" path="res://Global/Game_UI/Map/Assets/Houses_Pressed.png" id="13_7n653"]
+[ext_resource type="Texture2D" uid="uid://c86ygpdvfcnt0" path="res://Global/Game_UI/Map/Assets/Ricefield_Pressed.png" id="13_u2smn"]
+[ext_resource type="Texture2D" uid="uid://54e16oyc4f76" path="res://Global/Game_UI/Map/Assets/Ricefield_Hover.png" id="14_lrswv"]
+[ext_resource type="Texture2D" uid="uid://is14qsfdl654" path="res://Global/Game_UI/Map/Assets/Houses_Hover.png" id="14_te6vs"]
+[ext_resource type="BitMap" uid="uid://la0f32kmwc2r" path="res://Global/Game_UI/Map/Assets/Houses_Mask.png" id="15_4icr5"]
+[ext_resource type="BitMap" uid="uid://b11nuonm70ubg" path="res://Global/Game_UI/Map/Assets/Ricefield_Mask.png" id="15_lgwvk"]
+[ext_resource type="FontFile" uid="uid://wavv527jhmt1" path="res://Global/Game_UI/Fonts/K2D-Bold.ttf" id="23_enibt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_52b1r"]
 
 [node name="Map" type="Control"]
 layout_mode = 3
@@ -10,19 +33,100 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2pcqy")
 
-[node name="Map_overlay" type="TextureRect" parent="."]
+[node name="Overlay" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_no0ju")
+texture = SubResource("CompressedTexture2D_52b1r")
 
-[node name="Map_container" type="Node2D" parent="."]
-position = Vector2(960, 540)
-
-[node name="TextureRect" type="TextureRect" parent="Map_container"]
-offset_left = -785.0
-offset_top = -441.0
-offset_right = 783.0
-offset_bottom = 466.0
+[node name="Box" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -784.0
+offset_top = -453.5
+offset_right = 784.0
+offset_bottom = 453.5
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_4k8sw")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1601.0
+offset_top = 135.0
+offset_right = 1693.0
+offset_bottom = 227.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_eape2")
+texture_pressed = ExtResource("4_jx3ta")
+texture_hover = ExtResource("5_1nn6p")
+texture_click_mask = ExtResource("6_popbq")
+
+[node name="Government" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 562.0
+offset_right = 1574.0
+offset_bottom = 852.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_xiyk1")
+texture_pressed = ExtResource("8_jf60r")
+texture_hover = ExtResource("9_pepu4")
+texture_click_mask = ExtResource("10_dxtkk")
+
+[node name="Houses" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 561.0
+offset_top = 498.0
+offset_right = 1203.0
+offset_bottom = 915.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("12_lvdhp")
+texture_pressed = ExtResource("13_7n653")
+texture_hover = ExtResource("14_te6vs")
+texture_click_mask = ExtResource("15_4icr5")
+
+[node name="Ricefield" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 764.0
+offset_top = 322.0
+offset_right = 1577.0
+offset_bottom = 600.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("12_t6by6")
+texture_pressed = ExtResource("13_u2smn")
+texture_hover = ExtResource("14_lrswv")
+texture_click_mask = ExtResource("15_lgwvk")
+
+[node name="Forest" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 173.0
+offset_right = 938.0
+offset_bottom = 631.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_1sfiy")
+texture_pressed = ExtResource("9_pidh7")
+texture_hover = ExtResource("10_m0fca")
+texture_click_mask = ExtResource("11_n1v4b")
+
+[node name="MapLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 127.0
+offset_right = 373.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("23_enibt")
+theme_override_font_sizes/font_size = 64
+text = "MAP"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
