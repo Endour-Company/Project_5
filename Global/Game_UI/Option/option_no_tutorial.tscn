@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbaw0m10vqbdg"]
+
+[ext_resource type="Script" path="res://Global/Game_UI/Option/option_no_tutorial.gd" id="1_c8is4"]
+[ext_resource type="PackedScene" uid="uid://ghjik3ecy5jb" path="res://Global/Game_UI/Misc/overlay.tscn" id="2_swat6"]
+[ext_resource type="Texture2D" uid="uid://0sgwuu783gik" path="res://Global/Game_UI/Option/Box_Small.png" id="3_0y5jw"]
+[ext_resource type="Texture2D" uid="uid://bkncd1cxl0lai" path="res://Global/Game_UI/Option/Close Button_Normal.png" id="4_0eima"]
+[ext_resource type="Texture2D" uid="uid://w5suyx1xw0vj" path="res://Global/Game_UI/Option/Close Button_Pressed.png" id="5_xourv"]
+[ext_resource type="Texture2D" uid="uid://mqt06vbxpktv" path="res://Global/Game_UI/Option/Close Button_Hover.png" id="6_5623y"]
+[ext_resource type="PackedScene" uid="uid://bccd84x1xkt5d" path="res://Global/Game_UI/Option/h_slider.tscn" id="13_yij4p"]
+
+[node name="Option" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c8is4")
+
+[node name="Overlay" parent="." instance=ExtResource("2_swat6")]
+layout_mode = 0
+
+[node name="Box" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.5
+offset_top = -135.0
+offset_right = 303.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0y5jw")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1173.0
+offset_top = 429.0
+offset_right = 1230.0
+offset_bottom = 486.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_0eima")
+texture_pressed = ExtResource("5_xourv")
+texture_hover = ExtResource("6_5623y")
+
+[node name="BGMSlider" parent="." instance=ExtResource("13_yij4p")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.5
+offset_top = -51.0
+offset_right = 226.5
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SFXSlider" parent="." instance=ExtResource("13_yij4p")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.5
+offset_top = 16.0
+offset_right = 226.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

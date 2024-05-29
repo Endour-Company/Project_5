@@ -1,13 +1,8 @@
 extends Control
 
 # Define onready variables
-@onready var overlay : ColorRect = $Overlay
 @onready var tutorialScreen : Control
-
-
-func _ready():
-	# Hide overlay
-	overlay.visible = false
+@onready var optionScreen : Control
 
 
 func _on_mulai_button_pressed():
@@ -15,25 +10,27 @@ func _on_mulai_button_pressed():
 
 
 func _on_tutorial_button_pressed():
-	# Show overlay
-	overlay.visible = true
-	
 	# Spawn tutorial screen
 	tutorialScreen = preload("res://Main_menu/Lib/tutorial_book.tscn").instantiate()
 	add_child(tutorialScreen)
-	tutorialScreen.connect("exit_signal", _on_tutorial_closed)
+	tutorialScreen.connect("close_signal", _on_tutorial_closed)
 
 
 func _on_tutorial_closed():
 	# Kill tutorial screen
 	tutorialScreen.queue_free()
-	
-	# Hide overlay
-	overlay.visible = false
 
 
 func _on_opsi_button_pressed():
-	pass # Replace with function body.
+	# Spawn option screen (no tutorial version)
+	optionScreen = preload("res://Global/Game_UI/Option/option_no_tutorial.tscn").instantiate()
+	add_child(optionScreen)
+	optionScreen.connect("close_signal", _on_opsi_closed)
+	
+
+func _on_opsi_closed():
+	# Kill option screen
+	optionScreen.queue_free()
 
 
 func _on_keluar_button_pressed():

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ghjik3ecy5jb"]
+
+[node name="Overlay" type="ColorRect"]
+self_modulate = Color(0, 0, 0, 0.705882)
+offset_right = 1962.0
+offset_bottom = 1098.0

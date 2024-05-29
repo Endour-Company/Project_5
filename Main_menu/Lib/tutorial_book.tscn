@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://b66e6dfq4uqij"]
+[gd_scene load_steps=26 format=3 uid="uid://b66e6dfq4uqij"]
 
 [ext_resource type="Script" path="res://Main_menu/Lib/tutorial_book.gd" id="1_e7p2q"]
 [ext_resource type="Texture2D" uid="uid://83wxewt6erxb" path="res://Main_menu/Assets/Tutorial/Book.png" id="1_u0b0b"]
+[ext_resource type="PackedScene" uid="uid://ghjik3ecy5jb" path="res://Global/Game_UI/Misc/overlay.tscn" id="2_5v5bo"]
 [ext_resource type="Texture2D" uid="uid://choacr75yhbqc" path="res://Main_menu/Assets/Tutorial/LeftPage.png" id="2_m1roo"]
 [ext_resource type="Texture2D" uid="uid://tpxxj8kgsbn7" path="res://Main_menu/Assets/Tutorial/Close Button_Normal.png" id="2_sx4dt"]
 [ext_resource type="Texture2D" uid="uid://c4c0xpn3c0qa3" path="res://Main_menu/Assets/Tutorial/RightPage.png" id="3_ii4sv"]
@@ -33,6 +34,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e7p2q")
+
+[node name="Overlay" parent="." instance=ExtResource("2_5v5bo")]
+layout_mode = 0
 
 [node name="Book" type="TextureRect" parent="."]
 layout_mode = 0

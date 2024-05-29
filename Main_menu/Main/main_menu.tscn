@@ -82,13 +82,6 @@ texture_pressed = ExtResource("12_3hcqv")
 texture_hover = ExtResource("13_pecw0")
 texture_click_mask = ExtResource("17_geerx")
 
-[node name="Overlay" type="ColorRect" parent="."]
-visible = false
-self_modulate = Color(0, 0, 0, 0.705882)
-layout_mode = 0
-offset_right = 1921.0
-offset_bottom = 1081.0
-
 [connection signal="pressed" from="MulaiButton" to="." method="_on_mulai_button_pressed"]
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="OpsiButton" to="." method="_on_opsi_button_pressed"]

@@ -1,0 +1,121 @@
+[gd_scene load_steps=14 format=3 uid="uid://dyxgs5lp1nc7g"]
+
+[ext_resource type="Script" path="res://Global/Game_UI/Option/option.gd" id="1_6j1lv"]
+[ext_resource type="PackedScene" uid="uid://ghjik3ecy5jb" path="res://Global/Game_UI/Misc/overlay.tscn" id="1_10ego"]
+[ext_resource type="Texture2D" uid="uid://7gm7bc47oax8" path="res://Global/Game_UI/Option/Settings Box.png" id="2_ihun1"]
+[ext_resource type="Texture2D" uid="uid://bkncd1cxl0lai" path="res://Global/Game_UI/Option/Close Button_Normal.png" id="3_qrfym"]
+[ext_resource type="Texture2D" uid="uid://w5suyx1xw0vj" path="res://Global/Game_UI/Option/Close Button_Pressed.png" id="4_vyb1a"]
+[ext_resource type="Texture2D" uid="uid://mqt06vbxpktv" path="res://Global/Game_UI/Option/Close Button_Hover.png" id="5_8t3o1"]
+[ext_resource type="Texture2D" uid="uid://ge64k1btet0" path="res://Global/Game_UI/Option/Tutorial_Normal.png" id="7_qyb4m"]
+[ext_resource type="Texture2D" uid="uid://47cyf6ayubbg" path="res://Global/Game_UI/Option/Tutorial_Pressed.png" id="8_exm0d"]
+[ext_resource type="Texture2D" uid="uid://wtc8p25p7sjx" path="res://Global/Game_UI/Option/Tutorial_Hover.png" id="9_yoby0"]
+[ext_resource type="Texture2D" uid="uid://b2tiqsb20lghb" path="res://Global/Game_UI/Option/Exit_Normal.png" id="10_8tw1t"]
+[ext_resource type="Texture2D" uid="uid://bb631io4gxux3" path="res://Global/Game_UI/Option/Exit_Pressed.png" id="11_lwdp6"]
+[ext_resource type="PackedScene" uid="uid://bccd84x1xkt5d" path="res://Global/Game_UI/Option/h_slider.tscn" id="12_6atsh"]
+[ext_resource type="Texture2D" uid="uid://7bcip0f5rl6w" path="res://Global/Game_UI/Option/Exit_Hover.png" id="12_lmt2y"]
+
+[node name="Option" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6j1lv")
+
+[node name="Overlay" parent="." instance=ExtResource("1_10ego")]
+layout_mode = 0
+
+[node name="Box" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.5
+offset_top = -214.0
+offset_right = 303.5
+offset_bottom = 214.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ihun1")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1173.0
+offset_top = 351.0
+offset_right = 1230.0
+offset_bottom = 408.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_qrfym")
+texture_pressed = ExtResource("4_vyb1a")
+texture_hover = ExtResource("5_8t3o1")
+
+[node name="TutorialButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = 1.0
+offset_right = 98.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_qyb4m")
+texture_pressed = ExtResource("8_exm0d")
+texture_hover = ExtResource("9_yoby0")
+
+[node name="ExitButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = 102.0
+offset_right = 98.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_8tw1t")
+texture_pressed = ExtResource("11_lwdp6")
+texture_hover = ExtResource("12_lmt2y")
+
+[node name="BGMSlider" parent="." instance=ExtResource("12_6atsh")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.5
+offset_top = -129.0
+offset_right = 226.5
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SFXSlider" parent="." instance=ExtResource("12_6atsh")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.5
+offset_top = -62.0
+offset_right = 226.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

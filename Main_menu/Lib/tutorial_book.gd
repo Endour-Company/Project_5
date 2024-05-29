@@ -4,16 +4,16 @@ extends Control
 @onready var tutorialText : RichTextLabel = $Text
 
 # Declare custom signals
-signal exit_signal
+signal close_signal
 
 # Define bookmark order
 var bookmarkOrder : Dictionary = {
-	"BookmarkPusat"			: 2,
-	"BookmarkPemukiman"		: 3,
-	"BookmarkSawah"			: 4,
-	"BookmarkHutan"			: 5,
-	"BookmarkAspek"			: 6,
-	"BookmarkCara"			: 7,
+	"BookmarkPusat"			: 3,
+	"BookmarkPemukiman"		: 4,
+	"BookmarkSawah"			: 5,
+	"BookmarkHutan"			: 6,
+	"BookmarkAspek"			: 7,
+	"BookmarkCara"			: 8,
 }
 
 # Define tutorial texts
@@ -26,12 +26,12 @@ var tutorialTexts : Array = [
 	"[p][center][b]Cara Bermain[/b][/center][/p][p]Main yang bener ya[/p]",
 ]
 
-var selectedBookmarkIndex : int = 10 # The index where the selected index will be located
+var selectedBookmarkIndex : int = 11 # The index where the selected index will be located
 
 
 func _ready():
 	# Set default tutorial text
-	tutorialText.text = tutorialTexts[bookmarkOrder["BookmarkCara"]-2]
+	tutorialText.text = tutorialTexts[bookmarkOrder["BookmarkCara"]-3]
 
 
 # Function to swap bookmarks
@@ -43,8 +43,8 @@ func select_bookmark(newBookmarkName: String):
 	move_child(prevBookmark, bookmarkOrder[prevBookmark.name])
 	
 	# Set previous bookmark default cursor to pointing hand and enable it
-	prevBookmark.mouse_default_cursor_shape = CURSOR_POINTING_HAND
-	prevBookmark.disabled = false
+	prevBookmark.set_default_cursor_shape(CURSOR_POINTING_HAND)
+	prevBookmark.set_disabled(false)
 	
 	# Get new selected bookmark based on the order
 	var newBookmark : TextureButton = get_child(bookmarkOrder[newBookmarkName])
@@ -53,15 +53,11 @@ func select_bookmark(newBookmarkName: String):
 	move_child(newBookmark, selectedBookmarkIndex)
 	
 	# Set new bookmark default cursor to arrow and disable it
-	newBookmark.mouse_default_cursor_shape = CURSOR_ARROW
-	newBookmark.disabled = true
+	newBookmark.set_default_cursor_shape(CURSOR_ARROW)
+	newBookmark.set_disabled(true)
 	
 	# Set tutorial text
-	setTutorialText(tutorialTexts[bookmarkOrder[newBookmarkName]-2])
-
-
-func setTutorialText(text: String):
-	tutorialText.text = text
+	tutorialText.set_text(tutorialTexts[bookmarkOrder[newBookmarkName]-3])
 
 
 func _on_bookmark_cara_pressed():
@@ -89,4 +85,4 @@ func _on_bookmark_pusat_pressed():
 
 
 func _on_close_button_pressed():
-	exit_signal.emit()
+	close_signal.emit()
