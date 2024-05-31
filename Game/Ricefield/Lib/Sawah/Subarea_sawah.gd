@@ -41,27 +41,38 @@ func _process(delta):
 				pass
 			SAWAH_STATES.GROWTH:
 				TIME_ELAPSED += delta * GROWTH_SPEED
-				set_padis_growth()
+				set_sawah_growth()
 			SAWAH_STATES.PLOW :
 				pass
 			SAWAH_STATES.READY_TO_HARVEST :
-				set_sawah_state_ready_to_harvest()
+				pass
 			
-func set_padis_growth():
+func set_sawah_growth():
+	var previous_size = PADIS_SIZE
 	# Update PADIS_SIZE based on elapsed time
 	if TIME_ELAPSED >= 5 and PADIS_SIZE == PADIS_SIZES.NONE:
 		PADIS_SIZE = PADIS_SIZES.SMALL
-		set_padis_texture()
 
 	elif TIME_ELAPSED >= 30 and PADIS_SIZE == PADIS_SIZES.SMALL:
 		PADIS_SIZE = PADIS_SIZES.MEDIUM
-		set_padis_texture()
+
 	elif TIME_ELAPSED >= 50 and PADIS_SIZE == PADIS_SIZES.MEDIUM:
 		PADIS_SIZE = PADIS_SIZES.HIGH
-		set_padis_texture()
+
 	elif TIME_ELAPSED >= 80 and PADIS_SIZE == PADIS_SIZES.HIGH:
-		SAWAH_STATE = SAWAH_STATES.READY_TO_HARVEST
+		if SAWAH_STATE != SAWAH_STATES.READY_TO_HARVEST: 
+			SAWAH_STATE = SAWAH_STATES.READY_TO_HARVEST
+			set_sawah_state_ready_to_harvest()
 		TIME_ELAPSED = 0
+	
+	if previous_size != PADIS_SIZE:
+		set_padis_texture()
+		match PADIS_SIZE:
+			PADIS_SIZES.NONE:
+				set_sawah_state_idle()
+			PADIS_SIZES.SMALL, PADIS_SIZES.MEDIUM, PADIS_SIZES.HIGH:
+				set_sawah_state_growth()
+
 
 func set_padis_texture():
 	match PADIS_SIZE:

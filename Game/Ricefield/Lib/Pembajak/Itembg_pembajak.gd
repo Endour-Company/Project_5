@@ -37,8 +37,7 @@ var SAWAH_POINTS = [
 
 func _ready():
 	ITEM_NAME = "Pembajak"
-	behaviour_membajak()
 	super._ready()
 
 func behaviour_membajak():
-	print(global_position)
+	$TextureRect.global_position = Vector2(646,166)

@@ -26,6 +26,6 @@ func _on_sawah_change_state(state):
 		"plow" :
 			print("logic for plow")
 		"ready_to_harvest" :
-			print("logic for harvest")
+			$Itembg_pembajak.behaviour_membajak()
 
 
