@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h3nmgbxkaq2v"
-path="res://.godot/imported/Padis_sedang.png-d09977087df46e916ede3d3e9b8c9c16.ctex"
+uid="uid://br1wooalotovd"
+path="res://.godot/imported/padis_sedang.png-130b160aa592932335dbe0477bf00957.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Ricefield/Assets/item_bg_padi/Padis_sedang.png"
-dest_files=["res://.godot/imported/Padis_sedang.png-d09977087df46e916ede3d3e9b8c9c16.ctex"]
+source_file="res://Game/Ricefield/Assets/item_bg_padi/padis_sedang.png"
+dest_files=["res://.godot/imported/padis_sedang.png-130b160aa592932335dbe0477bf00957.ctex"]
 
 [params]
 

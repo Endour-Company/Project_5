@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqooamd15ligs"]
 
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Sawah/Sawah.gd" id="1_pct2r"]
-[ext_resource type="Texture2D" uid="uid://b4kyy2n5okrdj" path="res://Game/Ricefield/Assets/item_bg_padi/Padis_kecil.png" id="2_5hgt6"]
+[ext_resource type="Texture2D" uid="uid://dwra8hpubgaht" path="res://Game/Ricefield/Assets/item_bg_padi/Padis_kecil.png" id="2_5hgt6"]
 
 [node name="Sawah" type="Node2D"]
 position = Vector2(104, 100)
