@@ -13,6 +13,7 @@ var IS_CAR_READY = true
 func _ready():
 	$Subarea_sawah.sawah_change_state.connect(_on_sawah_change_state)
 	$Itembg_mobil.car_is_done.connect(_on_car_done)
+	$Itembg_pembajak.membajak_is_done.connect(_on_membajak_done)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,6 +34,7 @@ func _on_sawah_change_state(state):
 				$Itembg_mobil.set_mobil_state_move()
 
 func _on_car_done():
-	print("Car Is done")
 	$Itembg_pembajak.behaviour_membajak()
 
+func _on_membajak_done():
+	$Subarea_sawah.set_sawah_state_growth()

@@ -9,7 +9,7 @@ var padisHigh = load("res://Game/Ricefield/Assets/item_bg_padi/padis_besar.png")
 
 @export var GROWTH_SPEED : float = 1
 var PADIS_SIZE = PADIS_SIZES.NONE
-@export var SAWAH_STATE = SAWAH_STATES.GROWTH 
+@export var SAWAH_STATE = SAWAH_STATES.IDLE 
 
 signal sawah_change_state(state)
 
@@ -94,7 +94,6 @@ func set_sawah_state_idle():
 
 func set_sawah_state_growth():
 	SAWAH_STATE = SAWAH_STATES.GROWTH
-	emit_signal("sawah_change_state", SAWAH_STATE)
 	
 func set_sawah_state_plow():
 	SAWAH_STATE = SAWAH_STATES.PLOW

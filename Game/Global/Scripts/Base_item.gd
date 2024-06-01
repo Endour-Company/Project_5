@@ -35,7 +35,7 @@ func init_item():
 	init_item_visual_info()
 	
 	# Set Item Image
-	$TextureRect.set_texture(ITEM_TEXTURE)
+	$CharacterBody2D/Sprite2D.set_texture(ITEM_TEXTURE)
 	
 func init_item_level_info():
 	var item = Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", ITEM_NAME)
