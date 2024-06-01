@@ -7,10 +7,12 @@ var VAR_KUALITAS_PADI = 0
 var VAR_KUANTITAS_PADI = 0
 var VAR_JUMLAH_HAMA = 0
 var VAR_TINGKAT_PESTISIDA = 0
+var IS_CAR_READY = true
 
 
 func _ready():
 	$Subarea_sawah.sawah_change_state.connect(_on_sawah_change_state)
+	$Itembg_mobil.car_is_done.connect(_on_car_done)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,8 +26,13 @@ func _on_sawah_change_state(state):
 		"growth" : 
 			pass
 		"plow" :
-			print("logic for plow")
+			pass
 		"ready_to_harvest" :
-			$Itembg_pembajak.behaviour_membajak()
+			if(IS_CAR_READY) : 
+				$Subarea_sawah.set_sawah_state_idle()
+				$Itembg_mobil.set_mobil_state_move()
 
+func _on_car_done():
+	print("Car Is done")
+	$Itembg_pembajak.behaviour_membajak()
 

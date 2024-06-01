@@ -38,7 +38,9 @@ func _ready():
 func _process(delta):
 		match SAWAH_STATE :
 			SAWAH_STATES.IDLE :
-				pass
+				TIME_ELAPSED = 0
+				PADIS_SIZE = PADIS_SIZES.NONE
+				set_padis_texture()
 			SAWAH_STATES.GROWTH:
 				TIME_ELAPSED += delta * GROWTH_SPEED
 				set_sawah_growth()
@@ -88,7 +90,7 @@ func set_padis_texture():
 
 func set_sawah_state_idle():
 	SAWAH_STATE = SAWAH_STATES.IDLE
-	emit_signal("sawah_change_state", SAWAH_STATE)
+	
 
 func set_sawah_state_growth():
 	SAWAH_STATE = SAWAH_STATES.GROWTH
