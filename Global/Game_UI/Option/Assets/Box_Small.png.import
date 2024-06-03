@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp5ik0eh6qy04"
-path="res://.godot/imported/Option Bar_Circle_Selected.png-7278c1945cca8a5a0e729a001105fd5b.ctex"
+uid="uid://0sgwuu783gik"
+path="res://.godot/imported/Box_Small.png-2bdb16b954d8e4214b96884e12308af0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Global/Game_UI/Option/Option Bar_Circle_Selected.png"
-dest_files=["res://.godot/imported/Option Bar_Circle_Selected.png-7278c1945cca8a5a0e729a001105fd5b.ctex"]
+source_file="res://Global/Game_UI/Option/Assets/Box_Small.png"
+dest_files=["res://.godot/imported/Box_Small.png-2bdb16b954d8e4214b96884e12308af0.ctex"]
 
 [params]
 

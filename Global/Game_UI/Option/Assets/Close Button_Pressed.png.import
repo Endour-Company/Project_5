@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm1n2u3tjs5p4"
-path="res://.godot/imported/Option Bar_Under.png-4aca39335c3a58bdb0381d4a4f5c5ab3.ctex"
+uid="uid://w5suyx1xw0vj"
+path="res://.godot/imported/Close Button_Pressed.png-a3847da9b976948c6e6ae02df8de40e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Global/Game_UI/Option/Option Bar_Under.png"
-dest_files=["res://.godot/imported/Option Bar_Under.png-4aca39335c3a58bdb0381d4a4f5c5ab3.ctex"]
+source_file="res://Global/Game_UI/Option/Assets/Close Button_Pressed.png"
+dest_files=["res://.godot/imported/Close Button_Pressed.png-a3847da9b976948c6e6ae02df8de40e3.ctex"]
 
 [params]
 

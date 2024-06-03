@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ovd0sqabbmkt"]
+
+[ext_resource type="Script" path="res://Global/Game_UI/StarEffect/Lib/example.gd" id="1_su6um"]
+[ext_resource type="Texture2D" uid="uid://b4kyy2n5okrdj" path="res://Game/Ricefield/Assets/item_bg_padi/Padis_kecil.png" id="2_oe7fb"]
+
+[node name="Example" type="Node2D"]
+position = Vector2(506, 292)
+script = ExtResource("1_su6um")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 888.0
+offset_bottom = 342.0
+texture = ExtResource("2_oe7fb")
+expand_mode = 1

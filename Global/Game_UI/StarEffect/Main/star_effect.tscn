@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c36ns8vrerjlf"]
+
+[ext_resource type="Script" path="res://Global/Game_UI/StarEffect/Main/star_effect.gd" id="1_xktb0"]
+
+[node name="StarEffect" type="Node2D"]
+script = ExtResource("1_xktb0")

@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://dbaw0m10vqbdg"]
 
-[ext_resource type="Script" path="res://Global/Game_UI/Option/option_no_tutorial.gd" id="1_c8is4"]
+[ext_resource type="Script" path="res://Global/Game_UI/Option/Main/option_no_tutorial.gd" id="1_c8is4"]
 [ext_resource type="PackedScene" uid="uid://ghjik3ecy5jb" path="res://Global/Game_UI/Misc/overlay.tscn" id="2_swat6"]
-[ext_resource type="Texture2D" uid="uid://0sgwuu783gik" path="res://Global/Game_UI/Option/Box_Small.png" id="3_0y5jw"]
-[ext_resource type="Texture2D" uid="uid://bkncd1cxl0lai" path="res://Global/Game_UI/Option/Close Button_Normal.png" id="4_0eima"]
-[ext_resource type="Texture2D" uid="uid://w5suyx1xw0vj" path="res://Global/Game_UI/Option/Close Button_Pressed.png" id="5_xourv"]
-[ext_resource type="Texture2D" uid="uid://mqt06vbxpktv" path="res://Global/Game_UI/Option/Close Button_Hover.png" id="6_5623y"]
-[ext_resource type="PackedScene" uid="uid://bccd84x1xkt5d" path="res://Global/Game_UI/Option/h_slider.tscn" id="13_yij4p"]
+[ext_resource type="Texture2D" uid="uid://0sgwuu783gik" path="res://Global/Game_UI/Option/Assets/Box_Small.png" id="3_0y5jw"]
+[ext_resource type="Texture2D" uid="uid://bkncd1cxl0lai" path="res://Global/Game_UI/Option/Assets/Close Button_Normal.png" id="4_0eima"]
+[ext_resource type="Texture2D" uid="uid://w5suyx1xw0vj" path="res://Global/Game_UI/Option/Assets/Close Button_Pressed.png" id="5_xourv"]
+[ext_resource type="Texture2D" uid="uid://mqt06vbxpktv" path="res://Global/Game_UI/Option/Assets/Close Button_Hover.png" id="6_5623y"]
+[ext_resource type="PackedScene" uid="uid://bccd84x1xkt5d" path="res://Global/Game_UI/Option/Lib/h_slider.tscn" id="13_yij4p"]
 
 [node name="Option" type="Control"]
 layout_mode = 3

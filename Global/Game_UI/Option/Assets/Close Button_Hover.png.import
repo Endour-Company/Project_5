@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd8hi1m1wrts3"
-path="res://.godot/imported/Option Bar_Over.png-a94d20235966fc438b5c523cce64fe4c.ctex"
+uid="uid://mqt06vbxpktv"
+path="res://.godot/imported/Close Button_Hover.png-2cacbb8dafcaadeaa14f35ac45abb4c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Global/Game_UI/Option/Option Bar_Over.png"
-dest_files=["res://.godot/imported/Option Bar_Over.png-a94d20235966fc438b5c523cce64fe4c.ctex"]
+source_file="res://Global/Game_UI/Option/Assets/Close Button_Hover.png"
+dest_files=["res://.godot/imported/Close Button_Hover.png-2cacbb8dafcaadeaa14f35ac45abb4c1.ctex"]
 
 [params]
 

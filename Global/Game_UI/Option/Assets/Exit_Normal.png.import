@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7bcip0f5rl6w"
-path="res://.godot/imported/Exit_Hover.png-fdbc287fd0b9d4d76e4459cf9914d8f8.ctex"
+uid="uid://b2tiqsb20lghb"
+path="res://.godot/imported/Exit_Normal.png-547947f25b42593666162df5862400c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Global/Game_UI/Option/Exit_Hover.png"
-dest_files=["res://.godot/imported/Exit_Hover.png-fdbc287fd0b9d4d76e4459cf9914d8f8.ctex"]
+source_file="res://Global/Game_UI/Option/Assets/Exit_Normal.png"
+dest_files=["res://.godot/imported/Exit_Normal.png-547947f25b42593666162df5862400c3.ctex"]
 
 [params]
 

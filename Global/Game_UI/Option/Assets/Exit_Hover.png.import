@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crlip0gu0v2sf"
-path="res://.godot/imported/Option Bar_Circle.png-33b88f3d8fa6dad9836ea79f36774080.ctex"
+uid="uid://7bcip0f5rl6w"
+path="res://.godot/imported/Exit_Hover.png-0096c559b7e95fd26bf15fce780ea1e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Global/Game_UI/Option/Option Bar_Circle.png"
-dest_files=["res://.godot/imported/Option Bar_Circle.png-33b88f3d8fa6dad9836ea79f36774080.ctex"]
+source_file="res://Global/Game_UI/Option/Assets/Exit_Hover.png"
+dest_files=["res://.godot/imported/Exit_Hover.png-0096c559b7e95fd26bf15fce780ea1e2.ctex"]
 
 [params]
 

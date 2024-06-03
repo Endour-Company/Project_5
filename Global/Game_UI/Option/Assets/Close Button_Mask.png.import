@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cbu4fjtmggue2"
+path="res://.godot/imported/Close Button_Mask.png-7da6a691f188c9e5574b92dc8f11466c.res"
+
+[deps]
+
+source_file="res://Global/Game_UI/Option/Assets/Close Button_Mask.png"
+dest_files=["res://.godot/imported/Close Button_Mask.png-7da6a691f188c9e5574b92dc8f11466c.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

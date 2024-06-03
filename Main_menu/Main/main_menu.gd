@@ -23,7 +23,7 @@ func _on_tutorial_closed():
 
 func _on_opsi_button_pressed():
 	# Spawn option screen (no tutorial version)
-	optionScreen = preload("res://Global/Game_UI/Option/option_no_tutorial.tscn").instantiate()
+	optionScreen = preload("res://Global/Game_UI/Option/Main/option_no_tutorial.tscn").instantiate()
 	add_child(optionScreen)
 	optionScreen.connect("close_signal", _on_opsi_closed)
 	

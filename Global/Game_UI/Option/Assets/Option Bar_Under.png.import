@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb631io4gxux3"
-path="res://.godot/imported/Exit_Pressed.png-856c82430d1f51b481d13fe92f4f875d.ctex"
+uid="uid://cm1n2u3tjs5p4"
+path="res://.godot/imported/Option Bar_Under.png-e441eb4ade7b3822ef96b0a967b7c1d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Global/Game_UI/Option/Exit_Pressed.png"
-dest_files=["res://.godot/imported/Exit_Pressed.png-856c82430d1f51b481d13fe92f4f875d.ctex"]
+source_file="res://Global/Game_UI/Option/Assets/Option Bar_Under.png"
+dest_files=["res://.godot/imported/Option Bar_Under.png-e441eb4ade7b3822ef96b0a967b7c1d1.ctex"]
 
 [params]
 

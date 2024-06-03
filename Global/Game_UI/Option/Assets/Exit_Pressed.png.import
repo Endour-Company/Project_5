@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7gm7bc47oax8"
-path="res://.godot/imported/Settings Box.png-b730fce402b1005b96419eeff00ccdd1.ctex"
+uid="uid://bb631io4gxux3"
+path="res://.godot/imported/Exit_Pressed.png-c1c962a3872423252386a1822601d0b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Global/Game_UI/Option/Settings Box.png"
-dest_files=["res://.godot/imported/Settings Box.png-b730fce402b1005b96419eeff00ccdd1.ctex"]
+source_file="res://Global/Game_UI/Option/Assets/Exit_Pressed.png"
+dest_files=["res://.godot/imported/Exit_Pressed.png-c1c962a3872423252386a1822601d0b7.ctex"]
 
 [params]
 

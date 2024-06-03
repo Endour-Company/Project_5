@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mqt06vbxpktv"
-path="res://.godot/imported/Close Button_Hover.png-14f45b711d588e452b8693e12f0cef52.ctex"
+uid="uid://cms0ayilbrn7l"
+path="res://.godot/imported/Star.png-994829bf3aca8feba16ee6652bec944e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Global/Game_UI/Option/Close Button_Hover.png"
-dest_files=["res://.godot/imported/Close Button_Hover.png-14f45b711d588e452b8693e12f0cef52.ctex"]
+source_file="res://Global/Game_UI/StarEffect/Assets/Star.png"
+dest_files=["res://.godot/imported/Star.png-994829bf3aca8feba16ee6652bec944e.ctex"]
 
 [params]
 
