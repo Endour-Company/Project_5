@@ -13,7 +13,7 @@ func _ready():
 	itemImage.set_texture(image)
 	
 	if(price != 0):
-		itemPrice.set_text(str(price))
+		itemPrice.set_text(Utils.format_rupiah(price))
 	else :
 		itemPrice.set_text("MAX")	
 

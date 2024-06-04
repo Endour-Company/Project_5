@@ -23,3 +23,13 @@ func parse_json_file_by_filepath(filePath : String):
 		return parsedResult
 	else:
 		return null
+
+func format_rupiah(amount: int) -> String:
+	if amount < 1000:
+		return "Rp. " + str(amount)
+	elif amount < 1000000:
+		return "Rp. " + str(amount / 1000) + "K"
+	elif amount < 1000000000:
+		return "Rp. " + str(amount / 1000000) + "M"
+	else:
+		return "Rp. " + str(amount / 1000000000) + "B"

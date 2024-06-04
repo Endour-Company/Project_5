@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnbjf4amiks2m"
-path="res://.godot/imported/Padis_besar.png-4ffaac7b6b97af19377cf7c817f44e87.ctex"
+uid="uid://wwnb4y8mr7vi"
+path="res://.godot/imported/pasar_lv2.png-dac5f7fca5d25ac43448a65ebc22d090.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Ricefield/Assets/item_bg_padi/Padis_besar.png"
-dest_files=["res://.godot/imported/Padis_besar.png-4ffaac7b6b97af19377cf7c817f44e87.ctex"]
+source_file="res://Game/Area_pusat_desa/Assets/item_ct_pasar/pasar_lv2.png"
+dest_files=["res://.godot/imported/pasar_lv2.png-dac5f7fca5d25ac43448a65ebc22d090.ctex"]
 
 [params]
 

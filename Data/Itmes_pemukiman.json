@@ -1,0 +1,86 @@
+ [
+ {
+	"name": "Toilet Umum",
+	"description": "Toilet umum adalah fasilitas penting yang menyediakan tempat untuk buang air besar dan kecil bagi masyarakat. Adanya toilet umum dengan jumlah yang memadai dapat menjaga kebersihan lingkungan, kesehatan masyarakat, serta mendukung kenyamanan aktivitas masyarakat sehari-hari.",
+	"type": "countable",
+	"levels": [
+	  {
+		"level": 1,
+		"name": "Toilet Umum Lv 1",
+		"upgrade_price": 1000000,
+		"img": "res://Game/Area_pemukiman/Assets/item_ct_toilet/toilet.png"
+	  }
+	],
+	"max_owned": 5
+  },
+
+	{
+		"name": "Septic Tank",
+		"description": "Septic tank merupakan sistem pengolahan limbah domestik yang terkubur di bawah tanah. Limbah-limbah rumah tangga masuk ke tank ini, dipecah oleh bakteri anaerobik, kemudian airnya diresap tanah. Hal ini membantu mencegah pencemaran lingkungan dan menjaga kesehatan masyarakat.",
+		"type": "countable",
+		"levels": [
+		{
+			"level": 1,
+			"name": "Septic Tank",
+			"upgrade_price": 1000000,
+			"img": "res://Game/Area_pemukiman/Assets/item_ct_septictank/septictank.png"
+		}
+		],
+		"max_owned": 5
+	},
+	{
+		"name": "Tower Internet",
+		"description": "Tower internet adalah struktur tinggi yang digunakan untuk menyediakan layanan komunikasi nirkabel, seperti sinyal telepon seluler dan akses internet bagi masyarakat. Melalui peningkatan akses informasi dan komunikasi, tower internet memiliki potensi besar untuk meningkatkan kualitas hidup dan memajukan pembangunan di desa.",
+		"type": "countable",
+		"levels": [
+		{
+			"level": 1,
+			"name": "Tower Internet Lv 1",
+			"upgrade_price": 150000000,
+			"img": "res://Game/Area_pemukiman/Assets/item_ct_tower/tower.png"
+		}
+		],
+		"max_owned": 2
+	},
+	{
+		"name": "Jalan",
+		"description": "Jalan memfasilitasi transportasi, akses ke berbagai layanan desa, dan mendukung pertumbuhan ekonomi serta sosial. Jalan yang terawat meningkatkan mobilitas, keselamatan, dan kenyamanan masyarakat desa.",
+		"type": "upgradable",
+		"levels": [
+		{
+			"level": 1,
+			"name": "Jalan Lv 1",
+			"upgrade_price": 40000000,
+			"img": "res://Game/Area_pemukiman/Assets/item_up_jalan/jalan_lv1.png"
+		},
+		{
+			"level": 2,
+			"name": "Jalan Lv 2",
+			"upgrade_price": 120000000,
+			"img": "res://Game/Area_pemukiman/Assets/item_up_jalan/jalan_lv2.png"
+		},
+		{
+			"level": 3,
+			"name": "Jalan Lv 3",
+			"upgrade_price": 0,
+			"img": "res://Game/Area_pemukiman/Assets/item_up_jalan/jalan_lv3.png"
+		}
+		],
+		"max_owned": 1
+	},
+		{
+		"name": "Lampu Jalan",
+		"description":"Lampu jalan di desa meningkatkan keamanan dan mobilitas warga pada malam hari, memfasilitasi aktivitas sosial dan ekonomi, serta memberikan akses yang lebih mudah ke fasilitas penting seperti pasar dan puskesmas.",
+		"type" : "countable",
+		"levels": [		
+			{
+				"level" : 1,
+				"name" : "Lampu Jalan",
+				"upgrade_price" : 350000,
+				"img" : "res://Game/Area_pemukiman/Assets/item_ct_lampu_jalan/lampu_jalan.png"
+			}	
+		],
+		"max_owned" : 5
+	}
+
+]

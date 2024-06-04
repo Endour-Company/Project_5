@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnbjf4amiks2m"
-path="res://.godot/imported/Padis_besar.png-4ffaac7b6b97af19377cf7c817f44e87.ctex"
+uid="uid://dvx1mjb5ofcj3"
+path="res://.godot/imported/tanah_lapang_lv3.png-d1d9c177c6d9c777a276f2f330b5a7ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Ricefield/Assets/item_bg_padi/Padis_besar.png"
-dest_files=["res://.godot/imported/Padis_besar.png-4ffaac7b6b97af19377cf7c817f44e87.ctex"]
+source_file="res://Game/Area_pusat_desa/Assets/item_up_tanah_lapang/tanah_lapang_lv3.png"
+dest_files=["res://.godot/imported/tanah_lapang_lv3.png-d1d9c177c6d9c777a276f2f330b5a7ba.ctex"]
 
 [params]
 

@@ -8,10 +8,24 @@
 				"level": 1,
 				"name": "Pinus Lv 1",
 				"upgrade_price": 500,
-				"img": "res://Game/Ricefield/Assets/item_up_pembajak_sawah/pembajak_sawah_lv1.png"
-			},
+				"img": "res://Game/Area_hutan/Assets/item_ct_pinus/pinus_besar.png"
+			}
 		],
-		"max_owned" : 10,
+		"images" : [
+			{
+				"size" : "low",
+				"img" : "res://Game/Area_hutan/Assets/item_ct_pinus/pinus_kecil.png"
+			},
+			{
+				"size" : "medium",
+				"img" : "res://Game/Area_hutan/Assets/item_ct_pinus/pinus_sedang.png"
+			},
+			{
+				"size" : "high",
+				"img" : "res://Game/Area_hutan/Assets/item_ct_pinus/pinus_besar.png"
+			}
+		],
+		"max_owned" : 10
 	},
 	{
 		"name": "Jati",
@@ -20,11 +34,25 @@
 		"levels": [
 			{
 				"level": 1,
-				"name": "Pinus Lv 1",
+				"name": "Jati Lv 1",
 				"upgrade_price": 700,
-				"img": "res://Game/Ricefield/Assets/prototype/jalan_lv1.png"
-			},
+				"img": "res://Game/Area_hutan/Assets/item_ct_jati/jati_besar.png"
+			}
 			
+		],
+		"images" : [
+			{
+				"size" : "low",
+				"img" : "res://Game/Area_hutan/Assets/item_ct_jati/jati_kecil.png"
+			},
+			{
+				"size" : "medium",
+				"img" : "res://Game/Area_hutan/Assets/item_ct_jati/jati_sedang.png"
+			},
+			{
+				"size" : "high",
+				"img" : "res://Game/Area_hutan/Assets/item_ct_jati/jati_besar.png"
+			}
 		],
 		"max_owned" : 15,
 	},
@@ -37,8 +65,22 @@
 				"level" : 1,
 				"name" : "Mahoni Lv 1",
 				"upgrade_price" : 900,
-				"img" : "res://Game/Ricefield/Assets/prototype/lampu_taman.png"
+				"img" : "res://Game/Area_hutan/Assets/item_ct_mahoni/mahoni_besar.png"
 			}	
+		],
+				"images" : [
+			{
+				"size" : "low",
+				"img" : "res://Game/Area_hutan/Assets/item_ct_mahoni/mahoni_kecil.png"
+			},
+			{
+				"size" : "medium",
+				"img" : "res://Game/Area_hutan/Assets/item_ct_mahoni/mahoni_sedang.png"
+			},
+			{
+				"size" : "high",
+				"img" : "res://Game/Area_hutan/Assets/item_ct_mahoni/mahoni_besar.png"
+			}
 		],
 		"max_owned" : 5,
 	},

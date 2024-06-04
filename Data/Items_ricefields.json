@@ -1,19 +1,19 @@
 [
 	{
-		"name": "Pembajak",
-		"description": "Donec ut enim vestibulum, convallis lectus tincidunt, vehicula mi. Nunc facilisis accumsan mi sit amet semper. Etiam cursus felis eget rhoncus ultrices. Maecenas aliquam, nisi eget suscipit imperdiet, libero lectus hendrerit mi, a pulvinar elit magna ac velit. Donec interdum nisi vel dui euismod luctus non vel nibh. Maecenas et mattis leo, eget congue libero. Nunc sagittis porta nulla, convallis tempor eros luctus vel. Aliquam pellentesque lacus quis luctus vehicula.",
+		"name": "Alat Petanian",
+		"description": " Alat Pertanian adalah perangkat penting yang meningkatkan efisiensi dan produktivitas petani dalam mengolah lahan. Alat ini dapat mengurangi beban kerja fisik dan mendukung keberlanjutan serta kemajuan produksi padi di desa.",
 		"type" : "upgradable",
 		"levels": [
 			{
 				"level": 1,
 				"name": "Cangkul",
-				"upgrade_price": 3000,
+				"upgrade_price": 180000000,
 				"img": "res://Game/Ricefield/Assets/item_up_pembajak_sawah/pembajak_sawah_lv1.png"
 			},
 			{
 				"level": 2,
 				"name": "Traktor Tangan",
-				"upgrade_price": 4000,
+				"upgrade_price": 150000000,
 				"img": "res://Game/Ricefield/Assets/item_up_pembajak_sawah/pembajak_sawah_lv2.png"
 			},
 			{
@@ -21,44 +21,50 @@
 				"name": "Traktor Mobil",
 				"upgrade_price": 0,
 				"img": "res://Game/Ricefield/Assets/item_up_pembajak_sawah/pembajak_sawah_lv3.png"
-			},
+			}
 		],
-		"max_owned" : 1,
+		"max_owned" : 1
 	},
 	{
 		"name": "Jalan",
-		"description": "Street ut enim vestibulum, convallis lectus tincidunt, vehicula mi. Nunc facilisis accumsan mi sit amet semper. Etiam cursus felis eget rhoncus ultrices. Maecenas aliquam, nisi eget suscipit imperdiet, libero lectus hendrerit mi, a pulvinar elit magna ac velit. Donec interdum nisi vel dui euismod luctus non vel nibh. Maecenas et mattis leo, eget congue libero. Nunc sagittis porta nulla, convallis tempor eros luctus vel. Aliquam pellentesque lacus quis luctus vehicula.",
+		"description": "Jalan di daerah pertanian memfasilitasi akses untuk pengangkutan hasil panen dan pasokan pertanian. Selain meningkatkan mobilitas, jalan yang terawat dapat meningkatkan distribusi produk pertanian, efisiensi produksi sehingga mendukung pertumbuhan ekonomi dan kesejahteraan desa.",
 		"type" : "upgradable",
 		"levels": [
 			{
 				"level": 1,
 				"name": "Jalan Rusak",
-				"upgrade_price": 5000,
-				"img": "res://Game/Ricefield/Assets/prototype/jalan_lv1.png"
+				"upgrade_price": 50000000,
+				"img": "res://Game/Ricefield/Assets/item_up_jalan/jalan_lv1.png"
 			},
 			{
 				"level": 2,
 				"name": "Jalan Paving",
-				"upgrade_price": 11000,
-				"img": "res://Game/Ricefield/Assets/prototype/jalan_lv2.png"
+				"upgrade_price": 150000000,
+				"img": "res://Game/Ricefield/Assets/item_up_jalan/jalan_lv2.png"
 			},
+			{
+				"level": 2,
+				"name": "Jalan Aspal",
+				"upgrade_price": 0,
+				"img": "res://Game/Ricefield/Assets/item_up_jalan/jalan_lv2.png"
+			}
 			
 		],
-		"max_owned" : 1,
+		"max_owned" : 1
 	},
 	{
 		"name": "Lampu Jalan",
-		"description": "Street ut enim vestibulum, convallis lectus tincidunt, vehicula mi. Nunc facilisis accumsan mi sit amet semper. Etiam cursus felis eget rhoncus ultrices. Maecenas aliquam, nisi eget suscipit imperdiet, libero lectus hendrerit mi, a pulvinar elit magna ac velit. Donec interdum nisi vel dui euismod luctus non vel nibh. Maecenas et mattis leo, eget congue libero. Nunc sagittis porta nulla, convallis tempor eros luctus vel. Aliquam pellentesque lacus quis luctus vehicula.",
+		"description": "Lampu jalan di daerah pertanian meningkatkan keamanan, memfasilitasi mobilitas, dan memperpanjang jam kerja petani. Selain itu, lampu jalan juga membantu mengurangi risiko kejahatan dan kecelakaan.",
 		"type" : "countable",
 		"levels": [		
 			{
 				"level" : 1,
 				"name" : "Lampu Jalan",
-				"upgrade_price" : 5000,
-				"img" : "res://Game/Ricefield/Assets/prototype/lampu_taman.png"
+				"upgrade_price" : 350000,
+				"img" : "res://Game/Ricefield/Assets/item_ct_lampu_jalan/lampu_taman.png"
 			}	
 		],
-		"max_owned" : 5,
-	},
+		"max_owned" : 5
+	}
 
 ]

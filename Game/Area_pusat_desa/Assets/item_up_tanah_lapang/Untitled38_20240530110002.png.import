@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnbjf4amiks2m"
-path="res://.godot/imported/Padis_besar.png-4ffaac7b6b97af19377cf7c817f44e87.ctex"
+uid="uid://cluinewocegia"
+path="res://.godot/imported/Untitled38_20240530110002.png-7dcc09e07862467975702865a4f7e72a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Ricefield/Assets/item_bg_padi/Padis_besar.png"
-dest_files=["res://.godot/imported/Padis_besar.png-4ffaac7b6b97af19377cf7c817f44e87.ctex"]
+source_file="res://Game/Area_pusat_desa/Assets/item_up_tanah_lapang/Untitled38_20240530110002.png"
+dest_files=["res://.godot/imported/Untitled38_20240530110002.png-7dcc09e07862467975702865a4f7e72a.ctex"]
 
 [params]
 
