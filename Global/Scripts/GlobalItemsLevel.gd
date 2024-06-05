@@ -20,7 +20,23 @@ var ITEM_LEVEL = [
 		"name" : "Lampu Jalan",
 		"level" : 1,
 		"count" : 1
+	},
+	{
+		"name" : "Mahoni",
+		"level" : 1,
+		"count" : 0
+	},
+	{
+		"name" : "Cendana",
+		"level" : 1,
+		"count" : 0
+	},
+	{
+		"name" : "Jati",
+		"level" : 1,
+		"count" : 0
 	}
+	
 ]
 
 

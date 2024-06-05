@@ -1,13 +1,69 @@
-[gd_scene load_steps=3 format=3 uid="uid://mes4efbefx"]
+[gd_scene load_steps=6 format=3 uid="uid://mes4efbefx"]
 
 [ext_resource type="Script" path="res://Game/Area_hutan/Main/Area_hutan.gd" id="1_ptkcm"]
-[ext_resource type="Texture2D" uid="uid://orfw048xg66j" path="res://Game/Area_hutan/Assets/bg_main/hutan.jpeg" id="1_xaoaj"]
+[ext_resource type="Texture2D" uid="uid://ctamgsqvnu6xy" path="res://Game/Area_hutan/Assets/bg_main/bg_main.png" id="2_oqamr"]
+[ext_resource type="Texture2D" uid="uid://c6i4iy3p0pg7r" path="res://Game/Area_hutan/Assets/item_bg_sungai/sungai_normal.png" id="3_ldgps"]
+[ext_resource type="Script" path="res://Game/Area_hutan/Lib/subarea_pohons/Subarea_pohons.gd" id="3_ukjct"]
+[ext_resource type="PackedScene" uid="uid://cnsgo48clqybu" path="res://Game/Area_hutan/Lib/item_pohon/item_pohon.tscn" id="4_2c1e4"]
 
 [node name="Area_Hutan" type="Node2D"]
 script = ExtResource("1_ptkcm")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_xaoaj")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_oqamr")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Subarea_sungai" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Subarea_sungai"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_ldgps")
+expand_mode = 1
+
+[node name="Subarea_pohons" type="Node2D" parent="."]
+script = ExtResource("3_ukjct")
+
+[node name="Part_Mahonis" type="Node2D" parent="Subarea_pohons"]
+
+[node name="Item_pohon" parent="Subarea_pohons/Part_Mahonis" instance=ExtResource("4_2c1e4")]
+position = Vector2(247, 302)
+
+[node name="Item_pohon2" parent="Subarea_pohons/Part_Mahonis" instance=ExtResource("4_2c1e4")]
+position = Vector2(564, 244)
+
+[node name="Item_pohon3" parent="Subarea_pohons/Part_Mahonis" instance=ExtResource("4_2c1e4")]
+position = Vector2(876, 249)
+
+[node name="Part_cendanas" type="Node2D" parent="Subarea_pohons"]
+
+[node name="Item_pohon" parent="Subarea_pohons/Part_cendanas" instance=ExtResource("4_2c1e4")]
+position = Vector2(49, 631)
+
+[node name="Item_pohon2" parent="Subarea_pohons/Part_cendanas" instance=ExtResource("4_2c1e4")]
+position = Vector2(363, 595)
+
+[node name="Item_pohon3" parent="Subarea_pohons/Part_cendanas" instance=ExtResource("4_2c1e4")]
+position = Vector2(682, 578)
+
+[node name="Item_pohon4" parent="Subarea_pohons/Part_cendanas" instance=ExtResource("4_2c1e4")]
+position = Vector2(991, 555)
+
+[node name="Part_jatis" type="Node2D" parent="Subarea_pohons"]
+metadata/_edit_lock_ = true
+
+[node name="Item_pohon2" parent="Subarea_pohons/Part_jatis" instance=ExtResource("4_2c1e4")]
+position = Vector2(122, 888)
+
+[node name="Item_pohon3" parent="Subarea_pohons/Part_jatis" instance=ExtResource("4_2c1e4")]
+position = Vector2(816, 873)
+
+[node name="Item_pohon" parent="Subarea_pohons/Part_jatis" instance=ExtResource("4_2c1e4")]
+position = Vector2(471, 893)
+
+[node name="Item_pohon4" parent="Subarea_pohons/Part_jatis" instance=ExtResource("4_2c1e4")]
+position = Vector2(1157, 861)
