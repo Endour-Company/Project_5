@@ -5,7 +5,18 @@ extends Node
 
 var CURRENT_SELECTED_ITEM = null
 
+enum AREAS {
+	SAWAH,
+	HUTAN,
+	PEMUKIMAN,
+	PUSATDESA
+}
+
+@export var CURRENT_AREA = AREAS.HUTAN
+
 signal current_selected_item_changed(selected_item_name : String)
+
+signal current_area_changed()
 
 func _ready():
 	pass # Replace with function body.
@@ -18,3 +29,7 @@ func _process(delta):
 func set_selected_item(selected_item_name : String):
 	CURRENT_SELECTED_ITEM = selected_item_name
 	emit_signal("current_selected_item_changed", selected_item_name)
+
+func set_current_area(AREA):
+	CURRENT_AREA = AREA
+	emit_signal("current_area_changed")

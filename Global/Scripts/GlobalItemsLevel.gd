@@ -5,7 +5,7 @@ var ITEMS_JSON = []
 
 var ITEM_LEVEL = [
 	{
-		"name" : "Pembajak",
+		"name" : "Alat Pertanian",
 		"level" : 1,
 		"count" : 1,
 		
@@ -36,7 +36,25 @@ var ITEM_LEVEL = [
 		"level" : 1,
 		"count" : 0
 	}
-	
+]
+
+var ITEMS_PER_AREA : Array = [
+	{
+		'area' : GlobalActionBar.AREAS.SAWAH,
+		'path' : "res://Data/Items_ricefields.json"
+	},
+	{
+		'area' : GlobalActionBar.AREAS.HUTAN,
+		'path' : "res://Data/Items_hutan.json"
+	},
+	{
+		'area' : GlobalActionBar.AREAS.PEMUKIMAN,
+		'path' : "res://Data/Items_pemukiman.json"
+	},
+	{
+		'area' : GlobalActionBar.AREAS.PUSATDESA,
+		'path' : "res://Data/Items_pusat_desa.json"
+	},
 ]
 
 
@@ -44,9 +62,8 @@ signal item_upgraded
 
 
 func _ready():
-	var itemsJson = Utils.parse_json_file_by_filepath("res://Data/Items_ricefields.json")
-	ITEMS_JSON = itemsJson
-	pass # Replace with function body.
+	GlobalActionBar.current_area_changed.connect(_on_current_area_changed)
+	init_items_json()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -89,4 +106,11 @@ func upgrade_item(itemName):
 							break
 		emit_signal("item_upgraded")
 
-		
+func init_items_json():
+	var itemsInArea = Utils.find_item_in_array_with_key(ITEMS_PER_AREA, "area", GlobalActionBar.CURRENT_AREA)
+	var itemsJson = Utils.parse_json_file_by_filepath(itemsInArea['path'])
+	ITEMS_JSON = itemsJson
+	print(ITEMS_JSON)
+	
+func _on_current_area_changed():
+	init_items_json()

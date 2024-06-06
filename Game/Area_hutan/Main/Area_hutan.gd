@@ -5,7 +5,7 @@ var DATA_POHONS : Array = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_data_pohons_from_json()
-	print(DATA_POHONS)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

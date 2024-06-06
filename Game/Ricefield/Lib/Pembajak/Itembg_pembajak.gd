@@ -60,7 +60,7 @@ var start_point = Vector2()
 var end_point = Vector2()
 
 func _ready():
-	ITEM_NAME = "Pembajak"
+	ITEM_NAME = "Alat Pertanian"
 	super._ready()
 	set_points_for_current_sawah()
 
