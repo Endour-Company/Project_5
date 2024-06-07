@@ -75,4 +75,3 @@ func _on_item_upgraded():
 	
 	# Mahoni
 	var mahoniCount = Utils.find_item_in_array_with_key(itemLevel, "name", "Mahoni")
-	print(mahoniCount)

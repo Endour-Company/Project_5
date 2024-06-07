@@ -3,6 +3,7 @@ extends Node
 
 var ITEMS_JSON = []
 
+
 var ITEM_LEVEL = [
 	{
 		"name" : "Alat Pertanian",
@@ -41,19 +42,23 @@ var ITEM_LEVEL = [
 var ITEMS_PER_AREA : Array = [
 	{
 		'area' : GlobalActionBar.AREAS.SAWAH,
-		'path' : "res://Data/Items_ricefields.json"
+		'path' : "res://Data/Items_ricefields.json",
+		'items' : []
 	},
 	{
 		'area' : GlobalActionBar.AREAS.HUTAN,
-		'path' : "res://Data/Items_hutan.json"
+		'path' : "res://Data/Items_hutan.json",
+		'items' : []
 	},
 	{
 		'area' : GlobalActionBar.AREAS.PEMUKIMAN,
-		'path' : "res://Data/Items_pemukiman.json"
+		'path' : "res://Data/Items_pemukiman.json",
+		"items" : []
 	},
 	{
 		'area' : GlobalActionBar.AREAS.PUSATDESA,
-		'path' : "res://Data/Items_pusat_desa.json"
+		'path' : "res://Data/Items_pusat_desa.json",
+		"items" : []
 	},
 ]
 
@@ -64,7 +69,12 @@ signal item_upgraded
 func _ready():
 	GlobalActionBar.current_area_changed.connect(_on_current_area_changed)
 	init_items_json()
-
+	init_items_per_area()
+	
+func init_items_per_area():
+	for itemPerArea in ITEMS_PER_AREA :
+		var items = Utils.parse_json_file_by_filepath(itemPerArea['path'])
+		itemPerArea["items"] = items
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
