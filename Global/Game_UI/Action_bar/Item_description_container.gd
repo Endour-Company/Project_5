@@ -7,7 +7,7 @@ var buyButtonNormal = load("res://Global/Game_UI/Action_bar/Assets/Buy_ver2.png"
 var buyButtonMax = load("res://Global/Game_UI/Action_bar/Assets/Buy_max.png")
 
 var CURRENT_ITEM_NAME = null
-var items = null
+
 func _ready():
 	GlobalActionBar.current_selected_item_changed.connect(_on_current_selected_item_changed)
 
@@ -20,7 +20,10 @@ func _on_current_selected_item_changed(current_selected_item_name : String):
 	set_description_body()
 
 func set_description_body():
-	var currentItem = Utils.find_item_in_array_with_key(items,"name", CURRENT_ITEM_NAME)
+	var currentArea = GlobalActionBar.CURRENT_AREA
+	var itemsInCurrentAreaData = Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEMS_PER_AREA, "area",currentArea)
+	var itemsInCurrentArea = itemsInCurrentAreaData["items"]
+	var currentItem = Utils.find_item_in_array_with_key(itemsInCurrentArea,"name", CURRENT_ITEM_NAME)
 	var itemName = currentItem["name"]
 	var itemDescription = currentItem["description"]
 	$HBoxContainer/Item_name.set_text(itemName)
@@ -53,7 +56,7 @@ func set_description_body():
 	elif (currentItem["type"] == "countable"):
 		var isItemMaxOwned : bool = currentItem["max_owned"] <= currentLevel["count"]
 		isAllowToBuy = !isItemMaxOwned
-		print(currentItem["max_owned"])
+
 	
 	if (isAllowToBuy) : 
 		$HBoxContainer2/Buy_button.set_button_icon(buyButtonNormal)
@@ -64,9 +67,6 @@ func set_description_body():
 	
 func set_description_empty():
 	pass
-
-func init_items(newItems):
-	items = newItems
 
 
 func _on_buy_button_button_up():

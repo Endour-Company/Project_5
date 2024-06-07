@@ -1,10 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://brw17nqvu6hle"]
+[gd_scene load_steps=8 format=3 uid="uid://brw17nqvu6hle"]
 
 [ext_resource type="Script" path="res://Game/Ricefield/Main/ricefield_area.gd" id="1_0ucuo"]
 [ext_resource type="Texture2D" uid="uid://cmctconrlnkc8" path="res://Game/Ricefield/Assets/bg_main/bg_main.png" id="2_3j1xc"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Sawah/Subarea_sawah.gd" id="2_xe0x6"]
-[ext_resource type="Script" path="res://Game/Ricefield/Lib/Pembajak/Itembg_pembajak.gd" id="6_0ywcr"]
-[ext_resource type="Texture2D" uid="uid://drfusy02bgc55" path="res://Game/Ricefield/Assets/item_up_pembajak_sawah/pembajak_sawah_lv2.png" id="7_eed5c"]
 [ext_resource type="Texture2D" uid="uid://dkiw33dkar3p2" path="res://Game/Ricefield/Assets/item_bg_sungai/sungai_kotor.png" id="7_k0t7d"]
 [ext_resource type="Texture2D" uid="uid://bka6b1cjakj7r" path="res://Game/Ricefield/Assets/item_up_jalan/jalan_lv1.png" id="8_mrxar"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Mobil.gd" id="8_uv1uv"]
@@ -37,17 +35,6 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 expand_mode = 1
 stretch_mode = 4
-metadata/_edit_lock_ = true
-
-[node name="Itembg_pembajak" type="Node2D" parent="."]
-script = ExtResource("6_0ywcr")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Itembg_pembajak"]
-position = Vector2(1397, 77)
-
-[node name="Sprite2D" type="Sprite2D" parent="Itembg_pembajak/CharacterBody2D"]
-scale = Vector2(0.0917969, 0.0917969)
-texture = ExtResource("7_eed5c")
 metadata/_edit_lock_ = true
 
 [node name="Subarea_jalan" type="Node2D" parent="."]

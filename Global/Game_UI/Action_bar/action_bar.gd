@@ -12,7 +12,6 @@ extends Control
 func _ready():
 	GlobalItemsLevel.item_upgraded.connect(_on_item_upgraded)
 	GlobalActionBar.current_area_changed.connect(_on_current_area_changed)
-	init_items()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

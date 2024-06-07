@@ -1,0 +1,123 @@
+[gd_scene load_steps=16 format=3 uid="uid://6wgjm6tla017"]
+
+[ext_resource type="Texture2D" uid="uid://dpn7mh6fvy5oq" path="res://Global/Game_UI/Action_bar/Assets/Actions.png" id="1_2lrml"]
+[ext_resource type="Script" path="res://Global/Game_UI/Action_bar/action_bar.gd" id="1_14npq"]
+[ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Item_container.gd" id="3_rm0i6"]
+[ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Item_description_container.gd" id="4_noa5x"]
+[ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Item/Item_levels.gd" id="5_2jt7p"]
+[ext_resource type="Texture2D" uid="uid://cwa0yxbju0g8a" path="res://Global/Game_UI/Action_bar/Assets/Buy_ver2.png" id="6_ae25v"]
+[ext_resource type="Texture2D" uid="uid://dpuomn7vo615h" path="res://Global/Game_UI/Action_bar/Assets/Level_none.png" id="6_m2urv"]
+[ext_resource type="Texture2D" uid="uid://dh1uyl8pu5gy5" path="res://Global/Game_UI/Action_bar/Assets/Item_count.png" id="7_latrq"]
+
+[sub_resource type="Theme" id="Theme_l7g4g"]
+GridContainer/constants/h_separation = 30
+GridContainer/constants/v_separation = 100
+
+[sub_resource type="Theme" id="Theme_xjmjx"]
+VBoxContainer/constants/separation = 15
+
+[sub_resource type="Theme" id="Theme_4bkgh"]
+HBoxContainer/constants/separation = 14
+
+[sub_resource type="Theme" id="Theme_8xstm"]
+default_font_size = 30
+Label/colors/font_color = Color(0.364706, 0.427451, 0.403922, 1)
+
+[sub_resource type="Theme" id="Theme_jd0ee"]
+HBoxContainer/constants/separation = -7
+
+[sub_resource type="Theme" id="Theme_bwvr0"]
+Label/colors/font_color = Color(0.364706, 0.427451, 0.403922, 1)
+Label/fonts/font = null
+
+[sub_resource type="Theme" id="Theme_2oode"]
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 80
+Button/constants/outline_size = 0
+
+[node name="Action_bar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_14npq")
+
+[node name="Action_bar_container" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_2lrml")
+
+[node name="Item_container" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 96.0
+offset_right = 1059.0
+offset_bottom = 212.0
+theme = SubResource("Theme_l7g4g")
+columns = 7
+script = ExtResource("3_rm0i6")
+
+[node name="Item_description_container" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 264.0
+offset_right = 1083.0
+offset_bottom = 414.0
+theme = SubResource("Theme_xjmjx")
+script = ExtResource("4_noa5x")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Item_description_container"]
+layout_mode = 2
+theme = SubResource("Theme_4bkgh")
+
+[node name="Item_name" type="Label" parent="Item_description_container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_8xstm")
+text = "Jalan Bagus"
+
+[node name="Item_levels" type="HBoxContainer" parent="Item_description_container/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_jd0ee")
+script = ExtResource("5_2jt7p")
+
+[node name="Item_levels_none" type="TextureRect" parent="Item_description_container/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("6_m2urv")
+expand_mode = 3
+
+[node name="Item_count" type="MarginContainer" parent="Item_description_container/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Item_description_container/HBoxContainer/Item_count"]
+layout_mode = 2
+texture = ExtResource("7_latrq")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Item_description_container/HBoxContainer/Item_count"]
+layout_mode = 2
+text = "Punya  : 1"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Item_description_container"]
+custom_minimum_size = Vector2(1047, 0)
+layout_mode = 2
+
+[node name="Item_description" type="Label" parent="Item_description_container/HBoxContainer2"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_bwvr0")
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu ullamcorper leo, a efficitur diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu ullamcorper leo, a efficitur diam. Morbi eget turpis dui. Quisque efficitur ipsum mas"
+autowrap_mode = 1
+clip_text = true
+
+[node name="Buy_button" type="Button" parent="Item_description_container/HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_2oode")
+icon = ExtResource("6_ae25v")
+flat = true
+
+[connection signal="button_up" from="Item_description_container/HBoxContainer2/Buy_button" to="Item_description_container" method="_on_buy_button_button_up"]

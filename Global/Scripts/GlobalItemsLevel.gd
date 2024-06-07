@@ -1,9 +1,5 @@
 extends Node
 
-
-var ITEMS_JSON = []
-
-
 var ITEM_LEVEL = [
 	{
 		"name" : "Alat Pertanian",
@@ -28,7 +24,7 @@ var ITEM_LEVEL = [
 		"count" : 0
 	},
 	{
-		"name" : "Cendana",
+		"name" : "Pinus",
 		"level" : 1,
 		"count" : 0
 	},
@@ -68,7 +64,6 @@ signal item_upgraded
 
 func _ready():
 	GlobalActionBar.current_area_changed.connect(_on_current_area_changed)
-	init_items_json()
 	init_items_per_area()
 	
 func init_items_per_area():
@@ -81,8 +76,13 @@ func _process(delta):
 	pass
 
 func upgrade_item(itemName):
-	var item = Utils.find_item_in_array_with_key(ITEMS_JSON, "name",itemName)
+	var currentArea = GlobalActionBar.CURRENT_AREA
+	var itemsInCurrentAreaData = Utils.find_item_in_array_with_key(ITEMS_PER_AREA, "area", currentArea)
+	var itemsInCurrentArea = itemsInCurrentAreaData["items"]
 	
+	var item = Utils.find_item_in_array_with_key(itemsInCurrentArea, "name",itemName)
+	
+
 	var itemCurrentStats = Utils.find_item_in_array_with_key(ITEM_LEVEL, "name", itemName)
 	var isAllowToUpgrade = false
 	
@@ -116,11 +116,7 @@ func upgrade_item(itemName):
 							break
 		emit_signal("item_upgraded")
 
-func init_items_json():
-	var itemsInArea = Utils.find_item_in_array_with_key(ITEMS_PER_AREA, "area", GlobalActionBar.CURRENT_AREA)
-	var itemsJson = Utils.parse_json_file_by_filepath(itemsInArea['path'])
-	ITEMS_JSON = itemsJson
-	print(ITEMS_JSON)
+
 	
 func _on_current_area_changed():
-	init_items_json()
+	pass

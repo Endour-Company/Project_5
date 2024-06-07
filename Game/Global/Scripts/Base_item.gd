@@ -14,7 +14,6 @@ var ITEM_TEXTURE : Texture2D = null
 func _ready():
 	GlobalItemsLevel.item_upgraded.connect(_on_item_upgraded)
 	#var itemjson = Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEMS_JSON, "name", ITEM_NAME)
-	print(ITEM_NAME)
 	
 	var itemJson = null
 
@@ -22,9 +21,7 @@ func _ready():
 	for itemsPerArea in GlobalItemsLevel.ITEMS_PER_AREA :
 		var itemsInArea = itemsPerArea["items"]
 		
-		print(itemsInArea)
-		#itemJson = Utils.find_item_in_array_with_key(itemsInArea, "name", ITEM_NAME)
-	
+		itemJson = Utils.find_item_in_array_with_key(itemsInArea, "name", ITEM_NAME)
 	ITEM_JSON = {}
 	init_item()
 	
