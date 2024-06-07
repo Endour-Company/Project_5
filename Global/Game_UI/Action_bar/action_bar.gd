@@ -18,7 +18,7 @@ func _process(delta):
 	pass
 
 
-func _on_item_upgraded():
+func _on_item_upgraded(itemName):
 	$Item_description_container._refresh()
 	$Item_container._refresh()
 

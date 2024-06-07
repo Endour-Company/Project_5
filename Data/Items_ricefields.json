@@ -43,7 +43,7 @@
 				"img": "res://Game/Ricefield/Assets/item_up_jalan/jalan_lv2.png"
 			},
 			{
-				"level": 2,
+				"level": 3,
 				"name": "Jalan Aspal",
 				"upgrade_price": 0,
 				"img": "res://Game/Ricefield/Assets/item_up_jalan/jalan_lv2.png"

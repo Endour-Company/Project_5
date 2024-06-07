@@ -59,7 +59,7 @@ var ITEMS_PER_AREA : Array = [
 ]
 
 
-signal item_upgraded
+signal item_upgraded(itemName)
 
 
 func _ready():
@@ -114,7 +114,7 @@ func upgrade_item(itemName):
 						if ITEM["name"] == itemName:
 							ITEM["count"] += 1
 							break
-		emit_signal("item_upgraded")
+		emit_signal("item_upgraded",itemName)
 
 
 	

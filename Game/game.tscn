@@ -13,6 +13,7 @@ script = ExtResource("1_x0wwk")
 [node name="Ricefield_area" parent="." instance=ExtResource("1_ymy68")]
 
 [node name="Action_bar" parent="." instance=ExtResource("2_tmlwp")]
+z_index = 4
 offset_left = 441.0
 offset_top = 590.0
 offset_right = 441.0

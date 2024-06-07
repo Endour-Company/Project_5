@@ -28,42 +28,17 @@ expand_mode = 1
 [node name="Subarea_pohons" type="Node2D" parent="."]
 script = ExtResource("3_ukjct")
 
-[node name="Part_Mahonis" type="Node2D" parent="Subarea_pohons"]
+[node name="Part_mahonis" type="Node2D" parent="Subarea_pohons"]
 
-[node name="Item_pohon" parent="Subarea_pohons/Part_Mahonis" instance=ExtResource("4_2c1e4")]
-position = Vector2(247, 302)
-
-[node name="Item_pohon2" parent="Subarea_pohons/Part_Mahonis" instance=ExtResource("4_2c1e4")]
-position = Vector2(564, 244)
-
-[node name="Item_pohon3" parent="Subarea_pohons/Part_Mahonis" instance=ExtResource("4_2c1e4")]
-position = Vector2(876, 249)
-
-[node name="Part_cendanas" type="Node2D" parent="Subarea_pohons"]
-
-[node name="Item_pohon" parent="Subarea_pohons/Part_cendanas" instance=ExtResource("4_2c1e4")]
-position = Vector2(49, 631)
-
-[node name="Item_pohon2" parent="Subarea_pohons/Part_cendanas" instance=ExtResource("4_2c1e4")]
-position = Vector2(363, 595)
-
-[node name="Item_pohon3" parent="Subarea_pohons/Part_cendanas" instance=ExtResource("4_2c1e4")]
-position = Vector2(682, 578)
-
-[node name="Item_pohon4" parent="Subarea_pohons/Part_cendanas" instance=ExtResource("4_2c1e4")]
-position = Vector2(991, 555)
+[node name="Part_pinuses" type="Node2D" parent="Subarea_pohons"]
 
 [node name="Part_jatis" type="Node2D" parent="Subarea_pohons"]
 metadata/_edit_lock_ = true
 
-[node name="Item_pohon2" parent="Subarea_pohons/Part_jatis" instance=ExtResource("4_2c1e4")]
-position = Vector2(122, 888)
+[node name="Item_pohon" parent="Subarea_pohons" instance=ExtResource("4_2c1e4")]
 
-[node name="Item_pohon3" parent="Subarea_pohons/Part_jatis" instance=ExtResource("4_2c1e4")]
-position = Vector2(816, 873)
-
-[node name="Item_pohon" parent="Subarea_pohons/Part_jatis" instance=ExtResource("4_2c1e4")]
-position = Vector2(471, 893)
-
-[node name="Item_pohon4" parent="Subarea_pohons/Part_jatis" instance=ExtResource("4_2c1e4")]
-position = Vector2(1157, 861)
+[node name="Pohons_progress_bar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
