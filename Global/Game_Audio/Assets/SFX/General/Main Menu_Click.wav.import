@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://s6623ml458mu"
+path="res://.godot/imported/Main Menu_Click.wav-9ae2ff7fa6e4e1b34a9d1b679a0acb90.sample"
+
+[deps]
+
+source_file="res://Global/Game_Audio/Assets/SFX/General/Main Menu_Click.wav"
+dest_files=["res://.godot/imported/Main Menu_Click.wav-9ae2ff7fa6e4e1b34a9d1b679a0acb90.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://db35idblcda4e"]
 
 [ext_resource type="Script" path="res://Main_menu/Main/main_menu.gd" id="1_2j24b"]
-[ext_resource type="Texture2D" uid="uid://bjjie2m3jglhh" path="res://Main_menu/Assets/BG.png" id="1_jqwbi"]
+[ext_resource type="Texture2D" path="res://Main_menu/Assets/BG.png" id="1_jqwbi"]
 [ext_resource type="Texture2D" uid="uid://uupd40qy7j5v" path="res://Main_menu/Assets/Buttons/Mulai Button_Normal.png" id="2_ypjai"]
 [ext_resource type="Texture2D" uid="uid://c7qvcxty1x1et" path="res://Main_menu/Assets/Buttons/Mulai Button_Pressed.png" id="3_8n4l6"]
 [ext_resource type="Texture2D" uid="uid://dr7afrcu4coe0" path="res://Main_menu/Assets/Buttons/Mulai Button_Hover.png" id="4_0305y"]
@@ -82,7 +82,17 @@ texture_pressed = ExtResource("12_3hcqv")
 texture_hover = ExtResource("13_pecw0")
 texture_click_mask = ExtResource("17_geerx")
 
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="MulaiButton" to="." method="_on_mulai_button_mouse_entered"]
 [connection signal="pressed" from="MulaiButton" to="." method="_on_mulai_button_pressed"]
+[connection signal="mouse_entered" from="TutorialButton" to="." method="_on_tutorial_button_mouse_entered"]
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="mouse_entered" from="OpsiButton" to="." method="_on_opsi_button_mouse_entered"]
 [connection signal="pressed" from="OpsiButton" to="." method="_on_opsi_button_pressed"]
+[connection signal="mouse_entered" from="KeluarButton" to="." method="_on_keluar_button_mouse_entered"]
 [connection signal="pressed" from="KeluarButton" to="." method="_on_keluar_button_pressed"]

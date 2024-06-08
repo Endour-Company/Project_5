@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cdik81drbspgp"
+path="res://.godot/imported/Suasana Hutan.ogg-f2f814ad47e9d0516831dbd8239a8930.oggvorbisstr"
+
+[deps]
+
+source_file="res://Global/Game_Audio/Assets/SFX/Hutan/Suasana Hutan.ogg"
+dest_files=["res://.godot/imported/Suasana Hutan.ogg-f2f814ad47e9d0516831dbd8239a8930.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

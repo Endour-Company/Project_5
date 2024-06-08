@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://6l0e6cvke0t2"
+path="res://.godot/imported/Mobil Padi.wav-6d3da604786ee929680d7d2b3e5a624f.sample"
+
+[deps]
+
+source_file="res://Global/Game_Audio/Assets/SFX/Sawah/Mobil Padi.wav"
+dest_files=["res://.godot/imported/Mobil Padi.wav-6d3da604786ee929680d7d2b3e5a624f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

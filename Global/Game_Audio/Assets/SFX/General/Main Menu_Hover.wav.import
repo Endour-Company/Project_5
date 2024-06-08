@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3lb0lphpu35q"
+path="res://.godot/imported/Main Menu_Hover.wav-0c960ae6d844638cfa6544a67e646857.sample"
+
+[deps]
+
+source_file="res://Global/Game_Audio/Assets/SFX/General/Main Menu_Hover.wav"
+dest_files=["res://.godot/imported/Main Menu_Hover.wav-0c960ae6d844638cfa6544a67e646857.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

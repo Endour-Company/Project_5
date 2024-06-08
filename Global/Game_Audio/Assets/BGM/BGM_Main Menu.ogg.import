@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cyftnnth7flgo"
+path="res://.godot/imported/BGM_Main Menu.ogg-7c8096c9133f53aebf9d27e7f729f90c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Global/Game_Audio/Assets/BGM/BGM_Main Menu.ogg"
+dest_files=["res://.godot/imported/BGM_Main Menu.ogg-7c8096c9133f53aebf9d27e7f729f90c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=6.2
+bpm=0.0
+beat_count=0
+bar_beats=4

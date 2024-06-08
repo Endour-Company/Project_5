@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://3yqdi6c5wn1y"
+path="res://.godot/imported/Suasana Pusat Desa.ogg-3edd3aba02854c60a8c4988b33eb3207.oggvorbisstr"
+
+[deps]
+
+source_file="res://Global/Game_Audio/Assets/SFX/Pusat Desa/Suasana Pusat Desa.ogg"
+dest_files=["res://.godot/imported/Suasana Pusat Desa.ogg-3edd3aba02854c60a8c4988b33eb3207.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

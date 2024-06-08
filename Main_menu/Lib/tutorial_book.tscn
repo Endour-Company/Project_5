@@ -159,6 +159,9 @@ theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 32
 bbcode_enabled = true
 
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
 [connection signal="pressed" from="BookmarkPusat" to="." method="_on_bookmark_pusat_pressed"]
 [connection signal="pressed" from="BookmarkPemukiman" to="." method="_on_bookmark_pemukiman_pressed"]
 [connection signal="pressed" from="BookmarkSawah" to="." method="_on_bookmark_sawah_pressed"]

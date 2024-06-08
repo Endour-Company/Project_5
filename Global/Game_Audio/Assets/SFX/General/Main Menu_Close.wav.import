@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://44l3fxkw08no"
+path="res://.godot/imported/Main Menu_Close.wav-a28c6a0b128ceee4d87dfd8d3c47cf30.sample"
+
+[deps]
+
+source_file="res://Global/Game_Audio/Assets/SFX/General/Main Menu_Close.wav"
+dest_files=["res://.godot/imported/Main Menu_Close.wav-a28c6a0b128ceee4d87dfd8d3c47cf30.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

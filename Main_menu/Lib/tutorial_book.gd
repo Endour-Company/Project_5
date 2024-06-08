@@ -2,6 +2,7 @@ extends Control
 
 # Define onready variables
 @onready var tutorialText : RichTextLabel = $Text
+@onready var SFX : AudioStreamPlayer = $SFX
 
 # Declare custom signals
 signal close_signal
@@ -32,10 +33,19 @@ var selectedBookmarkIndex : int = 11 # The index where the selected index will b
 func _ready():
 	# Set default tutorial text
 	tutorialText.text = tutorialTexts[bookmarkOrder["BookmarkCara"]-3]
+	
+	# Set SFX volume
+	SFX.set_volume_db(GameAudio.get_volume_sfx())
+	
+	# Play tutorial open SFX
+	GameAudio.play(SFX, GameAudio.SFX_Tutorial_Open)
 
 
 # Function to swap bookmarks
 func select_bookmark(newBookmarkName: String):
+	# Play tutorial click SFX
+	GameAudio.play(SFX, GameAudio.SFX_Tutorial_Click)
+	
 	# Get previously selected bookmark
 	var prevBookmark : TextureButton = get_child(selectedBookmarkIndex)
 	
