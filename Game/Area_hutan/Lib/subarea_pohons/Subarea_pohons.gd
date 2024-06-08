@@ -100,6 +100,7 @@ func _on_pohon_planted(nameOfItem):
 				var pointToBePlanted = pointOfPohon["point"]
 				var sceneItemPohon = SCENE_ITEM_POHON.instantiate()
 				sceneItemPohon.set_position(pointToBePlanted)
+				sceneItemPohon.NAME_OF_POHON = nameOfPohon
 				
 				var nodes = {
 					"Mahoni" : $Part_mahonis,

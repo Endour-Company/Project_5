@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://mes4efbefx"]
+[gd_scene load_steps=5 format=3 uid="uid://mes4efbefx"]
 
 [ext_resource type="Script" path="res://Game/Area_hutan/Main/Area_hutan.gd" id="1_ptkcm"]
 [ext_resource type="Texture2D" uid="uid://ctamgsqvnu6xy" path="res://Game/Area_hutan/Assets/bg_main/bg_main.png" id="2_oqamr"]
 [ext_resource type="Texture2D" uid="uid://c6i4iy3p0pg7r" path="res://Game/Area_hutan/Assets/item_bg_sungai/sungai_normal.png" id="3_ldgps"]
 [ext_resource type="Script" path="res://Game/Area_hutan/Lib/subarea_pohons/Subarea_pohons.gd" id="3_ukjct"]
-[ext_resource type="PackedScene" uid="uid://cnsgo48clqybu" path="res://Game/Area_hutan/Lib/item_pohon/item_pohon.tscn" id="4_2c1e4"]
 
 [node name="Area_Hutan" type="Node2D"]
 script = ExtResource("1_ptkcm")
@@ -34,8 +33,6 @@ script = ExtResource("3_ukjct")
 
 [node name="Part_jatis" type="Node2D" parent="Subarea_pohons"]
 metadata/_edit_lock_ = true
-
-[node name="Item_pohon" parent="Subarea_pohons" instance=ExtResource("4_2c1e4")]
 
 [node name="Pohons_progress_bar" type="Control" parent="."]
 layout_mode = 3
