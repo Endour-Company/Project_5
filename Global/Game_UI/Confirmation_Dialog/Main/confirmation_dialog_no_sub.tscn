@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://ctw6sep6jftt4"]
+
+[ext_resource type="Script" path="res://Global/Game_UI/Confirmation_Dialog/Main/confirmation_dialog_no_sub.gd" id="1_y7lrv"]
+[ext_resource type="PackedScene" uid="uid://ghjik3ecy5jb" path="res://Global/Game_UI/Misc/overlay.tscn" id="2_rpc83"]
+[ext_resource type="Texture2D" uid="uid://c5i2xiwok1utv" path="res://Global/Game_UI/Confirmation_Dialog/Assets/Confirmation Dialog Box No Subtext.png" id="2_s7nmj"]
+[ext_resource type="Texture2D" uid="uid://dwyjvo452jquv" path="res://Global/Game_UI/Confirmation_Dialog/Assets/Yes_Normal.png" id="3_jruwy"]
+[ext_resource type="Texture2D" uid="uid://cx5mjoifmfpno" path="res://Global/Game_UI/Confirmation_Dialog/Assets/Yes_Pressed.png" id="4_hfh8t"]
+[ext_resource type="Texture2D" uid="uid://2clwkxr4b15b" path="res://Global/Game_UI/Confirmation_Dialog/Assets/Yes_Hover.png" id="5_07tqo"]
+[ext_resource type="Texture2D" uid="uid://k4wkspdj7h6p" path="res://Global/Game_UI/Confirmation_Dialog/Assets/No_Normal.png" id="6_rq5d7"]
+[ext_resource type="Texture2D" uid="uid://bulavvyseoyne" path="res://Global/Game_UI/Confirmation_Dialog/Assets/No_Pressed.png" id="7_3r62o"]
+[ext_resource type="Texture2D" uid="uid://qdkyjma6jgk7" path="res://Global/Game_UI/Confirmation_Dialog/Assets/No_Hover.png" id="8_nni1f"]
+
+[node name="ConfirmationDialogNoSub" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y7lrv")
+
+[node name="Overlay" parent="." instance=ExtResource("2_rpc83")]
+
+[node name="DialogBox" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.5
+offset_top = -119.0
+offset_right = 303.5
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_s7nmj")
+
+[node name="YesButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = 4.0
+offset_right = -24.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_jruwy")
+texture_pressed = ExtResource("4_hfh8t")
+texture_hover = ExtResource("5_07tqo")
+
+[node name="NoButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = 4.0
+offset_right = 168.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_rq5d7")
+texture_pressed = ExtResource("7_3r62o")
+texture_hover = ExtResource("8_nni1f")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[connection signal="pressed" from="YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="NoButton" to="." method="_on_no_button_pressed"]

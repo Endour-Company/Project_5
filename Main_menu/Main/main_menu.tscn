@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://db35idblcda4e"]
+[gd_scene load_steps=23 format=3 uid="uid://db35idblcda4e"]
 
 [ext_resource type="Script" path="res://Main_menu/Main/main_menu.gd" id="1_2j24b"]
-[ext_resource type="Texture2D" path="res://Main_menu/Assets/BG.png" id="1_jqwbi"]
+[ext_resource type="Texture2D" uid="uid://bhopp577h1dnf" path="res://Main_menu/Assets/BG Alt.png" id="2_xyoxd"]
 [ext_resource type="Texture2D" uid="uid://uupd40qy7j5v" path="res://Main_menu/Assets/Buttons/Mulai Button_Normal.png" id="2_ypjai"]
 [ext_resource type="Texture2D" uid="uid://c7qvcxty1x1et" path="res://Main_menu/Assets/Buttons/Mulai Button_Pressed.png" id="3_8n4l6"]
 [ext_resource type="Texture2D" uid="uid://dr7afrcu4coe0" path="res://Main_menu/Assets/Buttons/Mulai Button_Hover.png" id="4_0305y"]
@@ -18,6 +18,56 @@
 [ext_resource type="BitMap" uid="uid://bejkl3l3rb6tn" path="res://Main_menu/Assets/Buttons/Option Button_Mask.png" id="13_f1t6n"]
 [ext_resource type="Texture2D" uid="uid://cvocxplo8xn1p" path="res://Main_menu/Assets/Buttons/Exit Button_Hover.png" id="13_pecw0"]
 [ext_resource type="BitMap" uid="uid://bsjqafnqlrojl" path="res://Main_menu/Assets/Buttons/Exit Button_Mask.png" id="17_geerx"]
+[ext_resource type="Texture2D" uid="uid://gabtstc70q22" path="res://Main_menu/Assets/Logo.png" id="19_q241d"]
+[ext_resource type="AudioStream" uid="uid://c5xkwjahug4cb" path="res://Global/Game_Audio/Assets/SFX/General/Logo.wav" id="20_7oeil"]
+
+[sub_resource type="Animation" id="Animation_2qexo"]
+resource_name = "Intro"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IntroLogo:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BGM")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_7oeil")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IntroOverlay:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.5, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4jubt"]
+_data = {
+"Intro": SubResource("Animation_2qexo")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -32,7 +82,7 @@ script = ExtResource("1_2j24b")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_jqwbi")
+texture = ExtResource("2_xyoxd")
 
 [node name="MulaiButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -88,6 +138,33 @@ bus = &"BGM"
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
 
+[node name="IntroOverlay" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1929.0
+offset_bottom = 1091.0
+color = Color(0, 0, 0, 1)
+
+[node name="IntroLogo" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -363.5
+offset_right = 384.0
+offset_bottom = 363.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_q241d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4jubt")
+}
+
 [connection signal="mouse_entered" from="MulaiButton" to="." method="_on_mulai_button_mouse_entered"]
 [connection signal="pressed" from="MulaiButton" to="." method="_on_mulai_button_pressed"]
 [connection signal="mouse_entered" from="TutorialButton" to="." method="_on_tutorial_button_mouse_entered"]
@@ -96,3 +173,4 @@ bus = &"SFX"
 [connection signal="pressed" from="OpsiButton" to="." method="_on_opsi_button_pressed"]
 [connection signal="mouse_entered" from="KeluarButton" to="." method="_on_keluar_button_mouse_entered"]
 [connection signal="pressed" from="KeluarButton" to="." method="_on_keluar_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

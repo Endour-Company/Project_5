@@ -11,6 +11,7 @@ const SFX_MainMenu_Click : AudioStream = preload("res://Global/Game_Audio/Assets
 const SFX_MainMenu_Close : AudioStream = preload("res://Global/Game_Audio/Assets/SFX/General/Main Menu_Close.wav")
 const SFX_Tutorial_Open : AudioStream = preload("res://Global/Game_Audio/Assets/SFX/General/Tutorial_Open.wav")
 const SFX_Tutorial_Click : AudioStream = preload("res://Global/Game_Audio/Assets/SFX/General/Tutorial_Click.wav")
+const SFX_Gameplay_Click : AudioStream = preload("res://Global/Game_Audio/Assets/SFX/General/Gameplay_Click.wav")
 
 
 # Audio volume variabels

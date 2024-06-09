@@ -3,8 +3,10 @@ extends Control
 # Define onready variables
 @onready var tutorialScreen : Control
 @onready var optionScreen : Control
+@onready var confirmScreen : Control
 @onready var BGM : AudioStreamPlayer = $BGM
 @onready var SFX : AudioStreamPlayer = $SFX
+@onready var anim : AnimationPlayer = $AnimationPlayer
 
 
 func _ready():
@@ -12,8 +14,8 @@ func _ready():
 	BGM.set_volume_db(GameAudio.get_volume_bgm())
 	SFX.set_volume_db(GameAudio.get_volume_sfx())
 	
-	# Play BGM
-	GameAudio.play(BGM, GameAudio.BGM_MainMenu)
+	# Play Intro
+	anim.play("Intro")
 
 
 # Handle button hovers
@@ -90,3 +92,27 @@ func _on_opsi_closed():
 func _on_keluar_button_pressed():
 	# Play click SFX
 	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Click)
+	
+	# Spawn confirm screen
+	confirmScreen = preload("res://Global/Game_UI/Confirmation_Dialog/Main/confirmation_dialog_no_sub.tscn").instantiate()
+	add_child(confirmScreen)
+	confirmScreen.connect("close_signal", _on_confirm_closed)
+	
+
+func _on_confirm_closed():
+	# Play close SFX
+	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Close)
+	
+	# Kill confirm screen
+	confirmScreen.queue_free()
+
+
+# Handle intro animation finished
+func _on_animation_player_animation_finished(anim_name):
+	# Free the intro nodes
+	$IntroLogo.queue_free()
+	$IntroOverlay.queue_free()
+	anim.queue_free()
+	
+	# Play BGM
+	GameAudio.play(BGM, GameAudio.BGM_MainMenu)
