@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://crin0kw6o07qx"
+path="res://.godot/imported/Bookmark_Mask.png-17df2f9d18140ae9d7107c7df504256f.res"
+
+[deps]
+
+source_file="res://Global/Game_UI/Tutorial/Assets/Bookmark_Mask.png"
+dest_files=["res://.godot/imported/Bookmark_Mask.png-17df2f9d18140ae9d7107c7df504256f.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

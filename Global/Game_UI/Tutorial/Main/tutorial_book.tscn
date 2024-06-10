@@ -1,0 +1,171 @@
+[gd_scene load_steps=26 format=3 uid="uid://b66e6dfq4uqij"]
+
+[ext_resource type="Script" path="res://Global/Game_UI/Tutorial/Main/tutorial_book.gd" id="1_d2do3"]
+[ext_resource type="Texture2D" uid="uid://83wxewt6erxb" path="res://Global/Game_UI/Tutorial/Assets/Book.png" id="1_u0b0b"]
+[ext_resource type="PackedScene" uid="uid://ghjik3ecy5jb" path="res://Global/Game_UI/Misc/overlay.tscn" id="2_5v5bo"]
+[ext_resource type="Texture2D" uid="uid://choacr75yhbqc" path="res://Global/Game_UI/Tutorial/Assets/LeftPage.png" id="2_m1roo"]
+[ext_resource type="Texture2D" uid="uid://tpxxj8kgsbn7" path="res://Global/Game_UI/Tutorial/Assets/Close Button_Normal.png" id="2_sx4dt"]
+[ext_resource type="Texture2D" uid="uid://c4c0xpn3c0qa3" path="res://Global/Game_UI/Tutorial/Assets/RightPage.png" id="3_ii4sv"]
+[ext_resource type="Texture2D" uid="uid://dtxg15slgknda" path="res://Global/Game_UI/Tutorial/Assets/Close Button_Pressed.png" id="3_ui2lh"]
+[ext_resource type="Texture2D" uid="uid://dskks8sexvu55" path="res://Global/Game_UI/Tutorial/Assets/BookLink.png" id="3_v1fx2"]
+[ext_resource type="Texture2D" uid="uid://drp1y6lgdpt48" path="res://Global/Game_UI/Tutorial/Assets/Close Button_Hover.png" id="4_0iips"]
+[ext_resource type="Texture2D" uid="uid://bp3shykajqe6c" path="res://Global/Game_UI/Tutorial/Assets/Bookmark 1_Normal.png" id="8_i305i"]
+[ext_resource type="BitMap" uid="uid://bh2viddvmxl5k" path="res://Global/Game_UI/Tutorial/Assets/Close Button_Mask.png" id="8_q83ae"]
+[ext_resource type="Texture2D" uid="uid://bgmsgfhu1c66q" path="res://Global/Game_UI/Tutorial/Assets/Bookmark 1_Hover.png" id="10_ie4b7"]
+[ext_resource type="Texture2D" uid="uid://gknc1qtxkt7f" path="res://Global/Game_UI/Tutorial/Assets/Bookmark 2_Normal.png" id="11_vx4ap"]
+[ext_resource type="BitMap" uid="uid://crin0kw6o07qx" path="res://Global/Game_UI/Tutorial/Assets/Bookmark_Mask.png" id="12_mtbme"]
+[ext_resource type="Texture2D" uid="uid://chi6r0ct55q7o" path="res://Global/Game_UI/Tutorial/Assets/Bookmark 2_Hover.png" id="13_y3lqc"]
+[ext_resource type="Texture2D" uid="uid://ddet2ywf8tf4j" path="res://Global/Game_UI/Tutorial/Assets/Bookmark 3_Normal.png" id="14_cfmce"]
+[ext_resource type="Texture2D" uid="uid://dujpve6afi2vb" path="res://Global/Game_UI/Tutorial/Assets/Bookmark 3_Hover.png" id="16_sx1ah"]
+[ext_resource type="Texture2D" uid="uid://mal0ck6friqa" path="res://Global/Game_UI/Tutorial/Assets/Bookmark 4_Normal.png" id="17_yhmro"]
+[ext_resource type="Texture2D" uid="uid://cyxgj3yqu0may" path="res://Global/Game_UI/Tutorial/Assets/Bookmark 4_Hover.png" id="19_6guku"]
+[ext_resource type="Texture2D" uid="uid://d2xmrm3aq2asr" path="res://Global/Game_UI/Tutorial/Assets/Bookmark 5_Normal.png" id="20_6tisp"]
+[ext_resource type="Texture2D" uid="uid://dmk51vxupwnlk" path="res://Global/Game_UI/Tutorial/Assets/Bookmark 5_Hover.png" id="22_h6lnh"]
+[ext_resource type="Texture2D" uid="uid://c10xp36l62qxd" path="res://Global/Game_UI/Tutorial/Assets/Bookmark 6_Normal.png" id="23_0thle"]
+[ext_resource type="Texture2D" uid="uid://tgouiv4c14bt" path="res://Global/Game_UI/Tutorial/Assets/Bookmark 6_Hover.png" id="25_fk1ik"]
+[ext_resource type="FontFile" uid="uid://btisj7uyosjpa" path="res://Global/Game_UI/Fonts/K2D-Regular.ttf" id="28_s4x3g"]
+[ext_resource type="FontFile" uid="uid://wavv527jhmt1" path="res://Global/Game_UI/Fonts/K2D-Bold.ttf" id="29_t11jy"]
+
+[node name="TutorialBook" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d2do3")
+
+[node name="Overlay" parent="." instance=ExtResource("2_5v5bo")]
+layout_mode = 0
+
+[node name="Book" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -280.0
+offset_right = 1530.0
+offset_bottom = 1051.0
+texture = ExtResource("1_u0b0b")
+
+[node name="LeftPage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -194.0
+offset_top = 58.0
+offset_right = 549.0
+offset_bottom = 987.0
+texture = ExtResource("2_m1roo")
+
+[node name="BookmarkPusat" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 11.0
+offset_right = 821.0
+offset_bottom = 95.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("23_0thle")
+texture_hover = ExtResource("25_fk1ik")
+texture_click_mask = ExtResource("12_mtbme")
+
+[node name="BookmarkPemukiman" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 821.0
+offset_top = 11.0
+offset_right = 917.0
+offset_bottom = 95.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("20_6tisp")
+texture_hover = ExtResource("22_h6lnh")
+texture_click_mask = ExtResource("12_mtbme")
+
+[node name="BookmarkSawah" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 917.0
+offset_top = 11.0
+offset_right = 1013.0
+offset_bottom = 95.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_yhmro")
+texture_hover = ExtResource("19_6guku")
+texture_click_mask = ExtResource("12_mtbme")
+
+[node name="BookmarkHutan" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1013.0
+offset_top = 11.0
+offset_right = 1109.0
+offset_bottom = 95.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_cfmce")
+texture_hover = ExtResource("16_sx1ah")
+texture_click_mask = ExtResource("12_mtbme")
+
+[node name="BookmarkAspek" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1109.0
+offset_top = 11.0
+offset_right = 1205.0
+offset_bottom = 95.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_vx4ap")
+texture_hover = ExtResource("13_y3lqc")
+texture_click_mask = ExtResource("12_mtbme")
+
+[node name="RightPage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 57.0
+offset_right = 1347.0
+offset_bottom = 986.0
+texture = ExtResource("3_ii4sv")
+
+[node name="BookLink" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 126.0
+offset_right = 650.0
+offset_bottom = 936.0
+texture = ExtResource("3_v1fx2")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1415.0
+offset_top = 425.0
+offset_right = 1507.0
+offset_bottom = 517.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_sx4dt")
+texture_pressed = ExtResource("3_ui2lh")
+texture_hover = ExtResource("4_0iips")
+texture_click_mask = ExtResource("8_q83ae")
+
+[node name="BookmarkCara" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1205.0
+offset_top = 11.0
+offset_right = 1301.0
+offset_bottom = 95.0
+texture_normal = ExtResource("8_i305i")
+texture_hover = ExtResource("10_ie4b7")
+texture_click_mask = ExtResource("12_mtbme")
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 122.0
+offset_right = 1291.0
+offset_bottom = 872.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("28_s4x3g")
+theme_override_fonts/bold_font = ExtResource("29_t11jy")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[connection signal="pressed" from="BookmarkPusat" to="." method="_on_bookmark_pusat_pressed"]
+[connection signal="pressed" from="BookmarkPemukiman" to="." method="_on_bookmark_pemukiman_pressed"]
+[connection signal="pressed" from="BookmarkSawah" to="." method="_on_bookmark_sawah_pressed"]
+[connection signal="pressed" from="BookmarkHutan" to="." method="_on_bookmark_hutan_pressed"]
+[connection signal="pressed" from="BookmarkAspek" to="." method="_on_bookmark_aspek_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="BookmarkCara" to="." method="_on_bookmark_cara_pressed"]

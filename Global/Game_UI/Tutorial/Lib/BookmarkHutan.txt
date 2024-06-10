@@ -1,0 +1,7 @@
+[p][center][b]Hutan[/b][/center][/p]
+
+[p][center][img]res://Global/Game_UI/Tutorial/Assets/Tutorial_Hutan.png[/img][/center][/p]
+
+[p]Hutan yang dapat ditanami pohon jati, mahoni, dan cendana bukan hanya mempercantik pemandangan, tetapi juga menjadi sumber pendapatan desa.[/p]
+
+[p]Sebagai kepala desa, kamu dapat mengatur volume penebangan pohon. Namun, meski penebangan bisa menguntungkan, jika tidak terkendali, bisa merusak hutan dan lingkungan.[/p]

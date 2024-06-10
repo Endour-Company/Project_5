@@ -1,0 +1,21 @@
+[p][center][b]Cara Bermain[/b][/center][/p]
+
+[p]Sebagai kepala desa, kamu harus tau bagaimana cara mengembangkan desamu. Ada beberapa hal yang perlu kamu perhatikan.[/p]
+
+[p][center][img]res://Global/Game_UI/Tutorial/Assets/Tutorial_ActionBar.png[/img][/center][/p]
+
+[p]Action Bar dapat kamu gunakan untuk memilih fasilitas desa yang mana yang ingin kamu tingkatkan. Tekan tombol Beli untuk tingkatkan fasilitas.[/p]
+
+[p]Pilihan item akan berbeda di setiap sektor desa. Kamu juga dapat melihat deskripsi fasilitas yang dipilih dan melihat sudah level berapa atau ada berapa fasilitas yang sudah desamu miliki.[/p]
+
+[p][center][img]res://Global/Game_UI/Tutorial/Assets/Tutorial_MapCalendar.png[/img][/center][/p]
+
+[p]Di pojok kiri atas layar, kamu dapat menemukan Tombol Peta. Tombol tersebut dapat kamu tekan untuk membuka menu navigasi sektor desa. Dari menu tersebut, kamu bisa berpindah ke sektor desa lainnya.[/p]
+
+[p]Selain itu, di bawah Tombol Peta juga ada Indikator Kalendar yang memberikan informasi terkait sisa waktumu sebagai kepala desa. Pada permainan simulasi ini, kamu akan menjabat selama 5 tahun waktu permainan atau sekitar X menit waktu nyata.[/p]
+
+[p][center][img]res://Global/Game_UI/Tutorial/Assets/Tutorial_VolumeSetting.png[/img][/center][/p]
+
+[p]Di pojok kanan atas layar, kamu dapat menemukan Tombol Volume Penebangan. Tombol ini dapat kamu gunakan untuk mengatur seberapa banyak pohon yang ditebang per bulannya. Jumlah tersebut tentunya akan berpengaruh terhadap pendapatan desa dan lingkungan desa. Tombol ini hanya akan muncul ketika kamu berada di Sektor Hutan.[/p]
+
+[p]Selain itu, terdapat Tombol Pause untuk memberhentikan waktu permainan dan Tombol Pengaturan untuk membuka menu pengaturan. Dari menu tersebut, kamu dapat mengatur volume audio permainan, melihat Tutorial ini, dan keluar permainan.[/p]

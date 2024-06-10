@@ -46,7 +46,7 @@ func _on_tutorial_button_pressed():
 	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Click)
 	
 	# Spawn tutorial screen
-	tutorialScreen = preload("res://Main_menu/Lib/tutorial_book.tscn").instantiate()
+	tutorialScreen = preload("res://Global/Game_UI/Tutorial/Main/tutorial_book.tscn").instantiate()
 	add_child(tutorialScreen)
 	tutorialScreen.connect("close_signal", _on_tutorial_closed)
 

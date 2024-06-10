@@ -20,6 +20,7 @@ grow_vertical = 2
 script = ExtResource("1_u0oa6")
 
 [node name="Overlay" parent="." instance=ExtResource("2_ol5ed")]
+layout_mode = 0
 
 [node name="DialogBox" type="TextureRect" parent="."]
 layout_mode = 1

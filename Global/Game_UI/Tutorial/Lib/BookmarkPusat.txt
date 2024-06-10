@@ -1,0 +1,5 @@
+[p][center][b]Pusat Desa[/b][/center][/p]
+
+[p][center][img]res://Global/Game_UI/Tutorial/Assets/Tutorial_Pusat.png[/img][/center][/p]
+
+[p]Di pusat desa, terdapat sebuah lapangan hijau yang berpotensi besar untuk dijadikan alun-alun desa yang indah. Di sebelahnya, ada puskesmas yang memberikan pelayanan kesehatan vital bagi warga. Di sisi lain lapangan, terdapat kantor kepala desa yang menjadi pusat administrasi bagi kepala desa dan stafnya.[/p]

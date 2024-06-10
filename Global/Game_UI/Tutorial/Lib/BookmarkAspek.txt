@@ -1,0 +1,11 @@
+[p][center][b]Aspek Permainan[/b][/center][/p]
+
+[p]Untuk mengembangan desa dengan baik, ada beberapa aspek yang perlu kamu perhatikan, yakni Keuangan Desa, Kebahagian Masyarakat, serta Kesehatan Masyarakat.[/p]
+
+[p][center][img]res://Global/Game_UI/Tutorial/Assets/Tutorial_Aspek.png[/img][/center][/p]
+
+[p]Keuangan Desa adalah kekayaan desa dalam bentuk uang. Keuangan berasal dari dana desa dan bantuan pemerintah yang dikelola untuk pembangunan desa.[/p]
+
+[p]Kesejahteraan Masyarakat merupakan indikator yang mengukur apakah masyarakat hidup dengan baik dan sejahtera, punya akses ke pekerjaan, pendidikan, layanan kesehatan, dan perumahan yang layak.[/p]
+
+[p]Kesehatan Masyarakat berfokus pada pencegahan penyakit dan bantuan kesehatan untuk masyarakat desa. Indikator ini mengukur apakah lingkungan sehat dan layanan kesehatan baik.[/p]

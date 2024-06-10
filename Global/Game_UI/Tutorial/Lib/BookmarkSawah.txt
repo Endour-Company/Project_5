@@ -1,0 +1,5 @@
+[p][center][b]Sawah[/b][/center][/p]
+
+[p][center][img]res://Global/Game_UI/Tutorial/Assets/Tutorial_Sawah.png[/img][/center][/p]
+
+[p]Desa ini memiliki hamparan sawah yang luas. Lumbung padi yang kokoh di pojok sawah menyimpan hasil panen, rumah-rumah sederhana warga berdampingan dengan lahan pertanian, menciptakan suasana desa yang hangat dan tenang. Di samping lumbung, terdapat peralatan pertanian. Selain itu, terdapat sungai desa yang berfungsi sebagai irigasi sawah di sektor ini.[/p]

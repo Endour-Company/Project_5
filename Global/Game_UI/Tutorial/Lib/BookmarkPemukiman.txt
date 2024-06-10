@@ -1,0 +1,7 @@
+[p][center][b]Pemukiman[/b][/center][/p]
+
+[p][center][img]res://Global/Game_UI/Tutorial/Assets/Tutorial_Pemukiman.png[/img][/center][/p]
+
+[p]Pemukiman desa ini dipenuhi rumah-rumah warga yang tersebar di sepanjang jalan tanah. Di sudutnya, ada pos ronda sederhana sebagai pusat keamanan.[/p]
+
+[p]Meski ramai dengan aktivitas warga, kebersihannya kurang terjaga. Sungai di dekat pemukiman kotor dengan sampah, dan aroma tak sedap tercium karena kurangnya sistem pengelolaan limbah. Namun, ada harapan akan perubahan dengan adanya kamu sebagai kepala desa yang baru.[/p]
