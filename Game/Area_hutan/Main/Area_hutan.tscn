@@ -1,11 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://mes4efbefx"]
+[gd_scene load_steps=15 format=3 uid="uid://mes4efbefx"]
 
 [ext_resource type="Script" path="res://Game/Area_hutan/Main/Area_hutan.gd" id="1_ptkcm"]
 [ext_resource type="Texture2D" uid="uid://ctamgsqvnu6xy" path="res://Game/Area_hutan/Assets/bg_main/bg_main.png" id="2_oqamr"]
 [ext_resource type="Script" path="res://Game/Area_hutan/Lib/subarea_sungai/Subarea_sungai.gd" id="3_g3lnm"]
 [ext_resource type="Texture2D" uid="uid://c6i4iy3p0pg7r" path="res://Game/Area_hutan/Assets/item_bg_sungai/sungai_normal.png" id="3_ldgps"]
 [ext_resource type="Script" path="res://Game/Area_hutan/Lib/subarea_pohons/Subarea_pohons.gd" id="3_ukjct"]
-[ext_resource type="PackedScene" uid="uid://u8ardfqc8uvv" path="res://Game/Area_hutan/Lib/item_bg_wave/wave.tscn" id="5_yeu54"]
+[ext_resource type="Script" path="res://Game/Area_hutan/Lib/ui_logging_volume/logging_volume.gd" id="7_ypmjp"]
+[ext_resource type="Texture2D" uid="uid://cxs567xgojpkt" path="res://Game/Area_hutan/Assets/ui/logging_volume/Box.png" id="8_rgokk"]
+[ext_resource type="Texture2D" uid="uid://1vqdyad3fl2v" path="res://Game/Area_hutan/Assets/ui/logging_volume/Minus_Normal.png" id="9_rioox"]
+[ext_resource type="Texture2D" uid="uid://c4typvrk54axq" path="res://Game/Area_hutan/Assets/ui/logging_volume/Minus_Pressed.png" id="10_t8h44"]
+[ext_resource type="Texture2D" uid="uid://dc0wjy8vw6qn8" path="res://Game/Area_hutan/Assets/ui/logging_volume/Minus_Hover.png" id="11_xoqhf"]
+[ext_resource type="Texture2D" uid="uid://bknuyuxj4k4fr" path="res://Game/Area_hutan/Assets/ui/logging_volume/Plus_Normal.png" id="12_xbesi"]
+[ext_resource type="Texture2D" uid="uid://bp2ibuu0mpvo4" path="res://Game/Area_hutan/Assets/ui/logging_volume/Plus_Pressed.png" id="13_2spws"]
+[ext_resource type="Texture2D" uid="uid://dlbjkg4u7esxp" path="res://Game/Area_hutan/Assets/ui/logging_volume/Plus_Hover.png" id="14_ihyl6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bcwb3"]
+font_size = 100
 
 [node name="Area_Hutan" type="Node2D"]
 script = ExtResource("1_ptkcm")
@@ -26,8 +36,6 @@ texture = ExtResource("3_ldgps")
 
 [node name="Waves" type="Node2D" parent="Subarea_sungai"]
 
-[node name="Wave" parent="Subarea_sungai/Waves" instance=ExtResource("5_yeu54")]
-
 [node name="Subarea_pohons" type="Node2D" parent="."]
 script = ExtResource("3_ukjct")
 
@@ -43,3 +51,52 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Logging_volume" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1630.0
+offset_top = 189.0
+offset_right = 1670.0
+offset_bottom = 229.0
+scale = Vector2(0.25, 0.25)
+script = ExtResource("7_ypmjp")
+
+[node name="TextureRect" type="TextureRect" parent="Logging_volume"]
+offset_right = 1136.0
+offset_bottom = 628.0
+texture = ExtResource("8_rgokk")
+
+[node name="Button_minus" type="TextureButton" parent="Logging_volume"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 125.0
+offset_right = 378.0
+offset_bottom = 405.0
+texture_normal = ExtResource("9_rioox")
+texture_pressed = ExtResource("10_t8h44")
+texture_hover = ExtResource("11_xoqhf")
+
+[node name="Button_plus" type="TextureButton" parent="Logging_volume"]
+layout_mode = 0
+offset_left = 758.0
+offset_top = 125.0
+offset_right = 994.0
+offset_bottom = 405.0
+texture_normal = ExtResource("12_xbesi")
+texture_pressed = ExtResource("13_2spws")
+texture_hover = ExtResource("14_ihyl6")
+
+[node name="Label" type="Label" parent="Logging_volume"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 200.0
+offset_right = 648.0
+offset_bottom = 356.0
+text = "1"
+label_settings = SubResource("LabelSettings_bcwb3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Logging_volume/Button_minus" to="Logging_volume" method="_on_button_minus_pressed"]
+[connection signal="pressed" from="Logging_volume/Button_plus" to="Logging_volume" method="_on_button_plus_pressed"]

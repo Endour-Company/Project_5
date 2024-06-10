@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjwnjc45hlcrd"]
+[gd_scene load_steps=12 format=3 uid="uid://bjwnjc45hlcrd"]
 
 [ext_resource type="PackedScene" uid="uid://mes4efbefx" path="res://Game/Area_hutan/Main/Area_hutan.tscn" id="1_pgppg"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_x0wwk"]
 [ext_resource type="PackedScene" uid="uid://brw17nqvu6hle" path="res://Game/Ricefield/Main/ricefield_area.tscn" id="1_ymy68"]
 [ext_resource type="PackedScene" uid="uid://6wgjm6tla017" path="res://Global/Game_UI/Action_bar/action_bar.tscn" id="2_tmlwp"]
+[ext_resource type="Texture2D" uid="uid://dgtfy6d8fx0gk" path="res://Global/Game_UI/In_game_menu/Assets/Pause Button_Normal.png" id="5_arxck"]
+[ext_resource type="Texture2D" uid="uid://bbfe81cy14r6x" path="res://Global/Game_UI/In_game_menu/Assets/Pause Button_Pressed.png" id="6_3bc8o"]
+[ext_resource type="Texture2D" uid="uid://dif5f5mwn0y45" path="res://Global/Game_UI/In_game_menu/Assets/Settings Button_Normal.png" id="6_y8i1j"]
+[ext_resource type="Texture2D" uid="uid://b3egjmrssb702" path="res://Global/Game_UI/In_game_menu/Assets/Settings Button_Pressed.png" id="7_73ykx"]
+[ext_resource type="Texture2D" uid="uid://cvw8lu6wv2c6y" path="res://Global/Game_UI/In_game_menu/Assets/Pause Button_Hover.png" id="7_lb2po"]
+[ext_resource type="Texture2D" uid="uid://b1vhnppsfby7t" path="res://Global/Game_UI/In_game_menu/Assets/Settings Button_Hover.png" id="8_xucnr"]
+
+[sub_resource type="Theme" id="Theme_x2h6a"]
+HBoxContainer/constants/separation = 50
 
 [node name="Game" type="Node"]
 script = ExtResource("1_x0wwk")
@@ -18,3 +27,54 @@ offset_left = 441.0
 offset_top = 590.0
 offset_right = 441.0
 offset_bottom = 590.0
+
+[node name="In_game_menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1630.0
+offset_top = 28.0
+offset_right = 1670.0
+offset_bottom = 68.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="In_game_menu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+theme = SubResource("Theme_x2h6a")
+
+[node name="Button_pause" type="TextureButton" parent="In_game_menu/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_arxck")
+texture_pressed = ExtResource("6_3bc8o")
+texture_hover = ExtResource("7_lb2po")
+
+[node name="Button_option" type="TextureButton" parent="In_game_menu/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_y8i1j")
+texture_pressed = ExtResource("7_73ykx")
+texture_hover = ExtResource("8_xucnr")
+
+[node name="Progress_variable" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BoxContainer" type="BoxContainer" parent="Progress_variable"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Progress_variable/BoxContainer"]
+layout_mode = 2
+
+[node name="Progress_public_welfare" type="TextureProgressBar" parent="Progress_variable"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Progress_public_health" type="TextureProgressBar" parent="Progress_variable"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

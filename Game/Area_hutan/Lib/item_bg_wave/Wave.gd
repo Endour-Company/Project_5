@@ -9,15 +9,15 @@ var imgWave2 : Texture2D = preload("res://Game/Area_hutan/Assets/other/wave2.png
 var POINTS = [
 	{
 		"start" : Vector2(1391, -129),
-		"end" : Vector2(1950, 1049)
+		"end" : Vector2(2034, 1049)
  	},
 	{
 		"start" : Vector2(1256, -145),
-		"end" : Vector2(1950, 1223)
+		"end" : Vector2(2002, 1223)
  	},
 	{
 		"start" : Vector2(1272, -145),
-		"end" : Vector2(1950, 1087)
+		"end" : Vector2(2014, 1087)
  	},
 ]
 
