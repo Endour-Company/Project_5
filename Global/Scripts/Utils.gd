@@ -33,3 +33,9 @@ func format_rupiah(amount: int) -> String:
 		return "Rp. " + str(amount / 1000000) + "M"
 	else:
 		return "Rp. " + str(amount / 1000000000) + "B"
+
+func get_random_item_from_array(array):
+	if array.size() == 0:
+		return null # Return null if the array is empty
+	var random_index = randi() % array.size()
+	return array[random_index]
