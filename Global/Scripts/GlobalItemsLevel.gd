@@ -8,7 +8,7 @@ var ITEM_LEVEL = [
 		
 	},
 	{
-		"name" : "Jalan",
+		"name" : "Jalan Sawah",
 		"level" : 1,
 		"count" : 1,
 

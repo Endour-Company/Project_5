@@ -3,7 +3,7 @@ extends "res://Game/Global/Scripts/Base_item.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ITEM_NAME = "Jalan"
+	ITEM_NAME = "Jalan Sawah"
 	ITEM_TEXTURE_NODE = $TextureRect
 	super._ready()
 

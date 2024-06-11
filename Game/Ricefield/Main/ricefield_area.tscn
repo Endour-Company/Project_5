@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://boqkpcgr4hd32" path="res://Game/Ricefield/Lib/Pembajak/itembg_pembajak.tscn" id="3_felbc"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Subarea_jalan/Subarea_jalan.gd" id="6_pqkut"]
 [ext_resource type="Texture2D" uid="uid://dkiw33dkar3p2" path="res://Game/Ricefield/Assets/item_bg_sungai/sungai_kotor.png" id="7_k0t7d"]
-[ext_resource type="Texture2D" uid="uid://bka6b1cjakj7r" path="res://Game/Ricefield/Assets/item_up_jalan/jalan_lv1.png" id="8_mrxar"]
+[ext_resource type="Texture2D" uid="uid://b6jvmsu304a0" path="res://Game/Ricefield/Assets/item_up_jalan/jalan_lv1.png" id="8_mrxar"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Mobil.gd" id="8_uv1uv"]
 [ext_resource type="Texture2D" uid="uid://bbvaj3p5mfebk" path="res://Game/Ricefield/Assets/item_bg_mobil/mobil_kosong.png" id="8_vr351"]
 
@@ -31,6 +31,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Subarea_sawah" type="Node2D" parent="."]
+visible = false
 script = ExtResource("2_xe0x6")
 GROWTH_SPEED = 10.0
 
