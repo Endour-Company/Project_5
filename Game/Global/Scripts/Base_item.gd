@@ -21,8 +21,11 @@ func _ready():
 	for itemsPerArea in GlobalItemsLevel.ITEMS_PER_AREA :
 		var itemsInArea = itemsPerArea["items"]
 		
+		
 		itemJson = Utils.find_item_in_array_with_key(itemsInArea, "name", ITEM_NAME)
-	ITEM_JSON = {}
+		if(itemJson != null):
+			ITEM_JSON = itemJson
+	
 	init_item()
 	
 	
@@ -35,8 +38,9 @@ func _process(delta):
 	
 	
 
-func _on_item_upgraded():
+func _on_item_upgraded(itemName):
 	init_item()
+
 
 func init_item():
 	init_item_level_info()
@@ -54,5 +58,6 @@ func init_item_visual_info():
 	var itemlevelInfo = Utils.find_item_in_array_with_key(ITEM_JSON["levels"], "level", ITEM_LEVEL)
 	var itemTexturePath = itemlevelInfo["img"]
 	ITEM_TEXTURE = load(itemTexturePath)
+	
 	
 

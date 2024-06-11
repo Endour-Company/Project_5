@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://brw17nqvu6hle"]
+[gd_scene load_steps=9 format=3 uid="uid://brw17nqvu6hle"]
 
 [ext_resource type="Script" path="res://Game/Ricefield/Main/ricefield_area.gd" id="1_0ucuo"]
 [ext_resource type="Texture2D" uid="uid://cmctconrlnkc8" path="res://Game/Ricefield/Assets/bg_main/bg_main.png" id="2_3j1xc"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Sawah/Subarea_sawah.gd" id="2_xe0x6"]
+[ext_resource type="PackedScene" uid="uid://boqkpcgr4hd32" path="res://Game/Ricefield/Lib/Pembajak/itembg_pembajak.tscn" id="3_felbc"]
 [ext_resource type="Texture2D" uid="uid://dkiw33dkar3p2" path="res://Game/Ricefield/Assets/item_bg_sungai/sungai_kotor.png" id="7_k0t7d"]
 [ext_resource type="Texture2D" uid="uid://bka6b1cjakj7r" path="res://Game/Ricefield/Assets/item_up_jalan/jalan_lv1.png" id="8_mrxar"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Mobil.gd" id="8_uv1uv"]
@@ -16,6 +17,8 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_3j1xc")
 expand_mode = 1
+
+[node name="Itembg_pembajak" parent="." instance=ExtResource("3_felbc")]
 
 [node name="Subaera_sungai" type="Node2D" parent="."]
 
