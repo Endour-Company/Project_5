@@ -1,6 +1,6 @@
 [
 	{
-		"name": "Pinus",
+		"name": "Cendana",
 		"description": "Donec ut enim vestibulum, convallis lectus tincidunt, vehicula mi. Nunc facilisis accumsan mi sit amet semper. Etiam cursus felis eget rhoncus ultrices. Maecenas aliquam, nisi eget suscipit imperdiet, libero lectus hendrerit mi, a pulvinar elit magna ac velit. Donec interdum nisi vel dui euismod luctus non vel nibh. Maecenas et mattis leo, eget congue libero. Nunc sagittis porta nulla, convallis tempor eros luctus vel. Aliquam pellentesque lacus quis luctus vehicula.",
 		"type" : "countable",
 		"levels": [
@@ -18,15 +18,16 @@
 			},
 			{
 				"size" : "high",
-				"img" : "res://Game/Area_hutan/Assets/item_ct_pinus/pinus"
+				"img" : "res://Game/Area_hutan/Assets/item_ct_cendana/cendana.png"
 			},
 			{
 				"size" : "cut",
-				"img" : "res://Game/Area_hutan/Assets/item_ct_pinus/pinus_tebang.png"
+				"img" : "res://Game/Area_hutan/Assets/item_ct_cendana/cendana_tebang.png"
 			}
 		],
-		"max_owned" : 10,
-		"growth_speed" : 0.5
+		"max_owned" : 4,
+		"growth_speed" : 0.5,
+		"sell_price" : 10000000
 	},
 	{
 		"name": "Jati",
@@ -55,8 +56,9 @@
 				"img" : "res://Game/Area_hutan/Assets/item_ct_jati/jati_tebang.png"
 			}
 		],
-		"max_owned" : 10,
-		"growth_speed" : 0.7
+		"max_owned" : 4,
+		"growth_speed" : 0.7,
+		"sell_price" : 15000000
 	},
 	{
 		"name": "Mahoni",
@@ -84,8 +86,9 @@
 				"img" : "res://Game/Area_hutan/Assets/item_ct_mahoni/mahoni_tebang.png"
 			}
 		],
-		"max_owned" : 5,
-		"growth_speed" : 0.9
+		"max_owned" : 3,
+		"growth_speed" : 0.3,
+		"sell_price" : 20000000
 	},
 
 ]

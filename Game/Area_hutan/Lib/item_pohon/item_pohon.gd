@@ -3,6 +3,7 @@ extends Node2D
 var DATA_OF_POHON : Dictionary = {}
 
 var NAME_OF_POHON : String = ""
+var ID_OF_POINT : String = ""
 
 enum STATES_POHON {
 	GROWTH,
@@ -15,6 +16,8 @@ var STATE_POHON = STATES_POHON.GROWTH
 var HALF_GROWTH_DURATION = GROWTH_DURATION / 2.0
 var TIME_ELAPSED = 0.0
 
+
+signal pohon_cutted(id : String)
 
 func _ready():
 	init_pohon_data()
@@ -35,9 +38,6 @@ func init_pohon_data():
 	DATA_OF_POHON = dataOfPohon
 
 
-func init_pohon_visual():
-	print(DATA_OF_POHON)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if STATE_POHON == STATES_POHON.GROWTH:
@@ -52,11 +52,13 @@ func state_growth() -> void:
 	STATE_POHON = STATES_POHON.GROWTH
 	TIME_ELAPSED = 0.0
 	set_pohon_texture("low")
+	
 
 func state_ready_to_harvest() -> void:
 	STATE_POHON = STATES_POHON.READY_TO_HARVEST
 	$TextureProgressBar.value = GROWTH_DURATION
-	print("ready_to_harvest")
+	
+	
 	
 
 func _on_texture_progress_bar_value_changed(value):
@@ -66,5 +68,17 @@ func set_pohon_texture(size: String) -> void:
 	for image in DATA_OF_POHON.images:
 		if image.size == size:
 			var img = load(image.img)
-			$Sprite2D.set_texture(img)
+			var sprite : Sprite2D = $Sprite2D
+			sprite.set_texture(img)
 			break
+
+
+
+func cut_pohon():
+	if (STATE_POHON == STATES_POHON.READY_TO_HARVEST):
+		set_pohon_texture("cut")
+		
+	await get_tree().create_timer(5).timeout
+	queue_free()
+	emit_signal("pohon_cutted", ID_OF_POINT)
+	

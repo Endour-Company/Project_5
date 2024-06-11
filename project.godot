@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GlobalActionBar="*res://Global/Scripts/GlobalActionBar.gd"
 GlobalItemsLevel="*res://Global/Scripts/GlobalItemsLevel.gd"
 Utils="*res://Global/Scripts/Utils.gd"
+Variables="*res://Global/Scripts/Variables.gd"
 
 [display]
 

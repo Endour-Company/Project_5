@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5vsg40alfjv5"
-path="res://.godot/imported/mahoni_tebang.png-4ef216a0ea7453fde9dc6c8316633208.ctex"
+uid="uid://i5ihhogdy1tc"
+path="res://.godot/imported/Circular Progress_Progress.png-77b504fed8cfa4a57b08fde09c7deb1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Area_hutan/Assets/item_ct_mahoni/mahoni_tebang.png"
-dest_files=["res://.godot/imported/mahoni_tebang.png-4ef216a0ea7453fde9dc6c8316633208.ctex"]
+source_file="res://Global/Game_UI/In_game_map_calendar/Assets/Circular Progress_Progress.png"
+dest_files=["res://.godot/imported/Circular Progress_Progress.png-77b504fed8cfa4a57b08fde09c7deb1d.ctex"]
 
 [params]
 

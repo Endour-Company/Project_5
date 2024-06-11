@@ -3,7 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 
-@export var LOGGING_VOLUME_VALUE : int = 1
+var LOGGING_VOLUME_VALUE : int = Variables.LOGGING_VOLUME
 @export var LOGGING_VOLUME_MAX_VALUE : int = 5
 
 signal logging_volume_changed(value : int)
@@ -21,12 +21,14 @@ func _process(delta):
 func _on_button_minus_pressed():
 	if(LOGGING_VOLUME_VALUE - 1 > 0) :
 		LOGGING_VOLUME_VALUE -= 1
+		Variables.set_logging_volume(LOGGING_VOLUME_VALUE)
 	emit_signal("logging_volume_changed", LOGGING_VOLUME_VALUE)
 
 
 func _on_button_plus_pressed():
 	if(LOGGING_VOLUME_VALUE + 1 <= LOGGING_VOLUME_MAX_VALUE) :
 		LOGGING_VOLUME_VALUE += 1
+		Variables.set_logging_volume(LOGGING_VOLUME_VALUE)
 	emit_signal("logging_volume_changed", LOGGING_VOLUME_VALUE)
 
 func _on_logging_volume_changed(value):

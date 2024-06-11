@@ -1,5 +1,11 @@
 extends Node
 
+
+@export var MONEY : int = 10000000000
+
+# AREA : HUTAN
+var LOGGING_VOLUME = 1
+
 var VAR_KUALITAS_AIR = 0
 var VAR_PENDAPATAN = 0
 var VAR_KESEHATAN_MASYARAKAT = 0
@@ -13,3 +19,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func set_money(action : String, value : int):
+	match action : 
+		"min" :
+			MONEY -= value
+		"plus" :
+			MONEY += value
+
+func set_logging_volume(value : int):
+	LOGGING_VOLUME = value

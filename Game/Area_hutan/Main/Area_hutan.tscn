@@ -41,7 +41,7 @@ script = ExtResource("3_ukjct")
 
 [node name="Part_mahonis" type="Node2D" parent="Subarea_pohons"]
 
-[node name="Part_pinuses" type="Node2D" parent="Subarea_pohons"]
+[node name="Part_cendanas" type="Node2D" parent="Subarea_pohons"]
 
 [node name="Part_jatis" type="Node2D" parent="Subarea_pohons"]
 metadata/_edit_lock_ = true
@@ -63,6 +63,7 @@ scale = Vector2(0.25, 0.25)
 script = ExtResource("7_ypmjp")
 
 [node name="TextureRect" type="TextureRect" parent="Logging_volume"]
+layout_mode = 0
 offset_right = 1136.0
 offset_bottom = 628.0
 texture = ExtResource("8_rgokk")

@@ -24,7 +24,7 @@ var ITEM_LEVEL = [
 		"count" : 0
 	},
 	{
-		"name" : "Pinus",
+		"name" : "Cendana",
 		"level" : 1,
 		"count" : 0
 	},
