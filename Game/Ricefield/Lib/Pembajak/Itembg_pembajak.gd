@@ -61,6 +61,7 @@ var end_point = Vector2()
 
 func _ready():
 	ITEM_NAME = "Alat Pertanian"
+	ITEM_TEXTURE_NODE = $CharacterBody2D/Sprite2D
 	super._ready()
 	set_points_for_current_sawah()
 

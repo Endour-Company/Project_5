@@ -10,6 +10,7 @@ extends Node2D
 var ITEM_LEVEL : int = 1
 var ITEM_JSON : Dictionary = {}
 var ITEM_TEXTURE : Texture2D = null
+var ITEM_TEXTURE_NODE = null
 
 func _ready():
 	GlobalItemsLevel.item_upgraded.connect(_on_item_upgraded)
@@ -47,7 +48,7 @@ func init_item():
 	init_item_visual_info()
 	
 	# Set Item Image
-	$CharacterBody2D/Sprite2D.set_texture(ITEM_TEXTURE)
+	ITEM_TEXTURE_NODE.set_texture(ITEM_TEXTURE)
 	
 func init_item_level_info():
 	var item = Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", ITEM_NAME)
