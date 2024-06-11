@@ -10,6 +10,7 @@ extends Control
 
 
 func _ready():
+	GlobalItemsLevel.item_updated.connect(_on_item_updated)
 	GlobalItemsLevel.item_upgraded.connect(_on_item_upgraded)
 	GlobalActionBar.current_area_changed.connect(_on_current_area_changed)
 
@@ -17,6 +18,9 @@ func _ready():
 func _process(delta):
 	pass
 
+func _on_item_updated():
+	$Item_description_container._refresh()
+	$Item_container._refresh()
 
 func _on_item_upgraded(itemName):
 	$Item_description_container._refresh()

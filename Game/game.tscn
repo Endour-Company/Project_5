@@ -92,14 +92,14 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BoxContainer" type="MarginContainer" parent="Progress_variable/HBoxContainer"]
+[node name="Progress_money" type="MarginContainer" parent="Progress_variable/HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Progress_variable/HBoxContainer/BoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Progress_variable/HBoxContainer/Progress_money"]
 layout_mode = 2
 texture = ExtResource("11_22mr6")
 
-[node name="Label" type="Label" parent="Progress_variable/HBoxContainer/BoxContainer"]
+[node name="Label" type="Label" parent="Progress_variable/HBoxContainer/Progress_money"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Rp. 500 M"

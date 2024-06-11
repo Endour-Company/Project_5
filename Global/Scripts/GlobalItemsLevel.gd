@@ -60,10 +60,9 @@ var ITEMS_PER_AREA : Array = [
 
 
 signal item_upgraded(itemName)
-
+signal item_updated
 
 func _ready():
-	GlobalActionBar.current_area_changed.connect(_on_current_area_changed)
 	init_items_per_area()
 	
 func init_items_per_area():
@@ -117,6 +116,13 @@ func upgrade_item(itemName):
 		emit_signal("item_upgraded",itemName)
 
 
+func change_item_count(nameOfItem: String, action: int) -> void:
+	for ITEM in ITEM_LEVEL:
+		if ITEM["name"] == nameOfItem:
+			ITEM["count"] += action
+			# Ensure the count doesn't go below zero
+			if ITEM["count"] < 0:
+				ITEM["count"] = 0
+			break
+
 	
-func _on_current_area_changed():
-	pass

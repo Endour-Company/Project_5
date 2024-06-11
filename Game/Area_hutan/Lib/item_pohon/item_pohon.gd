@@ -79,6 +79,12 @@ func cut_pohon():
 		set_pohon_texture("cut")
 		
 	await get_tree().create_timer(5).timeout
+	money_income()
 	queue_free()
+	GlobalItemsLevel.change_item_count(NAME_OF_POHON, -1)
 	emit_signal("pohon_cutted", ID_OF_POINT)
 	
+
+func money_income() :
+	var income : int = DATA_OF_POHON["sell_price"]
+	Variables.set_money("plus",income)

@@ -1,7 +1,7 @@
 extends Node
 
 
-@export var MONEY : int = 10000000000
+@export var MONEY : int = 0
 
 # AREA : HUTAN
 var LOGGING_VOLUME = 1
@@ -12,6 +12,9 @@ var VAR_KESEHATAN_MASYARAKAT = 0
 var VAR_KESEJAHTERAAN_MASYARAKAT = 0
 
 # Called when the node enters the scene tree for the first time.
+
+signal money_changed
+
 func _ready():
 	pass # Replace with function body.
 
@@ -27,6 +30,7 @@ func set_money(action : String, value : int):
 			MONEY -= value
 		"plus" :
 			MONEY += value
+	emit_signal("money_changed")
 
 func set_logging_volume(value : int):
 	LOGGING_VOLUME = value

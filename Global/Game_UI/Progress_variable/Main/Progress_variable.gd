@@ -3,6 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Variables.money_changed.connect(set_ui_money)
 	set_ui_money()
 
 
@@ -14,7 +15,7 @@ func _process(delta):
 func set_ui_money():
 	var currentMoney = Variables.MONEY
 	var currentMoneyWithFormatting = Utils.format_rupiah(currentMoney)
-	$HBoxContainer/BoxContainer/Label.set_text(currentMoneyWithFormatting)
+	$HBoxContainer/Progress_money/Label.set_text(currentMoneyWithFormatting)
 
 func set_ui_public_welfare():
 	var currentPublicWelfare = Variables.VAR_KESEJAHTERAAN_MASYARAKAT
