@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfh6jwl3xuhyj"
-path="res://.godot/imported/Untitled37_20240531082733.png-706531d2a168827d29110a69b72ccd97.ctex"
+uid="uid://bv6m1tlukb8j3"
+path="res://.godot/imported/bg_pohon.png-b8945843edbf166a2f6329b5feab12a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Area_pemukiman/Assets/Untitled37_20240531082733.png"
-dest_files=["res://.godot/imported/Untitled37_20240531082733.png-706531d2a168827d29110a69b72ccd97.ctex"]
+source_file="res://Game/Area_pusat_desa/Assets/bg_main/bg_pohon.png"
+dest_files=["res://.godot/imported/bg_pohon.png-b8945843edbf166a2f6329b5feab12a8.ctex"]
 
 [params]
 

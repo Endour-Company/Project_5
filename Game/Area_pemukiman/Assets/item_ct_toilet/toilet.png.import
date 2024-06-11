@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://udvppkdbf28e"
-path="res://.godot/imported/Untitled37_20240530105029.png-13ca00ff9540c5f732cbe31891b1e48c.ctex"
+uid="uid://cd06ji0fgbvgi"
+path="res://.godot/imported/toilet.png-b171d7aea3fcd08b2a76a48064378777.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Area_pemukiman/Assets/Untitled37_20240530105029.png"
-dest_files=["res://.godot/imported/Untitled37_20240530105029.png-13ca00ff9540c5f732cbe31891b1e48c.ctex"]
+source_file="res://Game/Area_pemukiman/Assets/item_ct_toilet/toilet.png"
+dest_files=["res://.godot/imported/toilet.png-b171d7aea3fcd08b2a76a48064378777.ctex"]
 
 [params]
 

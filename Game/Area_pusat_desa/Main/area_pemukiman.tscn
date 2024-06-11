@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://ix0fems6c3kp"]
+
+[ext_resource type="Texture2D" uid="uid://blcmhu8hstusc" path="res://Game/Area_pusat_desa/Assets/bg_main/bg_main.png" id="1_cjahv"]
+[ext_resource type="Texture2D" uid="uid://b8vyrj5dfjgw7" path="res://Game/Area_pusat_desa/Assets/item_bg_sungai/sungai_kotor.png" id="2_48q5w"]
+[ext_resource type="Texture2D" uid="uid://ws8wtsej7pxq" path="res://Game/Area_pusat_desa/Assets/item_up_jalan/jalan_lv1.png" id="3_g5wdf"]
+[ext_resource type="Texture2D" uid="uid://dgkaaqkj8uiv3" path="res://Game/Area_pusat_desa/Assets/item_up_balai_desa/balai_desa_lv1.png" id="4_xyrpa"]
+[ext_resource type="Texture2D" uid="uid://kpkfawipbb7p" path="res://Game/Area_pusat_desa/Assets/item_up_puskesmas/puskesmas_lv1.png" id="5_wqv0y"]
+[ext_resource type="Texture2D" uid="uid://brbuv44lbprip" path="res://Game/Area_pusat_desa/Assets/item_ct_pasar/pasar_lv1.png" id="6_x7wbc"]
+[ext_resource type="Texture2D" uid="uid://dda7dqrb67wie" path="res://Game/Area_pusat_desa/Assets/item_up_tanah_lapang/tanah_lapang_lv1.png" id="7_x8n82"]
+
+[node name="AreaPemukiman" type="Node2D"]
+
+[node name="BG" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_cjahv")
+expand_mode = 1
+
+[node name="Subarea_sungai" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Subarea_sungai"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_48q5w")
+expand_mode = 1
+
+[node name="Subarea_jalan" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Subarea_jalan"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_g5wdf")
+expand_mode = 1
+
+[node name="Subarea_baldes" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Subarea_baldes"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_xyrpa")
+expand_mode = 1
+
+[node name="Subarea_puskesmas" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Subarea_puskesmas"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_wqv0y")
+expand_mode = 1
+
+[node name="Subarea_pasar" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Subarea_pasar"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("6_x7wbc")
+expand_mode = 1
+
+[node name="Subarea_lapangan" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Subarea_lapangan"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("7_x8n82")
+expand_mode = 1
