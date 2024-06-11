@@ -14,9 +14,9 @@ var ITEM_LEVEL = [
 
  	},
 	{
-		"name" : "Lampu Jalan",
+		"name" : "Lampu Jalan Sawah",
 		"level" : 1,
-		"count" : 1
+		"count" : 0
 	},
 	{
 		"name" : "Mahoni",

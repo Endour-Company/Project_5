@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://brw17nqvu6hle"]
+[gd_scene load_steps=11 format=3 uid="uid://brw17nqvu6hle"]
 
 [ext_resource type="Script" path="res://Game/Ricefield/Main/ricefield_area.gd" id="1_0ucuo"]
 [ext_resource type="Texture2D" uid="uid://cmctconrlnkc8" path="res://Game/Ricefield/Assets/bg_main/bg_main.png" id="2_3j1xc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b6jvmsu304a0" path="res://Game/Ricefield/Assets/item_up_jalan/jalan_lv1.png" id="8_mrxar"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Mobil.gd" id="8_uv1uv"]
 [ext_resource type="Texture2D" uid="uid://bbvaj3p5mfebk" path="res://Game/Ricefield/Assets/item_bg_mobil/mobil_kosong.png" id="8_vr351"]
+[ext_resource type="Script" path="res://Game/Ricefield/Lib/Subarea_lampu_sawah/Subarea_lampu_sawah.gd" id="10_e8lyc"]
 
 [node name="Ricefield_area" type="Node2D"]
 script = ExtResource("1_0ucuo")
@@ -62,3 +63,6 @@ script = ExtResource("8_uv1uv")
 position = Vector2(177, 782)
 scale = Vector2(0.202333, 0.207627)
 texture = ExtResource("8_vr351")
+
+[node name="Subarea_lampu_sawah" type="Node2D" parent="."]
+script = ExtResource("10_e8lyc")

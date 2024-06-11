@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs40nqwehhoet"]
+
+[ext_resource type="Texture2D" uid="uid://bhjmpo8k07nff" path="res://Game/Ricefield/Assets/item_ct_lampu_jalan/lampu_taman.png" id="1_lvsmf"]
+
+[node name="item_lampu_sawah" type="TextureRect"]
+offset_left = 1560.0
+offset_top = 314.0
+offset_right = 1875.0
+offset_bottom = 629.0
+texture = ExtResource("1_lvsmf")
+expand_mode = 1

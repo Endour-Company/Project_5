@@ -53,7 +53,7 @@
 		"max_owned" : 1
 	},
 	{
-		"name": "Lampu Jalan",
+		"name": "Lampu Jalan Sawah",
 		"description": "Lampu jalan di daerah pertanian meningkatkan keamanan, memfasilitasi mobilitas, dan memperpanjang jam kerja petani. Selain itu, lampu jalan juga membantu mengurangi risiko kejahatan dan kecelakaan.",
 		"type" : "countable",
 		"levels": [		
@@ -64,7 +64,7 @@
 				"img" : "res://Game/Ricefield/Assets/item_ct_lampu_jalan/lampu_taman.png"
 			}	
 		],
-		"max_owned" : 5
+		"max_owned" : 3
 	}
 
 ]
