@@ -27,9 +27,7 @@ func _on_item_upgraded(itemName):
 	$Item_container._refresh()
 
 func init_items():
-	var items = GlobalItemsLevel.ITEMS_JSON
-	itemContainer.init_items(items)
-	itemDescriptionContainer.init_items(items)
+	itemContainer._refresh()
 
 func _on_current_area_changed():
 	init_items()
