@@ -133,10 +133,8 @@ texture_hover = ExtResource("13_pecw0")
 texture_click_mask = ExtResource("17_geerx")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-bus = &"BGM"
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
-bus = &"SFX"
 
 [node name="IntroOverlay" type="ColorRect" parent="."]
 layout_mode = 0

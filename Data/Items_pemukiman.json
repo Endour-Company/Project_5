@@ -11,7 +11,7 @@
 		"img": "res://Game/Area_pemukiman/Assets/item_ct_toilet/toilet.png"
 	  }
 	],
-	"max_owned": 5
+	"max_owned": 6
   },
 
 	{
@@ -31,10 +31,10 @@
 	{
 		"name": "Tower Internet",
 		"description": "Tower internet adalah struktur tinggi yang digunakan untuk menyediakan layanan komunikasi nirkabel, seperti sinyal telepon seluler dan akses internet bagi masyarakat. Melalui peningkatan akses informasi dan komunikasi, tower internet memiliki potensi besar untuk meningkatkan kualitas hidup dan memajukan pembangunan di desa.",
-		"type": "countable",
+		"type": "upgradable",
 		"levels": [
 		{
-			"level": 1,
+			"level": 0,
 			"name": "Tower Internet Lv 1",
 			"upgrade_price": 150000000,
 			"img": "res://Game/Area_pemukiman/Assets/item_ct_tower/tower.png"
@@ -43,7 +43,7 @@
 		"max_owned": 2
 	},
 	{
-		"name": "Jalan",
+		"name": "Jalan Pemukiman",
 		"description": "Jalan memfasilitasi transportasi, akses ke berbagai layanan desa, dan mendukung pertumbuhan ekonomi serta sosial. Jalan yang terawat meningkatkan mobilitas, keselamatan, dan kenyamanan masyarakat desa.",
 		"type": "upgradable",
 		"levels": [

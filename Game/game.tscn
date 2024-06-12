@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://bjwnjc45hlcrd"]
+[gd_scene load_steps=28 format=3 uid="uid://bjwnjc45hlcrd"]
 
 [ext_resource type="PackedScene" uid="uid://mes4efbefx" path="res://Game/Area_hutan/Main/Area_hutan.tscn" id="1_pgppg"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_x0wwk"]
 [ext_resource type="PackedScene" uid="uid://brw17nqvu6hle" path="res://Game/Ricefield/Main/ricefield_area.tscn" id="1_ymy68"]
 [ext_resource type="PackedScene" uid="uid://6wgjm6tla017" path="res://Global/Game_UI/Action_bar/action_bar.tscn" id="2_tmlwp"]
+[ext_resource type="PackedScene" uid="uid://cn5dtrm2fsqbf" path="res://Game/Area_pemukiman/Main/area_pemukiman.tscn" id="4_qv2wn"]
 [ext_resource type="Texture2D" uid="uid://dgtfy6d8fx0gk" path="res://Global/Game_UI/In_game_menu/Assets/Pause Button_Normal.png" id="5_arxck"]
 [ext_resource type="Texture2D" uid="uid://bbfe81cy14r6x" path="res://Global/Game_UI/In_game_menu/Assets/Pause Button_Pressed.png" id="6_3bc8o"]
 [ext_resource type="Texture2D" uid="uid://dif5f5mwn0y45" path="res://Global/Game_UI/In_game_menu/Assets/Settings Button_Normal.png" id="6_y8i1j"]
@@ -42,6 +43,9 @@ script = ExtResource("1_x0wwk")
 visible = false
 
 [node name="Ricefield_area" parent="." instance=ExtResource("1_ymy68")]
+visible = false
+
+[node name="AreaPemukiman" parent="." instance=ExtResource("4_qv2wn")]
 
 [node name="Action_bar" parent="." instance=ExtResource("2_tmlwp")]
 z_index = 4

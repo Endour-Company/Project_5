@@ -14,7 +14,8 @@ func _process(delta):
 func init_area():
 	var areas = {
 		GlobalActionBar.AREAS.SAWAH: $Ricefield_area,
-		GlobalActionBar.AREAS.HUTAN: $Area_Hutan
+		GlobalActionBar.AREAS.HUTAN: $Area_Hutan,
+		GlobalActionBar.AREAS.PEMUKIMAN: $AreaPemukiman
 	}
 	
 	for area in areas:

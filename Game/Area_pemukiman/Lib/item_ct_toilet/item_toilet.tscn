@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c47f2mexbsujm"]
+
+[ext_resource type="Texture2D" uid="uid://cd06ji0fgbvgi" path="res://Game/Area_pemukiman/Assets/item_ct_toilet/toilet.png" id="1_gpxg0"]
+
+[node name="Toilet" type="TextureRect"]
+offset_left = 1607.0
+offset_top = 491.0
+offset_right = 1778.0
+offset_bottom = 662.0
+texture = ExtResource("1_gpxg0")
+expand_mode = 1

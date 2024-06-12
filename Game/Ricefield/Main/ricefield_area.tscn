@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://brw17nqvu6hle"]
 
 [ext_resource type="Script" path="res://Game/Ricefield/Main/ricefield_area.gd" id="1_0ucuo"]
-[ext_resource type="Texture2D" path="res://Game/Ricefield/Assets/bg_main/bg_main.png" id="2_3j1xc"]
+[ext_resource type="Texture2D" uid="uid://cmctconrlnkc8" path="res://Game/Ricefield/Assets/bg_main/bg_main.png" id="2_3j1xc"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Sawah/Subarea_sawah.gd" id="2_xe0x6"]
 [ext_resource type="PackedScene" uid="uid://boqkpcgr4hd32" path="res://Game/Ricefield/Lib/Pembajak/itembg_pembajak.tscn" id="3_felbc"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Subarea_sungai/Subarea_sungai.gd" id="3_xgtb8"]

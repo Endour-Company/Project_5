@@ -32,6 +32,31 @@ var ITEM_LEVEL = [
 		"name" : "Jati",
 		"level" : 1,
 		"count" : 0
+	},
+	{
+		"name" : "Jalan Pemukiman",
+		"level" : 1,
+		"count" : 1
+	},
+	{
+		"name" : "Toilet Umum",
+		"level" : 1,
+		"count" : 0
+	},
+	{
+		"name" : "Septic Tank",
+		"level" : 1,
+		"count" : 1
+	},
+	{
+		"name" : "Lampu Jalan",
+		"level" : 1,
+		"count" : 0
+	},
+	{
+		"name" : "Tower Internet",
+		"level" : 0,
+		"count" : 1
 	}
 ]
 
