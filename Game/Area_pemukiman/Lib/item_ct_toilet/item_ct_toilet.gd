@@ -22,17 +22,17 @@ var POINTS_TOILET = [
 	},
 	{
 		"id" : "toilet4",
-		"points" : Vector2(1630, 352),
+		"points" : Vector2(1630, 372),
 		"is_filled" : false
 	},
 	{
 		"id" : "toilet5",
-		"points" : Vector2(1697, 352),
+		"points" : Vector2(1697, 372),
 		"is_filled" : false
 	},
 	{
 		"id" : "toilet6",
-		"points" : Vector2(1765, 352),
+		"points" : Vector2(1765, 372),
 		"is_filled" : false
 	},
 ]
@@ -42,7 +42,8 @@ func _ready():
 	
 
 func _on_item_upgraded(itemName):
-	place_toilet()
+	if itemName == "Toilet Umum":
+		place_toilet()
 	
 
 func place_toilet():

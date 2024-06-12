@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cn5dtrm2fsqbf"]
+[gd_scene load_steps=9 format=3 uid="uid://cn5dtrm2fsqbf"]
 
 [ext_resource type="Texture2D" uid="uid://b5nobebfd31l7" path="res://Game/Area_pemukiman/Assets/bg_main/bg_main.png" id="1_rsogo"]
 [ext_resource type="Texture2D" uid="uid://bbeqegcoxuei2" path="res://Game/Area_pemukiman/Assets/item_bg_sungai/sungai_kotor.png" id="2_c3fdd"]
 [ext_resource type="Texture2D" uid="uid://cia5iea3px8fm" path="res://Game/Area_pemukiman/Assets/item_up_jalan/jalan_lv1.png" id="3_nj31e"]
 [ext_resource type="Script" path="res://Game/Area_pemukiman/Lib/item_up_jalan/item_up_jalan.gd" id="3_rmmd4"]
-[ext_resource type="Texture2D" uid="uid://gs56mtmhijma" path="res://Game/Area_pemukiman/Assets/item_ct_septictank/septictank.png" id="4_73jb5"]
+[ext_resource type="Script" path="res://Game/Area_pemukiman/Lib/item_ct_septictank/item_ct_septictank.gd" id="5_eeac5"]
 [ext_resource type="Script" path="res://Game/Area_pemukiman/Lib/item_ct_toilet/item_ct_toilet.gd" id="6_tle74"]
+[ext_resource type="Script" path="res://Game/Area_pemukiman/Lib/item_ct_tower/item_ct_tower.gd" id="6_wv3fg"]
+[ext_resource type="Script" path="res://Game/Area_pemukiman/Lib/item_ct_lampujalan/item_ct_lampujalan.gd" id="8_1eg7p"]
 
 [node name="AreaPemukiman" type="Node2D"]
 
@@ -33,32 +35,13 @@ texture = ExtResource("3_nj31e")
 expand_mode = 1
 
 [node name="Subarea_septictank" type="Node2D" parent="."]
+script = ExtResource("5_eeac5")
 
-[node name="Tank1" type="TextureRect" parent="Subarea_septictank"]
-offset_left = 668.0
-offset_top = 826.0
-offset_right = 892.0
-offset_bottom = 1054.0
-texture = ExtResource("4_73jb5")
-expand_mode = 1
-
-[node name="Tank2" type="TextureRect" parent="Subarea_septictank"]
-offset_left = 1044.0
-offset_top = 826.0
-offset_right = 1268.0
-offset_bottom = 1054.0
-texture = ExtResource("4_73jb5")
-expand_mode = 1
-
-[node name="Tank3" type="TextureRect" parent="Subarea_septictank"]
-offset_left = 1415.0
-offset_top = 826.0
-offset_right = 1639.0
-offset_bottom = 1054.0
-texture = ExtResource("4_73jb5")
-expand_mode = 1
+[node name="Subarea_tower" type="Node2D" parent="."]
+script = ExtResource("6_wv3fg")
 
 [node name="Subarea_toilet" type="Node2D" parent="."]
 script = ExtResource("6_tle74")
 
-[node name="Subarea_tower" type="Node2D" parent="."]
+[node name="Subarea_lampu" type="Node2D" parent="."]
+script = ExtResource("8_1eg7p")

@@ -46,17 +46,17 @@ var ITEM_LEVEL = [
 	{
 		"name" : "Septic Tank",
 		"level" : 1,
-		"count" : 1
+		"count" : 0
 	},
 	{
-		"name" : "Lampu Jalan",
+		"name" : "Lampu Jalan Pemukiman",
 		"level" : 1,
 		"count" : 0
 	},
 	{
 		"name" : "Tower Internet",
-		"level" : 0,
-		"count" : 1
+		"level" : 1,
+		"count" : 0
 	}
 ]
 

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c43vc3rqtvulq"]
+
+[ext_resource type="Texture2D" uid="uid://ddogo1ip3u8hr" path="res://Game/Area_pemukiman/Assets/item_ct_tower/tower-0.png" id="1_lkncj"]
+[ext_resource type="Texture2D" uid="uid://dtouvaukwjncp" path="res://Game/Area_pemukiman/Assets/item_ct_tower/tower-1.png" id="2_3hpms"]
+[ext_resource type="Texture2D" uid="uid://cmd3xnjqxfb8r" path="res://Game/Area_pemukiman/Assets/item_ct_tower/tower-2.png" id="3_g6vti"]
+[ext_resource type="Texture2D" uid="uid://df1005panp1t" path="res://Game/Area_pemukiman/Assets/item_ct_tower/tower-3.png" id="4_g2uyc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x7xdu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lkncj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3hpms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g6vti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g2uyc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Item_tower" type="AnimatedSprite2D"]
+position = Vector2(517.317, 286.6)
+scale = Vector2(0.372186, 0.372186)
+sprite_frames = SubResource("SpriteFrames_x7xdu")
+frame_progress = 0.176577

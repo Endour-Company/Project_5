@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://drko3yq8c1jya"]
+
+[ext_resource type="Texture2D" uid="uid://gs56mtmhijma" path="res://Game/Area_pemukiman/Assets/item_ct_septictank/septictank.png" id="1_qa4qu"]
+
+[node name="Item_tank" type="TextureRect"]
+offset_left = 668.0
+offset_top = 826.0
+offset_right = 892.0
+offset_bottom = 1054.0
+texture = ExtResource("1_qa4qu")
+expand_mode = 1

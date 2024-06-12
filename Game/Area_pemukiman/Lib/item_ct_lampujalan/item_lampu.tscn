@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://da67exgvulpqr"]
+
+[ext_resource type="Texture2D" uid="uid://740niy75muiw" path="res://Game/Area_pemukiman/Assets/item_ct_lampu_jalan/lampu_jalan.png" id="1_5dq2b"]
+
+[node name="item_lampu" type="TextureRect"]
+offset_left = -39.0
+offset_top = 116.0
+offset_right = 224.0
+offset_bottom = 379.0
+texture = ExtResource("1_5dq2b")
+expand_mode = 1
