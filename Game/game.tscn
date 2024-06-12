@@ -51,7 +51,6 @@ visible = false
 [node name="AreaPusat" parent="." instance=ExtResource("5_v2urd")]
 
 [node name="Action_bar" parent="." instance=ExtResource("2_tmlwp")]
-z_index = 4
 offset_left = 441.0
 offset_top = 590.0
 offset_right = 441.0
@@ -147,7 +146,7 @@ alignment = 1
 [node name="Map" type="BoxContainer" parent="In_game_map_calendar/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="In_game_map_calendar/VBoxContainer/Map"]
+[node name="MapTextureButton" type="TextureButton" parent="In_game_map_calendar/VBoxContainer/Map"]
 layout_mode = 2
 texture_normal = ExtResource("16_wxpol")
 texture_pressed = ExtResource("17_l5eo0")
@@ -183,3 +182,5 @@ text = "Jan 2024"
 label_settings = SubResource("LabelSettings_p786b")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="In_game_map_calendar/VBoxContainer/Map/MapTextureButton" to="." method="_on_map_texture_button_pressed"]

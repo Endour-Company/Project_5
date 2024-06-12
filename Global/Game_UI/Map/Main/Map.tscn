@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://Global/Game_UI/Map/Main/Map.gd" id="1_2pcqy"]
 [ext_resource type="Texture2D" uid="uid://dw1ah8qii8gqt" path="res://Global/Game_UI/Map/Assets/Box.png" id="2_4k8sw"]
+[ext_resource type="PackedScene" uid="uid://ghjik3ecy5jb" path="res://Global/Game_UI/Misc/overlay.tscn" id="2_6b6li"]
 [ext_resource type="Texture2D" uid="uid://bv7ycrh7ioox1" path="res://Global/Game_UI/Map/Assets/Close Button_Normal.png" id="3_eape2"]
 [ext_resource type="Texture2D" uid="uid://dm4e5u5f2q2ac" path="res://Global/Game_UI/Map/Assets/Close Button_Pressed.png" id="4_jx3ta"]
 [ext_resource type="Texture2D" uid="uid://dgcuc53aj41j5" path="res://Global/Game_UI/Map/Assets/Close Button_Hover.png" id="5_1nn6p"]
@@ -24,8 +25,6 @@
 [ext_resource type="BitMap" uid="uid://b11nuonm70ubg" path="res://Global/Game_UI/Map/Assets/Ricefield_Mask.png" id="15_lgwvk"]
 [ext_resource type="FontFile" uid="uid://wavv527jhmt1" path="res://Global/Game_UI/Fonts/K2D-Bold.ttf" id="23_enibt"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_52b1r"]
-
 [node name="Map" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -35,12 +34,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2pcqy")
 
-[node name="Overlay" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.470588)
+[node name="Overlay" parent="." instance=ExtResource("2_6b6li")]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("CompressedTexture2D_52b1r")
 
 [node name="Box" type="TextureRect" parent="."]
 layout_mode = 1
@@ -130,3 +125,7 @@ theme_override_font_sizes/font_size = 64
 text = "MAP"
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Government" to="." method="_on_government_pressed"]
+[connection signal="pressed" from="Houses" to="." method="_on_houses_pressed"]
+[connection signal="pressed" from="Ricefield" to="." method="_on_ricefield_pressed"]
+[connection signal="pressed" from="Forest" to="." method="_on_forest_pressed"]
