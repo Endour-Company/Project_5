@@ -22,6 +22,7 @@ func _ready():
 	$Sprite2D.set_texture(TEXTURE_WAVE)
 	set_position(POINT_BEGIN)
 	$Sprite2D.set_modulate(Color(1, 1, 1, 0))
+	$Sprite2D.set_scale(WAVE_SCALE_VECTOR)
 
 func _physics_process(delta):
 	var progress = CURRENT_TIME / (JOURNEY_LENGTH / VELOCITY_WAVE)
@@ -30,11 +31,11 @@ func _physics_process(delta):
 	
 	# Update alpha for fade in and fade out
 	if progress < 0.1:  # Fade in for the first 10% of the journey
-		$Sprite2D.modulate.a = progress * 2.5
+		$Sprite2D.modulate.a = progress * 5
 	elif progress > 0.9:  # Fade out for the last 10% of the journey
-		$Sprite2D.modulate.a = (1 - progress) * 2.5
+		$Sprite2D.modulate.a = (1 - progress) * 5
 	else:
-		$Sprite2D.modulate.a = 0.25  # Fully visible
+		$Sprite2D.modulate.a = 0.5 # Fully visible
 
 	# Check if the wave has reached the end point
 	if progress >= 1:
