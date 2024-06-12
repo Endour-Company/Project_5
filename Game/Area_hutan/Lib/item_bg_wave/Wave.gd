@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 
 # Called when the node enters the scene tree for the first time.
-var imgWave1 : Texture2D = preload("res://Game/Area_hutan/Assets/other/wave1.png")
-var imgWave2 : Texture2D = preload("res://Game/Area_hutan/Assets/other/wave2.png")
+var imgWave1 : Texture2D = preload("res://Game/Global/Assets/wave1.png")
+var imgWave2 : Texture2D = preload("res://Game/Global/Assets/wave2.png")
 
 
 var POINTS = [

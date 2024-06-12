@@ -35,6 +35,21 @@ var SAWAH_POINTS = [
 	}
 ]
 
+var TRACTOR_VELOCITIES_BASED_ON_LEVEL = [
+	{
+		"level" : 1,
+		"velocity" : 100
+	},
+	{
+		"level" : 2,
+		"velocity" : 200
+	},
+	{
+		"level" : 3,
+		"velocity" : 1000
+	},
+]
+
 @export var TRACTOR_VELOCITY : float = 600
 @export var SHAKE_AMPLITUDE : float = 0.5  # Amplitudo getaran (ke atas dan ke bawah)
 @export var SHAKE_SPEED : float = 20      # Kecepatan getaran
@@ -62,8 +77,8 @@ var end_point = Vector2()
 func _ready():
 	ITEM_NAME = "Alat Pertanian"
 	ITEM_TEXTURE_NODE = $CharacterBody2D/Sprite2D
-	super._ready()
 	set_points_for_current_sawah()
+	super._ready()
 
 func _process(delta):
 	match TRACTOR_STATE:
@@ -83,6 +98,7 @@ func move_state(delta):
 	if TRACTOR_DONE:
 		apply_brake(delta)
 	else:
+		watch_velocity_based_on_level()
 		move_along_path(delta)
 		apply_shake_effect(delta)
 	
@@ -134,3 +150,14 @@ func handle_flip():
 		$CharacterBody2D/Sprite2D.flip_h = true
 	else:
 		$CharacterBody2D/Sprite2D.flip_h = false
+
+
+func watch_velocity_based_on_level() :
+	var tractorVelocityBasedOnLevel = Utils.find_item_in_array_with_key(TRACTOR_VELOCITIES_BASED_ON_LEVEL, "level",ITEM_LEVEL)
+	var tractorVelocity = tractorVelocityBasedOnLevel["velocity"]
+	
+	TRACTOR_VELOCITY = tractorVelocity
+	
+	
+	
+	

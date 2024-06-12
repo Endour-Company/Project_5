@@ -18,12 +18,12 @@ var CAR_VELOCITIES_BASED_ON_JALAN_SAWAH = [
 	},
 	{
 		"level" : 3,
-		"velocity" : 300	
+		"velocity" : 200	
 	}
 ]
 
 @export var CAR_VELOCITY : float = 600
-@export var SHAKE_AMPLITUDE : float = 2  # Amplitudo getaran (ke atas dan ke bawah)
+@export var SHAKE_AMPLITUDE : float = 0.5  # Amplitudo getaran (ke atas dan ke bawah)
 @export var SHAKE_SPEED : float = 15      # Kecepatan getaran
 
 

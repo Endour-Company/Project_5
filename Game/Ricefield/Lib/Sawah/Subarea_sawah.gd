@@ -42,7 +42,7 @@ func _process(delta):
 				PADIS_SIZE = PADIS_SIZES.NONE
 				set_padis_texture()
 			SAWAH_STATES.GROWTH:
-				TIME_ELAPSED += delta * GROWTH_SPEED
+				TIME_ELAPSED += delta * GROWTH_SPEED * 0.133
 				set_sawah_growth()
 
 			SAWAH_STATES.READY_TO_HARVEST :

@@ -8,11 +8,7 @@ func _ready():
 	$Subarea_sawah.sawah_ready_to_harvest.connect(_on_sawah_ready_to_harvest)
 	$Itembg_mobil.car_is_done.connect(_on_car_done)
 	
-	# Set Variabel Pertumbuhan
-	$Subarea_sawah.GROWTH_SPEED = Variables.SAWAH_GROWTH_SPEED
-	$Itembg_mobil.CAR_VELOCITY = 100
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 

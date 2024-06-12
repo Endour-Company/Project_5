@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://brw17nqvu6hle"]
+[gd_scene load_steps=14 format=3 uid="uid://brw17nqvu6hle"]
 
 [ext_resource type="Script" path="res://Game/Ricefield/Main/ricefield_area.gd" id="1_0ucuo"]
 [ext_resource type="Texture2D" uid="uid://cmctconrlnkc8" path="res://Game/Ricefield/Assets/bg_main/bg_main.png" id="2_3j1xc"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Sawah/Subarea_sawah.gd" id="2_xe0x6"]
 [ext_resource type="PackedScene" uid="uid://boqkpcgr4hd32" path="res://Game/Ricefield/Lib/Pembajak/itembg_pembajak.tscn" id="3_felbc"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Subarea_sungai/Subarea_sungai.gd" id="3_xgtb8"]
+[ext_resource type="PackedScene" uid="uid://cf6js53bcyoa3" path="res://Game/Ricefield/Lib/Subarea_sungai/wave.tscn" id="5_mm02a"]
+[ext_resource type="Script" path="res://Game/Ricefield/Lib/Subarea_sungai/Waves.gd" id="5_qxehk"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Subarea_jalan/Subarea_jalan.gd" id="6_pqkut"]
 [ext_resource type="Texture2D" uid="uid://dkiw33dkar3p2" path="res://Game/Ricefield/Assets/item_bg_sungai/sungai_kotor.png" id="7_k0t7d"]
 [ext_resource type="Texture2D" uid="uid://b6jvmsu304a0" path="res://Game/Ricefield/Assets/item_up_jalan/jalan_lv1.png" id="8_mrxar"]
@@ -30,6 +32,12 @@ offset_bottom = 1080.0
 texture = ExtResource("7_k0t7d")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="Waves" type="Node2D" parent="Subarea_sungai"]
+script = ExtResource("5_qxehk")
+
+[node name="Wave" parent="Subarea_sungai/Waves" instance=ExtResource("5_mm02a")]
+position = Vector2(-37, 468)
 
 [node name="Subarea_sawah" type="Node2D" parent="."]
 script = ExtResource("2_xe0x6")

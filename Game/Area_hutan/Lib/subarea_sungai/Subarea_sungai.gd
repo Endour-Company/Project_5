@@ -24,4 +24,5 @@ func _process(delta):
 	if WAVE_COUNT < 3 : 
 		var wave = sceneWave.instantiate()
 		$Waves.add_child(wave)
-		
+	
+	super._process(delta)

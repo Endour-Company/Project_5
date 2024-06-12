@@ -34,7 +34,8 @@ func _process(delta):
 	pass
 
 func _on_item_upgraded(itemName):
-	place_lampu_sawah()
+	if(itemName == "Lampu Jalan Sawah"):
+		place_lampu_sawah()
 
 func place_lampu_sawah():
 	for pointLampuSawah in POINTS_LAMPU_SAWAH :
