@@ -9,10 +9,11 @@ var padisHigh = load("res://Game/Ricefield/Assets/item_bg_padi/padis_besar.png")
 
 @export var GROWTH_SPEED : float = 1
 var PADIS_SIZE = PADIS_SIZES.NONE
+
 @export var SAWAH_STATE = SAWAH_STATES.IDLE 
 
-signal sawah_change_state(state)
 
+signal sawah_ready_to_harvest
 
 enum PADIS_SIZES {
 	NONE,
@@ -23,16 +24,15 @@ enum PADIS_SIZES {
 
 enum SAWAH_STATES {
 	IDLE,
-	PLOW,
-	READY_TO_HARVEST,
 	GROWTH,
+	READY_TO_HARVEST,
 }
 
 var TIME_ELAPSED = 0
 
 func _ready():
+	$Itembg_pembajak.membajak_is_done.connect(_on_membajak_is_done)
 	set_padis_texture()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -44,8 +44,7 @@ func _process(delta):
 			SAWAH_STATES.GROWTH:
 				TIME_ELAPSED += delta * GROWTH_SPEED
 				set_sawah_growth()
-			SAWAH_STATES.PLOW :
-				pass
+
 			SAWAH_STATES.READY_TO_HARVEST :
 				pass
 			
@@ -64,16 +63,16 @@ func set_sawah_growth():
 	elif TIME_ELAPSED >= 80 and PADIS_SIZE == PADIS_SIZES.HIGH:
 		if SAWAH_STATE != SAWAH_STATES.READY_TO_HARVEST: 
 			SAWAH_STATE = SAWAH_STATES.READY_TO_HARVEST
-			set_sawah_state_ready_to_harvest()
+			emit_signal("sawah_ready_to_harvest")
 		TIME_ELAPSED = 0
 	
 	if previous_size != PADIS_SIZE:
 		set_padis_texture()
 		match PADIS_SIZE:
 			PADIS_SIZES.NONE:
-				set_sawah_state_idle()
+				SAWAH_STATE = SAWAH_STATES.IDLE
 			PADIS_SIZES.SMALL, PADIS_SIZES.MEDIUM, PADIS_SIZES.HIGH:
-				set_sawah_state_growth()
+				SAWAH_STATE = SAWAH_STATES.GROWTH
 
 
 func set_padis_texture():
@@ -88,16 +87,5 @@ func set_padis_texture():
 			$TextureRect.set_texture(padisHigh)
 
 
-func set_sawah_state_idle():
-	SAWAH_STATE = SAWAH_STATES.IDLE
-	
-
-func set_sawah_state_growth():
+func _on_membajak_is_done():
 	SAWAH_STATE = SAWAH_STATES.GROWTH
-	
-func set_sawah_state_plow():
-	SAWAH_STATE = SAWAH_STATES.PLOW
-	emit_signal("sawah_change_state", "plow")
-
-func set_sawah_state_ready_to_harvest():
-	emit_signal("sawah_change_state", "ready_to_harvest")

@@ -1,41 +1,32 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
-
 var VAR_KUALITAS_PADI = 0
 var VAR_KUANTITAS_PADI = 0
-var VAR_JUMLAH_HAMA = 0
-var VAR_TINGKAT_PESTISIDA = 0
-var IS_CAR_READY = true
-
 
 func _ready():
-	$Subarea_sawah.sawah_change_state.connect(_on_sawah_change_state)
+	$Subarea_sawah.sawah_ready_to_harvest.connect(_on_sawah_ready_to_harvest)
 	$Itembg_mobil.car_is_done.connect(_on_car_done)
-	#$Itembg_pembajak.membajak_is_done.connect(_on_membajak_done)
-
+	
+	# Set Variabel Pertumbuhan
+	$Subarea_sawah.GROWTH_SPEED = Variables.SAWAH_GROWTH_SPEED
+	$Itembg_mobil.CAR_VELOCITY = 100
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
+func _on_sawah_ready_to_harvest():
 
+	var isCarReady = $Itembg_mobil.IS_CAR_READY
+	if(isCarReady == true) : 
 
-func _on_sawah_change_state(state):
-	match state :
-		"growth" : 
-			pass
-		"plow" :
-			pass
-		"ready_to_harvest" :
-			if(IS_CAR_READY) : 
-				$Subarea_sawah.set_sawah_state_idle()
-				$Itembg_mobil.set_mobil_state_move()
+		$Itembg_mobil.CAR_STATE = $Itembg_mobil.CAR_STATES.MOVE
+		$Subarea_sawah.SAWAH_STATE = $Subarea_sawah.SAWAH_STATES.IDLE
 
 func _on_car_done():
-	pass
-	#$Itembg_pembajak.behaviour_membajak()
+	$Subarea_sawah/Itembg_pembajak.behaviour_membajak()
 
 func _on_membajak_done():
 	$Subarea_sawah.set_sawah_state_growth()
+

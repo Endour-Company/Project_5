@@ -35,7 +35,7 @@ var SAWAH_POINTS = [
 	}
 ]
 
-@export var TRACTOR_VELOCITY : float = 200
+@export var TRACTOR_VELOCITY : float = 600
 @export var SHAKE_AMPLITUDE : float = 0.5  # Amplitudo getaran (ke atas dan ke bawah)
 @export var SHAKE_SPEED : float = 20      # Kecepatan getaran
 @export var BRAKE_DECELERATION : float = 200  # Laju deselerasi saat pengereman
@@ -73,7 +73,6 @@ func _process(delta):
 			move_state(delta)
 
 func behaviour_membajak():
-	print("saatnya membajak")
 	set_tractor_state_move()
 
 func idle_state():
@@ -106,15 +105,8 @@ func move_along_path(delta):
 	handle_flip()
 
 func apply_brake(delta):
-	if current_velocity > 0:
-		current_velocity -= BRAKE_DECELERATION * delta
-		if current_velocity < 0:
-			current_velocity = 0
-	$CharacterBody2D.velocity = Vector2(current_velocity, 0)
-	
-	if current_velocity == 0:
-		set_tractor_state_idle()
-		emit_signal("membajak_is_done")
+	set_tractor_state_idle()
+	emit_signal("membajak_is_done")
 
 func apply_shake_effect(delta):
 	shake_timer += delta * SHAKE_SPEED

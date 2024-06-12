@@ -3,10 +3,15 @@ extends Node
 
 @export var MONEY : int = 0
 
+
+# AREA : SAWAH
+var SAWAH_GROWTH_SPEED =  100
+
 # AREA : HUTAN
 var LOGGING_VOLUME = 1
 
-var VAR_KUALITAS_AIR = 0
+# range 0 - 1
+var VAR_KUALITAS_AIR = 1
 var VAR_PENDAPATAN = 0
 var VAR_KESEHATAN_MASYARAKAT = 0
 var VAR_KESEJAHTERAAN_MASYARAKAT = 0
@@ -34,3 +39,5 @@ func set_money(action : String, value : int):
 
 func set_logging_volume(value : int):
 	LOGGING_VOLUME = value
+
+

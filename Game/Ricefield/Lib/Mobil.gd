@@ -7,9 +7,28 @@ var imgMobilIsi : Texture2D = preload("res://Game/Ricefield/Assets/item_bg_mobil
 
 var POS_INIT_IDLE = Vector2(0,0)
 
-@export var CAR_VELOCITY : float = 100
+var CAR_VELOCITIES_BASED_ON_JALAN_SAWAH = [
+	{
+		"level" : 1,
+		"velocity" : 50
+	},
+	{
+		"level" : 2,
+		"velocity" : 150
+	},
+	{
+		"level" : 3,
+		"velocity" : 300	
+	}
+]
+
+@export var CAR_VELOCITY : float = 600
 @export var SHAKE_AMPLITUDE : float = 2  # Amplitudo getaran (ke atas dan ke bawah)
 @export var SHAKE_SPEED : float = 15      # Kecepatan getaran
+
+
+# If car not ready, car cant be distracted while car in MOVE state
+var IS_CAR_READY = true
 
 signal car_is_done
 
@@ -22,6 +41,9 @@ var CAR_STATE = CAR_STATES.IDLE
 var CAR_DONE  = false
 var shake_timer = 0.0
 
+
+
+
 func _ready():
 	pass
 
@@ -31,7 +53,6 @@ func _process(delta):
 		CAR_STATES.IDLE :
 			idle_state()
 		CAR_STATES.MOVE :
-			
 			move_state(delta)
 			
 
@@ -42,6 +63,7 @@ func idle_state():
 
 
 func move_state(delta):
+	watch_jalan_sawah_level()
 	if($CharacterBody2D.position.x >= 1920):
 		$CharacterBody2D.position.x = -500
 		CAR_DONE = true
@@ -63,7 +85,17 @@ func apply_shake_effect(delta):
 	$CharacterBody2D/Sprite2D.position.y += shake_offset
 
 func set_mobil_state_idle():
+	CAR_DONE = false
 	CAR_STATE = CAR_STATES.IDLE
 	
 func set_mobil_state_move():
 	CAR_STATE = CAR_STATES.MOVE
+
+func watch_jalan_sawah_level():
+	var dataOfJalan = Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Jalan Sawah")
+	var levelOfJalan = dataOfJalan["level"]
+	var carVelocityBasedOnJalanLevel = Utils.find_item_in_array_with_key(CAR_VELOCITIES_BASED_ON_JALAN_SAWAH, "level", levelOfJalan)
+	
+	CAR_VELOCITY = carVelocityBasedOnJalanLevel["velocity"]
+	
+	
