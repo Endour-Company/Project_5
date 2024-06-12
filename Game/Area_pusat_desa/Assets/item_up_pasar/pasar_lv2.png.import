@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqka1q4dijlvp"
-path="res://.godot/imported/sampah.png-73801c49f071c878758b6f5760a4e9e8.ctex"
+uid="uid://wwnb4y8mr7vi"
+path="res://.godot/imported/pasar_lv2.png-f3b5b25fa4c4f19229b8acd085a5835d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Area_pusat_desa/Assets/item_ct_pasar/sampah.png"
-dest_files=["res://.godot/imported/sampah.png-73801c49f071c878758b6f5760a4e9e8.ctex"]
+source_file="res://Game/Area_pusat_desa/Assets/item_up_pasar/pasar_lv2.png"
+dest_files=["res://.godot/imported/pasar_lv2.png-f3b5b25fa4c4f19229b8acd085a5835d.ctex"]
 
 [params]
 

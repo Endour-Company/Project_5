@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwuj2mo6kvyjm"]
+
+[ext_resource type="Texture2D" uid="uid://de8ar4ccspqwh" path="res://Game/Area_pusat_desa/Assets/item_ct_lampu_jalan/lampu_jalan.png" id="1_atrgv"]
+
+[node name="item_lampu" type="TextureRect"]
+offset_left = 202.0
+offset_top = 128.0
+offset_right = 2250.0
+offset_bottom = 2176.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_atrgv")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs2pqvafanmfe"
-path="res://.godot/imported/Untitled38_20240530105907.png-d988d431a7aaa0d0921dbfacbb5afaf4.ctex"
+uid="uid://brbuv44lbprip"
+path="res://.godot/imported/pasar_lv1.png-a660f762126424950cd6f6c612e385f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Area_pusat_desa/Assets/item_up_tanah_lapang/Untitled38_20240530105907.png"
-dest_files=["res://.godot/imported/Untitled38_20240530105907.png-d988d431a7aaa0d0921dbfacbb5afaf4.ctex"]
+source_file="res://Game/Area_pusat_desa/Assets/item_up_pasar/pasar_lv1.png"
+dest_files=["res://.godot/imported/pasar_lv1.png-a660f762126424950cd6f6c612e385f5.ctex"]
 
 [params]
 

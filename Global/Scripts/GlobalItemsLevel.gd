@@ -57,7 +57,37 @@ var ITEM_LEVEL = [
 		"name" : "Tower Internet",
 		"level" : 1,
 		"count" : 0
-	}
+	},
+	{
+		"name" : "Jalan Pusat Desa",
+		"level" : 1,
+		"count" : 1
+	},
+	{
+		"name" : "Balai Desa",
+		"level" : 1,
+		"count" : 1
+	},
+	{
+		"name" : "Puskesmas",
+		"level" : 1,
+		"count" : 1
+	},
+	{
+		"name" : "Pasar",
+		"level" : 1,
+		"count" : 1
+	},
+	{
+		"name" : "Tanah Lapang",
+		"level" : 1,
+		"count" : 1
+	},
+	{
+		"name" : "Lampu Jalan Pusat Desa",
+		"level" : 1,
+		"count" : 0
+	},
 ]
 
 var ITEMS_PER_AREA : Array = [

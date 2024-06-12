@@ -15,7 +15,8 @@ func init_area():
 	var areas = {
 		GlobalActionBar.AREAS.SAWAH: $Ricefield_area,
 		GlobalActionBar.AREAS.HUTAN: $Area_Hutan,
-		GlobalActionBar.AREAS.PEMUKIMAN: $AreaPemukiman
+		GlobalActionBar.AREAS.PEMUKIMAN: $AreaPemukiman,
+		GlobalActionBar.AREAS.PUSATDESA: $AreaPusat
 	}
 	
 	for area in areas:

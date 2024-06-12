@@ -1,6 +1,6 @@
 [
   {
-	"name": "Jalan",
+	"name": "Jalan Pusat Desa",
 	"description": "Jalan di pusat desa yang memiliki berbagai fasilitas seperti pusat pemerintahan, alun-alun, pasar, dan puskesmas memfasilitasi aksesibilitas, memperkuat ekonomi melalui perdagangan, dan menciptakan lingkungan yang aman dan nyaman, meningkatkan kehidupan sosial, ekonomi, dan pemerintahan masyarakat.",
 	"type": "upgradable",
 	"levels": [
@@ -37,12 +37,17 @@
 		"img": "res://Game/Area_pusat_desa/Assets/item_up_pasar/pasar_lv1.png"
 	  },
 	  {
-		"level": 1,
+		"level": 2,
 		"name": "Pasar Lv 2",
 		"upgrade_price": 0,
 		"img": "res://Game/Area_pusat_desa/Assets/item_up_pasar/pasar_lv2.png"
 	  },
-
+	{
+		"level": 3,
+		"name": "Pasar Lv 3",
+		"upgrade_price": 0,
+		"img": "res://Game/Area_pusat_desa/Assets/item_up_pasar/pasar_lv3.png"
+	  },
 	],
 	"max_owned": 1
   },
@@ -93,7 +98,7 @@
 	"max_owned": 1
   },
   {
-		"name": "Lampu Jalan",
+		"name": "Lampu Jalan Pusat Desa",
 		"description": "Lampu jalan di pusat desa meningkatkan keamanan dan mobilitas penduduk pada malam hari, memperkuat kehidupan sosial dan ekonomi, serta meningkatkan daya tarik pariwisata lokal dan potensi ekonomi desa.", 
 		"type" : "countable",
 		"levels": [		
@@ -101,10 +106,10 @@
 				"level" : 1,
 				"name" : "Lampu Jalan",
 				"upgrade_price" : 350000,
-				"img" : "res://Game/Area_pusat_desa/Assets/lampu_jalan/lampu_jalan.png"
+				"img" : "res://Game/Area_pusat_desa/Assets/item_ct_lampu_jalan/lampu_jalan.png"
 			}	
 		],
-		"max_owned" : 5
+		"max_owned" : 6
 	},
 	 {
 	"name": "Balai Desa",
@@ -121,7 +126,7 @@
 		"level": 2,
 		"name": "Puskesmas Lv 2",
 		"upgrade_price": 0,
-		"img": "res://Game/Area_pusat_desa/Assets/item_up_balai_desa/balai_desa_lv1.png"
+		"img": "res://Game/Area_pusat_desa/Assets/item_up_balai_desa/balai_desa_lv2.png"
 	  }
 	],
 	"max_owned": 1
