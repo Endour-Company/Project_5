@@ -1,0 +1,136 @@
+[gd_scene load_steps=14 format=3 uid="uid://cjnu7rsccg082"]
+
+[ext_resource type="Texture2D" uid="uid://cuwx82bwbja1y" path="res://Global/Game_UI/Action_bar/Assets/Box.png" id="1_3esga"]
+[ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Buy_confirmation/Buy_confirmation.gd" id="1_lrq02"]
+[ext_resource type="Texture2D" uid="uid://kyd81uoky3lu" path="res://Global/Game_UI/Action_bar/Assets/Bayar_Normal.png" id="2_euj8d"]
+[ext_resource type="Texture2D" uid="uid://dhgbtvnk126it" path="res://Global/Game_UI/Action_bar/Assets/Bayar_Pressed.png" id="3_nkhy7"]
+[ext_resource type="Texture2D" uid="uid://55cuvu6fj7u2" path="res://Global/Game_UI/Action_bar/Assets/Bayar_Hover.png" id="4_ibk86"]
+[ext_resource type="Texture2D" uid="uid://dnl6eh4mgv53s" path="res://Global/Game_UI/Action_bar/Assets/Batal_Normal.png" id="5_7bupr"]
+[ext_resource type="Texture2D" uid="uid://gpbokeay0biw" path="res://Global/Game_UI/Action_bar/Assets/Batal_Pressed.png" id="6_n7sf5"]
+[ext_resource type="Texture2D" uid="uid://d01f0t2dr5tms" path="res://Global/Game_UI/Action_bar/Assets/Batal_Hover.png" id="7_v2xx7"]
+
+[sub_resource type="Theme" id="Theme_xsknp"]
+HBoxContainer/constants/separation = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_dge51"]
+font_size = 25
+font_color = Color(0.309804, 0.317647, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_52bfm"]
+font_size = 25
+font_color = Color(0.309804, 0.317647, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0cwwb"]
+font_size = 20
+font_color = Color(0.796078, 0.054902, 0.054902, 1)
+
+[sub_resource type="Theme" id="Theme_l5col"]
+HBoxContainer/constants/separation = 22
+
+[node name="BuyConfirmation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lrq02")
+
+[node name="Overlay" type="ColorRect" parent="."]
+self_modulate = Color(0, 0, 0, 0.705882)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Box" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -233.0
+offset_right = 193.0
+offset_bottom = 233.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3esga")
+
+[node name="Item_price_container" type="HBoxContainer" parent="Box"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.483
+anchor_right = 0.5
+anchor_bottom = 0.483
+offset_left = -142.0
+offset_top = -20.078
+offset_right = 142.0
+offset_bottom = 19.922
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_xsknp")
+
+[node name="Item_name" type="Label" parent="Box/Item_price_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Jalan Aspal Hehehe"
+label_settings = SubResource("LabelSettings_dge51")
+autowrap_mode = 3
+
+[node name="Item_price" type="Label" parent="Box/Item_price_container"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Rp. 500K"
+label_settings = SubResource("LabelSettings_52bfm")
+
+[node name="Label_not_enough_money" type="Label" parent="Box"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 57.0
+offset_right = 88.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Uang Tidak Cukup"
+label_settings = SubResource("LabelSettings_0cwwb")
+
+[node name="Buy_confirmation_container" type="HBoxContainer" parent="Box"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.794
+anchor_right = 0.5
+anchor_bottom = 0.794
+offset_left = -20.0
+offset_top = -20.004
+offset_right = 20.0
+offset_bottom = 19.996
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_l5col")
+alignment = 1
+
+[node name="Buy_button" type="TextureButton" parent="Box/Buy_confirmation_container"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_euj8d")
+texture_pressed = ExtResource("3_nkhy7")
+texture_hover = ExtResource("4_ibk86")
+
+[node name="Cancel_button" type="TextureButton" parent="Box/Buy_confirmation_container"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_7bupr")
+texture_pressed = ExtResource("6_n7sf5")
+texture_hover = ExtResource("7_v2xx7")
+
+[connection signal="pressed" from="Box/Buy_confirmation_container/Buy_button" to="." method="_on_buy_button_pressed"]
+[connection signal="pressed" from="Box/Buy_confirmation_container/Cancel_button" to="." method="_on_cancel_button_pressed"]

@@ -27,6 +27,7 @@ func _on_item_upgraded(itemName):
 	$Item_container._refresh()
 
 func init_items():
+	itemContainer._refresh()
 	$Item_container._refresh()
 
 func _on_current_area_changed():

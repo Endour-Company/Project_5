@@ -1,12 +1,10 @@
 extends VBoxContainer
 
 
-# Called when the node enters the scene tree for the first time.
-
-var buyButtonNormal = load("res://Global/Game_UI/Action_bar/Assets/Buy_ver2.png")
-var buyButtonMax = load("res://Global/Game_UI/Action_bar/Assets/Buy_max.png")
 
 var CURRENT_ITEM_NAME = null
+
+
 
 func _ready():
 	GlobalActionBar.current_selected_item_changed.connect(_on_current_selected_item_changed)
@@ -59,18 +57,18 @@ func set_description_body():
 
 	
 	if (isAllowToBuy) : 
-		$HBoxContainer2/Buy_button.set_button_icon(buyButtonNormal)
 		$HBoxContainer2/Buy_button.set_disabled(false)
 	else :
-		$HBoxContainer2/Buy_button.set_button_icon(buyButtonMax)
 		$HBoxContainer2/Buy_button.set_disabled(true)
 	
 func set_description_empty():
 	pass
 
-
-func _on_buy_button_button_up():
-	GlobalItemsLevel.upgrade_item(CURRENT_ITEM_NAME)
-
 func _refresh():
 	set_description_body()
+
+
+#func _on_buy_button_pressed():
+	#GlobalItemsLevel.upgrade_item(CURRENT_ITEM_NAME)
+
+

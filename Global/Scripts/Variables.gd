@@ -1,7 +1,7 @@
 extends Node
 
 
-@export var MONEY : int = 0
+@export var MONEY : int = 500000
 
 
 # AREA : SAWAH
