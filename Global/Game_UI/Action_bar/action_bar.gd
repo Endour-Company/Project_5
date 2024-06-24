@@ -1,13 +1,11 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
-
 @onready var PLACE = null
 
 @onready var itemContainer = $Item_container
 @onready var itemDescriptionContainer = $Item_description_container
 
+var is_hidden = false
 
 func _ready():
 	GlobalItemsLevel.item_updated.connect(_on_item_updated)
@@ -33,3 +31,12 @@ func init_items():
 func _on_current_area_changed():
 	init_items()
 
+
+func _on_hide_button_pressed():
+	is_hidden = !is_hidden
+	
+	var tween = get_tree().create_tween()
+	if is_hidden:
+		tween.tween_property(self, "position", Vector2(960, 1050), 0.5)
+	else:
+		tween.tween_property(self, "position", Vector2(960, 521), 0.5)
