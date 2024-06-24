@@ -4,14 +4,13 @@ extends VBoxContainer
 
 var CURRENT_ITEM_NAME = null
 
-
-
 func _ready():
 	GlobalActionBar.current_selected_item_changed.connect(_on_current_selected_item_changed)
+	CURRENT_ITEM_NAME = GlobalActionBar.CURRENT_SELECTED_ITEM
+	set_description_body()
 
 func _process(delta):
 	pass
-
 
 func _on_current_selected_item_changed(current_selected_item_name : String):
 	CURRENT_ITEM_NAME = GlobalActionBar.CURRENT_SELECTED_ITEM

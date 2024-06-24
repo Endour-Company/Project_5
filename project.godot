@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalActionBar="*res://Global/Scripts/GlobalActionBar.gd"
 GlobalItemsLevel="*res://Global/Scripts/GlobalItemsLevel.gd"
+GlobalActionBar="*res://Global/Scripts/GlobalActionBar.gd"
 Utils="*res://Global/Scripts/Utils.gd"
 Variables="*res://Global/Scripts/Variables.gd"
 GameAudio="*res://Global/Game_Audio/Lib/GameAudio.gd"

@@ -109,8 +109,15 @@ func _process(delta):
 	_update_tree_count_and_connect($Part_jatis, COUNT_JATIS)
 	
 	# Set scan interval
-	var scanInterval = 15 / Variables.LOGGING_VOLUME
-	SCAN_INTERVAL = scanInterval
+	if (Variables.LOGGING_VOLUME != 0) :
+		var scanInterval = 15 / Variables.LOGGING_VOLUME
+		SCAN_INTERVAL = scanInterval
+		if (SCAN_TIMER.paused == true) :
+			SCAN_TIMER.set_paused(false)
+	else :
+		SCAN_INTERVAL = 0
+		SCAN_TIMER.set_paused(true)
+		
 
 func init_data_pohons(dataPohons : Array) -> void:
 	DATA_POHONS = dataPohons

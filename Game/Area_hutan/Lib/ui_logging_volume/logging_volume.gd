@@ -19,7 +19,7 @@ func _process(delta):
 
 
 func _on_button_minus_pressed():
-	if(LOGGING_VOLUME_VALUE - 1 > 0) :
+	if(LOGGING_VOLUME_VALUE - 1 >= 0) :
 		LOGGING_VOLUME_VALUE -= 1
 		Variables.set_logging_volume(LOGGING_VOLUME_VALUE)
 	emit_signal("logging_volume_changed", LOGGING_VOLUME_VALUE)

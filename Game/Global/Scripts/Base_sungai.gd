@@ -51,8 +51,9 @@ func _process(delta):
 	watch_kualitas_air()
 	var statusSungai = STATUS_SUNGAI
 	if(statusSungai != STATUS_SUNGAI) :
-		change_texture_of_sungai()
-
+		print("Change status of sungai")
+	
+	change_texture_of_sungai()
 
 func watch_kualitas_air() :
 	var varKualitasAir = Variables.VAR_KUALITAS_AIR
