@@ -7,7 +7,6 @@ var padisSmall = load("res://Game/Ricefield/Assets/item_bg_padi/padis_kecil.png"
 var padisMedium = load("res://Game/Ricefield/Assets/item_bg_padi/padis_sedang.png")
 var padisHigh = load("res://Game/Ricefield/Assets/item_bg_padi/padis_besar.png")
 
-@export var GROWTH_SPEED : float = 1
 var PADIS_SIZE = PADIS_SIZES.NONE
 
 @export var SAWAH_STATE = SAWAH_STATES.IDLE 
@@ -42,7 +41,7 @@ func _process(delta):
 				PADIS_SIZE = PADIS_SIZES.NONE
 				set_padis_texture()
 			SAWAH_STATES.GROWTH:
-				TIME_ELAPSED += delta * GROWTH_SPEED * 0.133
+				TIME_ELAPSED += delta * Variables.GROWTH_SPEED * 0.8
 				set_sawah_growth()
 
 			SAWAH_STATES.READY_TO_HARVEST :
