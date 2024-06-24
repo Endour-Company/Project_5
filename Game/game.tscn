@@ -41,9 +41,9 @@ font_size = 125
 script = ExtResource("1_x0wwk")
 
 [node name="Area_Hutan" parent="." instance=ExtResource("1_pgppg")]
-visible = false
 
 [node name="Ricefield_area" parent="." instance=ExtResource("1_ymy68")]
+visible = false
 
 [node name="AreaPemukiman" parent="." instance=ExtResource("4_qv2wn")]
 visible = false

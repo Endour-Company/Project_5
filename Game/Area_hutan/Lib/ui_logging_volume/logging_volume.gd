@@ -29,7 +29,9 @@ func _on_button_plus_pressed():
 	if(LOGGING_VOLUME_VALUE + 1 <= LOGGING_VOLUME_MAX_VALUE) :
 		LOGGING_VOLUME_VALUE += 1
 		Variables.set_logging_volume(LOGGING_VOLUME_VALUE)
-	emit_signal("logging_volume_changed", LOGGING_VOLUME_VALUE)
+		emit_signal("logging_volume_changed", LOGGING_VOLUME_VALUE)
 
 func _on_logging_volume_changed(value):
 	$Label.set_text(str(value))
+	
+	

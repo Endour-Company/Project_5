@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://brw17nqvu6hle"]
+[gd_scene load_steps=23 format=3 uid="uid://brw17nqvu6hle"]
 
 [ext_resource type="Script" path="res://Game/Ricefield/Main/ricefield_area.gd" id="1_0ucuo"]
 [ext_resource type="Texture2D" uid="uid://cmctconrlnkc8" path="res://Game/Ricefield/Assets/bg_main/bg_main.png" id="2_3j1xc"]
@@ -13,6 +13,17 @@
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Mobil.gd" id="8_uv1uv"]
 [ext_resource type="Texture2D" uid="uid://bbvaj3p5mfebk" path="res://Game/Ricefield/Assets/item_bg_mobil/mobil_kosong.png" id="8_vr351"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Subarea_lampu_sawah/Subarea_lampu_sawah.gd" id="10_e8lyc"]
+[ext_resource type="Script" path="res://Game/Ricefield/Lib/Volume_pestisida.gd" id="14_851a6"]
+[ext_resource type="Texture2D" uid="uid://cxs567xgojpkt" path="res://Game/Area_hutan/Assets/ui/logging_volume/Box.png" id="14_nuse1"]
+[ext_resource type="Texture2D" uid="uid://1vqdyad3fl2v" path="res://Game/Area_hutan/Assets/ui/logging_volume/Minus_Normal.png" id="15_wcsrk"]
+[ext_resource type="Texture2D" uid="uid://c4typvrk54axq" path="res://Game/Area_hutan/Assets/ui/logging_volume/Minus_Pressed.png" id="16_kxbx1"]
+[ext_resource type="Texture2D" uid="uid://dc0wjy8vw6qn8" path="res://Game/Area_hutan/Assets/ui/logging_volume/Minus_Hover.png" id="17_4mra4"]
+[ext_resource type="Texture2D" uid="uid://bknuyuxj4k4fr" path="res://Game/Area_hutan/Assets/ui/logging_volume/Plus_Normal.png" id="18_qtqy0"]
+[ext_resource type="Texture2D" uid="uid://bp2ibuu0mpvo4" path="res://Game/Area_hutan/Assets/ui/logging_volume/Plus_Pressed.png" id="19_6uoke"]
+[ext_resource type="Texture2D" uid="uid://dlbjkg4u7esxp" path="res://Game/Area_hutan/Assets/ui/logging_volume/Plus_Hover.png" id="20_yqimx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o8ud1"]
+font_size = 100
 
 [node name="Ricefield_area" type="Node2D"]
 script = ExtResource("1_0ucuo")
@@ -74,3 +85,53 @@ texture = ExtResource("8_vr351")
 
 [node name="Subarea_lampu_sawah" type="Node2D" parent="."]
 script = ExtResource("10_e8lyc")
+
+[node name="Volume_pestisida" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1630.0
+offset_top = 189.0
+offset_right = 1670.0
+offset_bottom = 229.0
+scale = Vector2(0.25, 0.25)
+script = ExtResource("14_851a6")
+
+[node name="TextureRect" type="TextureRect" parent="Volume_pestisida"]
+layout_mode = 0
+offset_right = 1136.0
+offset_bottom = 628.0
+texture = ExtResource("14_nuse1")
+
+[node name="Button_minus" type="TextureButton" parent="Volume_pestisida"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 125.0
+offset_right = 378.0
+offset_bottom = 405.0
+texture_normal = ExtResource("15_wcsrk")
+texture_pressed = ExtResource("16_kxbx1")
+texture_hover = ExtResource("17_4mra4")
+
+[node name="Button_plus" type="TextureButton" parent="Volume_pestisida"]
+layout_mode = 0
+offset_left = 758.0
+offset_top = 125.0
+offset_right = 994.0
+offset_bottom = 405.0
+texture_normal = ExtResource("18_qtqy0")
+texture_pressed = ExtResource("19_6uoke")
+texture_hover = ExtResource("20_yqimx")
+
+[node name="Label" type="Label" parent="Volume_pestisida"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 200.0
+offset_right = 648.0
+offset_bottom = 356.0
+text = "1"
+label_settings = SubResource("LabelSettings_o8ud1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Volume_pestisida/Button_minus" to="Volume_pestisida" method="_on_button_minus_pressed"]
+[connection signal="pressed" from="Volume_pestisida/Button_plus" to="Volume_pestisida" method="_on_button_plus_pressed"]

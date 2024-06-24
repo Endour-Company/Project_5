@@ -4,40 +4,64 @@ extends Node
 @export var MONEY : int = 50000000000
 
 # AREA : ALL (Range 0-1)
+# Global Atribute
 var VAR_KUALITAS_AIR = 0.6
 var VAR_PENDAPATAN = 0
 var VAR_KESEHATAN_MASYARAKAT = 0
 var VAR_KESEJAHTERAAN_MASYARAKAT = 0
 
-# AREA : SAWAH
-var GROWTH_SPEED =  1 # Range  : 0-1
+#  ====== AREA : SAWAH
+var KUALITAS_PADI = 1 # Range  : 0-1
+var KUANTITAS_PADI = 1 # Range : 0-1
+var HAMA_COUNT = 1 # Range : 0-1
 
-# AREA : HUTAN
+# Item Upgraded
+var PESTISIDA_VOLUME = 1 # Range : 1-3
+# Support atribute
+var GROWTH_SPEED =  1 # Range  : 0-1
+var MAX_LEVEL_OF_JALAN_SAWAH = 3
+#  ====== END OF AREA : SAWAH
+
+
+#  ====== AREA : HUTAN
+var DAYA_SERAP_POHON = 1
+# Support Atribute
 var LOGGING_VOLUME = 1 # Range : 0-5
-var MAX_COUNT_POHON = 11
+var MAX_COUNT_POHON = 11 
 var COUNT_POHON = 1
 
-# AREA : PUSAT DESA
-var MAX_LEVEL_OF_PASAR = 3
+# ====== END OF AREA : HUTAN
 
-# AREA : PEMUKIMAN
+
+#  ====== AREA : PUSAT DESA
+var DAYA_BELI = 1 # Range : 11
+
+# Support variable
+var MAX_LEVEL_OF_PASAR = 3
+var MAX_LEVEL_OF_JALAN_PUSAT_DESA = 3
+
+# ====== END OF AREA : PUSAT DESA
+
+#  ====== AREA : PEMUKIMAN
+var SANTIATION = 1 # Range : 0 - 1 
+
+# Support Atribute
 var MAX_COUNT_OF_SEPTIC_TANK = 3 
 var MAX_COUNT_OF_TOILET = 6
 
-# Called when the node enters the scene tree for the first time.
+#  ====== END OF AREA : PEMUKIMAN
 
 signal money_changed
 
 func _ready():
-	var x : float = 1
-	var y : float = 4
+	pass
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	# Set GROWTH_SPEED based on KUALITAS_AIR
-	GROWTH_SPEED = calculate_growth_speed(VAR_KUALITAS_AIR)
 	watch_kualtas_air()
+	watch_kuantitas_padi()
+	print(KUANTITAS_PADI)
 
 
 func set_money(action : String, value : int):
@@ -51,24 +75,99 @@ func set_money(action : String, value : int):
 func set_logging_volume(value : int):
 	LOGGING_VOLUME = value
 
-func calculate_growth_speed(kualitas_air: float) -> float:
-	# Jika kualitas_air = 0, growth_speed adalah nilai minimal yaitu 0.5
-	if kualitas_air == 0:
-		return 0.5
-	# Jika kualitas_air > 0, growth_speed dihitung sebagai berikut:
-	# growth_speed = 0.5 * kualitas_air + 0.5
-	return 0.5 * kualitas_air + 0.5
 
 
+# ==== FUNCTION OF GLOBAL ATRIBUTE ====
 func watch_kualtas_air():
 	var kualitasAir = 0
 	
-	var normalizedCountPohon : float = COUNT_POHON / float(MAX_COUNT_POHON)
+	watch_sanitation()
+	watch_daya_serap_pohon()
+	watch_daya_beli()
+		
 	var normalizedLevelOfPasar : float = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Pasar"))["level"] / float(MAX_LEVEL_OF_PASAR)
-	var normalizedCountOfSeptictank : float  = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Septic Tank"))["level"] / float(MAX_COUNT_OF_SEPTIC_TANK)
-	var normalizedCountOfToilet: float  = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Toilet Umum"))["level"] / float(MAX_COUNT_OF_TOILET)
-	
-	for variable in [normalizedCountPohon, normalizedLevelOfPasar, normalizedCountOfSeptictank, normalizedCountOfToilet] :
-		kualitasAir += variable/4
-	
+	var normalizedPestisidaVolume : float = PESTISIDA_VOLUME / 3.0
+	kualitasAir = (SANTIATION * 0.5) + (DAYA_SERAP_POHON * 0.4) + (normalizedLevelOfPasar * 0.1) - (normalizedPestisidaVolume * 0.1) - (0.1 * DAYA_BELI) 
 	VAR_KUALITAS_AIR = kualitasAir
+	
+
+func watch_pendapatan() :
+	pass
+
+# ==== END OF FUNCTION GLOBAL ATRIBUTE ====
+
+# FUNCTION OF AREA : SAWAH
+func watch_kualitas_padi():
+	var kualitasPadi = 0
+	if VAR_KUALITAS_AIR == 0:
+		kualitasPadi = 0.5
+
+	kualitasPadi =  0.5 * VAR_KUALITAS_AIR + 0.5
+	KUALITAS_PADI = kualitasPadi
+
+func watch_kuantitas_padi():
+	
+	# Relation to KUALITAS_AIR
+	var kuantitasPadi = 0
+	if VAR_KUALITAS_AIR == 0:
+		kuantitasPadi = 0.5
+
+	
+	# Relationn to Level Of Jalan Sawah
+	var normalizedLevelOfJalanSawah = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Jalan Sawah")["level"]) / 3 # Divide by max level of jalan sawah
+	
+	kuantitasPadi = 0.5 + (0.3 * VAR_KUALITAS_AIR) + (0.2 * normalizedLevelOfJalanSawah)
+	
+	
+	# Relation to PESTISIDA_VOLUME
+	var normalizedPestisidaVolume : float = PESTISIDA_VOLUME / 3.0 #Divide by max_pestida_volume
+	kuantitasPadi -= (1-PESTISIDA_VOLUME) / 5.0
+	
+	KUANTITAS_PADI = kuantitasPadi
+	
+# END OF FUNCTION AREA : SAWAH
+
+
+# FUNCTION OF AREA : PEMUKIMAN
+func watch_sanitation():
+	var sanitation : float = 0
+	
+	var normalizedCountOfSeptictank : float  = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Septic Tank"))["count"] / float(MAX_COUNT_OF_SEPTIC_TANK)
+	var normalizedCountOfToilet: float  = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Toilet Umum"))["count"] / float(MAX_COUNT_OF_TOILET)
+	
+	for variable in [normalizedCountOfSeptictank,normalizedCountOfToilet] :
+		sanitation += variable/2.0
+	
+	SANTIATION = sanitation
+	
+# END OF FUNCTION AREA : PEMUKIMAN
+
+
+# FUNCTION OF AREA : HUTAN
+func watch_daya_serap_pohon() :
+	var dayaSerapPohon = 0
+	var normalizedCountPohon : float = COUNT_POHON / float(MAX_COUNT_POHON)
+	DAYA_SERAP_POHON = normalizedCountPohon
+
+
+func watch_growth_speed() :
+	var growthSpeed = 0
+	if VAR_KUALITAS_AIR == 0:
+		growthSpeed = 0.5
+
+	growthSpeed =  0.5 * VAR_KUALITAS_AIR + 0.5
+	GROWTH_SPEED = growthSpeed
+
+
+# END OF FUNCTION AREA : HUTAN
+
+
+# FUNCTION OF AREA : PUSAT DESA
+func watch_daya_beli() :
+	var dayaBeli = 0
+	var normalizedLevelOfJalanDesa : float = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Jalan Pusat Desa"))["level"] / float(MAX_LEVEL_OF_JALAN_PUSAT_DESA)
+	
+	dayaBeli = (normalizedLevelOfJalanDesa * 0.8) + (KUANTITAS_PADI * 0.2)
+	DAYA_BELI = dayaBeli
+	
+# END OF FUNCTION AREA : PUSAT DESA
