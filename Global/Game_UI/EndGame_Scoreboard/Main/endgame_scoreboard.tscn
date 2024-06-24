@@ -1,0 +1,930 @@
+[gd_scene load_steps=33 format=3 uid="uid://hu2o5fsq38sv"]
+
+[ext_resource type="Script" path="res://Global/Game_UI/EndGame_Scoreboard/Main/endgame_scoreboard.gd" id="1_h7s77"]
+[ext_resource type="PackedScene" uid="uid://ghjik3ecy5jb" path="res://Global/Game_UI/Misc/overlay.tscn" id="1_vk8ih"]
+[ext_resource type="Texture2D" uid="uid://cri13iu7eyg3k" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Box.png" id="2_oykys"]
+[ext_resource type="FontFile" uid="uid://wavv527jhmt1" path="res://Global/Game_UI/Fonts/K2D-Bold.ttf" id="3_51sq4"]
+[ext_resource type="FontFile" uid="uid://btisj7uyosjpa" path="res://Global/Game_UI/Fonts/K2D-Regular.ttf" id="4_vcjy6"]
+[ext_resource type="Texture2D" uid="uid://c60w0xkwgnm7n" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Indicator_Long.png" id="5_717m2"]
+[ext_resource type="Texture2D" uid="uid://b3hlee15a3wpv" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Icon_Money.png" id="6_ss0gq"]
+[ext_resource type="Texture2D" uid="uid://bc2dw66li18l5" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Indicator_Short.png" id="7_gs5t6"]
+[ext_resource type="Texture2D" uid="uid://bu72sxv87frh4" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Icon_Happy.png" id="8_vneca"]
+[ext_resource type="Texture2D" uid="uid://c0v7stua6h3l1" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Icon_Hospital.png" id="9_4es7b"]
+[ext_resource type="Texture2D" uid="uid://di80yfc1liclg" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Facilities Details.png" id="10_7c1lx"]
+[ext_resource type="Texture2D" uid="uid://dr6y0tqqevnaw" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Item Circle.png" id="11_qbx7i"]
+[ext_resource type="Texture2D" uid="uid://l2qctdyjtga1" path="res://Game/Ricefield/Assets/item_up_pembajak_sawah/pembajak_sawah_lv3.png" id="12_ey6m4"]
+[ext_resource type="Texture2D" uid="uid://bhjmpo8k07nff" path="res://Game/Ricefield/Assets/item_ct_lampu_jalan/lampu_taman.png" id="13_5rcyy"]
+[ext_resource type="Texture2D" uid="uid://kvdwqeky4f3i" path="res://Game/Area_hutan/Assets/item_ct_cendana/cendana.png" id="13_wsg88"]
+[ext_resource type="Texture2D" uid="uid://dfppkd60pm2a4" path="res://Game/Ricefield/Assets/item_up_jalan/jalan_lv3.png" id="14_m8po4"]
+[ext_resource type="Texture2D" uid="uid://b58oprvaa3k3s" path="res://Game/Area_hutan/Assets/item_ct_jati/jati.png" id="14_yvfyk"]
+[ext_resource type="Texture2D" uid="uid://cag5celo2hsv6" path="res://Game/Area_hutan/Assets/item_ct_mahoni/mahoni.png" id="15_ft5cr"]
+[ext_resource type="Texture2D" uid="uid://cd06ji0fgbvgi" path="res://Game/Area_pemukiman/Assets/item_ct_toilet/toilet.png" id="17_0t6a1"]
+[ext_resource type="Texture2D" uid="uid://gs56mtmhijma" path="res://Game/Area_pemukiman/Assets/item_ct_septictank/septictank.png" id="18_crby8"]
+[ext_resource type="Texture2D" uid="uid://ddogo1ip3u8hr" path="res://Game/Area_pemukiman/Assets/item_ct_tower/tower-0.png" id="19_fhhwt"]
+[ext_resource type="Texture2D" uid="uid://doeb7us8xsl5u" path="res://Game/Area_pemukiman/Assets/item_up_jalan/jalan_lv3.png" id="20_onkqx"]
+[ext_resource type="Texture2D" uid="uid://740niy75muiw" path="res://Game/Area_pemukiman/Assets/item_ct_lampu_jalan/lampu_jalan.png" id="21_fsqsy"]
+[ext_resource type="Texture2D" uid="uid://ws8wtsej7pxq" path="res://Game/Area_pusat_desa/Assets/item_up_jalan/jalan_lv1.png" id="22_uf8g3"]
+[ext_resource type="Texture2D" uid="uid://c7le66vayiydv" path="res://Game/Area_pusat_desa/Assets/item_up_pasar/pasar_lv3.png" id="23_v2re2"]
+[ext_resource type="Texture2D" uid="uid://dvx1mjb5ofcj3" path="res://Game/Area_pusat_desa/Assets/item_up_tanah_lapang/tanah_lapang_lv3.png" id="24_u73kc"]
+[ext_resource type="Texture2D" uid="uid://bgvv2avvyvlrx" path="res://Game/Area_pusat_desa/Assets/item_up_puskesmas/puskesmas_lv2.png" id="25_bf0ex"]
+[ext_resource type="Texture2D" uid="uid://dgkaaqkj8uiv3" path="res://Game/Area_pusat_desa/Assets/item_up_balai_desa/balai_desa_lv1.png" id="26_cbwt0"]
+[ext_resource type="Texture2D" uid="uid://de8ar4ccspqwh" path="res://Game/Area_pusat_desa/Assets/item_ct_lampu_jalan/lampu_jalan.png" id="27_r1xmd"]
+[ext_resource type="Texture2D" uid="uid://bnjln4k8bf6yd" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Keluar_Normal.png" id="28_4rwpq"]
+[ext_resource type="Texture2D" uid="uid://xsbtpsbj0qr5" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Keluar_Pressed.png" id="29_earny"]
+[ext_resource type="Texture2D" uid="uid://8nl2bk1soeov" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Keluar_Hover.png" id="30_rw27r"]
+
+[node name="EndgameScoreboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h7s77")
+
+[node name="Overlay" parent="." instance=ExtResource("1_vk8ih")]
+layout_mode = 0
+
+[node name="Box" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -709.0
+offset_top = -438.0
+offset_right = 709.0
+offset_bottom = 438.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_oykys")
+
+[node name="Label1" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.5
+offset_top = 152.0
+offset_right = 115.5
+offset_bottom = 211.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_51sq4")
+theme_override_font_sizes/font_size = 44
+text = "Pencapaian"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.5
+offset_top = -322.5
+offset_right = 274.5
+offset_bottom = -253.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 24
+text = "5 tahun sudah berlalu,
+berikut adalah pencapaianmu sebagai kepala desa:"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.0
+offset_top = -227.5
+offset_right = 357.0
+offset_bottom = 381.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Indicator_Money" type="CenterContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Indicator_Money"]
+layout_mode = 2
+texture = ExtResource("5_717m2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/Indicator_Money/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.5
+offset_top = -20.0
+offset_right = 101.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="IconMoney" type="TextureRect" parent="GridContainer/Indicator_Money/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_ss0gq")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="TotalMoney" type="Label" parent="GridContainer/Indicator_Money/TextureRect/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 24
+text = "Rp1.000.000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Indicator_Happy_Health" type="HBoxContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Indicator_Happy" type="CenterContainer" parent="GridContainer/Indicator_Happy_Health"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Indicator_Happy_Health/Indicator_Happy"]
+layout_mode = 2
+texture = ExtResource("7_gs5t6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/Indicator_Happy_Health/Indicator_Happy/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="IconHappy" type="TextureRect" parent="GridContainer/Indicator_Happy_Health/Indicator_Happy/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_vneca")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Percentage_Happy" type="Label" parent="GridContainer/Indicator_Happy_Health/Indicator_Happy/TextureRect/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 24
+text = "50%"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="GridContainer/Indicator_Happy_Health"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Indicator_Happy_Health/CenterContainer2"]
+layout_mode = 2
+texture = ExtResource("7_gs5t6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/Indicator_Happy_Health/CenterContainer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -20.0
+offset_right = 50.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="IconHealth" type="TextureRect" parent="GridContainer/Indicator_Happy_Health/CenterContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_4es7b")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Percentage_Health" type="Label" parent="GridContainer/Indicator_Happy_Health/CenterContainer2/TextureRect/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 24
+text = "100%"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Sektor_Sawah" type="CenterContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Sektor_Sawah"]
+layout_mode = 2
+texture = ExtResource("10_7c1lx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Sektor_Sawah/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SektorTitle" type="Label" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_51sq4")
+theme_override_font_sizes/font_size = 32
+text = "Sektor Sawah"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fasilitas" type="GridContainer" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="AlatPertanian" type="HBoxContainer" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas"]
+custom_minimum_size = Vector2(141, 41)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/AlatPertanian"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/AlatPertanian/ItemCircle"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/AlatPertanian/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("12_ey6m4")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Level" type="Label" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/AlatPertanian"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Level 1"
+vertical_alignment = 1
+
+[node name="JalanSawah" type="HBoxContainer" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas"]
+custom_minimum_size = Vector2(141, 41)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/JalanSawah"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/JalanSawah/ItemCircle"]
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 64.3333
+offset_bottom = 46.0
+scale = Vector2(0.6, 0.6)
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/JalanSawah/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("14_m8po4")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Level" type="Label" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/JalanSawah"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Level 1"
+vertical_alignment = 1
+
+[node name="LampuJalanSawah" type="HBoxContainer" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/LampuJalanSawah"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/LampuJalanSawah/ItemCircle"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/LampuJalanSawah/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("13_5rcyy")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/LampuJalanSawah"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Punya 3"
+vertical_alignment = 1
+
+[node name="Sektor_Hutan" type="CenterContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Sektor_Hutan"]
+layout_mode = 2
+texture = ExtResource("10_7c1lx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Sektor_Hutan/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SektorTitle" type="Label" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_51sq4")
+theme_override_font_sizes/font_size = 32
+text = "Sektor Hutan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fasilitas" type="GridContainer" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Cendana" type="HBoxContainer" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas"]
+custom_minimum_size = Vector2(141, 41)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Cendana"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Cendana/ItemCircle"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Cendana/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("13_wsg88")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Cendana"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Punya 3"
+vertical_alignment = 1
+
+[node name="Jati" type="HBoxContainer" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas"]
+custom_minimum_size = Vector2(141, 41)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Jati"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Jati/ItemCircle"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Jati/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("14_yvfyk")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Jati"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Punya 2"
+vertical_alignment = 1
+
+[node name="Mahoni" type="HBoxContainer" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Mahoni"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Mahoni/ItemCircle"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Mahoni/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("15_ft5cr")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Mahoni"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Punya 3"
+vertical_alignment = 1
+
+[node name="Sektor_Pemukiman" type="CenterContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Sektor_Pemukiman"]
+layout_mode = 2
+texture = ExtResource("10_7c1lx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SektorTitle" type="Label" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_51sq4")
+theme_override_font_sizes/font_size = 32
+text = "Sektor Pemukiman"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fasilitas" type="GridContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="ToiletUmum" type="HBoxContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas"]
+custom_minimum_size = Vector2(141, 41)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/ToiletUmum"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/ToiletUmum/ItemCircle"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/ToiletUmum/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("17_0t6a1")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/ToiletUmum"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Punya 6"
+vertical_alignment = 1
+
+[node name="SepticTank" type="HBoxContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas"]
+custom_minimum_size = Vector2(141, 41)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/SepticTank"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/SepticTank/ItemCircle"]
+offset_left = 2.0
+offset_right = 42.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/SepticTank/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("18_crby8")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/SepticTank"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Punya 2"
+vertical_alignment = 1
+
+[node name="TowerInternet" type="HBoxContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/TowerInternet"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/TowerInternet/ItemCircle"]
+offset_left = 7.0
+offset_right = 47.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/TowerInternet/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("19_fhhwt")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/TowerInternet"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Punya 2"
+vertical_alignment = 1
+
+[node name="JalanPemukiman" type="HBoxContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas"]
+custom_minimum_size = Vector2(141, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/JalanPemukiman"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/JalanPemukiman/ItemCircle"]
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 64.3333
+offset_bottom = 50.0
+scale = Vector2(0.6, 0.6)
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/JalanPemukiman/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("20_onkqx")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Level" type="Label" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/JalanPemukiman"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Level 3"
+vertical_alignment = 1
+
+[node name="LampuJalanPemukiman" type="HBoxContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/LampuJalanPemukiman"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/LampuJalanPemukiman/ItemCircle"]
+offset_left = 2.0
+offset_right = 42.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/LampuJalanPemukiman/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("21_fsqsy")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/LampuJalanPemukiman"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Punya 3"
+vertical_alignment = 1
+
+[node name="Sektor_Pusat" type="CenterContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Sektor_Pusat"]
+layout_mode = 2
+texture = ExtResource("10_7c1lx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Sektor_Pusat/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SektorTitle" type="Label" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_51sq4")
+theme_override_font_sizes/font_size = 32
+text = "Sektor Pusat Desa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fasilitas" type="GridContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="JalanPusat" type="HBoxContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas"]
+custom_minimum_size = Vector2(141, 41)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/JalanPusat"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/JalanPusat/ItemCircle"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 7.0
+offset_right = 65.3333
+offset_bottom = 47.0
+scale = Vector2(0.6, 0.6)
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/JalanPusat/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("22_uf8g3")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Level" type="Label" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/JalanPusat"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Level 1"
+vertical_alignment = 1
+
+[node name="Pasar" type="HBoxContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas"]
+custom_minimum_size = Vector2(141, 41)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Pasar"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Pasar/ItemCircle"]
+offset_left = 7.0
+offset_right = 47.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Pasar/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("23_v2re2")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Level" type="Label" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Pasar"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Level 2"
+vertical_alignment = 1
+
+[node name="Lapangan" type="HBoxContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas"]
+custom_minimum_size = Vector2(141, 41)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Lapangan"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Lapangan/ItemCircle"]
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 63.0637
+offset_bottom = 48.0
+scale = Vector2(0.6, 0.6)
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Lapangan/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("24_u73kc")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Level" type="Label" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Lapangan"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Level 3"
+vertical_alignment = 1
+
+[node name="Puskesmas" type="HBoxContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas"]
+custom_minimum_size = Vector2(141, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Puskesmas"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Puskesmas/ItemCircle"]
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 75.3333
+offset_bottom = 48.0
+scale = Vector2(0.6, 0.6)
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Puskesmas/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("25_bf0ex")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Level" type="Label" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Puskesmas"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Level 2"
+vertical_alignment = 1
+
+[node name="BalaiDesa" type="HBoxContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas"]
+custom_minimum_size = Vector2(141, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/BalaiDesa"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/BalaiDesa/ItemCircle"]
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/BalaiDesa/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("26_cbwt0")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Level" type="Label" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/BalaiDesa"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Level 1"
+vertical_alignment = 1
+
+[node name="LampuJalanPusat" type="HBoxContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="ItemCircle" type="TextureRect" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/LampuJalanPusat"]
+layout_mode = 2
+texture = ExtResource("11_qbx7i")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/LampuJalanPusat/ItemCircle"]
+offset_left = 2.0
+offset_right = 42.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImg" type="TextureRect" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/LampuJalanPusat/ItemCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("27_r1xmd")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/LampuJalanPusat"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vcjy6")
+theme_override_font_sizes/font_size = 22
+text = "Punya 3"
+vertical_alignment = 1
+
+[node name="KeluarButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -463.0
+offset_top = -231.0
+offset_right = -303.0
+offset_bottom = -160.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("28_4rwpq")
+texture_pressed = ExtResource("29_earny")
+texture_hover = ExtResource("30_rw27r")

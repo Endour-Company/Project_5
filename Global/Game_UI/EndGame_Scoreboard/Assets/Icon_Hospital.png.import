@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnbjf4amiks2m"
-path="res://.godot/imported/Padis_besar.png-4ffaac7b6b97af19377cf7c817f44e87.ctex"
+uid="uid://c0v7stua6h3l1"
+path="res://.godot/imported/Icon_Hospital.png-e30217bc02cef7db6da825b20c996a07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Ricefield/Assets/item_bg_padi/Padis_besar.png"
-dest_files=["res://.godot/imported/Padis_besar.png-4ffaac7b6b97af19377cf7c817f44e87.ctex"]
+source_file="res://Global/Game_UI/EndGame_Scoreboard/Assets/Icon_Hospital.png"
+dest_files=["res://.godot/imported/Icon_Hospital.png-e30217bc02cef7db6da825b20c996a07.ctex"]
 
 [params]
 

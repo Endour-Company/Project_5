@@ -7,6 +7,7 @@ var padisSmall = load("res://Game/Ricefield/Assets/item_bg_padi/padis_kecil.png"
 var padisMedium = load("res://Game/Ricefield/Assets/item_bg_padi/padis_sedang.png")
 var padisHigh = load("res://Game/Ricefield/Assets/item_bg_padi/padis_besar.png")
 
+@export var GROWTH_SPEED : float = 5
 var PADIS_SIZE = PADIS_SIZES.NONE
 
 @export var SAWAH_STATE = SAWAH_STATES.IDLE 

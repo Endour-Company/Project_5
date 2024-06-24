@@ -3,6 +3,7 @@ extends Node
 
 # BGM Asset References
 const BGM_MainMenu : AudioStream = preload("res://Global/Game_Audio/Assets/BGM/BGM_Main Menu.ogg")
+const BGM_Gameplay : AudioStream = preload("res://Global/Game_Audio/Assets/BGM/BGM_Gameplay.ogg")
 
 
 # SFX Asset References

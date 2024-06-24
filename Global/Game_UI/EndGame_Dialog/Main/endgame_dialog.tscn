@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://cjtwdnaojqlst"]
+
+[ext_resource type="Texture2D" uid="uid://o5hhxlrvf120" path="res://Global/Game_UI/EndGame_Dialog/Assets/Box.png" id="1_jahmi"]
+[ext_resource type="PackedScene" uid="uid://ghjik3ecy5jb" path="res://Global/Game_UI/Misc/overlay.tscn" id="1_pf5hx"]
+[ext_resource type="Script" path="res://Global/Game_UI/EndGame_Dialog/Main/endgame_dialog.gd" id="1_uhupg"]
+[ext_resource type="FontFile" uid="uid://wavv527jhmt1" path="res://Global/Game_UI/Fonts/K2D-Bold.ttf" id="2_qhoyl"]
+[ext_resource type="FontFile" uid="uid://cu1oq3jvf5gxi" path="res://Global/Game_UI/Fonts/K2D-Italic.ttf" id="3_a2ijf"]
+[ext_resource type="Texture2D" uid="uid://tvxk10hs83v2" path="res://Global/Game_UI/EndGame_Dialog/Assets/Lihat Pencapaian_Normal.png" id="4_xchi3"]
+[ext_resource type="Texture2D" uid="uid://cyjbjdyk0sm3j" path="res://Global/Game_UI/EndGame_Dialog/Assets/Lihat Pencapaian_Pressed.png" id="5_2aauh"]
+[ext_resource type="Texture2D" uid="uid://cnpl4vbr8teqb" path="res://Global/Game_UI/EndGame_Dialog/Assets/Lihat Pencapaian_Hover.png" id="6_jembd"]
+
+[node name="EndgameDialog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uhupg")
+
+[node name="Overlay" parent="." instance=ExtResource("1_pf5hx")]
+layout_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.5
+offset_top = -165.0
+offset_right = 303.5
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jahmi")
+
+[node name="Label1" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.5
+offset_top = -113.0
+offset_right = 156.5
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qhoyl")
+theme_override_font_sizes/font_size = 36
+text = "Permainan Selesai!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = -44.0
+offset_right = 191.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_a2ijf")
+theme_override_font_sizes/font_size = 30
+text = "Terima kasih sudah bermain."
+horizontal_alignment = 1
+
+[node name="ViewScoreboardButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = 29.0
+offset_right = 121.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_xchi3")
+texture_pressed = ExtResource("5_2aauh")
+texture_hover = ExtResource("6_jembd")
+
+[connection signal="pressed" from="ViewScoreboardButton" to="." method="_on_view_scoreboard_button_pressed"]

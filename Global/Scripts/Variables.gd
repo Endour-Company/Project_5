@@ -171,3 +171,11 @@ func watch_daya_beli() :
 	DAYA_BELI = dayaBeli
 	
 # END OF FUNCTION AREA : PUSAT DESA
+
+func get_kesejehtaraan_percentage():
+	var happiness = float((VAR_KESEJAHTERAAN_MASYARAKAT / 1) * 100)
+	return happiness
+	
+func get_kesehatan_percentage():
+	var health = float((VAR_KESEHATAN_MASYARAKAT / 1) * 100)
+	return health

@@ -1,16 +1,13 @@
-[gd_scene load_steps=29 format=3 uid="uid://bjwnjc45hlcrd"]
+[gd_scene load_steps=26 format=3 uid="uid://bjwnjc45hlcrd"]
 
 [ext_resource type="PackedScene" uid="uid://mes4efbefx" path="res://Game/Area_hutan/Main/Area_hutan.tscn" id="1_pgppg"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_x0wwk"]
 [ext_resource type="PackedScene" uid="uid://brw17nqvu6hle" path="res://Game/Ricefield/Main/ricefield_area.tscn" id="1_ymy68"]
 [ext_resource type="PackedScene" uid="uid://6wgjm6tla017" path="res://Global/Game_UI/Action_bar/action_bar.tscn" id="2_tmlwp"]
 [ext_resource type="PackedScene" uid="uid://cn5dtrm2fsqbf" path="res://Game/Area_pemukiman/Main/area_pemukiman.tscn" id="4_qv2wn"]
-[ext_resource type="Texture2D" uid="uid://dgtfy6d8fx0gk" path="res://Global/Game_UI/In_game_menu/Assets/Pause Button_Normal.png" id="5_arxck"]
 [ext_resource type="PackedScene" uid="uid://ix0fems6c3kp" path="res://Game/Area_pusat_desa/Main/area_pusat.tscn" id="5_v2urd"]
-[ext_resource type="Texture2D" uid="uid://bbfe81cy14r6x" path="res://Global/Game_UI/In_game_menu/Assets/Pause Button_Pressed.png" id="6_3bc8o"]
 [ext_resource type="Texture2D" uid="uid://dif5f5mwn0y45" path="res://Global/Game_UI/In_game_menu/Assets/Settings Button_Normal.png" id="6_y8i1j"]
 [ext_resource type="Texture2D" uid="uid://b3egjmrssb702" path="res://Global/Game_UI/In_game_menu/Assets/Settings Button_Pressed.png" id="7_73ykx"]
-[ext_resource type="Texture2D" uid="uid://cvw8lu6wv2c6y" path="res://Global/Game_UI/In_game_menu/Assets/Pause Button_Hover.png" id="7_lb2po"]
 [ext_resource type="Texture2D" uid="uid://b1vhnppsfby7t" path="res://Global/Game_UI/In_game_menu/Assets/Settings Button_Hover.png" id="8_xucnr"]
 [ext_resource type="Texture2D" uid="uid://bmb58wcyqbfrr" path="res://Global/Game_UI/Progress_variable/Assets/Indicator 1_No Number.png" id="11_22mr6"]
 [ext_resource type="Script" path="res://Global/Game_UI/Progress_variable/Main/Progress_variable.gd" id="11_ftkll"]
@@ -56,9 +53,9 @@ visible = false
 [node name="In_game_menu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1630.0
+offset_left = 1763.0
 offset_top = 28.0
-offset_right = 1670.0
+offset_right = 1803.0
 offset_bottom = 68.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="In_game_menu"]
@@ -67,13 +64,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.25, 0.25)
 theme = SubResource("Theme_x2h6a")
-
-[node name="Button_pause" type="TextureButton" parent="In_game_menu/HBoxContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("5_arxck")
-texture_pressed = ExtResource("6_3bc8o")
-texture_hover = ExtResource("7_lb2po")
 
 [node name="Button_option" type="TextureButton" parent="In_game_menu/HBoxContainer"]
 layout_mode = 2
@@ -167,7 +157,6 @@ layout_mode = 2
 [node name="TextureProgressBar" type="TextureProgressBar" parent="In_game_map_calendar/VBoxContainer/Calendar/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
-value = 66.0
 fill_mode = 4
 texture_over = ExtResource("20_l6qvk")
 texture_progress = ExtResource("21_lqoge")
@@ -180,4 +169,15 @@ label_settings = SubResource("LabelSettings_p786b")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GlobalTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[connection signal="pressed" from="In_game_menu/HBoxContainer/Button_option" to="." method="_on_button_option_pressed"]
 [connection signal="pressed" from="In_game_map_calendar/VBoxContainer/Map/MapTextureButton" to="." method="_on_map_texture_button_pressed"]
+[connection signal="timeout" from="GlobalTimer" to="." method="_on_global_timer_timeout"]

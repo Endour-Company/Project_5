@@ -1,5 +1,20 @@
 extends Node
 
+# Variable storing month text
+var months = [
+	"Jan",
+	"Feb",
+	"Mar",
+	"Apr",
+	"Mei",
+	"Jun",
+	"Jul",
+	"Agu",
+	"Sep",
+	"Okt",
+	"Nov",
+	"Des"
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,3 +54,7 @@ func get_random_item_from_array(array):
 		return null # Return null if the array is empty
 	var random_index = randi() % array.size()
 	return array[random_index]
+
+func convert_month_to_text(mon : int):
+	# Function to convert month from number to text
+	return months[mon]
