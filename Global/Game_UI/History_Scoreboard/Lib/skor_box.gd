@@ -5,7 +5,10 @@ var time : String
 var totalMoney : String
 var happiness : String
 var health : String
+var itemLevel
 @onready var SFX = $SFX
+
+signal see_detail(username, time, totalMoney, happiness, health, itemLevel)
 
 func _ready():
 	# Set initial SFX volume
@@ -27,3 +30,6 @@ func _on_mouse_entered():
 func _on_pressed():
 	# Play click sfx
 	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Click)
+	
+	# Send signal with id
+	see_detail.emit(username, time, totalMoney, happiness, health, itemLevel)

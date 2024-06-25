@@ -19,6 +19,22 @@
 [ext_resource type="Texture2D" uid="uid://cvocxplo8xn1p" path="res://Main_menu/Assets/Buttons/Exit Button_Hover.png" id="13_pecw0"]
 [ext_resource type="Texture2D" uid="uid://gabtstc70q22" path="res://Main_menu/Assets/Logo.png" id="19_q241d"]
 
+[sub_resource type="Animation" id="Animation_yt0hb"]
+resource_name = "Fade Out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IntroOverlay:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_2qexo"]
 resource_name = "Intro"
 length = 5.0
@@ -45,22 +61,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_yt0hb"]
-resource_name = "Fade Out"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("IntroOverlay:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4jubt"]
