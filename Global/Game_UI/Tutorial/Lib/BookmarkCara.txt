@@ -12,7 +12,7 @@
 
 [p]Di pojok kiri atas layar, kamu dapat menemukan Tombol Peta. Tombol tersebut dapat kamu tekan untuk membuka menu navigasi sektor desa. Dari menu tersebut, kamu bisa berpindah ke sektor desa lainnya.[/p]
 
-[p]Selain itu, di bawah Tombol Peta juga ada Indikator Kalendar yang memberikan informasi terkait sisa waktumu sebagai kepala desa. Pada permainan simulasi ini, kamu akan menjabat selama 5 tahun waktu permainan atau sekitar X menit waktu nyata.[/p]
+[p]Selain itu, di bawah Tombol Peta juga ada Indikator Kalendar yang memberikan informasi terkait sisa waktumu sebagai kepala desa. Pada permainan simulasi ini, kamu akan menjabat selama 5 tahun waktu permainan atau sekitar 30 menit waktu nyata.[/p]
 
 [p][center][img]res://Global/Game_UI/Tutorial/Assets/Tutorial_VolumeSetting.png[/img][/center][/p]
 

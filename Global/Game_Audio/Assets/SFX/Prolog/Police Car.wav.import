@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btksvlwa61hri"
+path="res://.godot/imported/Police Car.wav-3f71c1f331bf14f97cdb8275f7b54c48.sample"
+
+[deps]
+
+source_file="res://Global/Game_Audio/Assets/SFX/Prolog/Police Car.wav"
+dest_files=["res://.godot/imported/Police Car.wav-3f71c1f331bf14f97cdb8275f7b54c48.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

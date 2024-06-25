@@ -154,7 +154,7 @@ offset_bottom = 1091.0
 color = Color(0, 0, 0, 1)
 
 [node name="IntroLogo" type="TextureRect" parent="."]
-self_modulate = Color(1, 1, 1, 0.75)
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

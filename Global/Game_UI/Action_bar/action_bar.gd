@@ -5,7 +5,7 @@ extends Control
 @onready var itemContainer = $Item_container
 @onready var itemDescriptionContainer = $Item_description_container
 
-var is_hidden = false
+var is_hidden = true
 
 func _ready():
 	GlobalItemsLevel.item_updated.connect(_on_item_updated)

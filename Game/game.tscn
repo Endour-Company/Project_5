@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bjwnjc45hlcrd"]
+[gd_scene load_steps=28 format=3 uid="uid://bjwnjc45hlcrd"]
 
 [ext_resource type="PackedScene" uid="uid://mes4efbefx" path="res://Game/Area_hutan/Main/Area_hutan.tscn" id="1_pgppg"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_x0wwk"]
@@ -33,6 +33,26 @@ HBoxContainer/constants/separation = 60
 
 [sub_resource type="LabelSettings" id="LabelSettings_p786b"]
 font_size = 125
+
+[sub_resource type="Animation" id="Animation_h385o"]
+resource_name = "Fade In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lguin"]
+_data = {
+"Fade In": SubResource("Animation_h385o")
+}
 
 [node name="Game" type="Node"]
 script = ExtResource("1_x0wwk")
@@ -178,6 +198,21 @@ bus = &"BGM"
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
 
+[node name="Overlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lguin")
+}
+autoplay = "Fade In"
+
 [connection signal="pressed" from="In_game_menu/HBoxContainer/Button_option" to="." method="_on_button_option_pressed"]
 [connection signal="pressed" from="In_game_map_calendar/VBoxContainer/Map/MapTextureButton" to="." method="_on_map_texture_button_pressed"]
 [connection signal="timeout" from="GlobalTimer" to="." method="_on_global_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

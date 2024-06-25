@@ -13,7 +13,7 @@ var sceneScoreboard : Control
 @onready var calendarText = $In_game_map_calendar/VBoxContainer/Calendar/HBoxContainer/Label
 var prevTime = 0
 var currentTime = 0
-var maxTime = 10
+var maxTime = 1800
 var currentMonth = 0
 var currentYear = 0
 var currentCalendar = ""
@@ -30,9 +30,6 @@ func _ready():
 	# Set BGM and SFX volume
 	BGM.set_volume_db(GameAudio.get_volume_bgm())
 	SFX.set_volume_db(GameAudio.get_volume_sfx())
-	
-	# Play BGM
-	GameAudio.play(BGM, GameAudio.BGM_Gameplay)
 	
 	# set global timer and progress circle
 	globalTimer.start(maxTime)
@@ -205,3 +202,11 @@ func _on_view_scoreboard():
 func _on_close_signal():
 	# Send signal to go back to main menu
 	exit_signal.emit()
+
+func _on_animation_player_animation_finished(anim_name):
+	# Play BGM
+	GameAudio.play(BGM, GameAudio.BGM_Gameplay)
+	
+	# Delete Overlay and AnimPlayer
+	$Overlay.queue_free()
+	$AnimationPlayer.queue_free()
