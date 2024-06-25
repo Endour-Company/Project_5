@@ -8,6 +8,14 @@ extends Control
 @onready var SFX : AudioStreamPlayer = $SFX
 @onready var anim : AnimationPlayer = $AnimationPlayer
 
+# Overlay
+@onready var overlay = $IntroOverlay
+var overlayPos = 0
+
+# Custom signals
+signal start_signal
+signal exit_signal
+
 
 func _ready():
 	# Set BGM and SFX volume
@@ -39,6 +47,10 @@ func _on_keluar_button_mouse_entered():
 func _on_mulai_button_pressed():
 	# Play Start SFX
 	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Click)
+	
+	# Show overlay and play fade out animation before sending out start signal
+	move_child(overlay, overlayPos)
+	anim.play("Fade Out")
 
 
 func _on_tutorial_button_pressed():
@@ -57,6 +69,11 @@ func _on_tutorial_closed():
 	
 	# Kill tutorial screen
 	tutorialScreen.queue_free()
+
+
+func _on_skor_button_pressed():
+	# Play click SFX
+	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Click)
 
 
 func _on_opsi_button_pressed():
@@ -105,14 +122,24 @@ func _on_confirm_closed():
 	
 	# Kill confirm screen
 	confirmScreen.queue_free()
-
-
-# Handle intro animation finished
-func _on_animation_player_animation_finished(anim_name):
-	# Free the intro nodes
-	$IntroLogo.queue_free()
-	$IntroOverlay.queue_free()
-	anim.queue_free()
 	
-	# Play BGM
-	GameAudio.play(BGM, GameAudio.BGM_MainMenu)
+	# Send exit signal
+	exit_signal.emit()
+
+
+# Handle animation finished
+func _on_animation_player_animation_finished(anim_name):
+	match anim_name:
+		"Intro":
+			# Free the intro logo
+			$IntroLogo.queue_free()
+			
+			# Hide intro overlay
+			overlayPos = overlay.get_index()
+			move_child(overlay, 0)
+			
+			# Play BGM
+			GameAudio.play(BGM, GameAudio.BGM_MainMenu)
+		"Fade Out":
+			# Send start signal
+			start_signal.emit()

@@ -3,6 +3,7 @@ extends Node
 var sceneMap : Control
 var sceneOption : Control
 var sceneTutorial : Control
+var sceneConfirmExit : Control
 var sceneEndDialog : Control
 var sceneScoreboard : Control
 @onready var BGM = $BGM
@@ -16,6 +17,9 @@ var maxTime = 30
 var currentMonth = 0
 var currentYear = 0
 var currentCalendar = ""
+
+# Custom signals
+signal exit_signal
 
 
 # Called when the node enters the scene tree for the first time.
@@ -85,14 +89,61 @@ func _on_sfx_changed(value : float):
 	SFX.set_volume_db(GameAudio.get_volume_sfx())
 
 func _on_button_option_pressed():
+	# Play sfx
+	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Click)
+	
+	# Show option scene
 	sceneOption = preload("res://Global/Game_UI/Option/Main/option.tscn").instantiate()
-	sceneOption.connect("bgm_changed", _on_bgm_changed)
-	sceneOption.connect("sfx_changed", _on_sfx_changed)
+	sceneOption.bgm_changed.connect(_on_bgm_changed)
+	sceneOption.sfx_changed.connect(_on_sfx_changed)
 	sceneOption.close_signal.connect(_on_option_close)
+	sceneOption.tutorial_signal.connect(_on_tutorial_signal)
+	sceneOption.exit_signal.connect(_on_exit_signal)
 	add_child(sceneOption)
 	
 func _on_option_close():
+	# Play sfx
+	GameAudio.play(SFX, GameAudio.SFX_Gameplay_Click)
+	
+	# Free sceneOption
 	sceneOption.queue_free()
+	
+func _on_tutorial_signal():
+	# Play sfx
+	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Click)
+	
+	# Show tutorial scene
+	sceneTutorial = preload("res://Global/Game_UI/Tutorial/Main/tutorial_book.tscn").instantiate()
+	sceneTutorial.close_signal.connect(_on_tutorial_close)
+	add_child(sceneTutorial)
+	
+func _on_tutorial_close():
+	# Play sfx
+	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Close)
+	
+	# Free tutorial scene
+	sceneTutorial.queue_free()
+	
+func _on_exit_signal():
+	# Play sfx
+	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Click)
+	
+	# Show confirmation screen
+	sceneConfirmExit = preload("res://Global/Game_UI/Confirmation_Dialog/Main/confirmation_dialog.tscn").instantiate()
+	sceneConfirmExit.confirmed.connect(_on_exit_confirmed)
+	sceneConfirmExit.close_signal.connect(_on_confirm_close)
+	add_child(sceneConfirmExit)
+	
+func _on_exit_confirmed():
+	# Stop BGM
+	BGM.stop()
+	
+	# Emit exit_signal
+	exit_signal.emit()
+
+func _on_confirm_close():
+	# Free confirm scene
+	sceneConfirmExit.queue_free()
 
 func _on_map_texture_button_pressed():
 	sceneMap = preload("res://Global/Game_UI/Map/Main/Map.tscn").instantiate()

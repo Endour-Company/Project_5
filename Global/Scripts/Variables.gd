@@ -61,7 +61,6 @@ func _ready():
 func _process(delta):
 	watch_kualtas_air()
 	watch_kuantitas_padi()
-	print(KUANTITAS_PADI)
 
 
 func set_money(action : String, value : int):
