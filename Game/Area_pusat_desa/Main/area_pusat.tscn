@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ix0fems6c3kp"]
+[gd_scene load_steps=36 format=3 uid="uid://ix0fems6c3kp"]
 
 [ext_resource type="Texture2D" uid="uid://blcmhu8hstusc" path="res://Game/Area_pusat_desa/Assets/bg_main/bg_main.png" id="1_wmkgg"]
 [ext_resource type="Texture2D" uid="uid://b8vyrj5dfjgw7" path="res://Game/Area_pusat_desa/Assets/item_bg_sungai/sungai_kotor.png" id="2_wiods"]
@@ -14,6 +14,352 @@
 [ext_resource type="Script" path="res://Game/Area_pusat_desa/Lib/item_up_pasar/item_up_pasar.gd" id="10_b7vc5"]
 [ext_resource type="Script" path="res://Game/Area_pusat_desa/Lib/item_up_lapangan/item_up_lapangan.gd" id="12_mw336"]
 [ext_resource type="Script" path="res://Game/Area_pusat_desa/Lib/item_ct_lampu/item_ct_lampu.gd" id="14_1thax"]
+[ext_resource type="PackedScene" uid="uid://c0t5el6koktrq" path="res://Game/Global/Scenes/Cewe1/cewe1.tscn" id="15_towdp"]
+[ext_resource type="PackedScene" uid="uid://wx4fusxf6e3c" path="res://Game/Global/Scenes/Cowo1/cowo1.tscn" id="16_cuf4l"]
+[ext_resource type="PackedScene" uid="uid://c1nphf3avri0m" path="res://Game/Global/Scenes/Anak1/anak1.tscn" id="17_g5r84"]
+[ext_resource type="PackedScene" uid="uid://k47baf88chyh" path="res://Game/Global/Scenes/Cewe2/cewe2.tscn" id="18_wgfsw"]
+[ext_resource type="PackedScene" uid="uid://cp4ncbhij24p1" path="res://Game/Global/Scenes/Cowo2/cowo2.tscn" id="19_qmy1v"]
+
+[sub_resource type="Animation" id="Animation_qnmoc"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1955, 224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.07, -0.07)]
+}
+
+[sub_resource type="Animation" id="Animation_kdap3"]
+resource_name = "jalan"
+length = 40.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10.1, 15.1, 25.1, 30.1, 40),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1955, 224), Vector2(373, 224), Vector2(330, 788), Vector2(330, 788), Vector2(363, 217), Vector2(1966, 219)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 14.1, 15.1, 24.1, 25.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 25.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-0.07, -0.07), Vector2(0.07, -0.07)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8rt23"]
+_data = {
+"RESET": SubResource("Animation_qnmoc"),
+"jalan": SubResource("Animation_kdap3")
+}
+
+[sub_resource type="Animation" id="Animation_2rm55"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-59, 227)]
+}
+
+[sub_resource type="Animation" id="Animation_l5ed2"]
+resource_name = "jalan"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.1, 13.1, 26.1, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-59, 227), Vector2(364, 224), Vector2(314, 935), Vector2(2040, 943), Vector2(2000, 957)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mbtuc"]
+_data = {
+"RESET": SubResource("Animation_2rm55"),
+"jalan": SubResource("Animation_l5ed2")
+}
+
+[sub_resource type="Animation" id="Animation_iglpp"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.07, 0.07)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-26, 957)]
+}
+
+[sub_resource type="Animation" id="Animation_5qhyc"]
+resource_name = "lari"
+length = 35.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.9, 6.3, 15, 19.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-0.07, 0.07), Vector2(0.07, 0.07), Vector2(-0.07, 0.07), Vector2(0.07, 0.07), Vector2(-0.07, 0.07)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.9, 6.3, 15, 19.1, 27.1, 35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-26, 957), Vector2(544, 959), Vector2(227, 954), Vector2(1472, 959), Vector2(921, 959), Vector2(1967, 957), Vector2(1988, 963)]
+}
+
+[sub_resource type="Animation" id="Animation_sc3er"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tl8k5"]
+_data = {
+"RESET": SubResource("Animation_iglpp"),
+"lari": SubResource("Animation_5qhyc"),
+"new_animation": SubResource("Animation_sc3er")
+}
+
+[sub_resource type="Animation" id="Animation_d57vi"]
+resource_name = "jalan"
+length = 40.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 12.2, 20.2, 32.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-36, 967), Vector2(1965, 933), Vector2(1965, 933), Vector2(-53, 957)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 20.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-0.07, 0.07), Vector2(0.07, 0.07)]
+}
+
+[sub_resource type="Animation" id="Animation_8h2fw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-36, 967)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.07, 0.07)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_juy10"]
+_data = {
+"RESET": SubResource("Animation_8h2fw"),
+"jalan": SubResource("Animation_d57vi")
+}
+
+[sub_resource type="Animation" id="Animation_xu2pv"]
+resource_name = "jalan"
+length = 55.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(10.2, 15.2, 20.2, 21.2, 33.2, 34.4, 39.2, 44.3, 55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-93, 960), Vector2(331, 940), Vector2(339, 412), Vector2(266, 410), Vector2(252, 421), Vector2(344, 418), Vector2(354, 210), Vector2(-35, 215), Vector2(-50, 219)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(10.2, 15.2, 33.2, 39.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-0.07, 0.07), Vector2(0.07, 0.07), Vector2(-0.07, 0.07), Vector2(0.07, 0.07)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(10.2, 20.2, 21.2, 33.2, 34.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_171gw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-93, 960)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.07, 0.07)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0eakj"]
+_data = {
+"RESET": SubResource("Animation_171gw"),
+"jalan": SubResource("Animation_xu2pv")
+}
 
 [node name="AreaPusat" type="Node2D"]
 
@@ -90,3 +436,54 @@ texture = ExtResource("7_advao")
 
 [node name="Subarea_lampu" type="Node2D" parent="."]
 script = ExtResource("14_1thax")
+
+[node name="Cewe1" parent="." instance=ExtResource("15_towdp")]
+position = Vector2(1955, 224)
+rotation = 3.14159
+scale = Vector2(-0.07, -0.07)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cewe1"]
+libraries = {
+"": SubResource("AnimationLibrary_8rt23")
+}
+autoplay = "jalan"
+
+[node name="Cowo1" parent="." instance=ExtResource("16_cuf4l")]
+position = Vector2(-59, 227)
+scale = Vector2(-0.07, 0.07)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cowo1"]
+libraries = {
+"": SubResource("AnimationLibrary_mbtuc")
+}
+autoplay = "jalan"
+
+[node name="Anak1" parent="." instance=ExtResource("17_g5r84")]
+position = Vector2(-26, 957)
+scale = Vector2(-0.07, 0.07)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Anak1"]
+libraries = {
+"": SubResource("AnimationLibrary_tl8k5")
+}
+autoplay = "lari"
+
+[node name="Cewe2" parent="." instance=ExtResource("18_wgfsw")]
+position = Vector2(-36, 967)
+scale = Vector2(-0.07, 0.07)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cewe2"]
+libraries = {
+"": SubResource("AnimationLibrary_juy10")
+}
+autoplay = "jalan"
+
+[node name="Cowo2" parent="." instance=ExtResource("19_qmy1v")]
+position = Vector2(-93, 960)
+scale = Vector2(0.07, 0.07)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cowo2"]
+libraries = {
+"": SubResource("AnimationLibrary_0eakj")
+}
+autoplay = "jalan"
