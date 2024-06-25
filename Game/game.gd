@@ -12,7 +12,7 @@ var sceneScoreboard : Control
 @onready var calendarText = $In_game_map_calendar/VBoxContainer/Calendar/HBoxContainer/Label
 var prevTime = 0
 var currentTime = 0
-var maxTime = 2600
+var maxTime = 10
 var currentMonth = 0
 var currentYear = 0
 var currentCalendar = ""

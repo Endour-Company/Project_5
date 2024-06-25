@@ -2,7 +2,7 @@ extends Node
 
 
 @export var MONEY : int = 50000000000
-
+@export var PLAYER_NAME : String = "Chief" 
 # AREA : ALL (Range 0-1)
 # Global Atribute
 var VAR_KUALITAS_AIR = 0 # Range  : 0-1

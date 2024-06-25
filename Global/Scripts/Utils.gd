@@ -39,6 +39,10 @@ func parse_json_file_by_filepath(filePath : String):
 	else:
 		return null
 
+func save_json_to_filePath(filePath : String, jsonContent):
+	var file = FileAccess.open(filePath, FileAccess.WRITE)
+	file.store_string(JSON.stringify(jsonContent))
+
 func format_rupiah(amount: int) -> String:
 	if amount < 1000:
 		return "Rp. " + str(amount)
@@ -58,3 +62,4 @@ func get_random_item_from_array(array):
 func convert_month_to_text(mon : int):
 	# Function to convert month from number to text
 	return months[mon]
+
