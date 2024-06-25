@@ -12,7 +12,7 @@ var sceneScoreboard : Control
 @onready var calendarText = $In_game_map_calendar/VBoxContainer/Calendar/HBoxContainer/Label
 var prevTime = 0
 var currentTime = 0
-var maxTime = 30
+var maxTime = 2600
 var currentMonth = 0
 var currentYear = 0
 var currentCalendar = ""
@@ -28,7 +28,7 @@ func _ready():
 	SFX.set_volume_db(GameAudio.get_volume_sfx())
 	
 	# Play BGM
-	GameAudio.play(BGM, GameAudio.BGM_Gameplay)
+	#GameAudio.play(BGM, GameAudio.BGM_Gameplay)
 	
 	# set global timer and progress circle
 	globalTimer.start(maxTime)
