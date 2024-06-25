@@ -21,12 +21,12 @@ func set_money():
 	moneyLabel.set_text(formattedMoney)
 	
 func set_happiness():
-	var happiness = str(Variables.get_kesejehtaraan_percentage()) + "%"
+	var happiness = str(round(Variables.get_kesejehtaraan_percentage())) + "%"
 	var happinessLabel = $GridContainer/Indicator_Happy_Health/Indicator_Happy/TextureRect/HBoxContainer/Percentage_Happy
 	happinessLabel.set_text(happiness)
 	
 func set_health():
-	var health = str(Variables.get_kesehatan_percentage()) + "%"
+	var health = str(round(Variables.get_kesehatan_percentage())) + "%"
 	var healthLabel = $GridContainer/Indicator_Happy_Health/CenterContainer2/TextureRect/HBoxContainer/Percentage_Health
 	healthLabel.set_text(health)
 

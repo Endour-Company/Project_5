@@ -141,6 +141,7 @@ stretch_mode = 3
 
 [node name="TotalMoney" type="Label" parent="GridContainer/Indicator_Money/TextureRect/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("4_vcjy6")
 theme_override_font_sizes/font_size = 24
 text = "Rp1.000.000"
@@ -299,6 +300,7 @@ texture = ExtResource("11_qbx7i")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/JalanSawah/ItemCircle"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 6.0
 offset_right = 64.3333
@@ -333,6 +335,7 @@ texture = ExtResource("11_qbx7i")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Sawah/TextureRect/VBoxContainer/Fasilitas/LampuJalanSawah/ItemCircle"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 5
@@ -429,6 +432,7 @@ texture = ExtResource("11_qbx7i")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Jati/ItemCircle"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 5
@@ -460,6 +464,7 @@ texture = ExtResource("11_qbx7i")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Hutan/TextureRect/VBoxContainer/Fasilitas/Mahoni/ItemCircle"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 5
@@ -556,6 +561,7 @@ texture = ExtResource("11_qbx7i")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/SepticTank/ItemCircle"]
+layout_mode = 0
 offset_left = 2.0
 offset_right = 42.0
 offset_bottom = 40.0
@@ -588,6 +594,7 @@ texture = ExtResource("11_qbx7i")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/TowerInternet/ItemCircle"]
+layout_mode = 0
 offset_left = 7.0
 offset_right = 47.0
 offset_bottom = 40.0
@@ -621,6 +628,7 @@ texture = ExtResource("11_qbx7i")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/JalanPemukiman/ItemCircle"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 10.0
 offset_right = 64.3333
@@ -655,6 +663,7 @@ texture = ExtResource("11_qbx7i")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pemukiman/TextureRect/VBoxContainer/Fasilitas/LampuJalanPemukiman/ItemCircle"]
+layout_mode = 0
 offset_left = 2.0
 offset_right = 42.0
 offset_bottom = 40.0
@@ -755,6 +764,7 @@ texture = ExtResource("11_qbx7i")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Pasar/ItemCircle"]
+layout_mode = 0
 offset_left = 7.0
 offset_right = 47.0
 offset_bottom = 40.0
@@ -788,6 +798,7 @@ texture = ExtResource("11_qbx7i")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Lapangan/ItemCircle"]
+layout_mode = 0
 offset_left = 3.0
 offset_top = 8.0
 offset_right = 63.0637
@@ -823,6 +834,7 @@ texture = ExtResource("11_qbx7i")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/Puskesmas/ItemCircle"]
+layout_mode = 0
 offset_left = 12.0
 offset_top = 8.0
 offset_right = 75.3333
@@ -858,6 +870,7 @@ texture = ExtResource("11_qbx7i")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/BalaiDesa/ItemCircle"]
+layout_mode = 0
 offset_left = 6.0
 offset_right = 46.0
 offset_bottom = 40.0
@@ -890,6 +903,7 @@ texture = ExtResource("11_qbx7i")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Sektor_Pusat/TextureRect/VBoxContainer/Fasilitas/LampuJalanPusat/ItemCircle"]
+layout_mode = 0
 offset_left = 2.0
 offset_right = 42.0
 offset_bottom = 40.0

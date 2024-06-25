@@ -1,6 +1,7 @@
 extends Control
 
 # Define onready variables
+@onready var nameInputScreen : Control
 @onready var tutorialScreen : Control
 @onready var optionScreen : Control
 @onready var confirmScreen : Control
@@ -48,10 +49,18 @@ func _on_mulai_button_pressed():
 	# Play Start SFX
 	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Click)
 	
+	# Show name input scene
+	nameInputScreen = preload("res://Global/Game_UI/InputName/Main/inputname.tscn").instantiate()
+	nameInputScreen.connect("input_complete", _on_input_complete)
+	add_child(nameInputScreen)
+
+func _on_input_complete():
 	# Show overlay and play fade out animation before sending out start signal
 	move_child(overlay, overlayPos)
 	anim.play("Fade Out")
-
+	
+	# Delete name input screen
+	nameInputScreen.queue_free()
 
 func _on_tutorial_button_pressed():
 	# Play click SFX

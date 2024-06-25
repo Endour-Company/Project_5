@@ -13,7 +13,7 @@ var sceneScoreboard : Control
 @onready var calendarText = $In_game_map_calendar/VBoxContainer/Calendar/HBoxContainer/Label
 var prevTime = 0
 var currentTime = 0
-var maxTime = 2600
+var maxTime = 30
 var currentMonth = 0
 var currentYear = 0
 var currentCalendar = ""
@@ -32,7 +32,7 @@ func _ready():
 	SFX.set_volume_db(GameAudio.get_volume_sfx())
 	
 	# Play BGM
-	#GameAudio.play(BGM, GameAudio.BGM_Gameplay)
+	GameAudio.play(BGM, GameAudio.BGM_Gameplay)
 	
 	# set global timer and progress circle
 	globalTimer.start(maxTime)
@@ -49,6 +49,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	update_indicators()
+	update_calendar()
+	
+func update_indicators():
+	$Progress_variable/HBoxContainer/Progress_public_welfare.set_value_no_signal(Variables.VAR_KESEJAHTERAAN_MASYARAKAT * 100)
+	$Progress_variable/HBoxContainer/Progress_public_health.set_value_no_signal(Variables.VAR_KESEHATAN_MASYARAKAT * 100)
+
+func update_calendar():
 	currentTime = maxTime - globalTimer.get_time_left()
 	progressTime.set_value_no_signal((currentTime / maxTime) * 100)
 	

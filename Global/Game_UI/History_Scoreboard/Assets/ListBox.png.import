@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnbjf4amiks2m"
-path="res://.godot/imported/Padis_besar.png-4ffaac7b6b97af19377cf7c817f44e87.ctex"
+uid="uid://c0ywv84e6d0rk"
+path="res://.godot/imported/ListBox.png-4b53c04020732b2d5d0640494d40889f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Ricefield/Assets/item_bg_padi/Padis_besar.png"
-dest_files=["res://.godot/imported/Padis_besar.png-4ffaac7b6b97af19377cf7c817f44e87.ctex"]
+source_file="res://Global/Game_UI/History_Scoreboard/Assets/ListBox.png"
+dest_files=["res://.godot/imported/ListBox.png-4b53c04020732b2d5d0640494d40889f.ctex"]
 
 [params]
 

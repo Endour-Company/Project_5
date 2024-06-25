@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbf8vqwjydmgr"]
+
+[ext_resource type="PackedScene" uid="uid://ghjik3ecy5jb" path="res://Global/Game_UI/Misc/overlay.tscn" id="1_fnhxm"]
+[ext_resource type="Texture2D" uid="uid://c0ywv84e6d0rk" path="res://Global/Game_UI/History_Scoreboard/Assets/ListBox.png" id="2_ke7gt"]
+[ext_resource type="Texture2D" uid="uid://bgd52k34ueqte" path="res://Global/Game_UI/History_Scoreboard/Assets/Close Button_Normal.png" id="3_fd8iw"]
+[ext_resource type="Texture2D" uid="uid://degitj5q75lgj" path="res://Global/Game_UI/History_Scoreboard/Assets/Close Button_Pressed.png" id="4_48wl7"]
+[ext_resource type="Texture2D" uid="uid://cokcy8w0g4ehc" path="res://Global/Game_UI/History_Scoreboard/Assets/Close Button_Hover.png" id="5_ghyeb"]
+[ext_resource type="FontFile" uid="uid://wavv527jhmt1" path="res://Global/Game_UI/Fonts/K2D-Bold.ttf" id="6_aqnmy"]
+[ext_resource type="PackedScene" uid="uid://cygqr6s06vlpw" path="res://Global/Game_UI/History_Scoreboard/Lib/skor_box.tscn" id="7_rne2w"]
+
+[node name="ListRiwayat" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Overlay" parent="." instance=ExtResource("1_fnhxm")]
+layout_mode = 0
+
+[node name="Box" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.5
+offset_top = -302.5
+offset_right = 303.5
+offset_bottom = 302.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ke7gt")
+
+[node name="CloseButton" type="TextureButton" parent="Box"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -84.0
+offset_top = 26.0
+offset_right = -27.0
+offset_bottom = 83.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_fd8iw")
+texture_pressed = ExtResource("4_48wl7")
+texture_hover = ExtResource("5_ghyeb")
+
+[node name="Label" type="Label" parent="Box"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -106.5
+offset_top = 32.0
+offset_right = 106.5
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_aqnmy")
+theme_override_font_sizes/font_size = 36
+text = "Riwayat Skor"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Box"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -251.0
+offset_top = 123.0
+offset_right = 251.0
+offset_bottom = 503.0
+grow_horizontal = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Box/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="ListSkor" type="VBoxContainer" parent="Box/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SkorBox" parent="Box/ScrollContainer/MarginContainer/ListSkor" instance=ExtResource("7_rne2w")]
+layout_mode = 2

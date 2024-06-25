@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnbjf4amiks2m"
-path="res://.godot/imported/Padis_besar.png-4ffaac7b6b97af19377cf7c817f44e87.ctex"
+uid="uid://cokcy8w0g4ehc"
+path="res://.godot/imported/Close Button_Hover.png-7c311acf302b2c2da5d54e4720e8fc44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Ricefield/Assets/item_bg_padi/Padis_besar.png"
-dest_files=["res://.godot/imported/Padis_besar.png-4ffaac7b6b97af19377cf7c817f44e87.ctex"]
+source_file="res://Global/Game_UI/History_Scoreboard/Assets/Close Button_Hover.png"
+dest_files=["res://.godot/imported/Close Button_Hover.png-7c311acf302b2c2da5d54e4720e8fc44.ctex"]
 
 [params]
 
