@@ -5,10 +5,10 @@ extends Node
 
 # AREA : ALL (Range 0-1)
 # Global Atribute
-var VAR_KUALITAS_AIR = 0.6
-var VAR_PENDAPATAN = 0
-var VAR_KESEHATAN_MASYARAKAT = 0
-var VAR_KESEJAHTERAAN_MASYARAKAT = 0
+var VAR_KUALITAS_AIR = 0 # Range  : 0-1
+var VAR_PENDAPATAN = 0 # Range  : 0-1
+var VAR_KESEHATAN_MASYARAKAT = 0 # Range  : 0-1
+var VAR_KESEJAHTERAAN_MASYARAKAT = 0 # Range  : 0-1
 
 #  ====== AREA : SAWAH
 var KUALITAS_PADI = 1 # Range  : 0-1
@@ -20,6 +20,7 @@ var PESTISIDA_VOLUME = 1 # Range : 1-3
 # Support atribute
 var GROWTH_SPEED =  1 # Range  : 0-1
 var MAX_LEVEL_OF_JALAN_SAWAH = 3
+var MAX_COUNT_OF_LAMPU_JALAN_SAWAH = 3
 #  ====== END OF AREA : SAWAH
 
 
@@ -39,15 +40,21 @@ var DAYA_BELI = 1 # Range : 11
 # Support variable
 var MAX_LEVEL_OF_PASAR = 3
 var MAX_LEVEL_OF_JALAN_PUSAT_DESA = 3
-
+var MAX_LEVEL_OF_TANAH_LAPANG = 3
+var MAX_LEVEL_OF_PUSKESMAS = 2
+var MAX_LEVEL_OF_BALAI_DESA = 2
+var MAX_COUNT_OF_LAMPU_JALAN_PUSAT_DESA = 6
 # ====== END OF AREA : PUSAT DESA
 
 #  ====== AREA : PEMUKIMAN
 var SANTIATION = 1 # Range : 0 - 1 
 
 # Support Atribute
+var MAX_LEVEL_OF_JALAN_PEMUKIMAN = 3
+var MAX_COUNT_OF_TOWER_INTERNET = 2
 var MAX_COUNT_OF_SEPTIC_TANK = 3 
 var MAX_COUNT_OF_TOILET = 6
+var MAX_COUNT_OF_LAMPU_JALAN_PEMUKIMAN = 5
 
 #  ====== END OF AREA : PEMUKIMAN
 
@@ -61,8 +68,10 @@ func _ready():
 func _process(delta):
 	watch_kualtas_air()
 	watch_kuantitas_padi()
-
-
+	watch_pendapatan()
+	watch_kesehatan_masyarakat()
+	watch_kesejahteraan_masyarakat()
+	
 func set_money(action : String, value : int):
 	match action : 
 		"min" :
@@ -87,12 +96,49 @@ func watch_kualtas_air():
 	var normalizedLevelOfPasar : float = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Pasar"))["level"] / float(MAX_LEVEL_OF_PASAR)
 	var normalizedPestisidaVolume : float = PESTISIDA_VOLUME / 3.0
 	kualitasAir = (SANTIATION * 0.5) + (DAYA_SERAP_POHON * 0.4) + (normalizedLevelOfPasar * 0.1) - (normalizedPestisidaVolume * 0.1) - (0.1 * DAYA_BELI) 
+	if kualitasAir < 0 :
+		kualitasAir = 0
+	
 	VAR_KUALITAS_AIR = kualitasAir
 	
 
 func watch_pendapatan() :
-	pass
-
+	var pendapatan = 0
+	var normalizedLevelOfTanahLapang: float = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Tanah Lapang"))["level"] / float(MAX_LEVEL_OF_TANAH_LAPANG)
+	var normalizedCountOfTowerInternet : float =  (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Tower Internet"))["count"] / float(MAX_COUNT_OF_TOWER_INTERNET)
+	var normalizedLevelOfJalanPemukiman: float = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Jalan Pemukiman"))["level"] / float(MAX_LEVEL_OF_JALAN_PEMUKIMAN)
+	pendapatan = 0.5 + (DAYA_BELI * 0.3) + (normalizedLevelOfTanahLapang * 0.1) + (normalizedLevelOfJalanPemukiman * 0.1) - (normalizedCountOfTowerInternet * 0.1)
+	
+	VAR_PENDAPATAN = pendapatan
+	
+func watch_kesehatan_masyarakat() :
+	var kesehatanMasyarakat = 0
+	var normalizedLevelOfPuskesmas : float =  (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Puskesmas"))["level"] / float(MAX_LEVEL_OF_PUSKESMAS)
+	
+	kesehatanMasyarakat = (0.2) + (normalizedLevelOfPuskesmas * 0.2) + (VAR_KUALITAS_AIR * 0.4) + (KUALITAS_PADI * 0.2) 
+	
+	VAR_KESEHATAN_MASYARAKAT = kesehatanMasyarakat
+	
+func watch_kesejahteraan_masyarakat() :
+	var kesejahteraanMasyarakat = 0
+	
+	# Area : Pemukiman
+	var normalizedCountOfTowerInternet : float =  (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Tower Internet"))["count"] / float(MAX_COUNT_OF_TOWER_INTERNET)
+	var normalizedLevelOfJalanPemukiman: float = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Jalan Pemukiman"))["level"] / float(MAX_LEVEL_OF_JALAN_PEMUKIMAN)
+	var normalizedCountOfLampuJalanPemukiman : float =  (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Lampu Jalan Pemukiman"))["count"] / float(MAX_COUNT_OF_LAMPU_JALAN_PEMUKIMAN)
+	
+	# Area : Sawah
+	var normalizedCountOfLampuJalanSawah : float =  (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Lampu Jalan Sawah"))["count"] / float(MAX_COUNT_OF_LAMPU_JALAN_SAWAH)
+	
+	# Area : Pusat Desa
+	var normalizedLevelOfJalanPusatDesa : float = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Jalan Pusat Desa"))["level"] / float(MAX_LEVEL_OF_JALAN_PUSAT_DESA)
+	var normalizedLevelOfBalaiDesa : float = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Balai Desa"))["level"] / float(MAX_LEVEL_OF_BALAI_DESA)
+	var normalizedLevelOfTanahLapang: float = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Tanah Lapang"))["level"] / float(MAX_LEVEL_OF_TANAH_LAPANG)
+	var normalizedCountOfLampuJalanPusatDesa : float = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Lampu Jalan Pusat Desa"))["count"] / float(MAX_COUNT_OF_LAMPU_JALAN_PUSAT_DESA)
+	
+	kesejahteraanMasyarakat = (normalizedCountOfTowerInternet * 0.1) + (normalizedCountOfLampuJalanPemukiman * 0.1) + (normalizedCountOfLampuJalanPemukiman * 0.1) + (KUANTITAS_PADI * 0.1) + (normalizedCountOfLampuJalanSawah * 0.1) + (normalizedCountOfLampuJalanPusatDesa * 0.1) + (normalizedLevelOfBalaiDesa * 0.1) + (normalizedLevelOfTanahLapang * 0.1) + (normalizedCountOfLampuJalanPusatDesa * 0.2)
+	
+	VAR_KESEJAHTERAAN_MASYARAKAT = kesejahteraanMasyarakat
 # ==== END OF FUNCTION GLOBAL ATRIBUTE ====
 
 # FUNCTION OF AREA : SAWAH
