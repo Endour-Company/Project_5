@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://db35idblcda4e"]
+[gd_scene load_steps=22 format=3 uid="uid://db35idblcda4e"]
 
 [ext_resource type="Script" path="res://Main_menu/Main/main_menu.gd" id="1_2j24b"]
 [ext_resource type="Texture2D" uid="uid://bhopp577h1dnf" path="res://Main_menu/Assets/BG Alt.png" id="2_xyoxd"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://cnemqrnik8yya" path="res://Main_menu/Assets/Buttons/Exit Button_Pressed.png" id="12_3hcqv"]
 [ext_resource type="Texture2D" uid="uid://cvocxplo8xn1p" path="res://Main_menu/Assets/Buttons/Exit Button_Hover.png" id="13_pecw0"]
 [ext_resource type="Texture2D" uid="uid://gabtstc70q22" path="res://Main_menu/Assets/Logo.png" id="19_q241d"]
-[ext_resource type="AudioStream" uid="uid://c5xkwjahug4cb" path="res://Global/Game_Audio/Assets/SFX/General/Logo.wav" id="20_7oeil"]
 
 [sub_resource type="Animation" id="Animation_2qexo"]
 resource_name = "Intro"
@@ -35,28 +34,13 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/1/type = "audio"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BGM")
+tracks/1/path = NodePath("IntroOverlay:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("20_7oeil")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/1/use_blend = true
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("IntroOverlay:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 3.5, 4.9),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
@@ -170,7 +154,7 @@ offset_bottom = 1091.0
 color = Color(0, 0, 0, 1)
 
 [node name="IntroLogo" type="TextureRect" parent="."]
-self_modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.75)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -192,6 +176,7 @@ libraries = {
 
 [connection signal="pressed" from="ButtonsContainer/Row1/MulaiButton" to="." method="_on_mulai_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Row1/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="mouse_entered" from="ButtonsContainer/Row2/SkorButton" to="." method="_on_skor_button_mouse_entered"]
 [connection signal="pressed" from="ButtonsContainer/Row2/SkorButton" to="." method="_on_skor_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Row2/OpsiButton" to="." method="_on_opsi_button_pressed"]
 [connection signal="pressed" from="ButtonsContainer/KeluarButton" to="." method="_on_keluar_button_pressed"]

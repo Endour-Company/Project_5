@@ -3,6 +3,7 @@ extends Control
 # Define onready variables
 @onready var nameInputScreen : Control
 @onready var tutorialScreen : Control
+@onready var riwayatListScreen : Control
 @onready var optionScreen : Control
 @onready var confirmScreen : Control
 @onready var BGM : AudioStreamPlayer = $BGM
@@ -33,6 +34,10 @@ func _on_mulai_button_mouse_entered():
 	
 
 func _on_tutorial_button_mouse_entered():
+	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Hover)
+	
+
+func _on_skor_button_mouse_entered():
 	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Hover)
 	
 
@@ -83,7 +88,18 @@ func _on_tutorial_closed():
 func _on_skor_button_pressed():
 	# Play click SFX
 	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Click)
+	
+	# Spawn riwayat skor screen
+	riwayatListScreen = preload("res://Global/Game_UI/History_Scoreboard/Lib/list_riwayat.tscn").instantiate()
+	riwayatListScreen.connect("close_signal", _on_riwayat_list_close)
+	add_child(riwayatListScreen)
 
+func _on_riwayat_list_close():
+	# Play close SFX
+	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Close)
+	
+	# Kill riwayat list screen
+	riwayatListScreen.queue_free()
 
 func _on_opsi_button_pressed():
 	# Play click SFX
@@ -121,8 +137,9 @@ func _on_keluar_button_pressed():
 	
 	# Spawn confirm screen
 	confirmScreen = preload("res://Global/Game_UI/Confirmation_Dialog/Main/confirmation_dialog_no_sub.tscn").instantiate()
-	add_child(confirmScreen)
+	confirmScreen.connect("confirmed", _on_confirm_confirmed)
 	confirmScreen.connect("close_signal", _on_confirm_closed)
+	add_child(confirmScreen)
 	
 
 func _on_confirm_closed():
@@ -132,6 +149,7 @@ func _on_confirm_closed():
 	# Kill confirm screen
 	confirmScreen.queue_free()
 	
+func _on_confirm_confirmed():
 	# Send exit signal
 	exit_signal.emit()
 

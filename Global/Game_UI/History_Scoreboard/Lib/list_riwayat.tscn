@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://bbf8vqwjydmgr"]
 
 [ext_resource type="PackedScene" uid="uid://ghjik3ecy5jb" path="res://Global/Game_UI/Misc/overlay.tscn" id="1_fnhxm"]
+[ext_resource type="Script" path="res://Global/Game_UI/History_Scoreboard/Lib/list_riwayat.gd" id="1_nysto"]
 [ext_resource type="Texture2D" uid="uid://c0ywv84e6d0rk" path="res://Global/Game_UI/History_Scoreboard/Assets/ListBox.png" id="2_ke7gt"]
 [ext_resource type="Texture2D" uid="uid://bgd52k34ueqte" path="res://Global/Game_UI/History_Scoreboard/Assets/Close Button_Normal.png" id="3_fd8iw"]
 [ext_resource type="Texture2D" uid="uid://degitj5q75lgj" path="res://Global/Game_UI/History_Scoreboard/Assets/Close Button_Pressed.png" id="4_48wl7"]
 [ext_resource type="Texture2D" uid="uid://cokcy8w0g4ehc" path="res://Global/Game_UI/History_Scoreboard/Assets/Close Button_Hover.png" id="5_ghyeb"]
 [ext_resource type="FontFile" uid="uid://wavv527jhmt1" path="res://Global/Game_UI/Fonts/K2D-Bold.ttf" id="6_aqnmy"]
-[ext_resource type="PackedScene" uid="uid://cygqr6s06vlpw" path="res://Global/Game_UI/History_Scoreboard/Lib/skor_box.tscn" id="7_rne2w"]
 
 [node name="ListRiwayat" type="Control"]
 layout_mode = 3
@@ -15,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nysto")
 
 [node name="Overlay" parent="." instance=ExtResource("1_fnhxm")]
 layout_mode = 0
@@ -84,5 +85,4 @@ theme_override_constants/margin_right = 10
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="SkorBox" parent="Box/ScrollContainer/MarginContainer/ListSkor" instance=ExtResource("7_rne2w")]
-layout_mode = 2
+[connection signal="pressed" from="Box/CloseButton" to="." method="_on_close_button_pressed"]

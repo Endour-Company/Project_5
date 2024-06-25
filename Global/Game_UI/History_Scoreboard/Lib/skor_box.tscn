@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c0v7stua6h3l1" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Icon_Hospital.png" id="8_2gs26"]
 
 [node name="SkorBox" type="TextureButton"]
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("1_kbea4")
 texture_pressed = ExtResource("2_k0ut3")
 texture_hover = ExtResource("3_o7sgo")
@@ -95,3 +96,8 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("5_v14gm")
 theme_override_font_sizes/font_size = 18
 text = "100%"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

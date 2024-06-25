@@ -1,5 +1,6 @@
 extends Control
 
+signal close_signal
 
 func _ready():
 	# Set indicators
@@ -243,3 +244,5 @@ func save_to_scoreboard():
 	
 	Utils.save_json_to_filePath("res://Data/score_data.json", scoreboard)
 	
+func _on_keluar_button_pressed():
+	close_signal.emit()

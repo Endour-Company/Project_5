@@ -18,8 +18,14 @@ func _on_submit_button_pressed():
 	
 	# Validate input
 	if validateName(inputName):
+		# Play SFX
 		GameAudio.play(SFX, GameAudio.SFX_Gameplay_Click)
 		await get_tree().create_timer(0.2).timeout
+		
+		# Save name
+		Variables.PLAYER_NAME = inputName
+		
+		# Emit signal input complete
 		input_complete.emit()
 		
 

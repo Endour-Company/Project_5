@@ -199,4 +199,9 @@ func _on_global_timer_timeout():
 func _on_view_scoreboard():
 	# Show scoreboard
 	sceneScoreboard = preload("res://Global/Game_UI/EndGame_Scoreboard/Main/endgame_scoreboard.tscn").instantiate()
+	sceneScoreboard.connect("close_signal", _on_close_signal)
 	add_child(sceneScoreboard)
+
+func _on_close_signal():
+	# Send signal to go back to main menu
+	exit_signal.emit()
