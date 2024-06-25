@@ -12,6 +12,8 @@ func _ready():
 	set_hutan()
 	set_pemukiman()
 	set_pusat_desa()
+	
+	save_to_scoreboard()
 
 
 # Setter method for indicators
@@ -219,3 +221,25 @@ func set_label_level(label: Label, level: int):
 	
 func set_label_count(label: Label, count: int):
 	label.set_text("Punya " + str(count))
+
+func save_to_scoreboard():
+	var scoreboard : Array = Utils.parse_json_file_by_filepath("res://Data/score_data.json")
+	
+	var id : int = 0
+	for scoreData in scoreboard :
+		var currentId = scoreData["id"]
+		id = currentId + 1
+	
+	var jsonSchema = {
+		"id" : id,
+		"name" : Variables.PLAYER_NAME,
+		"date" : Time.get_datetime_dict_from_system(),
+		"money" : Variables.MONEY,
+		"percentage_kesehatan" : int(Variables.VAR_KESEHATAN_MASYARAKAT * 100),
+		"percentage_kesejahteraan" : int(Variables.VAR_KESEJAHTERAAN_MASYARAKAT * 100),
+		"item_level" : GlobalItemsLevel.ITEM_LEVEL
+	}
+	scoreboard.append(jsonSchema)
+	
+	Utils.save_json_to_filePath("res://Data/score_data.json", scoreboard)
+	
