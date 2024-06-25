@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://wx4fusxf6e3c"]
+
+[ext_resource type="Texture2D" uid="uid://bsg21i8dd22ri" path="res://Game/Global/Assets/Cowo1/cowo1-0.png" id="1_0khxy"]
+[ext_resource type="Texture2D" uid="uid://c2vm18y61g7tl" path="res://Game/Global/Assets/Cowo1/cowo1-1.png" id="2_fb26k"]
+[ext_resource type="Texture2D" uid="uid://b6kewrd8qvrp6" path="res://Game/Global/Assets/Cowo1/cowo1-2.png" id="3_tssqa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wnpry"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0khxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fb26k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tssqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fb26k")
+}],
+"loop": true,
+"name": &"Jalan",
+"speed": 5.0
+}]
+
+[node name="Cowo1" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wnpry")
+animation = &"Jalan"
+autoplay = "Jalan"
+frame_progress = 0.360555

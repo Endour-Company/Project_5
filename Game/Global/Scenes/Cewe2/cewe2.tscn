@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://k47baf88chyh"]
+
+[ext_resource type="Texture2D" uid="uid://bf4ps3faphufc" path="res://Game/Global/Assets/Cewe2/Cewe2_20240624122046.png" id="1_fcr3k"]
+[ext_resource type="Texture2D" uid="uid://b2k5tn8pkwphk" path="res://Game/Global/Assets/Cewe2/Cewe2_20240624122412.png" id="2_q5fcu"]
+[ext_resource type="Texture2D" uid="uid://dcycgger72doh" path="res://Game/Global/Assets/Cewe2/Cewe2_20240624122607.png" id="3_8qne3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u14q6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fcr3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q5fcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8qne3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q5fcu")
+}],
+"loop": true,
+"name": &"jalan",
+"speed": 5.0
+}]
+
+[node name="Cewe2" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u14q6")
+animation = &"jalan"
+autoplay = "jalan"
+frame_progress = 0.741655
