@@ -7,10 +7,12 @@ var happiness : String
 var health : String
 var itemLevel
 var stars = 0
-
+@onready var SFX = $SFX
 signal close_signal
 
 func _ready():
+	SFX.set_volume_db(GameAudio.get_volume_sfx())
+	
 	# Set indicators
 	set_username()
 	set_time()
@@ -312,4 +314,8 @@ func set_label_count(label: Label, count: int):
 	label.set_text("Punya " + str(count))
 	
 func _on_keluar_button_pressed():
+	GameAudio.play(SFX, GameAudio.SFX_Gameplay_Click)
 	close_signal.emit()
+
+func _on_keluar_button_mouse_entered():
+	GameAudio.play(SFX, GameAudio.SFX_Gameplay_Hover)

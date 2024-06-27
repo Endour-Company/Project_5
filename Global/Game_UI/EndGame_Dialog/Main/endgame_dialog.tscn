@@ -90,4 +90,7 @@ texture_normal = ExtResource("4_xchi3")
 texture_pressed = ExtResource("5_2aauh")
 texture_hover = ExtResource("6_jembd")
 
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[connection signal="mouse_entered" from="ViewScoreboardButton" to="." method="_on_view_scoreboard_button_mouse_entered"]
 [connection signal="pressed" from="ViewScoreboardButton" to="." method="_on_view_scoreboard_button_pressed"]

@@ -940,4 +940,7 @@ texture_normal = ExtResource("28_4rwpq")
 texture_pressed = ExtResource("29_earny")
 texture_hover = ExtResource("30_rw27r")
 
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[connection signal="mouse_entered" from="KeluarButton" to="." method="_on_keluar_button_mouse_entered"]
 [connection signal="pressed" from="KeluarButton" to="." method="_on_keluar_button_pressed"]

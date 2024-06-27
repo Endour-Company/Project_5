@@ -1,10 +1,12 @@
 extends Control
 
 var stars = 0
-
+@onready var SFX = $SFX
 signal close_signal
 
 func _ready():
+	SFX.set_volume_db(GameAudio.get_volume_sfx())
+	
 	# Set indicators
 	set_money()
 	set_happiness()
@@ -318,4 +320,8 @@ func save_to_scoreboard():
 	Utils.save_json_to_filePath("res://Data/score_data.json", scoreboard)
 	
 func _on_keluar_button_pressed():
+	GameAudio.play(SFX, GameAudio.SFX_Gameplay_Click)
 	close_signal.emit()
+
+func _on_keluar_button_mouse_entered():
+	GameAudio.play(SFX, GameAudio.SFX_Gameplay_Hover)
