@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://0mnnapywg8gh"]
+
+[ext_resource type="Texture2D" uid="uid://cit7iw0cq563d" path="res://Game/Global/Assets/Sapi/Makan/sapi_20240620083143.png" id="1_u35bp"]
+[ext_resource type="Texture2D" uid="uid://bt6rc3cbwcpg1" path="res://Game/Global/Assets/Sapi/Makan/sapi_20240620083155.png" id="2_rleb2"]
+[ext_resource type="Texture2D" uid="uid://bqu3x57dkkad7" path="res://Game/Global/Assets/Sapi/Makan/sapi_20240620083204.png" id="3_xstl4"]
+[ext_resource type="Texture2D" uid="uid://cjajpia4i0jvc" path="res://Game/Global/Assets/Sapi/Makan/sapi_20240620083212.png" id="4_cv6i0"]
+[ext_resource type="Texture2D" uid="uid://c2q4o2h7y0v10" path="res://Game/Global/Assets/Sapi/Makan/sapi_20240620083418.png" id="5_ocwsm"]
+[ext_resource type="Texture2D" uid="uid://xqyas4quafdf" path="res://Game/Global/Assets/Sapi/Makan/sapi_20240620083426.png" id="6_h53sy"]
+[ext_resource type="Texture2D" uid="uid://dy0od4ek5j2bq" path="res://Game/Global/Assets/Sapi/Makan/sapi_20240620083433.png" id="7_or57i"]
+[ext_resource type="Texture2D" uid="uid://do3eosi8dg1u2" path="res://Game/Global/Assets/Sapi/Makan/sapi_20240620083440.png" id="8_3qisu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nltly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u35bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rleb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xstl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cv6i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ocwsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h53sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_or57i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3qisu")
+}],
+"loop": true,
+"name": &"sapimakan",
+"speed": 10.0
+}]
+
+[node name="Sapimakan" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nltly")
+animation = &"sapimakan"
+autoplay = "sapimakan"
+frame_progress = 0.458516

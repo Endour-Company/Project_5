@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://ix0fems6c3kp"]
+[gd_scene load_steps=47 format=3 uid="uid://ix0fems6c3kp"]
 
 [ext_resource type="Texture2D" uid="uid://blcmhu8hstusc" path="res://Game/Area_pusat_desa/Assets/bg_main/bg_main.png" id="1_wmkgg"]
 [ext_resource type="Texture2D" uid="uid://b8vyrj5dfjgw7" path="res://Game/Area_pusat_desa/Assets/item_bg_sungai/sungai_kotor.png" id="2_wiods"]
@@ -20,6 +20,108 @@
 [ext_resource type="PackedScene" path="res://Game/Global/Scenes/Anak1/anak1.tscn" id="17_g5r84"]
 [ext_resource type="PackedScene" uid="uid://k47baf88chyh" path="res://Game/Global/Scenes/Cewe2/cewe2.tscn" id="18_wgfsw"]
 [ext_resource type="PackedScene" uid="uid://cp4ncbhij24p1" path="res://Game/Global/Scenes/Cowo2/cowo2.tscn" id="19_qmy1v"]
+[ext_resource type="PackedScene" uid="uid://c461dogyngbwa" path="res://Game/Global/Scenes/Wave/wave1.tscn" id="20_p3uwu"]
+[ext_resource type="PackedScene" uid="uid://cmhkf4q0cyfjt" path="res://Game/Global/Scenes/Burung/burung.tscn" id="21_b66ug"]
+
+[sub_resource type="Animation" id="Animation_2r4ec"]
+resource_name = "wave"
+length = 33.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 17.3, 33),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-76, 126), Vector2(-76, 132), Vector2(2003, 72)]
+}
+
+[sub_resource type="Animation" id="Animation_4wti8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2003, -15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sldm8"]
+_data = {
+"RESET": SubResource("Animation_4wti8"),
+"wave": SubResource("Animation_2r4ec")
+}
+
+[sub_resource type="Animation" id="Animation_nb85r"]
+resource_name = "wave"
+length = 35.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Wave2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-23, 77), Vector2(1982, 71)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 9.1, 30),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-99, 81), Vector2(-82, 126), Vector2(1983, 95)]
+}
+
+[sub_resource type="Animation" id="Animation_04yu3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Wave2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-23, 77)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-99, 81)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ow5yk"]
+_data = {
+"RESET": SubResource("Animation_04yu3"),
+"wave": SubResource("Animation_nb85r")
+}
 
 [sub_resource type="Animation" id="Animation_qnmoc"]
 length = 0.001
@@ -362,6 +464,44 @@ _data = {
 "jalan": SubResource("Animation_xu2pv")
 }
 
+[sub_resource type="Animation" id="Animation_uadmu"]
+resource_name = "terbang"
+length = 60.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 25.1, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-167, 4.97699e-06), Vector2(2083, 853), Vector2(2087, 842)]
+}
+
+[sub_resource type="Animation" id="Animation_gvrdn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-167, 4.97699e-06)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ga2hb"]
+_data = {
+"RESET": SubResource("Animation_gvrdn"),
+"terbang": SubResource("Animation_uadmu")
+}
+
 [node name="AreaPusat" type="Node2D"]
 
 [node name="BG" type="TextureRect" parent="."]
@@ -380,6 +520,29 @@ texture = ExtResource("2_wiods")
 expand_mode = 1
 
 [node name="Trashes" type="Node2D" parent="Subarea_sungai"]
+[node name="Wave3" parent="." instance=ExtResource("20_p3uwu")]
+position = Vector2(2003, -15)
+scale = Vector2(0.08, 0.08)
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="Wave3"]
+libraries = {
+"": SubResource("AnimationLibrary_sldm8")
+}
+autoplay = "wave"
+
+[node name="Wave2" parent="." instance=ExtResource("20_p3uwu")]
+position = Vector2(-23, 77)
+scale = Vector2(0.08, 0.08)
+
+[node name="Wave1" parent="." instance=ExtResource("20_p3uwu")]
+position = Vector2(-99, 81)
+scale = Vector2(0.08, 0.08)
+
+[node name="AnimationPlayer1" type="AnimationPlayer" parent="Wave1"]
+libraries = {
+"": SubResource("AnimationLibrary_ow5yk")
+}
+autoplay = "wave"
 
 [node name="Pohon" type="TextureRect" parent="."]
 offset_right = 1920.0
@@ -491,3 +654,14 @@ libraries = {
 "": SubResource("AnimationLibrary_0eakj")
 }
 autoplay = "jalan"
+
+[node name="Burung" parent="." instance=ExtResource("21_b66ug")]
+position = Vector2(-167, 4.97699e-06)
+rotation = 1.28805
+scale = Vector2(0.2, 0.2)
+
+[node name="terbang" type="AnimationPlayer" parent="Burung"]
+libraries = {
+"": SubResource("AnimationLibrary_ga2hb")
+}
+autoplay = "terbang"
