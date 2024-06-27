@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://c461dogyngbwa"]
+[gd_scene load_steps=3 format=3 uid="uid://c461dogyngbwa"]
+
+[ext_resource type="Texture2D" uid="uid://bsnwmgi4dbxg0" path="res://Game/Global/Assets/wave1.png" id="1_qwxds"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8qgu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qwxds")
+}],
+"loop": true,
+"name": &"wave",
+"speed": 4.0
+}]
 
 [node name="Wave1" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c8qgu")
+animation = &"wave"
+autoplay = "wave"
+frame_progress = 0.930643

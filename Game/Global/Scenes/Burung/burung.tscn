@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmhkf4q0cyfjt"]
+
+[ext_resource type="Texture2D" uid="uid://dotjvslkvpptv" path="res://Game/Global/Assets/Burung/burung_20240627082450.png" id="1_msea0"]
+[ext_resource type="Texture2D" uid="uid://bvf27286n85fg" path="res://Game/Global/Assets/Burung/burung_20240627082557.png" id="2_j0xcw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n6rq3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_msea0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j0xcw")
+}],
+"loop": true,
+"name": &"burung",
+"speed": 5.0
+}]
+
+[node name="Burung" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n6rq3")
+animation = &"burung"
+autoplay = "burung"
+frame_progress = 0.448582
