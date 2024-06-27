@@ -74,7 +74,7 @@ texture_pressed = ExtResource("6_fpous")
 texture_hover = ExtResource("7_sh7ou")
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
-bus = &"SFX"
+bus = &"SFX_UI"
 
 [connection signal="pressed" from="YesButton" to="." method="_on_yes_button_pressed"]
 [connection signal="pressed" from="NoButton" to="." method="_on_no_button_pressed"]

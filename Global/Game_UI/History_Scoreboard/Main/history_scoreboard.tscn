@@ -1,10 +1,12 @@
-[gd_scene load_steps=34 format=3 uid="uid://bp8srpl07356q"]
+[gd_scene load_steps=36 format=3 uid="uid://bp8srpl07356q"]
 
 [ext_resource type="Script" path="res://Global/Game_UI/History_Scoreboard/Main/history_scoreboard.gd" id="1_fouh8"]
-[ext_resource type="Texture2D" uid="uid://cri13iu7eyg3k" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Box.png" id="2_oykys"]
+[ext_resource type="Texture2D" uid="uid://dhorrfg1l0wsc" path="res://Global/Game_UI/History_Scoreboard/Assets/Box.png" id="2_o4wl4"]
 [ext_resource type="FontFile" uid="uid://wavv527jhmt1" path="res://Global/Game_UI/Fonts/K2D-Bold.ttf" id="3_51sq4"]
+[ext_resource type="Texture2D" uid="uid://diw2m5v11ddc1" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Stars_Under.png" id="4_ocu6t"]
 [ext_resource type="FontFile" uid="uid://btisj7uyosjpa" path="res://Global/Game_UI/Fonts/K2D-Regular.ttf" id="4_vcjy6"]
 [ext_resource type="Texture2D" uid="uid://c60w0xkwgnm7n" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Indicator_Long.png" id="5_717m2"]
+[ext_resource type="Texture2D" uid="uid://dm0wedlsypvhp" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Stars_Over.png" id="5_mfwn1"]
 [ext_resource type="Texture2D" uid="uid://cecglqosewp76" path="res://Global/Game_UI/History_Scoreboard/Assets/Icon_User.png" id="6_ac84u"]
 [ext_resource type="Texture2D" uid="uid://b3hlee15a3wpv" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Icon_Money.png" id="6_ss0gq"]
 [ext_resource type="Texture2D" uid="uid://bc2dw66li18l5" path="res://Global/Game_UI/EndGame_Scoreboard/Assets/Indicator_Short.png" id="7_gs5t6"]
@@ -50,28 +52,42 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -709.0
-offset_top = -438.0
-offset_right = 709.0
-offset_bottom = 438.0
+offset_left = -791.5
+offset_top = -488.5
+offset_right = 791.5
+offset_bottom = 488.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_oykys")
+texture = ExtResource("2_o4wl4")
 
 [node name="Label1" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -115.5
-offset_top = 152.0
-offset_right = 115.5
-offset_bottom = 211.0
+offset_left = -131.0
+offset_top = 88.0
+offset_right = 131.0
+offset_bottom = 147.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_51sq4")
 theme_override_font_sizes/font_size = 44
 text = "Riwayat Skor"
 horizontal_alignment = 1
+
+[node name="Stars" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.0
+offset_top = 168.0
+offset_right = 162.0
+offset_bottom = 232.0
+grow_horizontal = 2
+value = 50.0
+texture_under = ExtResource("4_ocu6t")
+texture_progress = ExtResource("5_mfwn1")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -81,9 +97,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -357.0
-offset_top = -318.0
+offset_top = -278.0
 offset_right = 357.0
-offset_bottom = 380.0
+offset_bottom = 420.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 40
@@ -967,9 +983,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -463.0
-offset_top = -231.0
+offset_top = -191.0
 offset_right = -303.0
-offset_bottom = -160.0
+offset_bottom = -120.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_default_cursor_shape = 2

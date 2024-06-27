@@ -25,7 +25,7 @@ var texts = [
 	"Semoga berhasil!"
 ]
 
-var dialogIndex = 0
+var dialogIndex = 21
 var dialogDone = false
 @onready var dialogLabel =  $DialogLabel
 @onready var dialogNextLabel = $NextLabel

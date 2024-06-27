@@ -3,8 +3,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Variables.money_changed.connect(set_ui_money)
 	set_ui_money()
+	Variables.money_changed.connect(set_ui_money)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

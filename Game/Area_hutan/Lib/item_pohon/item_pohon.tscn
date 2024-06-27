@@ -7,7 +7,7 @@
 
 [node name="Item_pohon" type="Node2D"]
 position = Vector2(226, 938)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.219, 0.219)
 script = ExtResource("1_iq5h2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -31,5 +31,8 @@ grow_vertical = 2
 value = 1.0
 texture_under = ExtResource("3_at3lt")
 texture_progress = ExtResource("4_msctk")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX_Game"
 
 [connection signal="value_changed" from="TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]

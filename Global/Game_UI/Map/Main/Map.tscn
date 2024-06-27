@@ -124,8 +124,16 @@ theme_override_fonts/font = ExtResource("23_enibt")
 theme_override_font_sizes/font_size = 64
 text = "MAP"
 
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX_UI"
+
+[connection signal="mouse_entered" from="CloseButton" to="." method="play_hover_sfx"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="mouse_entered" from="Government" to="." method="play_hover_sfx"]
 [connection signal="pressed" from="Government" to="." method="_on_government_pressed"]
+[connection signal="mouse_entered" from="Houses" to="." method="play_hover_sfx"]
 [connection signal="pressed" from="Houses" to="." method="_on_houses_pressed"]
+[connection signal="mouse_entered" from="Ricefield" to="." method="play_hover_sfx"]
 [connection signal="pressed" from="Ricefield" to="." method="_on_ricefield_pressed"]
+[connection signal="mouse_entered" from="Forest" to="." method="play_hover_sfx"]
 [connection signal="pressed" from="Forest" to="." method="_on_forest_pressed"]

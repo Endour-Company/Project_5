@@ -1,14 +1,14 @@
 [
 	{
 		"name": "Cendana",
-		"description": "Donec ut enim vestibulum, convallis lectus tincidunt, vehicula mi. Nunc facilisis accumsan mi sit amet semper. Etiam cursus felis eget rhoncus ultrices. Maecenas aliquam, nisi eget suscipit imperdiet, libero lectus hendrerit mi, a pulvinar elit magna ac velit. Donec interdum nisi vel dui euismod luctus non vel nibh. Maecenas et mattis leo, eget congue libero. Nunc sagittis porta nulla, convallis tempor eros luctus vel. Aliquam pellentesque lacus quis luctus vehicula.",
+		"description": "Pohon cendana memberikan manfaat ekologis dengan menyediakan habitat, mencegah erosi, mempengaruhi siklus air, serta mengurangi emisi karbon dan menyediakan oksigen. Secara ekonomis, cendana bernilai tinggi karena kayunya yang harum, digunakan dalam minyak atsiri dan wewangian.",
 		"type" : "countable",
 		"levels": [
 			{
 				"level": 1,
 				"name": "Pinus Lv 1",
 				"upgrade_price": 500,
-				"img": "res://Game/Area_hutan/Assets/item_ct_pinus/pinus.png"
+				"img": "res://Game/Area_hutan/Assets/item_ct_cendana/cendana.png"
 			}
 		],
 		"images" : [
@@ -31,7 +31,7 @@
 	},
 	{
 		"name": "Jati",
-		"description": "Street ut enim vestibulum, convallis lectus tincidunt, vehicula mi. Nunc facilisis accumsan mi sit amet semper. Etiam cursus felis eget rhoncus ultrices. Maecenas aliquam, nisi eget suscipit imperdiet, libero lectus hendrerit mi, a pulvinar elit magna ac velit. Donec interdum nisi vel dui euismod luctus non vel nibh. Maecenas et mattis leo, eget congue libero. Nunc sagittis porta nulla, convallis tempor eros luctus vel. Aliquam pellentesque lacus quis luctus vehicula.",
+		"description": "Pohon jati memiliki nilai ekonomi dan ekologis tinggi berkat kayu yang kuat, habitat yang disediakan, dan manfaat untuk menjaga kesuburan tanah serta mengurangi erosi.",
 		"type" : "countable",
 		"levels": [
 			{
@@ -62,7 +62,7 @@
 	},
 	{
 		"name": "Mahoni",
-		"description": "Street ut enim vestibulum, convallis lectus tincidunt, vehicula mi. Nunc facilisis accumsan mi sit amet semper. Etiam cursus felis eget rhoncus ultrices. Maecenas aliquam, nisi eget suscipit imperdiet, libero lectus hendrerit mi, a pulvinar elit magna ac velit. Donec interdum nisi vel dui euismod luctus non vel nibh. Maecenas et mattis leo, eget congue libero. Nunc sagittis porta nulla, convallis tempor eros luctus vel. Aliquam pellentesque lacus quis luctus vehicula.",
+		"description": "Pohon mahoni dikenal karena kayunya yang kuat dan mudah diolah. Selain digunakan dalam industri kayu, mahoni juga populer untuk dekorasi dan memiliki nilai ekologis sebagai habitat bagi berbagai spesies.",
 		"type" : "countable",
 		"levels": [		
 			{

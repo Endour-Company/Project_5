@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cjnu7rsccg082"]
+[gd_scene load_steps=15 format=3 uid="uid://cjnu7rsccg082"]
 
 [ext_resource type="Texture2D" uid="uid://cuwx82bwbja1y" path="res://Global/Game_UI/Action_bar/Assets/Box.png" id="1_3esga"]
 [ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Buy_confirmation/Buy_confirmation.gd" id="1_lrq02"]
 [ext_resource type="Texture2D" uid="uid://kyd81uoky3lu" path="res://Global/Game_UI/Action_bar/Assets/Bayar_Normal.png" id="2_euj8d"]
 [ext_resource type="Texture2D" uid="uid://dhgbtvnk126it" path="res://Global/Game_UI/Action_bar/Assets/Bayar_Pressed.png" id="3_nkhy7"]
+[ext_resource type="FontFile" uid="uid://wavv527jhmt1" path="res://Global/Game_UI/Fonts/K2D-Bold.ttf" id="3_utc1t"]
 [ext_resource type="Texture2D" uid="uid://55cuvu6fj7u2" path="res://Global/Game_UI/Action_bar/Assets/Bayar_Hover.png" id="4_ibk86"]
 [ext_resource type="Texture2D" uid="uid://dnl6eh4mgv53s" path="res://Global/Game_UI/Action_bar/Assets/Batal_Normal.png" id="5_7bupr"]
 [ext_resource type="Texture2D" uid="uid://gpbokeay0biw" path="res://Global/Game_UI/Action_bar/Assets/Batal_Pressed.png" id="6_n7sf5"]
@@ -75,6 +76,7 @@ theme = SubResource("Theme_xsknp")
 [node name="Item_name" type="Label" parent="Box/Item_price_container"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_utc1t")
 text = "Jalan Aspal Hehehe"
 label_settings = SubResource("LabelSettings_dge51")
 autowrap_mode = 3
@@ -82,6 +84,7 @@ autowrap_mode = 3
 [node name="Item_price" type="Label" parent="Box/Item_price_container"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_utc1t")
 text = "Rp. 500K"
 label_settings = SubResource("LabelSettings_52bfm")
 
@@ -132,5 +135,10 @@ texture_normal = ExtResource("5_7bupr")
 texture_pressed = ExtResource("6_n7sf5")
 texture_hover = ExtResource("7_v2xx7")
 
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX_Game"
+
+[connection signal="mouse_entered" from="Box/Buy_confirmation_container/Buy_button" to="." method="_on_buy_button_mouse_entered"]
 [connection signal="pressed" from="Box/Buy_confirmation_container/Buy_button" to="." method="_on_buy_button_pressed"]
+[connection signal="mouse_entered" from="Box/Buy_confirmation_container/Cancel_button" to="." method="_on_cancel_button_mouse_entered"]
 [connection signal="pressed" from="Box/Buy_confirmation_container/Cancel_button" to="." method="_on_cancel_button_pressed"]

@@ -60,10 +60,8 @@ script = ExtResource("1_x0wwk")
 [node name="Area_Hutan" parent="." instance=ExtResource("1_pgppg")]
 
 [node name="Ricefield_area" parent="." instance=ExtResource("1_ymy68")]
-visible = false
 
 [node name="AreaPemukiman" parent="." instance=ExtResource("4_qv2wn")]
-visible = false
 
 [node name="AreaPusat" parent="." instance=ExtResource("5_v2urd")]
 visible = false
@@ -155,6 +153,7 @@ layout_mode = 2
 
 [node name="MapTextureButton" type="TextureButton" parent="In_game_map_calendar/VBoxContainer/Map"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("16_wxpol")
 texture_pressed = ExtResource("17_l5eo0")
 texture_hover = ExtResource("18_3grc8")
@@ -196,9 +195,10 @@ one_shot = true
 bus = &"BGM"
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
-bus = &"SFX"
+bus = &"SFX_UI"
 
 [node name="Overlay" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -213,6 +213,7 @@ libraries = {
 autoplay = "Fade In"
 
 [connection signal="pressed" from="In_game_menu/HBoxContainer/Button_option" to="." method="_on_button_option_pressed"]
+[connection signal="mouse_entered" from="In_game_map_calendar/VBoxContainer/Map/MapTextureButton" to="." method="_on_map_texture_button_mouse_entered"]
 [connection signal="pressed" from="In_game_map_calendar/VBoxContainer/Map/MapTextureButton" to="." method="_on_map_texture_button_pressed"]
 [connection signal="timeout" from="GlobalTimer" to="." method="_on_global_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

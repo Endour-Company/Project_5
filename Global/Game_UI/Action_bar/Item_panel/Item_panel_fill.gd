@@ -1,17 +1,9 @@
 extends Panel
 
-
-# Called when the node enters the scene tree for the first time.
-
+@onready var SFX = $SFX
 @onready var item = preload("res://Global/Game_UI/Action_bar/Item/Item.tscn")
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
 	pass
-	
 
 func init_item_panel(itemPath : String, price : int, itemName : String):
 	var myItem = item.instantiate()
@@ -20,3 +12,8 @@ func init_item_panel(itemPath : String, price : int, itemName : String):
 	myItem.itemName = itemName
 	add_child(myItem)
 	
+
+func _on_mouse_entered():
+	# Play hover sfx
+	SFX.set_volume_db(GameAudio.get_volume_sfx())
+	GameAudio.play(SFX, GameAudio.SFX_Gameplay_Hover)

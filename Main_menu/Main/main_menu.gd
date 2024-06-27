@@ -56,8 +56,16 @@ func _on_mulai_button_pressed():
 	
 	# Show name input scene
 	nameInputScreen = preload("res://Global/Game_UI/InputName/Main/inputname.tscn").instantiate()
+	nameInputScreen.connect("input_cancel", _on_input_cancel)
 	nameInputScreen.connect("input_complete", _on_input_complete)
 	add_child(nameInputScreen)
+
+func _on_input_cancel():
+	# Play close sfx
+	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Close)
+	
+	# Delete name input screen
+	nameInputScreen.queue_free()
 
 func _on_input_complete():
 	# Show overlay and play fade out animation before sending out start signal

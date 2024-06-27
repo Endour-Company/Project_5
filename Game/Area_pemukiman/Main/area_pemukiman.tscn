@@ -1,17 +1,18 @@
-[gd_scene load_steps=29 format=3 uid="uid://cn5dtrm2fsqbf"]
+[gd_scene load_steps=30 format=3 uid="uid://cn5dtrm2fsqbf"]
 
 [ext_resource type="Texture2D" uid="uid://b5nobebfd31l7" path="res://Game/Area_pemukiman/Assets/bg_main/bg_main.png" id="1_rsogo"]
 [ext_resource type="Texture2D" uid="uid://bbeqegcoxuei2" path="res://Game/Area_pemukiman/Assets/item_bg_sungai/sungai_kotor.png" id="2_c3fdd"]
+[ext_resource type="Script" path="res://Game/Area_pemukiman/Lib/subarea_sungai/Subarea_sungai.gd" id="2_oee1k"]
 [ext_resource type="Texture2D" uid="uid://cia5iea3px8fm" path="res://Game/Area_pemukiman/Assets/item_up_jalan/jalan_lv1.png" id="3_nj31e"]
 [ext_resource type="Script" path="res://Game/Area_pemukiman/Lib/item_up_jalan/item_up_jalan.gd" id="3_rmmd4"]
 [ext_resource type="Script" path="res://Game/Area_pemukiman/Lib/item_ct_septictank/item_ct_septictank.gd" id="5_eeac5"]
 [ext_resource type="Script" path="res://Game/Area_pemukiman/Lib/item_ct_toilet/item_ct_toilet.gd" id="6_tle74"]
 [ext_resource type="Script" path="res://Game/Area_pemukiman/Lib/item_ct_tower/item_ct_tower.gd" id="6_wv3fg"]
 [ext_resource type="Script" path="res://Game/Area_pemukiman/Lib/item_ct_lampujalan/item_ct_lampujalan.gd" id="8_1eg7p"]
-[ext_resource type="PackedScene" uid="uid://c0t5el6koktrq" path="res://Game/Global/Scenes/Cewe1/cewe1.tscn" id="9_a35hi"]
-[ext_resource type="PackedScene" uid="uid://wx4fusxf6e3c" path="res://Game/Global/Scenes/Cowo1/cowo1.tscn" id="9_gd3km"]
+[ext_resource type="PackedScene" path="res://Game/Global/Scenes/Cewe1/cewe1.tscn" id="9_a35hi"]
+[ext_resource type="PackedScene" path="res://Game/Global/Scenes/Cowo1/cowo1.tscn" id="9_gd3km"]
 [ext_resource type="PackedScene" uid="uid://k47baf88chyh" path="res://Game/Global/Scenes/Cewe2/cewe2.tscn" id="11_blgk5"]
-[ext_resource type="PackedScene" uid="uid://c1nphf3avri0m" path="res://Game/Global/Scenes/Anak1/anak1.tscn" id="11_vr25a"]
+[ext_resource type="PackedScene" path="res://Game/Global/Scenes/Anak1/anak1.tscn" id="11_vr25a"]
 [ext_resource type="PackedScene" uid="uid://cp4ncbhij24p1" path="res://Game/Global/Scenes/Cowo2/cowo2.tscn" id="13_l68mk"]
 
 [sub_resource type="Animation" id="Animation_1emaa"]
@@ -186,6 +187,45 @@ _data = {
 "RESET": SubResource("Animation_rbvru")
 }
 
+[sub_resource type="Animation" id="Animation_mvw5l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2039, 678)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.07, 0.07)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_6rpb2"]
 resource_name = "jalan"
 length = 30.0
@@ -225,45 +265,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_mvw5l"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2039, 678)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.07, 0.07)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7fy0e"]
@@ -358,6 +359,45 @@ _data = {
 "RESET": SubResource("Animation_ei2k2")
 }
 
+[sub_resource type="Animation" id="Animation_ydj0n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1126, 649)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.07, 0.07)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_5rdnq"]
 resource_name = "jalan"
 length = 50.0
@@ -399,45 +439,6 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ydj0n"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1126, 649)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-0.07, 0.07)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w6h6g"]
 _data = {
 "RESET": SubResource("Animation_ydj0n"),
@@ -453,12 +454,15 @@ texture = ExtResource("1_rsogo")
 expand_mode = 1
 
 [node name="Subarea_sungai" type="Node2D" parent="."]
+script = ExtResource("2_oee1k")
 
 [node name="TextureRect" type="TextureRect" parent="Subarea_sungai"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_c3fdd")
 expand_mode = 1
+
+[node name="Trashes" type="Node2D" parent="Subarea_sungai"]
 
 [node name="Subarea_jalan" type="Node2D" parent="."]
 script = ExtResource("3_rmmd4")

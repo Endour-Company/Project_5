@@ -6,6 +6,7 @@ var totalMoney : String
 var happiness : String
 var health : String
 var itemLevel
+var stars = 0
 
 signal close_signal
 
@@ -22,6 +23,9 @@ func _ready():
 	set_hutan()
 	set_pemukiman()
 	set_pusat_desa()
+	
+	# Calculate stars
+	calculate_stars()
 
 
 # Setter method for indicators
@@ -228,9 +232,78 @@ func get_item_level(name: String):
 	var item = Utils.find_item_in_array_with_key(itemLevel, "name", name)
 	return item["level"]
 	
+func get_item_max_level(name: String, area: String):
+	var items
+	match area:
+		"Sawah":
+			items = Utils.parse_json_file_by_filepath("res://Data/Items_ricefields.json")
+		"Hutan":
+			items = Utils.parse_json_file_by_filepath("res://Data/Items_hutan.json")
+		"Pemukiman":
+			items = Utils.parse_json_file_by_filepath("res://Data/Items_pemukiman.json")
+		"Pusat Desa":
+			items = Utils.parse_json_file_by_filepath("res://Data/items_pusat_desa.json")
+			
+	var item = Utils.find_item_in_array_with_key(items, "name", name)
+	return len(item["levels"])
+	
 func get_item_count(name: String):
 	var item = Utils.find_item_in_array_with_key(itemLevel, "name", name)
 	return item["count"]
+	
+func get_item_max_count(name: String, area: String):
+	var items
+	match area:
+		"Sawah":
+			items = Utils.parse_json_file_by_filepath("res://Data/Items_ricefields.json")
+		"Hutan":
+			items = Utils.parse_json_file_by_filepath("res://Data/Items_hutan.json")
+		"Pemukiman":
+			items = Utils.parse_json_file_by_filepath("res://Data/Items_pemukiman.json")
+		"Pusat Desa":
+			items = Utils.parse_json_file_by_filepath("res://Data/items_pusat_desa.json")
+			
+	var item = Utils.find_item_in_array_with_key(items, "name", name)
+	return item["max_owned"]
+
+func calculate_stars():
+	# Indicators
+	var happiness = Variables.get_kesejehtaraan_percentage() / 4
+	var health = Variables.get_kesehatan_percentage() / 4
+	stars += happiness + health
+	
+	var sector_score = 0
+	
+	# Sektor sawah
+	var levelAlat = get_item_level("Alat Pertanian") / get_item_max_level("Alat Pertanian", "Sawah")
+	var levelJalanSawah = get_item_level("Jalan Sawah") / get_item_max_level("Jalan Sawah", "Sawah")
+	var countLampuSawah = get_item_count("Lampu Jalan Sawah") / get_item_max_count("Lampu Jalan Sawah", "Sawah")
+	sector_score += (levelAlat + levelJalanSawah + countLampuSawah) / 3
+	
+	# Sektor pemukiman
+	var levelJalanPemukiman = get_item_level("Jalan Pemukiman") / get_item_max_level("Jalan Pemukiman", "Pemukiman")
+	var countToilet = get_item_count("Toilet Umum") / get_item_max_count("Toilet Umum", "Pemukiman")
+	var countTower = get_item_count("Tower Internet") / get_item_max_count("Tower Internet", "Pemukiman")
+	var countSeptic = get_item_count("Septic Tank") / get_item_max_count("Septic Tank", "Pemukiman")
+	var countLampuPemukiman = get_item_count("Lampu Jalan Pemukiman") / get_item_max_count("Lampu Jalan Pemukiman", "Pemukiman")
+	sector_score += (levelJalanPemukiman + countLampuPemukiman + countSeptic + countToilet + countTower) / 5
+	
+	# Sektor pusat desa
+	var levelJalanPusat = get_item_level("Jalan Pusat Desa") / get_item_max_level("Jalan Pusat Desa", "Pusat Desa")
+	var levelBalai = get_item_level("Balai Desa") / get_item_max_level("Balai Desa", "Pusat Desa")
+	var levelPuskesmas = get_item_level("Puskesmas") / get_item_max_level("Puskesmas", "Pusat Desa")
+	var levelLapangan = get_item_level("Tanah Lapang") / get_item_max_level("Tanah Lapang", "Pusat Desa")
+	var levelPasar = get_item_level("Pasar") / get_item_max_level("Pasar", "Pusat Desa")
+	var countLampuPusat = get_item_count("Lampu Jalan Pusat Desa") / get_item_max_count("Lampu Jalan Pusat Desa", "Pusat Desa")
+	sector_score += (levelJalanPusat + levelBalai + levelPuskesmas + levelLapangan + levelPasar + countLampuPusat) / 6
+	
+	stars += (sector_score * 50) / 3
+	
+	# Floor value of stars
+	stars = round((stars / 10)) * 10
+	
+	# Set stars
+	$Stars.set_value_no_signal(stars)
 
 func set_label_level(label: Label, level: int):
 	label.set_text("Level " + str(level))

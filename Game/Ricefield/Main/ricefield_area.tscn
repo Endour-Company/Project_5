@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bbvaj3p5mfebk" path="res://Game/Ricefield/Assets/item_bg_mobil/mobil_kosong.png" id="8_vr351"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Subarea_lampu_sawah/Subarea_lampu_sawah.gd" id="10_e8lyc"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Volume_pestisida.gd" id="14_851a6"]
-[ext_resource type="Texture2D" uid="uid://cxs567xgojpkt" path="res://Game/Area_hutan/Assets/ui/logging_volume/Box.png" id="14_nuse1"]
+[ext_resource type="Texture2D" uid="uid://cripbuk8duw66" path="res://Game/Ricefield/Assets/other/Box_Pestisida.png" id="15_8d682"]
 [ext_resource type="Texture2D" uid="uid://1vqdyad3fl2v" path="res://Game/Area_hutan/Assets/ui/logging_volume/Minus_Normal.png" id="15_wcsrk"]
 [ext_resource type="Texture2D" uid="uid://c4typvrk54axq" path="res://Game/Area_hutan/Assets/ui/logging_volume/Minus_Pressed.png" id="16_kxbx1"]
 [ext_resource type="Texture2D" uid="uid://dc0wjy8vw6qn8" path="res://Game/Area_hutan/Assets/ui/logging_volume/Minus_Hover.png" id="17_4mra4"]
@@ -100,7 +100,7 @@ script = ExtResource("14_851a6")
 layout_mode = 0
 offset_right = 1136.0
 offset_bottom = 628.0
-texture = ExtResource("14_nuse1")
+texture = ExtResource("15_8d682")
 
 [node name="Button_minus" type="TextureButton" parent="Volume_pestisida"]
 layout_mode = 0

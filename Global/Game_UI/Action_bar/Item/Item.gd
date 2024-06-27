@@ -6,6 +6,7 @@ var itemName = ""
 var image = load("")
 var price = 0
 
+@onready var SFX = $SFX
 @onready var itemImage = $VBoxContainer/Item_image
 @onready var itemPrice = $VBoxContainer/Price
 
@@ -26,6 +27,10 @@ func _process(delta):
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			# Play click sfx
+			SFX.set_volume_db(GameAudio.get_volume_sfx())
+			GameAudio.play(SFX, GameAudio.SFX_Gameplay_Click)
+			
 			print("Item clicked")
 			change_current_selected_item(itemName)
 	

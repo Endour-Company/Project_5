@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var SFX = $SFX
 var DATA_OF_POHON : Dictionary = {}
 
 var NAME_OF_POHON : String = ""
@@ -28,6 +29,11 @@ func _ready():
 	$TextureProgressBar.value = 0
 	
 	state_growth()
+	
+	# Play nanem sfx
+	if GlobalActionBar.CURRENT_AREA == GlobalActionBar.AREAS.HUTAN:
+		SFX.set_volume_db(GameAudio.get_volume_sfx())
+		GameAudio.play(SFX, GameAudio.SFX_Plant)
 
 
 func init_pohon_data():
@@ -76,6 +82,11 @@ func set_pohon_texture(size: String) -> void:
 
 func cut_pohon():
 	if (STATE_POHON == STATES_POHON.READY_TO_HARVEST):
+		# Play nebang sfx
+		if GlobalActionBar.CURRENT_AREA == GlobalActionBar.AREAS.HUTAN:
+			SFX.set_volume_db(GameAudio.get_volume_sfx())
+			GameAudio.play(SFX, GameAudio.SFX_Cut)
+		
 		set_pohon_texture("cut")
 		
 	await get_tree().create_timer(5).timeout
@@ -87,4 +98,4 @@ func cut_pohon():
 
 func money_income() :
 	var income : int = DATA_OF_POHON["sell_price"]
-	Variables.set_money("plus",income)
+	Variables.set_money("plus",income * Variables.VAR_PENDAPATAN)

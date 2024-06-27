@@ -1,7 +1,7 @@
 extends Node
 
 
-@export var MONEY : int = 50000000000
+@export var MONEY : int = 500000000
 @export var PLAYER_NAME : String = "Chief" 
 # AREA : ALL (Range 0-1)
 # Global Atribute
@@ -13,10 +13,10 @@ var VAR_KESEJAHTERAAN_MASYARAKAT = 0 # Range  : 0-1
 #  ====== AREA : SAWAH
 var KUALITAS_PADI = 1 # Range  : 0-1
 var KUANTITAS_PADI = 1 # Range : 0-1
-var HAMA_COUNT = 1 # Range : 0-1
+var HAMA_COUNT = 0 # Range : 0-1
 
 # Item Upgraded
-var PESTISIDA_VOLUME = 1 # Range : 1-3
+var PESTISIDA_VOLUME = 0 # Range : 1-3
 # Support atribute
 var GROWTH_SPEED =  1 # Range  : 0-1
 var MAX_LEVEL_OF_JALAN_SAWAH = 3
@@ -27,7 +27,7 @@ var MAX_COUNT_OF_LAMPU_JALAN_SAWAH = 3
 #  ====== AREA : HUTAN
 var DAYA_SERAP_POHON = 1
 # Support Atribute
-var LOGGING_VOLUME = 1 # Range : 0-5
+var LOGGING_VOLUME = 0 # Range : 0-5
 var MAX_COUNT_POHON = 11 
 var COUNT_POHON = 1
 
@@ -47,7 +47,7 @@ var MAX_COUNT_OF_LAMPU_JALAN_PUSAT_DESA = 6
 # ====== END OF AREA : PUSAT DESA
 
 #  ====== AREA : PEMUKIMAN
-var SANTIATION = 1 # Range : 0 - 1 
+var SANTIATION = 0 # Range : 0 - 1 
 
 # Support Atribute
 var MAX_LEVEL_OF_JALAN_PEMUKIMAN = 3
@@ -59,6 +59,29 @@ var MAX_COUNT_OF_LAMPU_JALAN_PEMUKIMAN = 5
 #  ====== END OF AREA : PEMUKIMAN
 
 signal money_changed
+
+func reset_variables():
+	VAR_KUALITAS_AIR = 0 # Range  : 0-1
+	VAR_PENDAPATAN = 0 # Range  : 0-1
+	VAR_KESEHATAN_MASYARAKAT = 0 # Range  : 0-1
+	VAR_KESEJAHTERAAN_MASYARAKAT = 0 # Range  : 0-1
+	
+	MONEY = 5000000000
+	
+	KUALITAS_PADI = 1 # Range  : 0-1
+	KUANTITAS_PADI = 1 # Range : 0-1
+	HAMA_COUNT = 0 # Range : 0-1
+	
+	PESTISIDA_VOLUME = 0 # Range : 1-3
+
+	GROWTH_SPEED =  1 # Range  : 0-1
+	
+	LOGGING_VOLUME = 0 # Range : 0-5
+	COUNT_POHON = 0
+	
+	DAYA_BELI = 0 # Range : 11
+	
+	SANTIATION = 0 # Range : 0 - 1 
 
 func _ready():
 	pass
@@ -136,7 +159,7 @@ func watch_kesejahteraan_masyarakat() :
 	var normalizedLevelOfTanahLapang: float = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Tanah Lapang"))["level"] / float(MAX_LEVEL_OF_TANAH_LAPANG)
 	var normalizedCountOfLampuJalanPusatDesa : float = (Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEM_LEVEL, "name", "Lampu Jalan Pusat Desa"))["count"] / float(MAX_COUNT_OF_LAMPU_JALAN_PUSAT_DESA)
 	
-	kesejahteraanMasyarakat = (normalizedCountOfTowerInternet * 0.1) + (normalizedCountOfLampuJalanPemukiman * 0.1) + (normalizedCountOfLampuJalanPemukiman * 0.1) + (KUANTITAS_PADI * 0.1) + (normalizedCountOfLampuJalanSawah * 0.1) + (normalizedCountOfLampuJalanPusatDesa * 0.1) + (normalizedLevelOfBalaiDesa * 0.1) + (normalizedLevelOfTanahLapang * 0.1) + (normalizedCountOfLampuJalanPusatDesa * 0.2)
+	kesejahteraanMasyarakat = (normalizedCountOfTowerInternet * 0.1) + (normalizedCountOfLampuJalanPemukiman * 0.1) + (normalizedCountOfLampuJalanPemukiman * 0.195) + (KUANTITAS_PADI * 0.005) + (normalizedCountOfLampuJalanSawah * 0.1) + (normalizedCountOfLampuJalanPusatDesa * 0.1) + (normalizedLevelOfBalaiDesa * 0.1) + (normalizedLevelOfTanahLapang * 0.1) + (normalizedCountOfLampuJalanPusatDesa * 0.2)
 	
 	VAR_KESEJAHTERAAN_MASYARAKAT = kesejahteraanMasyarakat
 # ==== END OF FUNCTION GLOBAL ATRIBUTE ====

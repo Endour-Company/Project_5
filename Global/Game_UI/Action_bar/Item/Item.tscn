@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqtcbojv8uhff"]
+[gd_scene load_steps=7 format=3 uid="uid://cqtcbojv8uhff"]
 
 [ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Item/Item.gd" id="1_cabcm"]
 [ext_resource type="Texture2D" uid="uid://dk6io2p68o7bm" path="res://Global/Game_UI/Action_bar/Assets/Item_road.png" id="1_mi6qg"]
 [ext_resource type="Script" path="res://Global/Game_UI/Action_bar/Item/Item_image.gd" id="2_14cuw"]
+[ext_resource type="FontFile" uid="uid://wavv527jhmt1" path="res://Global/Game_UI/Fonts/K2D-Bold.ttf" id="4_rwgnr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kvtxl"]
 radius = 57.2713
@@ -42,8 +43,12 @@ script = ExtResource("2_14cuw")
 
 [node name="Price" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_rwgnr")
 text = "Rp 5000 M"
 horizontal_alignment = 1
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX_UI"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

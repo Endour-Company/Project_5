@@ -1,6 +1,6 @@
 extends Node
 
-var ITEM_LEVEL = [
+var DEFAULT_ITEM_LEVEL = [
 	{
 		"name" : "Alat Pertanian",
 		"level" : 1,
@@ -90,6 +90,9 @@ var ITEM_LEVEL = [
 	},
 ]
 
+var ITEM_LEVEL
+
+
 var ITEMS_PER_AREA : Array = [
 	{
 		'area' : GlobalActionBar.AREAS.SAWAH,
@@ -118,6 +121,7 @@ signal item_upgraded(itemName)
 signal item_updated
 
 func _ready():
+	ITEM_LEVEL = DEFAULT_ITEM_LEVEL.duplicate(true)
 	init_items_per_area()
 	
 func init_items_per_area():
@@ -181,3 +185,5 @@ func change_item_count(nameOfItem: String, action: int) -> void:
 			break
 
 	
+func reset_item_level():
+	ITEM_LEVEL = DEFAULT_ITEM_LEVEL.duplicate(true)

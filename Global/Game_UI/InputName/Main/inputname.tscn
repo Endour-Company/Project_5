@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw03qrvr3cfie"]
+[gd_scene load_steps=12 format=3 uid="uid://dw03qrvr3cfie"]
 
 [ext_resource type="Script" path="res://Global/Game_UI/InputName/Main/inputname.gd" id="1_5520n"]
 [ext_resource type="Texture2D" uid="uid://cu1yeug3nr88d" path="res://Global/Game_UI/InputName/Assets/Box.png" id="1_gc3r7"]
@@ -6,7 +6,10 @@
 [ext_resource type="FontFile" uid="uid://wavv527jhmt1" path="res://Global/Game_UI/Fonts/K2D-Bold.ttf" id="2_uhjg6"]
 [ext_resource type="FontFile" uid="uid://btisj7uyosjpa" path="res://Global/Game_UI/Fonts/K2D-Regular.ttf" id="3_3obda"]
 [ext_resource type="Texture2D" uid="uid://d0fiueuif3o3i" path="res://Global/Game_UI/InputName/Assets/Lanjut_Normal.png" id="4_1j2iu"]
+[ext_resource type="Texture2D" uid="uid://bgd52k34ueqte" path="res://Global/Game_UI/History_Scoreboard/Assets/Close Button_Normal.png" id="4_s4bnm"]
 [ext_resource type="Texture2D" uid="uid://74cpglfm8cxo" path="res://Global/Game_UI/InputName/Assets/Lanjut_Pressed.png" id="5_1um3a"]
+[ext_resource type="Texture2D" uid="uid://degitj5q75lgj" path="res://Global/Game_UI/History_Scoreboard/Assets/Close Button_Pressed.png" id="5_libca"]
+[ext_resource type="Texture2D" uid="uid://cokcy8w0g4ehc" path="res://Global/Game_UI/History_Scoreboard/Assets/Close Button_Hover.png" id="6_2oivw"]
 [ext_resource type="Texture2D" uid="uid://c881vjmiuan80" path="res://Global/Game_UI/InputName/Assets/Lanjut_Hover.png" id="6_5j40l"]
 
 [node name="InputName" type="Control"]
@@ -36,6 +39,21 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_gc3r7")
 
+[node name="CloseButton" type="TextureButton" parent="Box"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.0
+offset_top = 22.0
+offset_right = -20.0
+offset_bottom = 79.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_s4bnm")
+texture_pressed = ExtResource("5_libca")
+texture_hover = ExtResource("6_2oivw")
+
 [node name="Label" type="Label" parent="Box"]
 layout_mode = 2
 offset_left = 176.0
@@ -63,7 +81,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_3obda")
 theme_override_font_sizes/font_size = 28
-text = "Yudith"
+text = "Endour"
 max_length = 10
 
 [node name="SubmitButton" type="TextureButton" parent="Box"]
@@ -86,4 +104,5 @@ texture_hover = ExtResource("6_5j40l")
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 
+[connection signal="pressed" from="Box/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Box/SubmitButton" to="." method="_on_submit_button_pressed"]

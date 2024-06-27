@@ -39,7 +39,7 @@
 	  {
 		"level": 2,
 		"name": "Pasar Lv 2",
-		"upgrade_price": 0,
+		"upgrade_price": 5000000,
 		"img": "res://Game/Area_pusat_desa/Assets/item_up_pasar/pasar_lv2.png"
 	  },
 	{

@@ -4,6 +4,7 @@ extends Control
 
 var inputName : String
 
+signal input_cancel
 signal input_complete
 
 func _ready():
@@ -33,3 +34,7 @@ func validateName(name: String):
 	if name != "":
 		return true
 	return false
+
+
+func _on_close_button_pressed():
+	input_cancel.emit()

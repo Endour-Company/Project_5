@@ -23,3 +23,7 @@ custom_minimum_size = Vector2(116, 116)
 mouse_filter = 1
 theme = SubResource("Theme_awpmf")
 script = ExtResource("2_wuxu2")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

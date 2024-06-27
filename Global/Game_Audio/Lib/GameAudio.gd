@@ -12,7 +12,12 @@ const SFX_MainMenu_Click : AudioStream = preload("res://Global/Game_Audio/Assets
 const SFX_MainMenu_Close : AudioStream = preload("res://Global/Game_Audio/Assets/SFX/General/Main Menu_Close.wav")
 const SFX_Tutorial_Open : AudioStream = preload("res://Global/Game_Audio/Assets/SFX/General/Tutorial_Open.wav")
 const SFX_Tutorial_Click : AudioStream = preload("res://Global/Game_Audio/Assets/SFX/General/Tutorial_Click.wav")
+const SFX_Gameplay_Hover : AudioStream = preload("res://Global/Game_Audio/Assets/SFX/General/Gameplay_Hover.wav")
 const SFX_Gameplay_Click : AudioStream = preload("res://Global/Game_Audio/Assets/SFX/General/Gameplay_Click.wav")
+const SFX_Cashier : AudioStream = preload("res://Global/Game_Audio/Assets/SFX/General/Suara Uang.wav")
+const SFX_Upgrade : AudioStream = preload("res://Global/Game_Audio/Assets/SFX/General/Upgrade.wav")
+const SFX_Plant : AudioStream = preload("res://Global/Game_Audio/Assets/SFX/Hutan/Nanam.wav")
+const SFX_Cut : AudioStream = preload("res://Global/Game_Audio/Assets/SFX/Hutan/Nebang.wav")
 
 
 # Audio volume variabels

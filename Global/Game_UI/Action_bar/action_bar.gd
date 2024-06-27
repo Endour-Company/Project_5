@@ -1,7 +1,7 @@
 extends Control
 
 @onready var PLACE = null
-
+@onready var SFX = $SFX
 @onready var itemContainer = $Item_container
 @onready var itemDescriptionContainer = $Item_description_container
 
@@ -33,6 +33,10 @@ func _on_current_area_changed():
 
 
 func _on_hide_button_pressed():
+	# Play click SFX
+	SFX.set_volume_db(GameAudio.get_volume_sfx())
+	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Click)
+	
 	is_hidden = !is_hidden
 	
 	var tween = get_tree().create_tween()
@@ -40,3 +44,9 @@ func _on_hide_button_pressed():
 		tween.tween_property(self, "position", Vector2(960, 1050), 0.5)
 	else:
 		tween.tween_property(self, "position", Vector2(960, 521), 0.5)
+
+
+func _on_hide_button_mouse_entered():
+	# Play hover SFX
+	SFX.set_volume_db(GameAudio.get_volume_sfx())
+	GameAudio.play(SFX, GameAudio.SFX_MainMenu_Hover)

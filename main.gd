@@ -25,6 +25,8 @@ func exit_game():
 
 func new_game():
 	# Show prolog
+	Variables.reset_variables()
+	GlobalItemsLevel.reset_item_level()
 	show_prolog()
 	
 	# Delete main menu

@@ -13,7 +13,7 @@ var sceneScoreboard : Control
 @onready var calendarText = $In_game_map_calendar/VBoxContainer/Calendar/HBoxContainer/Label
 var prevTime = 0
 var currentTime = 0
-var maxTime = 1800
+var maxTime = 180
 var currentMonth = 0
 var currentYear = 0
 var currentCalendar = ""
@@ -64,6 +64,9 @@ func update_calendar():
 			# Set to next year
 			currentMonth = 0
 			currentYear = currentYear + 1
+			
+			# Tambah dana per tahun
+			Variables.MONEY += 500000000
 			
 		# Set new calendar text
 		currentCalendar = Utils.convert_month_to_text(currentMonth) + " " + str(currentYear)
@@ -150,7 +153,13 @@ func _on_confirm_close():
 	# Free confirm scene
 	sceneConfirmExit.queue_free()
 
+func _on_map_texture_button_mouse_entered():
+	GameAudio.play(SFX, GameAudio.SFX_Gameplay_Hover)
+
+
 func _on_map_texture_button_pressed():
+	GameAudio.play(SFX, GameAudio.SFX_Gameplay_Click)
+	
 	sceneMap = preload("res://Global/Game_UI/Map/Main/Map.tscn").instantiate()
 	sceneMap.close_signal.connect(_on_map_close)
 	sceneMap.area_hutan.connect(_on_area_hutan)

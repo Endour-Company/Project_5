@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://6wgjm6tla017"]
+[gd_scene load_steps=24 format=3 uid="uid://6wgjm6tla017"]
 
 [ext_resource type="Texture2D" uid="uid://dpn7mh6fvy5oq" path="res://Global/Game_UI/Action_bar/Assets/Actions.png" id="1_2lrml"]
 [ext_resource type="Script" path="res://Global/Game_UI/Action_bar/action_bar.gd" id="1_14npq"]
@@ -12,8 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://dpuomn7vo615h" path="res://Global/Game_UI/Action_bar/Assets/Level_none.png" id="6_m2urv"]
 [ext_resource type="Texture2D" uid="uid://dh1uyl8pu5gy5" path="res://Global/Game_UI/Action_bar/Assets/Item_count.png" id="7_latrq"]
 [ext_resource type="Texture2D" uid="uid://baatip67e64j6" path="res://Global/Game_UI/Action_bar/Assets/Beli_normal.png" id="9_fbtc7"]
+[ext_resource type="FontFile" uid="uid://wavv527jhmt1" path="res://Global/Game_UI/Fonts/K2D-Bold.ttf" id="9_q4oep"]
 [ext_resource type="Texture2D" uid="uid://ljue3gnqh424" path="res://Global/Game_UI/Action_bar/Assets/Beli_hover.png" id="10_eshmb"]
 [ext_resource type="Texture2D" uid="uid://ddopbjpih2ijy" path="res://Global/Game_UI/Action_bar/Assets/Beli_max.png" id="11_7vke8"]
+[ext_resource type="FontFile" uid="uid://btisj7uyosjpa" path="res://Global/Game_UI/Fonts/K2D-Regular.ttf" id="13_n60b5"]
 
 [sub_resource type="Theme" id="Theme_l7g4g"]
 GridContainer/constants/h_separation = 30
@@ -54,6 +56,11 @@ offset_right = 1000.0
 offset_bottom = 1090.0
 mouse_filter = 1
 script = ExtResource("1_14npq")
+
+[node name="SFX" type="AudioStreamPlayer" parent="Action_bar"]
+bus = &"SFX_UI"
+
+[node name="SFX2" type="AudioStreamPlayer" parent="Action_bar"]
 
 [node name="HideButton" type="TextureButton" parent="Action_bar"]
 layout_mode = 0
@@ -116,6 +123,7 @@ theme = SubResource("Theme_4bkgh")
 layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_8xstm")
+theme_override_fonts/font = ExtResource("9_q4oep")
 text = "Jalan Bagus"
 
 [node name="Item_levels" type="HBoxContainer" parent="Action_bar/Item_description_container/HBoxContainer"]
@@ -139,6 +147,7 @@ expand_mode = 3
 
 [node name="Label" type="Label" parent="Action_bar/Item_description_container/HBoxContainer/Item_count"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("9_q4oep")
 text = "Punya  : 1"
 horizontal_alignment = 1
 
@@ -152,6 +161,8 @@ custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_bwvr0")
+theme_override_fonts/font = ExtResource("13_n60b5")
+theme_override_font_sizes/font_size = 20
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu ullamcorper leo, a efficitur diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu ullamcorper leo, a efficitur diam. Morbi eget turpis dui. Quisque efficitur ipsum mas"
 autowrap_mode = 2
 clip_text = true
@@ -163,5 +174,7 @@ texture_normal = ExtResource("9_fbtc7")
 texture_hover = ExtResource("10_eshmb")
 texture_disabled = ExtResource("11_7vke8")
 
+[connection signal="mouse_entered" from="Action_bar/HideButton" to="Action_bar" method="_on_hide_button_mouse_entered"]
 [connection signal="pressed" from="Action_bar/HideButton" to="Action_bar" method="_on_hide_button_pressed"]
+[connection signal="mouse_entered" from="Action_bar/Item_description_container/HBoxContainer2/Buy_button" to="." method="_on_buy_button_mouse_entered"]
 [connection signal="pressed" from="Action_bar/Item_description_container/HBoxContainer2/Buy_button" to="." method="_on_buy_button_pressed"]
