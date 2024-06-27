@@ -213,6 +213,12 @@ libraries = {
 autoplay = "Fade In"
 
 [connection signal="pressed" from="In_game_menu/HBoxContainer/Button_option" to="." method="_on_button_option_pressed"]
+[connection signal="mouse_entered" from="Progress_variable/HBoxContainer/Progress_money" to="." method="_on_progress_money_mouse_entered"]
+[connection signal="mouse_exited" from="Progress_variable/HBoxContainer/Progress_money" to="." method="_on_indicator_mouse_exited"]
+[connection signal="mouse_entered" from="Progress_variable/HBoxContainer/Progress_public_welfare" to="." method="_on_progress_public_welfare_mouse_entered"]
+[connection signal="mouse_exited" from="Progress_variable/HBoxContainer/Progress_public_welfare" to="." method="_on_indicator_mouse_exited"]
+[connection signal="mouse_entered" from="Progress_variable/HBoxContainer/Progress_public_health" to="." method="_on_progress_public_health_mouse_entered"]
+[connection signal="mouse_exited" from="Progress_variable/HBoxContainer/Progress_public_health" to="." method="_on_indicator_mouse_exited"]
 [connection signal="mouse_entered" from="In_game_map_calendar/VBoxContainer/Map/MapTextureButton" to="." method="_on_map_texture_button_mouse_entered"]
 [connection signal="pressed" from="In_game_map_calendar/VBoxContainer/Map/MapTextureButton" to="." method="_on_map_texture_button_pressed"]
 [connection signal="timeout" from="GlobalTimer" to="." method="_on_global_timer_timeout"]

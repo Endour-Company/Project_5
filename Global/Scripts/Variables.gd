@@ -1,7 +1,7 @@
 extends Node
 
 
-@export var MONEY : int = 500000000
+@export var MONEY : int = 100000000
 @export var PLAYER_NAME : String = "Chief" 
 # AREA : ALL (Range 0-1)
 # Global Atribute
@@ -66,7 +66,7 @@ func reset_variables():
 	VAR_KESEHATAN_MASYARAKAT = 0 # Range  : 0-1
 	VAR_KESEJAHTERAAN_MASYARAKAT = 0 # Range  : 0-1
 	
-	MONEY = 5000000000
+	MONEY = 100000000
 	
 	KUALITAS_PADI = 1 # Range  : 0-1
 	KUANTITAS_PADI = 1 # Range : 0-1

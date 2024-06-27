@@ -1,5 +1,6 @@
 extends Node
 
+var sceneIndicatorDetail : Control
 var sceneMap : Control
 var sceneOption : Control
 var sceneTutorial : Control
@@ -13,10 +14,13 @@ var sceneScoreboard : Control
 @onready var calendarText = $In_game_map_calendar/VBoxContainer/Calendar/HBoxContainer/Label
 var prevTime = 0
 var currentTime = 0
-var maxTime = 180
+var maxTime = 1800
 var currentMonth = 0
 var currentYear = 0
 var currentCalendar = ""
+var showDetailMoney = false
+var showDetailWelfare = false
+var showDetailHealth = false
 
 # Custom signals
 signal exit_signal
@@ -66,7 +70,7 @@ func update_calendar():
 			currentYear = currentYear + 1
 			
 			# Tambah dana per tahun
-			Variables.MONEY += 500000000
+			Variables.MONEY += 100000000
 			
 		# Set new calendar text
 		currentCalendar = Utils.convert_month_to_text(currentMonth) + " " + str(currentYear)
@@ -219,3 +223,62 @@ func _on_animation_player_animation_finished(anim_name):
 	# Delete Overlay and AnimPlayer
 	$Overlay.queue_free()
 	$AnimationPlayer.queue_free()
+
+
+func show_indicator_detail(indicator: String):
+	if sceneIndicatorDetail != null:
+		return
+	sceneIndicatorDetail = preload("res://Global/Game_UI/Progress_variable/Lib/detail.tscn").instantiate()
+	match indicator:
+		"Dana Desa":
+			sceneIndicatorDetail.title = "Dana Desa"
+			sceneIndicatorDetail.desc = "Kamu dapat membeli atau meningkatkan fasilitas di berbagai sektor menggunakan dana desa ini. Kamu akan mendapatkan Rp100 juta per tahunnya dari negara."
+			sceneIndicatorDetail.set_position(Vector2(487, 123))
+		"Kesejahteraan":
+			sceneIndicatorDetail.title = "Kesejahteraan Masyarakat"
+			sceneIndicatorDetail.desc = "Kesejahteraan menunjukkan seberapa bahagia warga desa di bawah kepemimpinanmu. Tingkatkan fasilitas pelayanan dan hiburan untuk meningkatkan indikator ini."
+			sceneIndicatorDetail.set_position(Vector2(824, 123))
+		"Kesehatan":
+			sceneIndicatorDetail.title = "Kesehatan Masyarakat"
+			sceneIndicatorDetail.desc = "Kesehatan menunjukkan tingkat harapan hidup warga desa. Indikator ini memiliki kaitan kuat dengan kualitas lingkungan desa dan fasilitas kesehatan."
+			sceneIndicatorDetail.set_position(Vector2(1158, 123))
+	
+	add_child(sceneIndicatorDetail)
+
+func _on_indicator_mouse_exited():
+	showDetailMoney = false
+	showDetailWelfare = false
+	showDetailHealth = false
+	if sceneIndicatorDetail != null:
+		sceneIndicatorDetail.destroy()
+
+func _on_progress_money_mouse_entered():
+	if showDetailMoney == true:
+		return
+	showDetailMoney = true
+	await get_tree().create_timer(0.5).timeout
+	if showDetailMoney == false:
+		return
+		
+	show_indicator_detail("Dana Desa")
+
+func _on_progress_public_welfare_mouse_entered():
+	if showDetailWelfare == true:
+		return
+	showDetailWelfare = true
+	await get_tree().create_timer(0.5).timeout
+	if showDetailWelfare == false:
+		return
+		
+	show_indicator_detail("Kesejahteraan")
+
+
+func _on_progress_public_health_mouse_entered():
+	if showDetailHealth == true:
+		return
+	showDetailHealth = true
+	await get_tree().create_timer(0.5).timeout
+	if showDetailHealth == false:
+		return
+		
+	show_indicator_detail("Kesehatan")

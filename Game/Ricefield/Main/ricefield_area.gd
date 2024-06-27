@@ -22,6 +22,7 @@ func _on_sawah_ready_to_harvest():
 
 func _on_car_done():
 	$Subarea_sawah/Itembg_pembajak.behaviour_membajak()
+	Variables.set_money("plus", 200000000 * Variables.VAR_PENDAPATAN)
 
 func _on_membajak_done():
 	$Subarea_sawah.set_sawah_state_growth()

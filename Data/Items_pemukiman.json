@@ -7,7 +7,7 @@
 	  {
 		"level": 1,
 		"name": "Toilet Umum Lv 1",
-		"upgrade_price": 1000000,
+		"upgrade_price": 15000000,
 		"img": "res://Game/Area_pemukiman/Assets/item_ct_toilet/toilet.png"
 	  }
 	],
@@ -22,7 +22,7 @@
 		{
 			"level": 1,
 			"name": "Septic Tank",
-			"upgrade_price": 1000000,
+			"upgrade_price": 10000000,
 			"img": "res://Game/Area_pemukiman/Assets/item_ct_septictank/septictank.png"
 		}
 		],
@@ -36,7 +36,7 @@
 		{
 			"level": 1,
 			"name": "Tower Internet Lv 1",
-			"upgrade_price": 150000000,
+			"upgrade_price": 1500000000,
 			"img": "res://Game/Area_pemukiman/Assets/item_ct_tower/tower-0.png"
 		}
 		],
@@ -76,7 +76,7 @@
 			{
 				"level" : 1,
 				"name" : "Lampu Jalan",
-				"upgrade_price" : 350000,
+				"upgrade_price" : 5000000,
 				"img" : "res://Game/Area_pemukiman/Assets/item_ct_lampu_jalan/lampu_jalan.png"
 			}	
 		],

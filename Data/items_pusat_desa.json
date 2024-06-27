@@ -13,13 +13,13 @@
 	  {
 		"level": 2,
 		"name": "Jalan Lv 2",
-		"upgrade_price": 18000000,
+		"upgrade_price": 180000000,
 		"img": "res://Game/Area_pusat_desa/Assets/item_up_jalan/jalan_lv2.png"
 	  },
 	  {
 		"level": 3,
 		"name": "Jalan Lv 3",
-		"upgrade_price": 18000000,
+		"upgrade_price": 0,
 		"img": "res://Game/Area_pusat_desa/Assets/item_up_jalan/jalan_lv3.png"
 	  }
 	],
@@ -33,13 +33,13 @@
 	  {
 		"level": 1,
 		"name": "Pasar Lv 1",
-		"upgrade_price": 2000000,
+		"upgrade_price": 15000000,
 		"img": "res://Game/Area_pusat_desa/Assets/item_up_pasar/pasar_lv1.png"
 	  },
 	  {
 		"level": 2,
 		"name": "Pasar Lv 2",
-		"upgrade_price": 5000000,
+		"upgrade_price": 100000000,
 		"img": "res://Game/Area_pusat_desa/Assets/item_up_pasar/pasar_lv2.png"
 	  },
 	{
@@ -65,7 +65,7 @@
 	  {
 		"level": 2,
 		"name": "Tanah Lapang Lv 2",
-		"upgrade_price": 1000000000,
+		"upgrade_price": 1500000000,
 		"img": "res://Game/Area_pusat_desa/Assets/item_up_tanah_lapang/tanah_lapang_lv2.png"
 	  },
 	  {
@@ -85,7 +85,7 @@
 	  {
 		"level": 1,
 		"name": "Puskesmas Lv 1",
-		"upgrade_price" : 500000000,
+		"upgrade_price" : 2000000000,
 		"img": "res://Game/Area_pusat_desa/Assets/item_up_puskesmas/puskesmas_lv1.png"
 	  },
 	  {
@@ -105,7 +105,7 @@
 			{
 				"level" : 1,
 				"name" : "Lampu Jalan",
-				"upgrade_price" : 350000,
+				"upgrade_price" : 5000000,
 				"img" : "res://Game/Area_pusat_desa/Assets/item_ct_lampu_jalan/lampu_jalan.png"
 			}	
 		],
@@ -119,7 +119,7 @@
 	  {
 		"level": 1,
 		"name": "Balai Desa Lv 1",
-		"upgrade_price" : 500000000,
+		"upgrade_price" : 1000000000,
 		"img": "res://Game/Area_pusat_desa/Assets/item_up_balai_desa/balai_desa_lv1.png"
 	  },
 	  {

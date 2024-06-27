@@ -7,7 +7,7 @@
 			{
 				"level": 1,
 				"name": "Cangkul",
-				"upgrade_price": 180000000,
+				"upgrade_price": 30000000,
 				"img": "res://Game/Ricefield/Assets/item_up_pembajak_sawah/pembajak_sawah_lv1.png"
 			},
 			{
@@ -60,7 +60,7 @@
 			{
 				"level" : 1,
 				"name" : "Lampu Jalan",
-				"upgrade_price" : 350000,
+				"upgrade_price" : 5000000,
 				"img" : "res://Game/Ricefield/Assets/item_ct_lampu_jalan/lampu_taman.png"
 			}	
 		],

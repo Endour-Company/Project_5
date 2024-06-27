@@ -47,11 +47,11 @@ func format_rupiah(amount: int) -> String:
 	if amount < 1000:
 		return "Rp. " + str(amount)
 	elif amount < 1000000:
-		return "Rp. " + str(amount / 1000) + "K"
+		return "Rp. " + str(amount / 1000) + "RB"
 	elif amount < 1000000000:
-		return "Rp. " + str(amount / 1000000) + "M"
+		return "Rp. " + str(amount / 1000000) + "JT"
 	else:
-		return "Rp. " + str(amount / 1000000000) + "B"
+		return "Rp. " + str(amount / 1000000000) + "M"
 
 func get_random_item_from_array(array):
 	if array.size() == 0:

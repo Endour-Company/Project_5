@@ -32,8 +32,12 @@ var dialogDone = false
 @onready var dialogTimer = $DialogTimer
 @onready var anim = $AnimationPlayer
 @onready var dialogNextAnim = $NextDialogAnim
+@onready var SFX = $SFX
 
 signal prolog_done
+
+func _ready():
+	SFX.set_volume_db(GameAudio.get_volume_sfx())
 
 func show_text():
 	clear_text()
@@ -66,6 +70,10 @@ func _on_animation_player_animation_finished(anim_name):
 
 func _process(delta):
 	if dialogDone and Input.is_action_just_pressed("mb_left"):
+		# Play click sfx
+		GameAudio.play(SFX, GameAudio.SFX_Gameplay_Click)
+		
+		# Next slide
 		if dialogIndex == 11:
 			clear_text()
 			anim.play("Transition Pemukiman")

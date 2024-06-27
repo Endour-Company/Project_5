@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfyjk0c4wdiwd"]
+
+[ext_resource type="Script" path="res://Global/Game_UI/Progress_variable/Lib/detail.gd" id="1_m4u87"]
+[ext_resource type="Texture2D" uid="uid://ctwx0rpkft35e" path="res://Global/Game_UI/Progress_variable/Assets/Detail Box.png" id="2_k76bl"]
+[ext_resource type="FontFile" uid="uid://wavv527jhmt1" path="res://Global/Game_UI/Fonts/K2D-Bold.ttf" id="3_skeqg"]
+
+[node name="Detail" type="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m4u87")
+
+[node name="Box" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_k76bl")
+
+[node name="Title" type="Label" parent="Box"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 131.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("3_skeqg")
+theme_override_font_sizes/font_size = 22
+text = "Dana Desa"
+
+[node name="Desc" type="Label" parent="Box"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 53.0
+offset_right = 295.0
+offset_bottom = 213.0
+text = "Kamu dapat membeli atau meningkatkan fasilitas di berbagai sektor menggunakan dana desa ini. Kamu akan mendapatkan Rp5 juta per tahunnya dari negara."
+autowrap_mode = 2

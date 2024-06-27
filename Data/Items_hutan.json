@@ -7,7 +7,7 @@
 			{
 				"level": 1,
 				"name": "Pinus Lv 1",
-				"upgrade_price": 500,
+				"upgrade_price": 900000,
 				"img": "res://Game/Area_hutan/Assets/item_ct_cendana/cendana.png"
 			}
 		],
@@ -27,7 +27,7 @@
 		],
 		"max_owned" : 4,
 		"growth_speed" : 0.5,
-		"sell_price" : 10000000
+		"sell_price" : 30000000
 	},
 	{
 		"name": "Jati",
@@ -37,7 +37,7 @@
 			{
 				"level": 1,
 				"name": "Jati Lv 1",
-				"upgrade_price": 700,
+				"upgrade_price": 700000,
 				"img": "res://Game/Area_hutan/Assets/item_ct_jati/jati.png"
 			}
 			
@@ -58,7 +58,7 @@
 		],
 		"max_owned" : 4,
 		"growth_speed" : 0.7,
-		"sell_price" : 15000000
+		"sell_price" : 25000000
 	},
 	{
 		"name": "Mahoni",
@@ -68,7 +68,7 @@
 			{
 				"level" : 1,
 				"name" : "Mahoni Lv 1",
-				"upgrade_price" : 900,
+				"upgrade_price" : 500000,
 				"img" : "res://Game/Area_hutan/Assets/item_ct_mahoni/mahoni.png"
 			}	
 		],
