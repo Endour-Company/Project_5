@@ -12,7 +12,7 @@ enum AREAS {
 	PUSATDESA
 }
 
-@export var CURRENT_AREA = AREAS.SAWAH
+@export var CURRENT_AREA = AREAS.PUSATDESA
 
 signal current_selected_item_changed(selected_item_name : String)
 

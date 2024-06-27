@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://brw17nqvu6hle"]
+[gd_scene load_steps=35 format=3 uid="uid://brw17nqvu6hle"]
 
 [ext_resource type="Script" path="res://Game/Ricefield/Main/ricefield_area.gd" id="1_0ucuo"]
 [ext_resource type="Texture2D" uid="uid://cmctconrlnkc8" path="res://Game/Ricefield/Assets/bg_main/bg_main.png" id="2_3j1xc"]
@@ -13,20 +13,56 @@
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Mobil.gd" id="8_uv1uv"]
 [ext_resource type="Texture2D" uid="uid://bbvaj3p5mfebk" path="res://Game/Ricefield/Assets/item_bg_mobil/mobil_kosong.png" id="8_vr351"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Subarea_lampu_sawah/Subarea_lampu_sawah.gd" id="10_e8lyc"]
+[ext_resource type="PackedScene" uid="uid://bgd6y2vgmcn5q" path="res://Game/Global/Scenes/Sapi_Jalan/sapijalan.tscn" id="14_6xhpp"]
 [ext_resource type="Script" path="res://Game/Ricefield/Lib/Volume_pestisida.gd" id="14_851a6"]
+[ext_resource type="PackedScene" uid="uid://cmhkf4q0cyfjt" path="res://Game/Global/Scenes/Burung/burung.tscn" id="14_jo6gd"]
 [ext_resource type="Texture2D" uid="uid://cripbuk8duw66" path="res://Game/Ricefield/Assets/other/Box_Pestisida.png" id="15_8d682"]
 [ext_resource type="Texture2D" uid="uid://1vqdyad3fl2v" path="res://Game/Area_hutan/Assets/ui/logging_volume/Minus_Normal.png" id="15_wcsrk"]
 [ext_resource type="Texture2D" uid="uid://c4typvrk54axq" path="res://Game/Area_hutan/Assets/ui/logging_volume/Minus_Pressed.png" id="16_kxbx1"]
+[ext_resource type="PackedScene" uid="uid://0mnnapywg8gh" path="res://Game/Global/Scenes/Sapi_Makan/sapimakan.tscn" id="16_mvfy3"]
 [ext_resource type="Texture2D" uid="uid://dc0wjy8vw6qn8" path="res://Game/Area_hutan/Assets/ui/logging_volume/Minus_Hover.png" id="17_4mra4"]
 [ext_resource type="Texture2D" uid="uid://bknuyuxj4k4fr" path="res://Game/Area_hutan/Assets/ui/logging_volume/Plus_Normal.png" id="18_qtqy0"]
 [ext_resource type="Texture2D" uid="uid://bp2ibuu0mpvo4" path="res://Game/Area_hutan/Assets/ui/logging_volume/Plus_Pressed.png" id="19_6uoke"]
 [ext_resource type="Texture2D" uid="uid://dlbjkg4u7esxp" path="res://Game/Area_hutan/Assets/ui/logging_volume/Plus_Hover.png" id="20_yqimx"]
-[ext_resource type="PackedScene" uid="uid://bgd6y2vgmcn5q" path="res://Game/Global/Scenes/Sapi_Jalan/sapijalan.tscn" id="14_6xhpp"]
-[ext_resource type="PackedScene" uid="uid://cmhkf4q0cyfjt" path="res://Game/Global/Scenes/Burung/burung.tscn" id="14_jo6gd"]
-[ext_resource type="PackedScene" uid="uid://0mnnapywg8gh" path="res://Game/Global/Scenes/Sapi_Makan/sapimakan.tscn" id="16_mvfy3"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_o8ud1"]
-font_size = 100
+[sub_resource type="Animation" id="Animation_d621p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1136, 101)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.05, 0.05)]
+}
 
 [sub_resource type="Animation" id="Animation_ags0k"]
 resource_name = "jalan"
@@ -69,7 +105,13 @@ tracks/2/keys = {
 "values": [Vector2(0.05, 0.05), Vector2(-0.05, 0.05)]
 }
 
-[sub_resource type="Animation" id="Animation_d621p"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6m7s0"]
+_data = {
+"RESET": SubResource("Animation_d621p"),
+"jalan": SubResource("Animation_ags0k")
+}
+
+[sub_resource type="Animation" id="Animation_cv71c"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -81,37 +123,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1136, 101)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.05, 0.05)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6m7s0"]
-_data = {
-"RESET": SubResource("Animation_d621p"),
-"jalan": SubResource("Animation_ags0k")
+"values": [Vector2(2053, 175)]
 }
 
 [sub_resource type="Animation" id="Animation_lhysr"]
@@ -131,7 +143,13 @@ tracks/0/keys = {
 "values": [Vector2(2053, 175), Vector2(2053, 175), Vector2(-204, 749), Vector2(-204, 749)]
 }
 
-[sub_resource type="Animation" id="Animation_cv71c"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2lxdi"]
+_data = {
+"RESET": SubResource("Animation_cv71c"),
+"terbang": SubResource("Animation_lhysr")
+}
+
+[sub_resource type="Animation" id="Animation_bmcvp"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -143,13 +161,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2053, 175)]
+"values": [Vector2(844.087, 123.43)]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2lxdi"]
-_data = {
-"RESET": SubResource("Animation_cv71c"),
-"terbang": SubResource("Animation_lhysr")
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_1f60q"]
@@ -181,38 +205,14 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_bmcvp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(844.087, 123.43)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bwmmp"]
 _data = {
 "RESET": SubResource("Animation_bmcvp"),
 "sapimakan": SubResource("Animation_1f60q")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_o8ud1"]
+font_size = 100
 
 [node name="Ricefield_area" type="Node2D"]
 script = ExtResource("1_0ucuo")
@@ -274,6 +274,7 @@ texture = ExtResource("8_vr351")
 
 [node name="Subarea_lampu_sawah" type="Node2D" parent="."]
 script = ExtResource("10_e8lyc")
+
 [node name="Sapijalan" parent="." instance=ExtResource("14_6xhpp")]
 position = Vector2(1136, 101)
 scale = Vector2(0.05, 0.05)

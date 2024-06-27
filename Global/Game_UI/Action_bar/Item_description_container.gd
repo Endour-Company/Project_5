@@ -20,6 +20,7 @@ func set_description_body():
 	var currentArea = GlobalActionBar.CURRENT_AREA
 	var itemsInCurrentAreaData = Utils.find_item_in_array_with_key(GlobalItemsLevel.ITEMS_PER_AREA, "area",currentArea)
 	var itemsInCurrentArea = itemsInCurrentAreaData["items"]
+	print(CURRENT_ITEM_NAME)
 	var currentItem = Utils.find_item_in_array_with_key(itemsInCurrentArea,"name", CURRENT_ITEM_NAME)
 	var itemName = currentItem["name"]
 	var itemDescription = currentItem["description"]
